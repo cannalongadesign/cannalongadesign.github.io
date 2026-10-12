@@ -11,27 +11,27 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannadesign.github.io with the real deployed URL after publishing. -->
+<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with the real deployed URL after publishing. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Guilherme Cannalonga · Senior Product Designer">
 <meta property="og:description" content="Product design for systems where the wrong screen is expensive. Clinical AI, enterprise logistics, consumer healthcare and fintech. Open to Senior Product Designer roles in the US.">
-<meta property="og:url" content="https://cannadesign.github.io/">
-<link rel="canonical" href="https://cannadesign.github.io/">
-<meta property="og:image" content="https://cannadesign.github.io/assets/og-image.jpg">
+<meta property="og:url" content="https://cannalongadesign.github.io/">
+<link rel="canonical" href="https://cannalongadesign.github.io/">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Guilherme Cannalonga · Senior Product Designer">
 <meta name="twitter:description" content="Product design for systems where the wrong screen is expensive. Open to Senior Product Designer roles in the US.">
-<meta name="twitter:image" content="https://cannadesign.github.io/assets/og-image.jpg">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
-     canna design
+     cannalonga design
      Paper ground. Ink type. Acid as punctuation, never as a field
      behind artwork.
 
@@ -166,8 +166,9 @@
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     font-family:inherit; font-size:15px; font-weight:500; padding:16px 28px;
     border-radius:100px; border:1px solid transparent; cursor:pointer;
-    transition:background .2s ease, border-color .2s ease; white-space:nowrap;
+    transition:background .2s ease, border-color .2s ease, transform .12s ease; white-space:nowrap;
   }
+  .btn:active,.brief-cta:active{transform:scale(.98);}
   /* ── Action hierarchy ─────────────────────────────────────────
      Wherever two actions sit together, exactly one is primary and it is
      always the contact action. Everything else is the outline variant.
@@ -178,7 +179,7 @@
   .btn-acid:hover{background:#cbe63c;}
 
   /* ================= HERO ================= */
-  .hero{padding:128px 0 var(--s4);}
+  .hero{padding:144px 0 var(--s4);}
   .hero .label{margin-bottom:var(--s3);}
   /* No picture in the hero. The evidence here is the four numbers below,
      and they are typographic — a screenshot beside them competes with them
@@ -186,10 +187,15 @@
      headline gets the full column instead, capped at a measure that still
      reads as a line of type rather than a paragraph. */
   .hero-grid{padding-bottom:var(--s5); border-bottom:1px solid var(--line);}
-  .hero-copy h1{font-size:clamp(40px,5vw,68px); line-height:.94; margin-bottom:var(--s3); text-wrap:balance; max-width:17ch;}
-  .hero-copy .bio{font-size:18px; color:var(--ink-2); max-width:58ch; margin-bottom:var(--s3);}
-  .avail{display:flex; align-items:center; gap:10px; font-size:13.5px; font-weight:700; letter-spacing:-0.01em; margin-bottom:var(--s3);}
-  .avail .dot{width:8px; height:8px; border-radius:50%; background:#2f9e5b; flex-shrink:0;}
+  .hero-copy h1{font-size:clamp(40px,5vw,72px); line-height:.94; text-wrap:balance;}
+  /* The headline runs the full column in two lines. Under it the page splits:
+     the claim on the left, the three numbers that back it on the right, at a
+     size that reads as evidence rather than as a footnote. Still no picture:
+     the numbers are the hero's image. */
+  .hero-row{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s6); align-items:end;}
+  .hero-copy .bio{font-size:18px; color:var(--ink-2); max-width:52ch; margin-bottom:var(--s3); text-wrap:pretty;}
+  .avail{display:flex; align-items:flex-start; gap:10px; line-height:1.45; font-size:13.5px; font-weight:700; letter-spacing:-0.01em; margin-bottom:var(--s3);}
+  .avail .dot{width:8px; height:8px; border-radius:50%; background:#2f9e5b; flex-shrink:0; margin-top:.42em;}
   .hero-actions{display:flex; flex-wrap:wrap; gap:10px;}
   .btn-line{background:transparent; border-color:var(--line-2); color:var(--ink);}
   .btn-line:hover{border-color:var(--ink);}
@@ -222,14 +228,13 @@
   /* Divider rule, borrowed from Stripe's tables: the rule spans the full
      container, the content is inset on BOTH sides. Related things stay
      close (number to label), unrelated things stay far (cell to cell). */
-  .stats{display:grid; grid-template-columns:repeat(3,1fr); padding-top:var(--s4);}
-  .stat{padding-inline:var(--s4); border-right:1px solid var(--line);}
-  .stat:first-child{padding-left:0;}
-  .stat:last-child{border-right:none; padding-right:0;}
-  .stat .n{font-weight:900; font-size:clamp(19px,1.9vw,25px); letter-spacing:-0.04em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .stats{border-top:1px solid var(--line);}
+  .stat{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:var(--s3); align-items:center; padding:20px 0; border-bottom:1px solid var(--line);}
+  .stat:last-child{border-bottom:none; padding-bottom:0;}
+  .stat .n{font-weight:900; font-size:clamp(26px,2.8vw,40px); letter-spacing:-0.05em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
   .stat .n span{font-weight:700; font-size:.72em; letter-spacing:0;}
   .stat .n span.morph{font-weight:900; font-size:1em; letter-spacing:inherit;}
-  .stat .l{font-size:12.5px; color:var(--ink-2); margin-top:8px; line-height:1.45; max-width:24ch;}
+  .stat .l{font-size:12.5px; color:var(--ink-2); line-height:1.45; max-width:26ch;}
   
   
 
@@ -241,7 +246,7 @@
   .sec-head p{font-size:15.5px; color:var(--ink-2); max-width:52ch;}
 
   /* ================= PROJECT GRID ================= */
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s4) 20px;}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s5) 44px;}
   .card{display:block;}
   /* One well, one ratio, for every card in the grid. The artwork is a flat
      composite exported at 2x, so what ships is exactly what was designed. */
@@ -289,26 +294,26 @@
     transition:transform .18s ease;
   }
   .brief-cta:hover{transform:translateY(-2px);}
-  .card-cap{display:flex; justify-content:space-between; align-items:baseline; gap:var(--s3); margin-top:16px;}
-  .card-cap h3{font-size:21px; letter-spacing:-0.04em; line-height:1.15;}
-  .card-cap .cat{font-size:13.5px; color:var(--ink-2); margin-top:4px;}
-  .card-sum{font-size:14.5px; color:var(--ink-2); margin-top:10px; max-width:46ch; line-height:1.5;}
+  /* Caption anatomy. Everything hangs from the left edge of its own card,
+     so nothing in one card ever lines up against the title of the next.
+     Context, name, one sentence; then a rule the width of the card and,
+     under it, the number with the name of what it measures. */
+  .card-cap{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:14px; row-gap:8px; align-items:baseline; margin-top:18px;}
+  .card-head{grid-column:1 / -1; display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px;}
+  .card-cap h3{font-size:25px; letter-spacing:-0.045em; line-height:1.1;}
+  /* the kind of product, as a quiet badge beside the name */
+  .card-cap .cat{font-size:12px; font-weight:500; line-height:1; color:var(--ink-2); padding:6px 10px; border:1px solid var(--line-2); border-radius:100px; white-space:nowrap;}
+  .card-sum strong{font-weight:700; color:var(--ink);}
+  .card-sum{font-size:14.5px; color:var(--ink-2); line-height:1.5; text-wrap:pretty;
+    grid-column:1 / -1; order:1; padding:0 14% 18px 0; min-height:calc(3em + 18px); margin-bottom:8px; border-bottom:1px solid var(--line);}
   .now-tag{display:inline-block; vertical-align:middle; margin-left:8px; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; background:var(--acid); padding:4px 8px; border-radius:100px; transform:translateY(-3px);}
   .card-media.ink{background:var(--ink);}
   .sec-head.sub{margin:var(--s6) 0 var(--s3);}
-  .card-cap .met{flex-shrink:0;}
   section[id]{scroll-margin-top:120px;}
-  /* A number with no name is trivia. "8.59% → 62.3%" tells a reader the
-     direction and the size of a win but not what moved, so the strongest
-     evidence on the page was arriving unlabelled. The name sits on the
-     baseline of the card title; the number sits under it, where the eye
-     lands after reading what it measures. */
-  .card-cap .met{text-align:right; letter-spacing:-0.02em; max-width:17ch;}
-  .card-cap .met-n{
-    display:block; font-size:11px; font-weight:700; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--ink-2); line-height:1.3;
-  }
-  .card-cap .met-v{display:block; font-size:15px; font-weight:700; margin-top:5px; white-space:nowrap;}
+  /* A number with no name is trivia, so the name of the measure sits right
+     under it, in sentence case and at reading size. */
+  .card-cap .met-v{order:2; font-size:20px; font-weight:900; letter-spacing:-0.04em; line-height:1.2; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .card-cap .met-n{order:3; font-size:13px; color:var(--ink-2); line-height:1.4;}
   a.card:hover .card-cap h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
   /* corner affordance, the way Stripe hints an expandable card */
   a.card .card-media::after{
@@ -398,7 +403,12 @@
   .instruments .k{font-weight:900; letter-spacing:-0.03em; font-size:16px;}
   .instruments .v{font-size:15px; color:var(--ink-2); line-height:1.5;}
   /* ================= TESTIMONIALS (all three, static) ================= */
-  .quotes{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  /* One voice leads, two confirm. Three equal cards gave the manager, the PM
+     and the developer the same weight; the person who reviewed the work for
+     two years gets the larger setting. */
+  .quotes{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:20px;}
+  .quote-card:first-child{grid-row:span 2; padding:var(--s5) var(--s4);}
+  .quote-card:first-child .quote{font-size:clamp(22px,2.4vw,31px); line-height:1.22; letter-spacing:-0.035em; text-wrap:pretty;}
   .quote-card{background:var(--paper-2); border-radius:18px; padding:var(--s4) var(--s3); display:flex; flex-direction:column; gap:var(--s3); justify-content:space-between;}
   .quote{font-size:17px; line-height:1.45; letter-spacing:-0.015em; font-weight:500;}
   .quote strong{font-weight:900;}
@@ -478,6 +488,12 @@
   .js .hero-copy > :nth-child(5){animation-delay:.5s}
   .js .stats{animation:rise .7s cubic-bezier(.2,.7,.2,1) .65s both;}
   .morph{display:inline-block; min-width:2.6ch; text-align:left; font-variant-numeric:tabular-nums;}
+  /* the same acid marker as the headline, under the number that moved */
+  .stat .morph{
+    padding:0 .08em; margin:0 -.08em;
+    background-image:linear-gradient(var(--acid),var(--acid));
+    background-repeat:no-repeat; background-position:0 86%; background-size:100% .36em;
+  }
   /* cards: the artwork breathes, the well deepens, the arrow points the way */
   .card-shot{transition:transform .7s cubic-bezier(.2,.7,.2,1);}
   a.card:hover .card-shot{transform:scale(1.035);}
@@ -548,7 +564,7 @@
     }
   }
 
-  @media (max-width:900px){ .quotes{grid-template-columns:1fr;} }
+  @media (max-width:900px){ .quotes{grid-template-columns:1fr;} .quote-card:first-child{grid-row:auto; padding:var(--s4) var(--s3);} }
 
   @media (max-width:900px){ .about-grid{grid-template-columns:1fr; gap:var(--s4);} .about-photo{max-width:390px;} }
 
@@ -584,11 +600,13 @@
 
   @media (max-width:820px){
     .grid{grid-template-columns:1fr; gap:var(--s4);}
-    .card-cap{flex-direction:column; gap:10px;}
-    .card-cap .met{text-align:left; max-width:none;}
     /* the brief is type, not a picture: it needs room, not a ratio */
     .card-media.brief{aspect-ratio:auto; min-height:340px;}
   }
+
+  @media (max-width:980px){ .hero-row{grid-template-columns:1fr; gap:var(--s4); align-items:start;} }
+  @media (max-width:820px){ .card-sum{min-height:0; padding-right:0;} }
+  @media (max-width:560px){ .stat{grid-template-columns:1fr; gap:8px;} .stat .l{max-width:none;} }
 
   @media (max-width:820px){ .exp-grid{grid-template-columns:1fr; gap:var(--s4);} }
 
@@ -645,6 +663,41 @@
     .nav-pill{padding:3px;}
     .nav-pill a{font-size:11.5px; padding:8px 9px;}
   }
+
+  /* ================= PAGE TRANSITIONS =================
+     Home to case and back is one document swap. A short cross-fade with a
+     small rise keeps it reading as one site instead of a hard cut. Browsers
+     without cross-document view transitions simply navigate. */
+  @view-transition{navigation:auto;}
+  @keyframes vt-out{to{opacity:0;}}
+  @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
+  @media (prefers-reduced-motion:no-preference){
+    ::view-transition-old(root){animation:vt-out .16s ease both;}
+    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+  }
+
+  /* ===== HERO D: who, the claim, the proof. Three rows, one job each. ===== */
+  .hero-d{padding:156px 0 var(--s6);}
+  .hero-d .who{display:flex; align-items:center; gap:14px; margin-bottom:var(--s4);}
+  .hero-d .who img{width:52px; height:52px; border-radius:16px; object-fit:cover; object-position:50% 22%;}
+  .hero-d .who strong{display:block; font-size:15px; font-weight:700; letter-spacing:-0.02em; line-height:1.3;}
+  .hero-d .who span{display:block; font-size:13.5px; color:var(--ink-2); line-height:1.3;}
+  /* availability lives with the portrait in About: it is a fact about the person, not part of the claim */
+  .about-grid .avail{margin:16px 0 0;}
+  .hero-d h1{font-size:clamp(44px,7.3vw,104px); line-height:.92; letter-spacing:-0.055em; margin-bottom:var(--s5); text-wrap:balance;}
+  .hero-d .hero-foot{display:flex; align-items:center; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; padding-top:var(--s3); border-top:1px solid var(--line);}
+  .hero-d .stats{display:flex; gap:var(--s4); border-top:none;}
+  .hero-d .stat{display:block; padding:0; border-bottom:none;}
+  .hero-d .stat .n{font-size:clamp(18px,1.7vw,23px); letter-spacing:-0.04em;}
+  .hero-d .stat .l{font-size:12px; margin-top:7px; max-width:none; white-space:nowrap;}
+  @media (max-width:1040px){ .hero-d .hero-foot{flex-direction:column; align-items:flex-start;} }
+  @media (max-width:640px){
+    .hero-d{padding:150px 0 var(--s5);}
+    .hero-d .stats{flex-direction:column; gap:var(--s2); width:100%;}
+    .hero-d .stat{display:flex; align-items:baseline; justify-content:space-between; gap:var(--s2); padding:0 0 var(--s2); border-bottom:1px solid var(--line);}
+    .hero-d .stat:last-child{border-bottom:none; padding-bottom:0;}
+    .hero-d .stat .l{margin-top:0; white-space:normal; text-align:right;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -652,18 +705,17 @@
  "@graph": [
   {
    "@type": "Person",
-   "@id": "https://cannadesign.github.io/#person",
+   "@id": "https://cannalongadesign.github.io/#person",
    "name": "Guilherme Cannalonga",
    "givenName": "Guilherme",
    "familyName": "Cannalonga",
    "alternateName": [
-    "Gui Cannalonga",
-    "Canna"
+    "Gui Cannalonga"
    ],
    "jobTitle": "Senior Product Designer",
    "description": "Senior Product Designer based in Greater Boston, MA, authorized to work in the US. Designs products where the wrong screen is expensive: AI clinical documentation, consumer healthcare, enterprise logistics and design systems.",
-   "url": "https://cannadesign.github.io/",
-   "image": "https://cannadesign.github.io/assets/about-portrait.webp",
+   "url": "https://cannalongadesign.github.io/",
+   "image": "https://cannalongadesign.github.io/assets/about-portrait.webp",
    "email": "mailto:cannalongadesign@gmail.com",
    "address": {
     "@type": "PostalAddress",
@@ -733,68 +785,68 @@
   },
   {
    "@type": "WebSite",
-   "@id": "https://cannadesign.github.io/#website",
-   "url": "https://cannadesign.github.io/",
+   "@id": "https://cannalongadesign.github.io/#website",
+   "url": "https://cannalongadesign.github.io/",
    "name": "Guilherme Cannalonga · Product Design Portfolio",
    "inLanguage": "en",
    "author": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    },
    "publisher": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    },
    "about": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    }
   },
   {
    "@type": "ProfilePage",
-   "@id": "https://cannadesign.github.io/#profilepage",
-   "url": "https://cannadesign.github.io/",
+   "@id": "https://cannalongadesign.github.io/#profilepage",
+   "url": "https://cannalongadesign.github.io/",
    "name": "Guilherme Cannalonga · Senior Product Designer",
    "isPartOf": {
-    "@id": "https://cannadesign.github.io/#website"
+    "@id": "https://cannalongadesign.github.io/#website"
    },
    "mainEntity": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    },
    "dateModified": "2026-10-08",
    "inLanguage": "en",
    "about": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    },
    "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://cannadesign.github.io/assets/about-portrait.webp"
+    "url": "https://cannalongadesign.github.io/assets/about-portrait.webp"
    }
   },
   {
    "@type": "ItemList",
-   "@id": "https://cannadesign.github.io/#work",
+   "@id": "https://cannalongadesign.github.io/#work",
    "name": "Selected case studies",
    "itemListElement": [
     {
      "@type": "ListItem",
      "position": 1,
-     "url": "https://cannadesign.github.io/genial/",
+     "url": "https://cannalongadesign.github.io/genial/",
      "name": "Genial App: turning a forgotten app into the tool 62% of families open every day"
     },
     {
      "@type": "ListItem",
      "position": 2,
-     "url": "https://cannadesign.github.io/liam/",
+     "url": "https://cannalongadesign.github.io/liam/",
      "name": "LIAM: turning up to 2 hours of clinical paperwork into a 25-minute review"
     },
     {
      "@type": "ListItem",
      "position": 3,
-     "url": "https://cannadesign.github.io/pick-and-pack/",
+     "url": "https://cannalongadesign.github.io/pick-and-pack/",
      "name": "Pick & Pack: one order, three people, one screen each"
     },
     {
      "@type": "ListItem",
      "position": 4,
-     "url": "https://cannadesign.github.io/compass/",
+     "url": "https://cannalongadesign.github.io/compass/",
      "name": "Compass: from one-off screens to a system three teams could build on"
     }
    ]
@@ -809,7 +861,7 @@
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav>
-  <a class="nav-mark" href="#top">canna</a>
+  <a class="nav-mark" href="#top">cannalonga</a>
   <div class="nav-pill" id="navPill">
     <a href="#work" data-i18n="nav.work">Work</a>
     <a href="#method" data-i18n="nav.method">How I decide</a>
@@ -834,24 +886,25 @@
 </button>
 
 <main id="main">
-<section class="hero" id="top">
+<section class="hero hero-d" id="top">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="label" data-i18n="hero.eyebrow">Guilherme Cannalonga · Senior Product Designer · Greater Boston, MA</span>
-        <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
-        <p class="bio" data-i18n="hero.bio">I design the tools clinicians, operators and families use to decide fast when the stakes are real: from an AI assistant that drafts clinical records to a fulfillment platform across 80+ stores. Six-plus years in product design.</p>
-        <p class="avail" data-i18n="hero.avail"><span class="dot" aria-hidden="true"></span>Open to Senior Product Designer roles in the US · Authorized to work in the US</p>
+    <div class="hero-copy">
+      <div class="who">
+        <img src="/assets/about-portrait.webp" alt="" width="780" height="892">
+        <div><strong>Guilherme Cannalonga</strong><span>Senior Product Designer · Greater Boston, MA</span></div>
+      </div>
+      <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
+      <div class="hero-foot">
+        <div class="stats">
+          <div class="stat"><div class="n">8.6% &rarr; <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><div class="l" data-i18n="card.genial.metname">Families opening the app daily</div></div>
+          <div class="stat"><div class="n">2h &rarr; <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="card.liam.metname">Documentation per session</div></div>
+          <div class="stat"><div class="n">4.2d &rarr; <span class="morph" data-from="4.2" data-to="2.5" data-dec="1" data-suffix="d">2.5d</span></div><div class="l" data-i18n="card.compass.metname">Design-ticket cycle time</div></div>
+        </div>
         <div class="hero-actions">
           <a class="btn btn-acid" href="#work"><span data-i18n="hero.cta1">See the work</span> <span aria-hidden="true">&darr;</span></a>
           <a class="btn btn-line" href="https://www.linkedin.com/in/guilhermecannalonga" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a>
         </div>
       </div>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n">8.6% &rarr; <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><div class="l" data-i18n="stat.genial.label">Families opening the app daily, as the base grew to ~500 · Genial Care</div></div>
-      <div class="stat"><div class="n">2h &rarr; <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="stat.liam.label">Documentation per session, from up to 2h · LIAM</div></div>
-      <div class="stat"><div class="n">4.2d &rarr; <span class="morph" data-from="4.2" data-to="2.5" data-dec="1" data-suffix="d">2.5d</span></div><div class="l" data-i18n="stat.compass.label">Design-ticket cycle time · Compass design system</div></div>
     </div>
   </div>
 </section>
@@ -871,12 +924,10 @@
           <img class="card-shot" src="/assets/card-genial.webp" alt="Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child&#39;s evolution note" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>Genial App</h3>
-            <div class="cat" data-i18n="card.genial.cat">Consumer healthcare · Genial Care, autism therapy (Brazil)</div>
-            <p class="card-sum" data-i18n="card.genial.sum">Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.genial.metname">Families opening the app daily</span><span class="met-v">8.6% &rarr; 62.3%</span></div>
+          <div class="card-head"><h3>Genial App</h3><span class="cat" data-i18n="card.genial.cat">Consumer healthcare</span></div>
+          <span class="met-v">8.6% &rarr; 62.3%</span>
+          <p class="card-sum"><strong>Genial Care.</strong> <span data-i18n="card.genial.sum">Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.</span></p>
+          <span class="met-n" data-i18n="card.genial.metname">Families opening the app daily</span>
         </div>
       </a>
 
@@ -885,12 +936,10 @@
           <img class="card-shot" src="/assets/card-liam.webp" alt="LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>LIAM</h3>
-            <div class="cat" data-i18n="card.liam.cat">AI clinical documentation · Genial Care, autism therapy (Brazil)</div>
-            <p class="card-sum" data-i18n="card.liam.sum">Drafts the clinical record from the therapist's narration. Never signs it.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.liam.metname">Documentation per session</span><span class="met-v">2h &rarr; 25min</span></div>
+          <div class="card-head"><h3>LIAM</h3><span class="cat" data-i18n="card.liam.cat">Clinical AI</span></div>
+          <span class="met-v">2h &rarr; 25min</span>
+          <p class="card-sum"><strong>Genial Care.</strong> <span data-i18n="card.liam.sum">Drafts the clinical record from the therapist's narration. Never signs it.</span></p>
+          <span class="met-n" data-i18n="card.liam.metname">Documentation per session</span>
         </div>
       </a>
 
@@ -899,12 +948,10 @@
           <img class="card-shot" src="/assets/card-kruzer.webp" alt="Pick &amp; Pack order queue on a desktop monitor: every order with status, carrier and waiting time" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>Pick &amp; Pack</h3>
-            <div class="cat" data-i18n="card.kruzer.cat">Enterprise logistics · Kruzer, commerce platform, for retailer Fast Shop</div>
-            <p class="card-sum" data-i18n="card.kruzer.sum">One order, three people, one screen each. Designed around the exceptions.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.kruzer.metname">Stores live, rolled out in waves over 3 months</span><span class="met-v" data-i18n="card.kruzer.met">80+</span></div>
+          <div class="card-head"><h3>Pick &amp; Pack</h3><span class="cat" data-i18n="card.kruzer.cat">Enterprise logistics</span></div>
+          <span class="met-v" data-i18n="card.kruzer.met">80+</span>
+          <p class="card-sum"><strong data-i18n="card.kruzer.co">Kruzer, for Fast Shop.</strong> <span data-i18n="card.kruzer.sum">One order, three people, one screen each. Designed around the exceptions.</span></p>
+          <span class="met-n" data-i18n="card.kruzer.metname">Stores live</span>
         </div>
       </a>
 
@@ -913,12 +960,10 @@
           <img class="card-shot" src="/assets/card-compass.webp" alt="Compass design system documentation on a desktop monitor: the colour palette page with primitive and semantic tokens" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>Compass</h3>
-            <div class="cat" data-i18n="card.compass.cat">Design system · Kruzer, commerce platform (Brazil)</div>
-            <p class="card-sum" data-i18n="card.compass.sum">Twenty blues in production to one semantic token layer, with governance.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.compass.metname">Design-ticket cycle time</span><span class="met-v" data-i18n="card.compass.met">4.2d &rarr; 2.5d</span></div>
+          <div class="card-head"><h3>Compass</h3><span class="cat" data-i18n="card.compass.cat">Design system</span></div>
+          <span class="met-v" data-i18n="card.compass.met">4.2d &rarr; 2.5d</span>
+          <p class="card-sum"><strong>Kruzer.</strong> <span data-i18n="card.compass.sum">Twenty blues in production to one semantic token layer, with governance.</span></p>
+          <span class="met-n" data-i18n="card.compass.metname">Design-ticket cycle time</span>
         </div>
       </a>
     </div>
@@ -932,12 +977,10 @@
           <img class="card-shot" src="/assets/matri-app.webp" alt="Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen" loading="lazy" width="1400" height="1054">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>Matri Bank</h3>
-            <div class="cat" data-i18n="card.matri.cat">Fintech · Shock Tecnologia, white-label banking (Brazil)</div>
-            <p class="card-sum" data-i18n="card.matri.sum">Redesigned the credit journey for a regulated product. Full case on request.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span><span class="met-v">18% &rarr; 63%</span></div>
+          <div class="card-head"><h3>Matri Bank</h3><span class="cat" data-i18n="card.matri.cat">Fintech</span></div>
+          <span class="met-v">18% &rarr; 63%</span>
+          <p class="card-sum"><strong>Shock Tecnologia.</strong> <span data-i18n="card.matri.sum">Redesigned the credit journey for a regulated product. Full case on request.</span></p>
+          <span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span>
         </div>
       </div>
 
@@ -946,12 +989,10 @@
           <img class="card-shot" src="/assets/card-ra.webp" alt="Compra Confiável on a desktop monitor: the Reclame Aqui search and reputation homepage" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
-          <div>
-            <h3>Compra Confiável <span class="now-tag" data-i18n="card.ra.now">Now</span></h3>
-            <div class="cat" data-i18n="card.ra.cat">Consumer trust · Reclame Aqui, Brazil&rsquo;s closest equivalent to Trustpilot</div>
-            <p class="card-sum" data-i18n="card.ra.sum">Senior Product Designer on the trust layer shoppers check before buying from a company. Under NDA.</p>
-          </div>
-          <div class="met"><span class="met-n" data-i18n="card.ra.metname">Since</span><span class="met-v" data-i18n="card.ra.met">2026</span></div>
+          <div class="card-head"><h3>Compra Confiável</h3><span class="cat" data-i18n="card.ra.cat">Consumer trust</span></div>
+          <span class="met-v" data-i18n="card.ra.met">Since 2026</span>
+          <p class="card-sum"><strong>Reclame Aqui.</strong> <span data-i18n="card.ra.sum">Senior Product Designer on the trust layer shoppers check before buying from a company.</span></p>
+          <span class="met-n" data-i18n="card.ra.metname">Current role, under NDA</span>
         </div>
       </div>
     </div>
@@ -992,7 +1033,7 @@
         <figcaption class="quote-by"><div class="n">Lívia Bomfim</div><div class="r" data-i18n="tst.2.role">Product Manager · Genial Care</div></figcaption>
       </figure>
       <figure class="quote-card">
-        <blockquote class="quote" data-i18n="tst.3.quote">Working with Canna was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.</blockquote>
+        <blockquote class="quote" data-i18n="tst.3.quote">Working with Guilherme was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.</blockquote>
         <figcaption class="quote-by"><div class="n">Arthur Togni</div><div class="r" data-i18n="tst.3.role">Developer · Modal project</div></figcaption>
       </figure>
     </div>
@@ -1004,7 +1045,7 @@
     <div class="about-grid reveal">
       <div>
         <div class="about-photo"><img src="/assets/about-portrait.webp" alt="Guilherme Cannalonga" loading="lazy" width="780" height="892"></div>
-        <div class="about-cap" data-i18n="about.location">Greater Boston, Massachusetts</div>
+        <p class="avail" data-i18n="hero.avail"><span class="dot" aria-hidden="true"></span>Open to Senior Product Designer roles in the US · Authorized to work in the US</p>
       </div>
       <div class="about-text">
         <span class="label" style="margin-bottom:18px" data-i18n="about.label">About</span>
@@ -1038,7 +1079,7 @@
 <footer>
   <div class="wrap">
     <div class="foot">
-      <span>© 2026 — <span data-i18n="foot.made">Made by Guilherme Cannalonga</span></span>
+      <span>© 2026 · <span data-i18n="foot.made">Made by Guilherme Cannalonga</span></span>
       <div class="foot-links">
         <a href="https://www.linkedin.com/in/guilhermecannalonga" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:cannalongadesign@gmail.com" data-contact-trigger data-i18n="footer.email">Email</a>
@@ -1184,25 +1225,25 @@
         'stat.pp.label':`Rolled out on growing volume, 2-hour promise · Pick &amp; Pack`,
         'work.label':'Selected work', 'work.h2':`Four products where the failure states mattered more than the demo.`,
         'work.p':`Healthcare, logistics and fintech. Same job every time: find the real constraint, name the number that could veto the win, design the exceptions first.`,
-        'card.liam.cat':`AI clinical documentation · Genial Care, autism therapy (Brazil)`,
+        'card.liam.cat':`Clinical AI`,
         'card.liam.sum':`Drafts the clinical record from the therapist's narration. Never signs it.`,
         'card.liam.metname':'Documentation per session',
-        'card.kruzer.cat':`Enterprise logistics · Kruzer, commerce platform, for retailer Fast Shop`,
+        'card.kruzer.cat':`Enterprise logistics`,
         'card.kruzer.sum':`One order, three people, one screen each. Designed around the exceptions.`,
-        'card.kruzer.metname':`Stores live, rolled out in waves over 3 months`, 'card.kruzer.met':`80+`,
-        'card.genial.cat':`Consumer healthcare · Genial Care, autism therapy (Brazil)`,
+        'card.kruzer.co':`Kruzer, for Fast Shop.`, 'card.kruzer.metname':`Stores live`, 'card.kruzer.met':`80+`,
+        'card.genial.cat':`Consumer healthcare`,
         'card.genial.sum':`Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.`,
         'card.genial.metname':'Families opening the app daily',
-        'card.compass.cat':`Design system · Kruzer, commerce platform (Brazil)`,
+        'card.compass.cat':`Design system`,
         'card.compass.sum':`Twenty blues in production to one semantic token layer, with governance.`,
         'card.compass.metname':'Design-ticket cycle time', 'card.compass.met':'4.2d &rarr; 2.5d',
         'more.label':'Also shipped · and now',
-        'card.matri.cat':`Fintech · Shock Tecnologia, white-label banking (Brazil)`,
+        'card.matri.cat':`Fintech`,
         'card.matri.sum':`Redesigned the credit journey for a regulated product. Full case on request.`,
         'card.matri.metname':'Credit-journey completion',
-        'card.ra.now':'Now', 'card.ra.cat':`Consumer trust · Reclame Aqui, Brazil&rsquo;s closest equivalent to Trustpilot`,
-        'card.ra.sum':`Senior Product Designer on the trust layer shoppers check before buying from a company. Under NDA.`,
-        'card.ra.metname':`Since`, 'card.ra.met':`2026`,
+        'card.ra.now':'Now', 'card.ra.cat':`Consumer trust`,
+        'card.ra.sum':`Senior Product Designer on the trust layer shoppers check before buying from a company.`,
+        'card.ra.metname':`Current role, under NDA`, 'card.ra.met':`Since 2026`,
         'method.label':'How I decide', 'method.h2':`The instrument is <mark class="mk on">chosen</mark>, not inherited.`,
         'method.p':`A decision doesn't reach production until something outside my own taste has argued for it. What changes is which evidence is the cheapest that could still prove me wrong.`,
         'method.1':`A weekly behaviour curve with release markers. Hundreds of families, so an A/B test would have bought comfort at the price of learning speed.`,
@@ -1214,7 +1255,7 @@
         'tst.1.role':'Product Design Manager · Genial Care',
         'tst.2.quote':`Guilherme has a sharp critical and creative eye, and a real commitment to what he ships. <strong>Watching him work live in Figma was mesmerizing</strong>, the speed of his vision and execution.`,
         'tst.2.role':'Product Manager · Genial Care',
-        'tst.3.quote':`Working with Canna was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.`,
+        'tst.3.quote':`Working with Guilherme was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.`,
         'tst.3.role':'Developer · Modal project',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'About',
         'about.p1':`I came to design through the machine room: enterprise support, then front-end development, before my first screen. UX is where I found the work I wanted, and I went at it deliberately: two postgraduate specialisations, then product, strategy and business. The origin still shows: I read the API before the wireframe, ask what the backend does past the cutoff, and stay in the squad through release.`,
@@ -1247,25 +1288,25 @@
         'stat.pp.label':`Lançado com o volume crescendo, promessa de 2 horas · Pick &amp; Pack`,
         'work.label':'Projetos selecionados', 'work.h2':`Quatro produtos em que os estados de falha importavam mais do que a demo.`,
         'work.p':`Saúde, logística e fintech. O mesmo trabalho toda vez: achar a restrição real, nomear o número que poderia vetar a vitória, desenhar as exceções primeiro.`,
-        'card.liam.cat':`Documentação clínica com IA · Genial Care, terapia para autismo`,
+        'card.liam.cat':`IA clínica`,
         'card.liam.sum':`Rascunha o registro clínico a partir da narração do terapeuta. Nunca assina por ele.`,
         'card.liam.metname':'Documentação por sessão',
-        'card.kruzer.cat':`Logística empresarial · Kruzer, plataforma de commerce, para a varejista Fast Shop`,
+        'card.kruzer.cat':`Logística empresarial`,
         'card.kruzer.sum':`Um pedido, três pessoas, uma tela para cada. Desenhado a partir das exceções.`,
-        'card.kruzer.metname':`Lojas no ar, em ondas ao longo de 3 meses`, 'card.kruzer.met':`80+`,
-        'card.genial.cat':`Saúde para famílias · Genial Care, terapia para autismo`,
+        'card.kruzer.co':`Kruzer, para a Fast Shop.`, 'card.kruzer.metname':`Lojas no ar`, 'card.kruzer.met':`80+`,
+        'card.genial.cat':`Saúde para famílias`,
         'card.genial.sum':`Encontrou primeiro o gargalo da agenda. Um MVP de um mês, depois um ano de apostas pequenas.`,
         'card.genial.metname':'Famílias abrindo o app por dia',
-        'card.compass.cat':`Design system · Kruzer, plataforma de commerce`,
+        'card.compass.cat':`Design system`,
         'card.compass.sum':`De vinte azuis em produção para uma camada de tokens semânticos, com governança.`,
         'card.compass.metname':'Tempo de ciclo de ticket de design', 'card.compass.met':'4,2d &rarr; 2,5d',
         'more.label':'Também entreguei · e agora',
-        'card.matri.cat':`Fintech · Shock Tecnologia, banking white-label`,
+        'card.matri.cat':`Fintech`,
         'card.matri.sum':`Redesenhei a jornada de crédito de um produto regulado. Case completo sob consulta.`,
         'card.matri.metname':'Conclusão da jornada de crédito',
-        'card.ra.now':'Agora', 'card.ra.cat':`Confiança do consumidor · Reclame Aqui`,
-        'card.ra.sum':`Senior Product Designer na camada de confiança que o consumidor consulta antes de comprar de uma empresa. Sob NDA.`,
-        'card.ra.metname':`Desde`, 'card.ra.met':`2026`,
+        'card.ra.now':'Agora', 'card.ra.cat':`Confiança do consumidor`,
+        'card.ra.sum':`Senior Product Designer na camada de confiança que o consumidor consulta antes de comprar de uma empresa.`,
+        'card.ra.metname':`Cargo atual, sob NDA`, 'card.ra.met':`Desde 2026`,
         'method.label':'Como decido', 'method.h2':`O instrumento é <mark class="mk on">escolhido</mark>, não herdado.`,
         'method.p':`Uma decisão não chega em produção até que algo fora do meu gosto tenha argumentado por ela. O que muda é qual evidência é a mais barata que ainda consegue me provar errado.`,
         'method.1':`Uma curva semanal com marcadores de release. Centenas de famílias, então um A/B compraria conforto ao preço da velocidade de aprendizado.`,
@@ -1277,7 +1318,7 @@
         'tst.1.role':'Product Design Manager · Genial Care',
         'tst.2.quote':`Guilherme tem um olhar crítico e criativo apurado, e um compromisso real com o que entrega. <strong>Ver ele trabalhando ao vivo no Figma era hipnotizante</strong>, pela velocidade da visão e da execução.`,
         'tst.2.role':'Product Manager · Genial Care',
-        'tst.3.quote':`Trabalhar com o Canna foi incrível. Ele tem uma habilidade excepcional de <strong>traduzir a dor do usuário em soluções eficazes</strong>, sustentando o time com entregas concretas em cada etapa.`,
+        'tst.3.quote':`Trabalhar com o Guilherme foi incrível. Ele tem uma habilidade excepcional de <strong>traduzir a dor do usuário em soluções eficazes</strong>, sustentando o time com entregas concretas em cada etapa.`,
         'tst.3.role':'Desenvolvedor · projeto Modal',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'Sobre',
         'about.p1':`Cheguei ao design pela sala de máquinas: suporte a sistemas corporativos, depois desenvolvimento front-end, antes da primeira tela. Foi em UX que encontrei o trabalho que eu queria, e fui atrás de forma deliberada: duas pós-graduações, e daí produto, estratégia e negócio. A origem ainda aparece: leio a API antes do wireframe, pergunto o que o backend faz depois do prazo de corte e fico com o squad até o lançamento.`,

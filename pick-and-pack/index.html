@@ -12,26 +12,26 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannadesign.github.io with your real deployed URL after publishing. -->
+<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Pick &amp; Pack (Kruzer) case study · real-time order visibility across 80+ stores">
 <meta property="og:description" content="Designing fulfillment for three roles at once, plus the Compass design system, for Fast Shop's move to 2-hour delivery.">
-<meta property="og:url" content="https://cannadesign.github.io/pick-and-pack/">
-<link rel="canonical" href="https://cannadesign.github.io/pick-and-pack/">
-<meta property="og:image" content="https://cannadesign.github.io/assets/og-image.jpg">
+<meta property="og:url" content="https://cannalongadesign.github.io/pick-and-pack/">
+<link rel="canonical" href="https://cannalongadesign.github.io/pick-and-pack/">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pick &amp; Pack (Kruzer) case study · real-time order visibility across 80+ stores">
 <meta name="twitter:description" content="Designing fulfillment for three roles at once, plus the Compass design system.">
-<meta name="twitter:image" content="https://cannadesign.github.io/assets/og-image.jpg">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
-     canna design — case study system
+     cannalonga design — case study system
      Paper ground, ink type, one acid field. DM Sans.
      Hard rules: no shadow, no gradient, no glow, no translucency.
      ============================================================ */
@@ -656,6 +656,19 @@
     .meta-item:nth-child(3n+1){border-left:1px solid var(--line); padding-left:16px;}
     .meta-item:nth-child(2n+1){border-left:none; padding-left:0;}
   }
+
+  /* ================= PAGE TRANSITIONS =================
+     Home to case and back is one document swap. A short cross-fade with a
+     small rise keeps it reading as one site instead of a hard cut. Browsers
+     without cross-document view transitions simply navigate. */
+  @view-transition{navigation:auto;}
+  @keyframes vt-out{to{opacity:0;}}
+  @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
+  @media (prefers-reduced-motion:no-preference){
+    ::view-transition-old(root){animation:vt-out .16s ease both;}
+    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+  }
+  .btn:active{transform:scale(.98);}
 </style>
 <script type="application/ld+json">
 {
@@ -663,29 +676,29 @@
  "@graph": [
   {
    "@type": "Article",
-   "@id": "https://cannadesign.github.io/pick-and-pack/#article",
+   "@id": "https://cannalongadesign.github.io/pick-and-pack/#article",
    "headline": "Pick & Pack: one order, three people, one screen each",
    "description": "Pick & Pack, the fulfillment platform behind Fast Shop's 2-hour delivery, designed for store, distribution centre and driver at once and rolled out to 80+ stores in waves over 3 months.",
-   "url": "https://cannadesign.github.io/pick-and-pack/",
-   "mainEntityOfPage": "https://cannadesign.github.io/pick-and-pack/",
+   "url": "https://cannalongadesign.github.io/pick-and-pack/",
+   "mainEntityOfPage": "https://cannalongadesign.github.io/pick-and-pack/",
    "author": {
     "@type": "Person",
-    "@id": "https://cannadesign.github.io/#person",
+    "@id": "https://cannalongadesign.github.io/#person",
     "name": "Guilherme Cannalonga",
-    "url": "https://cannadesign.github.io/",
+    "url": "https://cannalongadesign.github.io/",
     "sameAs": [
      "https://www.linkedin.com/in/guilhermecannalonga"
     ]
    },
    "publisher": {
-    "@id": "https://cannadesign.github.io/#person"
+    "@id": "https://cannalongadesign.github.io/#person"
    },
    "isPartOf": {
-    "@id": "https://cannadesign.github.io/#website"
+    "@id": "https://cannalongadesign.github.io/#website"
    },
    "inLanguage": "en",
    "dateModified": "2026-10-08",
-   "image": "https://cannadesign.github.io/assets/card-kruzer.webp",
+   "image": "https://cannalongadesign.github.io/assets/card-kruzer.webp",
    "about": {
     "@type": "SoftwareApplication",
     "name": "Pick & Pack",
@@ -711,13 +724,13 @@
      "@type": "ListItem",
      "position": 1,
      "name": "Guilherme Cannalonga · Portfolio",
-     "item": "https://cannadesign.github.io/"
+     "item": "https://cannalongadesign.github.io/"
     },
     {
      "@type": "ListItem",
      "position": 2,
      "name": "Pick & Pack",
-     "item": "https://cannadesign.github.io/pick-and-pack/"
+     "item": "https://cannalongadesign.github.io/pick-and-pack/"
     }
    ]
   }

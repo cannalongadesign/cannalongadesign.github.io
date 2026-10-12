@@ -1,6 +1,6 @@
 # Guilherme Cannalonga · Portfolio (full text)
 
-Source: https://cannadesign.github.io/ · Last updated: 2026-10-08
+Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-08
 
 Guilherme Cannalonga · Senior Product Designer · Greater Boston, MA
 
@@ -116,7 +116,7 @@ Guilherme has a sharp critical and creative eye, and a real commitment to what h
 Lívia Bomfim
 Product Manager · Genial Care
 
-Working with Canna was incredible. He has an exceptional ability to **translate user pain into effective solutions**, backing the team with concrete deliverables at every step.
+Working with Guilherme was incredible. He has an exceptional ability to **translate user pain into effective solutions**, backing the team with concrete deliverables at every step.
 Arthur Togni
 Developer · Modal project
 
@@ -150,7 +150,7 @@ cannalongadesign@gmail.com ↗
 
 ---
 
-URL: https://cannadesign.github.io/genial/
+URL: https://cannalongadesign.github.io/genial/
 
 Case study · Healthcare · Product Growth
 
@@ -320,7 +320,7 @@ Read the Kruzer case
 
 ---
 
-URL: https://cannadesign.github.io/liam/
+URL: https://cannalongadesign.github.io/liam/
 
 Case study · Healthcare · AI Design
 
@@ -483,7 +483,7 @@ Read the Pick & Pack case
 
 ---
 
-URL: https://cannadesign.github.io/pick-and-pack/
+URL: https://cannalongadesign.github.io/pick-and-pack/
 
 Case study · Enterprise logistics · B2B
 
@@ -686,7 +686,7 @@ See the other case
 
 ---
 
-URL: https://cannadesign.github.io/compass/
+URL: https://cannalongadesign.github.io/compass/
 
 Case study · Design Systems · Enterprise platform
 
