@@ -16,7 +16,7 @@ LinkedIn ↗
 8.6% → 62.3%
 Families opening the app daily, as the base grew to ~500 · Genial Care
 
-2h → 25min
+Up to 2h → 25min
 Documentation per session, from up to 2h · LIAM
 
 4.2d → 2.5d
@@ -46,7 +46,7 @@ AI clinical documentation · Genial Care, autism therapy (Brazil)
 
 Drafts the clinical record from the therapist's narration. Never signs it.
 
-Documentation per session 2h → 25min
+Documentation per session Up to 2h → 25min
 
 [Image: Pick & Pack order queue on a desktop monitor: every order with status, carrier and waiting time]
 
@@ -118,7 +118,7 @@ Product Manager · Genial Care
 
 Working with Guilherme was incredible. He has an exceptional ability to **translate user pain into effective solutions**, backing the team with concrete deliverables at every step.
 Arthur Togni
-Developer · Modal project
+Developer · Modal, client project at 7COMm
 
 [Image: Guilherme Cannalonga]
 
@@ -135,7 +135,7 @@ I'm an AI enthusiast and I work with LLMs and agents every day: to think decisio
 
 **2024 – 26:** Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products
 
-**2023 – 25:** Senior Product Designer (contract) · Shock Tecnologia · white-label banking (Matri)
+**2023 – 25:** Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)
 
 **2022 – 24:** Senior Product Designer · Genial Care · first designer, then leading design across two teams
 
@@ -290,7 +290,7 @@ Families opening the app on a given day, July 2024, weekly average
 1 month
 Discovery, prototype and build for the first release
 
-**How it was measured:** the share of families on the platform opening the app on a given day, tracked in Metabase and read as a weekly average across the 13 months from the June 2023 baseline to July 2024. The chart above is the raw weekly series (its axis labels are in Portuguese: Semana is week, Meta is the target line). Two things it does not show, stated on purpose. The first is that the base moved underneath the rate: around 30 families when I joined, around 500 when I left. The share climbed while the denominator grew roughly sixteen times, which makes the rise harder to achieve, not easier, but it does mean the 8.59% baseline sits on a much smaller base than the 62.3%. The second is that the operations-hours saving, the other pointer, was never instrumented; the six-hours-to-one figure is the operations lead’s recollection, and I present it as that. One guardrail we agreed before launch: a cancellation rate above roughly 10% would have meant the change made things worse. I don’t have the closed-out reading.
+**How it was measured:** the share of families on the platform opening the app on a given day, tracked in Metabase and read as a weekly average across the 13 months from the June 2023 baseline to July 2024. The chart above is the raw weekly series (its axis labels are in Portuguese: Semana is week, Meta is the target line). Two things it does not show, stated on purpose. The first is that the base moved underneath the rate: around 30 families when I joined, around 500 when I left. The share climbed while the denominator grew roughly sixteen times, which makes the rise harder to achieve, not easier, but it does mean the 8.59% baseline sits on a much smaller base than the 62.3%. The second is that the operations-hours saving, the other pointer, was never instrumented; the operations lead s recollection is that rescheduling work went from about six hours to one, and I present it as that. One guardrail we agreed before launch: a cancellation rate above roughly 10% would have meant the change made things worse. I don’t have the closed-out reading.
 
 **06** · What I’d do differently
 
@@ -474,7 +474,7 @@ LIAM shipped after the family-facing app had already gone from 8% to 62% daily u
 
 ## Questions this page doesn't answer?
 
-How the model was chosen, how we handled clinical-language accuracy, how many therapists ran sessions through it and what the feedback loop has surfaced since launch: all of it is a 30-minute call away.
+How the model was chosen, how we handled clinical-language accuracy, how the rollout reached the whole clinical team and what the feedback prompt was built to catch: all of it is a 30-minute call away.
 
 Get in touch
 Read the Genial App case
@@ -577,6 +577,8 @@ The store board as shipped.
 **04** · What shipped: the screens
 
 ## What shipped: the screens
+
+Below, the store and distribution-centre homes and the exceptions they share. The driver’s side is one stop at a time, and I walk through it on a call.
 
 ### The distribution centre: every store, and the numbers that say where the day is going wrong
 
@@ -681,7 +683,7 @@ Read the Compass case →
 The research, the driver’s screen, how the rollout waves were sequenced and how we prioritised against Fast Shop’s OKRs: all of it is a 30-minute call away.
 
 Get in touch
-See the other case
+See all cases
 
 
 ---
@@ -815,7 +817,7 @@ Molecules: the select composed from smaller pieces: field, label, tooltip, chip,
 
 There's no usability test for a design system, and no funnel: the evidence came from three places instead. The audit gave a hard before: around twenty blues, seven paddings and four button heights live in production, counted rather than estimated. Pick & Pack was the first consumer, proving the system against a real product before anyone else adopted it. And Jira, which the team already used to track demand, gave the after: the same class of work, measured before and after adoption. A metric I invent to prove my own project is worth roughly nothing in a review; a metric engineering already trusts is much harder to wave away.
 
-The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose sharply, and review comments shifted from spacing and colour to whether the flow was right. What that number can't prove, and I'd say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.
+The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and colour to whether the flow was right. What that number can't prove, and I'd say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.
 
 4.2d → 2.5d
 Cycle time on the same class of design ticket, before and after adoption: the harder number, found late

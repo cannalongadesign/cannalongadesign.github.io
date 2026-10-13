@@ -233,7 +233,7 @@
   .stat:last-child{border-bottom:none; padding-bottom:0;}
   .stat .n{font-weight:900; font-size:clamp(26px,2.8vw,40px); letter-spacing:-0.05em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
   .stat .n span{font-weight:700; font-size:.72em; letter-spacing:0;}
-  .stat .n span.morph{font-weight:900; font-size:1em; letter-spacing:inherit;}
+  .stat .n span.morph,.stat .n span[data-i18n]{font-weight:900; font-size:1em; letter-spacing:inherit;}
   .stat .l{font-size:12.5px; color:var(--ink-2); line-height:1.45; max-width:26ch;}
   
   
@@ -964,7 +964,7 @@
       <div class="hero-foot">
         <div class="stats">
           <div class="stat"><div class="n">8.6% &rarr; <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><div class="l" data-i18n="card.genial.metname">Families opening the app daily</div></div>
-          <div class="stat"><div class="n">2h &rarr; <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="card.liam.metname">Documentation per session</div></div>
+          <div class="stat"><div class="n"><span data-i18n="stat.liam.from">Up to 2h &rarr;</span> <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="card.liam.metname">Documentation per session</div></div>
           <div class="stat"><div class="n">4.2d &rarr; <span class="morph" data-from="4.2" data-to="2.5" data-dec="1" data-suffix="d">2.5d</span></div><div class="l" data-i18n="card.compass.metname">Design-ticket cycle time</div></div>
         </div>
         <div class="hero-actions">
@@ -1004,7 +1004,7 @@
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>LIAM</h3><span class="cat" data-i18n="card.liam.cat">Clinical AI</span></div>
-          <span class="met-v">2h &rarr; 25min</span>
+          <span class="met-v" data-i18n="card.liam.met">Up to 2h &rarr; 25min</span>
           <p class="card-sum"><strong>Genial Care.</strong> <span data-i18n="card.liam.sum">Drafts the clinical record from the therapist's narration. Never signs it.</span></p>
           <span class="met-n" data-i18n="card.liam.metname">Documentation per session</span>
         </div>
@@ -1101,7 +1101,7 @@
       </figure>
       <figure class="quote-card">
         <blockquote class="quote" data-i18n="tst.3.quote">Working with Guilherme was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.</blockquote>
-        <figcaption class="quote-by"><div class="n">Arthur Togni</div><div class="r" data-i18n="tst.3.role">Developer · Modal project</div></figcaption>
+        <figcaption class="quote-by"><div class="n">Arthur Togni</div><div class="r" data-i18n="tst.3.role">Developer · Modal, client project at 7COMm</div></figcaption>
       </figure>
     </div>
   </div>
@@ -1122,7 +1122,7 @@
         <dl class="timeline">
           <div><dt>2026 –</dt><dd data-i18n="tl.1">Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot</dd></div>
           <div><dt>2024 – 26</dt><dd data-i18n="tl.2">Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products</dd></div>
-          <div><dt data-i18n="tl.4.d">2023 – 25</dt><dd data-i18n="tl.4">Senior Product Designer (contract) · Shock Tecnologia · white-label banking (Matri)</dd></div>
+          <div><dt data-i18n="tl.4.d">2023 – 25</dt><dd data-i18n="tl.4">Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)</dd></div>
           <div><dt>2022 – 24</dt><dd data-i18n="tl.3">Senior Product Designer · Genial Care · first designer, then leading design across two teams</dd></div>
           <div><dt data-i18n="tl.5.d">five years</dt><dd data-i18n="tl.5">7COMm &middot; intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team</dd></div>
         </dl>
@@ -1295,6 +1295,7 @@
         'work.p':`Healthcare, logistics and fintech. Same job every time: find the real constraint, name the number that could veto the win, design the exceptions first.`,
         'card.liam.cat':`Clinical AI`,
         'card.liam.sum':`Drafts the clinical record from the therapist's narration. Never signs it.`,
+        'stat.liam.from':`Up to 2h &rarr;`, 'card.liam.met':`Up to 2h &rarr; 25min`,
         'card.liam.metname':'Documentation per session',
         'card.kruzer.cat':`Enterprise logistics`,
         'card.kruzer.sum':`One order, three people, one screen each. Designed around the exceptions.`,
@@ -1324,7 +1325,7 @@
         'tst.2.quote':`Guilherme has a sharp critical and creative eye, and a real commitment to what he ships. <strong>Watching him work live in Figma was mesmerizing</strong>, the speed of his vision and execution.`,
         'tst.2.role':'Product Manager · Genial Care',
         'tst.3.quote':`Working with Guilherme was incredible. He has an exceptional ability to <strong>translate user pain into effective solutions</strong>, backing the team with concrete deliverables at every step.`,
-        'tst.3.role':'Developer · Modal project',
+        'tst.3.role':'Developer · Modal, client project at 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'About',
         'about.p1':`I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.`,
         'about.p2':`I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now on Reclame Aqui's consumer-trust platform.`,
@@ -1332,7 +1333,7 @@
         'tl.1':`Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot`,
         'tl.2':`Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products`,
         'tl.3':'Senior Product Designer · Genial Care · first designer, then leading design across two teams',
-        'tl.4':`Senior Product Designer (contract) · Shock Tecnologia · white-label banking (Matri)`,
+        'tl.4':`Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)`,
         'tl.5':`7COMm &middot; intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team`,
         'about.book':'Book 30 minutes', 'tl.4.d':`2023 – 25`, 'tl.5.d':'five years',
         'contact.label':`Hiring a Senior Product Designer?`, 'contact.h2':`Let's talk.`,
@@ -1359,6 +1360,7 @@
         'work.p':`Saúde, logística e fintech. O mesmo trabalho toda vez: achar a restrição real, nomear o número que poderia vetar a vitória, desenhar as exceções primeiro.`,
         'card.liam.cat':`IA clínica`,
         'card.liam.sum':`Rascunha o registro clínico a partir da narração do terapeuta. Nunca assina por ele.`,
+        'stat.liam.from':`Até 2h &rarr;`, 'card.liam.met':`Até 2h &rarr; 25min`,
         'card.liam.metname':'Documentação por sessão',
         'card.kruzer.cat':`Logística empresarial`,
         'card.kruzer.sum':`Um pedido, três pessoas, uma tela para cada. Desenhado a partir das exceções.`,
@@ -1388,7 +1390,7 @@
         'tst.2.quote':`Guilherme tem um olhar crítico e criativo apurado, e um compromisso real com o que entrega. <strong>Ver ele trabalhando ao vivo no Figma era hipnotizante</strong>, pela velocidade da visão e da execução.`,
         'tst.2.role':'Product Manager · Genial Care',
         'tst.3.quote':`Trabalhar com o Guilherme foi incrível. Ele tem uma habilidade excepcional de <strong>traduzir a dor do usuário em soluções eficazes</strong>, sustentando o time com entregas concretas em cada etapa.`,
-        'tst.3.role':'Desenvolvedor · projeto Modal',
+        'tst.3.role':'Desenvolvedor · Modal, projeto de cliente na 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'Sobre',
         'about.p1':`Comecei no suporte a sistemas corporativos, passei pelo front-end e encontrei no design o trabalho que eu queria para a vida. Comecei pela interface e fui para a usabilidade, para entender quem usa. Daí fui para produto, para entender como aquelas telas fazem sentido para a empresa no fim do mês e qual ponteiro elas mexem. Duas pós-graduações depois, o caminho tem sido cada vez mais métricas, estratégia e negócio.`,
         'about.p2':`Fui o primeiro ou o único designer mais vezes do que não: primeiro Senior Product Designer da Genial Care, depois liderando design em dois times; designer único de quatro produtos na Kruzer; agora na plataforma de confiança do consumidor do Reclame Aqui.`,
@@ -1396,7 +1398,7 @@
         'tl.1':`Senior Product Designer · Reclame Aqui · confiança e decisão de compra do consumidor`,
         'tl.2':'Senior Product Designer · Kruzer · plataforma de logística para a Fast Shop, designer único de quatro produtos',
         'tl.3':'Senior Product Designer · Genial Care · primeiro designer, depois liderando design em dois times',
-        'tl.4':`Senior Product Designer (contrato) · Shock Tecnologia · banking white-label (Matri)`,
+        'tl.4':`Senior Product Designer (freelance, fora do horário) · Shock Tecnologia · banking white-label (Matri)`,
         'tl.5':`7COMm &middot; de estagiário a Senior UX/UI Designer: do suporte, passando pelo front-end, até apoiar a liderança do time de UX design`,
         'about.book':'Agendar 30 minutos', 'tl.4.d':`2023 – 25`, 'tl.5.d':'cinco anos',
         'contact.label':`Contratando um Senior Product Designer?`, 'contact.h2':'Vamos conversar.',
