@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Guilherme Cannalonga · 15-second reel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     cannalonga design — 15-second reel
+     A 4:5 stage (1080 x 1350 when recorded full height) that plays the
+     portfolio's argument once: who, the claim, three numbers, the work,
+     where to find it. Every size is in container units, so the stage
+     records the same at any window size. Click or press R to replay.
+     ============================================================ */
+  :root{--paper:#f7f6f1; --paper-2:#eeebe4; --ink:#14140f; --ink-2:#605e56; --acid:#d9f24b;
+        --peri:#c9cbf5; --sky:#d3e9ff; --coral:#ff8d8f; --indigo:#8ea5ff; --ease:cubic-bezier(.2,.7,.2,1);}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{background:#0c0c09; display:flex; align-items:center; justify-content:center; overflow:hidden;
+       font-family:'DM Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:var(--ink);}
+  .stage{position:relative; height:min(100vh,125vw); aspect-ratio:4/5; background:var(--paper); overflow:hidden; container-type:size; cursor:pointer;}
+  .scene{position:absolute; inset:0; padding:9cqw; display:flex; flex-direction:column; justify-content:center; opacity:0;
+         animation:scene var(--d) linear var(--t) both;}
+  @keyframes scene{0%{opacity:0;} 6%{opacity:1;} 90%{opacity:1;} 100%{opacity:0;}}
+  .up{opacity:0; animation:up .8s var(--ease) both; animation-delay:var(--at);}
+  @keyframes up{from{opacity:0; transform:translateY(3.2cqw);} to{opacity:1; transform:none;}}
+  h1,h2,.big{font-weight:900; letter-spacing:-0.055em; line-height:.92;}
+
+  /* 1 · who */
+  .s1{align-items:center; text-align:center; gap:3cqw;}
+  .s1 img{width:26cqw; height:26cqw; border-radius:50%; object-fit:cover;}
+  .s1 .name{font-size:7cqw; font-weight:900; letter-spacing:-0.05em; line-height:1;}
+  .s1 .role{font-size:3.5cqw; color:var(--ink-2);}
+
+  /* 2 · the claim */
+  .s2 h1{font-size:12.4cqw;}
+  .s2 .w{display:inline-block; opacity:0; animation:up .7s var(--ease) both; animation-delay:calc(var(--t) + .15s + var(--i) * 90ms);}
+  .s2 mark{background:none; color:inherit; padding:0 .06em; margin:0 -.06em;
+           -webkit-box-decoration-break:clone; box-decoration-break:clone;
+           background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat; background-position:0 80%;
+           background-size:0% .38em; animation:sweep .9s var(--ease) both; animation-delay:calc(var(--t) + 1.95s);}
+  @keyframes sweep{to{background-size:100% .38em;}}
+
+  /* 3 · three numbers, one at a time */
+  .s3{padding:0;}
+  .metric{position:absolute; inset:0; padding:9cqw; display:flex; flex-direction:column; justify-content:center; gap:3cqw; opacity:0;
+          animation:scene var(--d) linear var(--t) both;}
+  .metric .case{font-size:3.4cqw; font-weight:700; color:var(--ink-2);}
+  .metric .big{font-size:16cqw; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .metric .big small{display:block; font-size:.5em; color:var(--ink-2); letter-spacing:-0.04em; margin-bottom:.12em;}
+  .metric .big b{font-weight:900; padding:0 .05em; margin:0 -.05em; background-image:linear-gradient(var(--acid),var(--acid));
+                 background-repeat:no-repeat; background-position:0 86%; background-size:0% .34em;
+                 animation:sweep2 .6s var(--ease) both; animation-delay:calc(var(--t) + .55s);}
+  @keyframes sweep2{to{background-size:100% .34em;}}
+  .metric .what{font-size:4.2cqw; color:var(--ink); max-width:16ch; line-height:1.2; letter-spacing:-0.02em;}
+
+  /* 4 · the work */
+  .s4{gap:4cqw;}
+  .s4 h2{font-size:7.4cqw;}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:2.6cqw;}
+  .tile{border-radius:3cqw; overflow:hidden; aspect-ratio:2191/1728; opacity:0; animation:tile .9s var(--ease) both; animation-delay:var(--at);}
+  @keyframes tile{from{opacity:0; transform:translateY(5cqw) scale(.96);} to{opacity:1; transform:none;}}
+  .tile img{display:block; width:100%; height:100%; object-fit:cover;}
+  .peri{background:var(--peri);} .sky{background:var(--sky);} .coral{background:var(--coral);} .indigo{background:var(--indigo);}
+  .names{font-size:3.3cqw; color:var(--ink-2); letter-spacing:-0.01em;}
+
+  /* 5 · where: the last scene arrives and stays */
+  @keyframes scene-in{from{opacity:0;} to{opacity:1;}}
+  .scene.s5{animation:scene-in .45s linear var(--t) both;}
+  .s5{align-items:flex-start; gap:4.5cqw;}
+  .s5 .mark{font-size:5cqw; font-weight:900; letter-spacing:-0.06em;}
+  .s5 h2{font-size:13cqw;}
+  .s5 .url{font-size:4.1cqw; font-weight:700; letter-spacing:-0.02em; background:var(--acid); padding:2.6cqw 4.4cqw; border-radius:100cqw;}
+  .s5 .open{font-size:3.4cqw; color:var(--ink-2); display:flex; align-items:center; gap:1.6cqw;}
+  .s5 .open i{width:1.5cqw; height:1.5cqw; border-radius:50%; background:#2f9e5b;}
+
+  /* instructions sit beside the stage, never on it, so they are not in the recording */
+  .hint{position:fixed; left:16px; bottom:14px; width:calc((100vw - min(80vh,100vw)) / 2 - 32px); font-size:12px; line-height:1.5; color:#8b897f; pointer-events:none;}
+  @media (max-aspect-ratio:11/10){ .hint{display:none;} }
+</style>
+</head>
+<body>
+<div class="stage" id="stage" title="Click to replay">
+  <section class="scene s1" style="--t:0s; --d:2.7s">
+    <img class="up" style="--at:.1s" src="/assets/hero-portrait.jpg" alt="">
+    <div class="name up" style="--at:.35s">Guilherme Cannalonga</div>
+    <div class="role up" style="--at:.55s">Senior Product Designer</div>
+  </section>
+
+  <section class="scene s2" style="--t:2.6s; --d:4.1s">
+    <h1><span class="w" style="--i:0">Product</span> <span class="w" style="--i:1">design</span> <span class="w" style="--i:2">for</span> <span class="w" style="--i:3">systems</span> <span class="w" style="--i:4">where</span> <mark><span class="w" style="--i:5">the</span> <span class="w" style="--i:6">wrong</span> <span class="w" style="--i:7">screen</span></mark> <span class="w" style="--i:8">is</span> <span class="w" style="--i:9">expensive.</span></h1>
+  </section>
+
+  <section class="scene s3" style="--t:6.6s; --d:3.9s">
+    <div class="metric" style="--t:6.6s; --d:1.3s">
+      <div class="case">Genial App</div>
+      <div class="big"><small>8.6% &rarr;</small><b>62.3%</b></div>
+      <div class="what">Families opening the app daily</div>
+    </div>
+    <div class="metric" style="--t:7.9s; --d:1.3s">
+      <div class="case">LIAM</div>
+      <div class="big"><small>2h &rarr;</small><b>25min</b></div>
+      <div class="what">Documentation per session</div>
+    </div>
+    <div class="metric" style="--t:9.2s; --d:1.3s">
+      <div class="case">Compass</div>
+      <div class="big"><small>4.2d &rarr;</small><b>2.5d</b></div>
+      <div class="what">Design-ticket cycle time</div>
+    </div>
+  </section>
+
+  <section class="scene s4" style="--t:10.4s; --d:2.9s">
+    <h2 class="up" style="--at:10.5s">Four products, designed around the exceptions.</h2>
+    <div class="grid">
+      <div class="tile peri" style="--at:10.7s"><img src="/assets/card-genial.webp" alt=""></div>
+      <div class="tile sky" style="--at:10.82s"><img src="/assets/card-liam.webp" alt=""></div>
+      <div class="tile coral" style="--at:10.94s"><img src="/assets/card-kruzer.webp" alt=""></div>
+      <div class="tile indigo" style="--at:11.06s"><img src="/assets/card-compass.webp" alt=""></div>
+    </div>
+    <div class="names up" style="--at:11.3s">Genial App · LIAM · Pick &amp; Pack · Compass</div>
+  </section>
+
+  <section class="scene s5" style="--t:13.2s">
+    <div class="mark up" style="--at:13.3s">cannalonga</div>
+    <h2 class="up" style="--at:13.45s">Let's talk.</h2>
+    <div class="url up" style="--at:13.7s">cannalongadesign.github.io</div>
+    <div class="open up" style="--at:13.9s"><i></i>Open to Senior Product Designer roles</div>
+  </section>
+</div>
+<p class="hint">Click the stage or press R to replay. 15 seconds. Record only the light area.</p>
+<script>
+  /* replay: re-insert the stage so every animation restarts from zero */
+  (function(){
+    const replay=()=>{ const s=document.getElementById('stage'); const c=s.cloneNode(true); s.replaceWith(c); c.addEventListener('click',replay); };
+    document.getElementById('stage').addEventListener('click',replay);
+    addEventListener('keydown',e=>{ if(e.key==='r'||e.key==='R') replay(); });
+  })();
+</script>
+</body>
+</html>

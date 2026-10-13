@@ -8,7 +8,7 @@ Guilherme Cannalonga · Senior Product Designer · Greater Boston, MA
 
 I design the tools clinicians, operators and families use to decide fast when the stakes are real: from an AI assistant that drafts clinical records to a fulfillment platform across 80+ stores. Six-plus years in product design.
 
-Open to Senior Product Designer roles in the US · Authorized to work in the US
+Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere
 
 See the work ↓
 LinkedIn ↗
@@ -86,7 +86,7 @@ Credit-journey completion 18% → 63%
 
 Consumer trust · Reclame Aqui, Brazil’s closest equivalent to Trustpilot
 
-Senior Product Designer on the trust layer shoppers check before buying from a company. Under NDA.
+Senior Product Designer. I structure Reclame Aqui's data for people and for LLMs, so anyone can decide whether to buy, quickly and clearly. Under NDA.
 
 Since 2026
 
@@ -94,15 +94,15 @@ How I decide
 
 ## The instrument is chosen, not inherited.
 
-A decision doesn't reach production until something outside my own taste has argued for it. What changes is which evidence is the cheapest that could still prove me wrong.
+I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.
 
-- Genial App A weekly behaviour curve with release markers. Hundreds of families, so an A/B test would have bought comfort at the price of learning speed.
+- Genial App: The app families use to follow their child's autism therapy. With a few hundred families, an A/B test would have been slow to teach us anything, so I tracked weekly usage and marked each release on the curve.
 
-- LIAM About 80 therapists, a few documentation events a day each. They tested the first version, and the fix it revealed was readable drafts. After launch, the trust signal lived inside the flow, because a funnel can't see who stops trusting but keeps clicking.
+- LIAM: An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.
 
-- Pick & Pack A store that went first. You can't split traffic in a warehouse, and the operation already records what it does.
+- Pick & Pack: The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.
 
-- Compass The engineering team's own tracker. A metric I invent to prove my own project is worth nothing in a review.
+- Compass: The design system shared by Kruzer's products. I measured it on the engineering team's own Jira board, not on a metric I made up: a design ticket went from 4.2 to 2.5 days.
 
 What people say
 
@@ -125,13 +125,13 @@ Developer · Modal project
 Greater Boston, Massachusetts
 
 About
-I came to design through the machine room: enterprise support, then front-end development, before my first screen. UX is where I found the work I wanted, and I went at it deliberately: two postgraduate specialisations, then product, strategy and business. The origin still shows: I read the API before the wireframe, ask what the backend does past the cutoff, and stay in the squad through release.
+I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.
 
 I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now on Reclame Aqui's consumer-trust platform.
 
-I use LLMs and agents daily for research and for pressure-testing concepts before they cost engineering time, and I ship experiments with Claude Code, this site among them.
+I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.
 
-**2026 –:** Senior Product Designer · Reclame Aqui · consumer reviews and trust, Brazil’s closest equivalent to Trustpilot
+**2026 –:** Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot
 
 **2024 – 26:** Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products
 
@@ -139,7 +139,7 @@ I use LLMs and agents daily for research and for pressure-testing concepts befor
 
 **2022 – 24:** Senior Product Designer · Genial Care · first designer, then leading design across two teams
 
-**five years:** 7COMm · support intern to Senior UX/UI Designer, by way of front-end
+**five years:** 7COMm · intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team
 
 Hiring a Senior Product Designer?
 
