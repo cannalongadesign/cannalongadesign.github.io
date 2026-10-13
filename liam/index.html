@@ -646,6 +646,79 @@
     ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
   }
   .btn:active{transform:scale(.98);}
+
+  /* ============================================================
+     v25 — same standard as the home
+     One grid. Everything hangs from the same left edge: the hero, the
+     summary, the prose and every image share one 720px column, so nothing
+     is ever wider than the text it sits between. The only thing outside
+     that column is the index, which rides in the right rail and follows
+     the reader down the page.
+     ============================================================ */
+  .kicker{background:none; border:1px solid var(--line-strong); color:var(--ink-2); font-size:12.5px; font-weight:500; letter-spacing:0; text-transform:none; padding:7px 12px;}
+  .article-hero h1{text-wrap:balance;}
+  .article-hero .dek{text-wrap:pretty;}
+  .meta-item .k{font-size:12.5px; font-weight:500; letter-spacing:0; text-transform:none; margin-bottom:6px;}
+  .meta-item .v{font-size:15px; line-height:1.4;}
+  /* the outcome is the one fact in the strip that is a result, so it carries the marker */
+  .meta-item:last-child .v{
+    display:inline; font-weight:900; letter-spacing:-0.02em; padding:0 .08em; margin:0 -.08em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+    background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat;
+    background-position:0 88%; background-size:100% .42em;
+  }
+  .stage-label{font-size:0; letter-spacing:0;}
+  .stage-label b{font-size:13px; letter-spacing:.04em; margin-right:0;}
+  .tldr .k,.index .k{font-size:12.5px; letter-spacing:0; text-transform:none;}
+  .tldr dt,.decision-row .dk,.receipts b,.compare .k{font-size:13px; font-weight:700; letter-spacing:0; text-transform:none; color:var(--ink-2);}
+  .index .k .rt{letter-spacing:0; font-weight:500; color:var(--ink-2);}
+  .index li a.active{color:var(--ink); font-weight:700;}
+  .demo-tags span{font-size:12px; font-weight:500; letter-spacing:0; text-transform:none; background:var(--acid); border-color:var(--acid); color:var(--ink);}
+  .metrics-strip .num{font-size:clamp(20px,2.6vw,28px); letter-spacing:-0.05em; line-height:1.05; font-variant-numeric:tabular-nums;}
+  .metrics-strip .label{font-size:13px; line-height:1.45; margin-top:10px;}
+  .article-body h2,.article-close h2{text-wrap:balance;}
+  /* the pull quote runs the full column, like everything around it */
+  .article-body .pull{max-width:none; text-wrap:pretty;}
+  /* sub-headings inside a section had no rule at all, so they sat flush against the paragraph under them */
+  .article-body h3.card-h{font-size:21px; line-height:1.25; letter-spacing:-0.035em; margin:var(--sp-7) 0 var(--sp-3);}
+  .article-body .col > h3.card-h:first-child{margin-top:0;}
+  /* the summary comes first in reading order on a phone, the index after it */
+  .case-intro{display:flex; flex-direction:column;}
+  .case-intro > .index{order:2;}
+  @media (min-width:1100px){
+    .article-hero{padding:164px 0 var(--sp-7);}
+    .article-hero .col,.article-close .col{max-width:1088px;}
+    .article-hero h1{font-size:clamp(44px,4.6vw,66px); line-height:.97; letter-spacing:-0.05em; max-width:22ch; margin-bottom:var(--sp-5);}
+    .article-hero .dek{font-size:21px; line-height:1.5; max-width:56ch; margin-bottom:var(--sp-7);}
+    .meta-row{padding-top:var(--sp-5); grid-template-columns:1fr 1.1fr 1fr .9fr 1.5fr;}
+
+    .article-body{max-width:1088px; margin:0 auto; padding:var(--sp-4) var(--pad) var(--sp-5); display:flow-root;}
+    .case-intro{display:contents;}
+    .article-body > .col,.article-body .case-intro > .col,.article-body > .shot,.article-body > .dsp{
+      max-width:720px; margin-left:0; margin-right:0; padding-left:0; padding-right:0;
+    }
+    /* device shots keep the column width; the stage is capped in height and the device sits inside it */
+    .article-body > .shot-device .stage{height:520px; padding:0;}
+    .article-body > .shot-device .stage img{width:auto; height:100%; max-width:100%; object-fit:contain;}
+    .article-body > .shot-phone .phone-row{height:520px; align-items:flex-start; padding-top:40px;}
+    .article-body > .shot-phone .phone-row img{width:auto; max-width:100%; height:auto; max-height:none; margin-bottom:0;}
+    nav .wrap{max-width:1040px;}
+    .article-body .shot .frame > img{max-height:640px;}
+    .article-body .shot .caption,.article-body .annot-list{margin-left:0; margin-right:0;}
+    .article-body .tldr{max-width:none; margin:0 0 var(--sp-7); padding:32px 36px;}
+    .article-body .takeaway{margin-left:0; margin-right:0;}
+
+    /* right rail: the index, sticky under the nav */
+    .article-body .index{
+      float:right; width:264px; max-width:none; margin:0; padding:0;
+      position:sticky; top:104px;
+    }
+    .article-body .index ol{grid-template-columns:1fr;}
+    .article-body .index li a{padding:11px 0; font-size:14px;}
+
+    .article-close h2{font-size:clamp(36px,4.2vw,56px); letter-spacing:-0.05em; line-height:.97; max-width:18ch; margin-bottom:var(--sp-4);}
+    .article-close p{font-size:18px; max-width:56ch;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -750,6 +823,18 @@
 </header>
 
 <article class="article-body">
+  <div class="case-intro">
+  <div class="index reveal">
+    <span class="k"><span data-i18n="ix.k">In this case</span><span class="rt" data-i18n="ix.time">7 min read</span></span>
+    <ol>
+      <li><a href="#s01" data-i18n="l.ix.1">Why it was hard</a></li>
+      <li><a href="#s02" data-i18n="l.ix.2">Decision: LIAM proposes, the clinician decides</a></li>
+      <li><a href="#s03" data-i18n="l.ix.3">Decision: how I read trust</a></li>
+      <li><a href="#s04" data-i18n="l.ix.4">What shipped</a></li>
+      <li><a href="#s05" data-i18n="l.ix.5">Impact</a></li>
+      <li><a href="#s06" data-i18n="l.ix.6">What I&rsquo;d do differently</a></li>
+    </ol>
+  </div>
   <div class="col reveal">
     <div class="tldr">
       <span class="k" data-i18n="tl.k">The short version</span>
@@ -761,17 +846,6 @@
       <div class="demo-tags"><span data-i18n="l.demo.1">AI product design</span><span data-i18n="l.demo.2">Human-in-the-loop</span><span data-i18n="l.demo.3">Healthcare</span><span data-i18n="l.demo.4">Trust &amp; safety</span></div>
     </div>
   </div>
-
-  <div class="index reveal">
-    <span class="k"><span data-i18n="ix.k">In this case</span><span class="rt" data-i18n="ix.time">7 min read</span></span>
-    <ol>
-      <li><a href="#s01" data-i18n="l.ix.1">Why it was hard</a></li>
-      <li><a href="#s02" data-i18n="l.ix.2">Decision: LIAM proposes, the clinician decides</a></li>
-      <li><a href="#s03" data-i18n="l.ix.3">Decision: how I read trust</a></li>
-      <li><a href="#s04" data-i18n="l.ix.4">What shipped</a></li>
-      <li><a href="#s05" data-i18n="l.ix.5">Impact</a></li>
-      <li><a href="#s06" data-i18n="l.ix.6">What I&rsquo;d do differently</a></li>
-    </ol>
   </div>
 
 
@@ -1208,6 +1282,15 @@
     }
     set(window.currentLang ? window.currentLang() : 'en');
     document.addEventListener('langchange', e=>set(e.detail && e.detail.lang));
+  })();
+</script>
+<script>
+  /* index: mark the section being read */
+  (function(){
+    const links=[...document.querySelectorAll('.index a[href^="#"]')]; if(!links.length||!('IntersectionObserver' in window)) return;
+    const map=new Map(links.map(a=>[document.querySelector(a.getAttribute('href')),a]));
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const a=map.get(e.target); if(a) a.classList.add('active'); } });},{rootMargin:'-20% 0px -70% 0px'});
+    map.forEach((a,el)=>{ if(el) io.observe(el); });
   })();
 </script>
 </body>
