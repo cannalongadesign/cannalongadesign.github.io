@@ -260,7 +260,15 @@
   .card-media.coral{background:var(--coral);}
   .card-media.indigo{background:var(--indigo);}
   .card-media.mint{background:var(--mint);}
-  .card-shot{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  /* The artwork sits at 96% of its well. Each file is a flat composite on
+     the same colour as the well, so the margin reads as air around the
+     device. Where the device runs off the bottom (a second phone, a hand,
+     a monitor stand) the artwork is anchored to the bottom edge so it still
+     does; where the whole device is in frame (Compass, Compra Confiável)
+     it is centred instead. */
+  .card-shot{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; scale:.96; transform-origin:50% 100%;}
+  .card-media.indigo .card-shot,.card-media.mint .card-shot{transform-origin:50% 50%;}
+  .card-media.ink .card-shot{scale:1; transform-origin:50% 50%;}
 
   /* ---- the open slot: the next case study, written as a brief that is still
      missing its company. Same anatomy as a real card, so it reads as part of
@@ -753,8 +761,15 @@
       @keyframes hero-recede{to{opacity:.12; transform:translateY(-36px) scale(.985);}}
       .hero-d > .wrap{transform-origin:50% 0; animation:hero-recede linear both; animation-timeline:scroll(root block); animation-range:120px 720px;}
 
-      @keyframes shot-drift{from{translate:0 2.4%;} to{translate:0 -2.4%;}}
-      .card-shot{scale:1.06; animation:shot-drift linear both; animation-timeline:view(); animation-range:entry 0% exit 100%;}
+      /* The drift only ever pushes the artwork down from its resting place,
+         never up: devices that run off the bottom edge stay attached to it. */
+      @keyframes shot-drift{from{translate:0 4%;} to{translate:0 0;}}
+      .card-shot{animation:shot-drift linear both; animation-timeline:view(); animation-range:entry 0% exit 100%;}
+      /* Matri is a wall of phones bleeding off every edge, so it keeps the two-way drift and the overscan that hides it */
+      @keyframes shot-drift-bleed{from{translate:0 2.4%;} to{translate:0 -2.4%;}}
+      .card-media.ink .card-shot{scale:1.06; animation-name:shot-drift-bleed;}
+      /* a whole device in frame can drift both ways around its centre */
+      .card-media.indigo .card-shot,.card-media.mint .card-shot{animation-name:shot-drift-bleed;}
 
       @keyframes lit-fill{to{background-size:100% 100%;}}
       .lit{
