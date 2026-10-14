@@ -317,6 +317,9 @@
   .now-tag{display:inline-block; vertical-align:middle; margin-left:8px; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; background:var(--acid); padding:4px 8px; border-radius:100px; transform:translateY(-3px);}
   .card-media.ink{background:var(--ink);}
   .sec-head.sub{margin:var(--s6) 0 var(--s3);}
+  /* selected work: the supporting line runs most of the grid instead of sitting in a narrow corner */
+  #work > .wrap > .sec-head{max-width:none;}
+  #work > .wrap > .sec-head p{max-width:88ch;}
   section[id]{scroll-margin-top:120px;}
   /* A number with no name is trivia, so the name of the measure sits right
      under it, in sentence case and at reading size. */
@@ -1007,7 +1010,7 @@
     <div class="sec-head reveal">
       <span class="label" data-i18n="work.label">Selected work</span>
       <h2 data-i18n="work.h2">Six products where a confusing screen had a real cost.</h2>
-      <p data-i18n="work.p">Consumer trust, healthcare, logistics and fintech. A misread verdict, a missed therapy session, a late order, an abandoned credit application: I start from what the screen could cost, and pick the number that shows it stopped.</p>
+      <p data-i18n="work.p">Consumer trust, healthcare, logistics and fintech. Different products, the same starting point: what the person needs to decide on that screen, and which number shows whether they could.</p>
     </div>
 
     <div class="grid">
@@ -1318,7 +1321,7 @@
         'stat.pp.n':'stores',
         'stat.pp.label':`Rolled out on growing volume, 2-hour promise · Pick &amp; Pack`,
         'work.label':'Selected work', 'work.h2':`Six products where a confusing screen had a real cost.`,
-        'work.p':`Consumer trust, healthcare, logistics and fintech. A misread verdict, a missed therapy session, a late order, an abandoned credit application: I start from what the screen could cost, and pick the number that shows it stopped.`,
+        'work.p':`Consumer trust, healthcare, logistics and fintech. Different products, the same starting point: what the person needs to decide on that screen, and which number shows whether they could.`,
         'card.ssd.cat':`Consumer trust`, 'card.ssd.met':`R$1.7M &rarr; R$1.2k`,
         'card.ssd.sum':`An in-house AI detector that replaced a costly partner, and that more people decide with: 45.1% to 72.4%.`,
         'card.ssd.metname':`Monthly cost, projected vs. actual`,
@@ -1387,7 +1390,7 @@
         'stat.pp.n':'lojas',
         'stat.pp.label':`Lançado com o volume crescendo, promessa de 2 horas · Pick &amp; Pack`,
         'work.label':'Projetos selecionados', 'work.h2':`Seis produtos em que uma tela confusa tinha um custo real.`,
-        'work.p':`Confiança do consumidor, saúde, logística e fintech. Um veredito mal entendido, uma sessão de terapia perdida, um pedido atrasado, um pedido de crédito abandonado: começo pelo que aquela tela pode custar e escolho o número que mostra que isso parou.`,
+        'work.p':`Confiança do consumidor, saúde, logística e fintech. Produtos diferentes, o mesmo ponto de partida: entender o que a pessoa precisa decidir naquela tela e qual número mostra se ela conseguiu.`,
         'card.ssd.cat':`Confiança do consumidor`, 'card.ssd.met':`R$1,7M &rarr; R$1,2 mil`,
         'card.ssd.sum':`Detector próprio com IA que substituiu um parceiro caro e levou a decisão de 45,1% para 72,4%.`,
         'card.ssd.metname':`Custo mensal, projetado vs. real`,

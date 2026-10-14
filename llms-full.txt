@@ -26,7 +26,7 @@ Selected work
 
 ## Six products where a confusing screen had a real cost.
 
-Consumer trust, healthcare, logistics and fintech. A misread verdict, a missed therapy session, a late order, an abandoned credit application: I start from what the screen could cost, and pick the number that shows it stopped.
+Consumer trust, healthcare, logistics and fintech. Different products, the same starting point: what the person needs to decide on that screen, and which number shows whether they could.
 
 [Image: Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy]
 
