@@ -26,7 +26,7 @@ Selected work
 
 ## Six products where a confusing screen had a real cost.
 
-Consumer trust, healthcare, logistics and fintech. Same approach every time: find the real constraint, pick the number that proves it worked, and design for what goes wrong first.
+Consumer trust, healthcare, logistics and fintech. A misread verdict, a missed therapy session, a late order, an abandoned credit application: I start from what the screen could cost, and pick the number that shows it stopped.
 
 [Image: Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy]
 
