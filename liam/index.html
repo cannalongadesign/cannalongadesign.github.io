@@ -643,7 +643,7 @@
   @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
   @media (prefers-reduced-motion:no-preference){
     ::view-transition-old(root){animation:vt-out .16s ease both;}
-    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+    ::view-transition-new(root){animation:vt-in .26s cubic-bezier(.2,.7,.2,1) both;}
   }
   .btn:active{transform:scale(.98);}
 
@@ -745,6 +745,19 @@
     .js .meta-item:last-child .v{animation:outcome-mark .8s cubic-bezier(.2,.7,.2,1) .9s both;}
     /* annotated screens carry numbered pins placed on the image, so the image must not move under them */
     .js .shot.annot.reveal .frame > img{transform:none;}
+  }
+
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
+    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
+    .close-ctas .btn-link{justify-content:center; min-height:48px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .back-link,.nav-cta{position:relative;}
+    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
   }
 </style>
 <script type="application/ld+json">
@@ -877,7 +890,7 @@
 
 
   <figure class="shot shot-device reveal">
-    <div class="stage sky bleed"><img src="/assets/liam-tablet.webp" alt="LIAM running on a tablet: the intervention screen a therapist works in during a session" width="1400" height="1430"></div>
+    <div class="stage sky bleed"><img decoding="async" src="/assets/liam-tablet.webp" alt="LIAM running on a tablet: the intervention screen a therapist works in during a session" width="1400" height="1430"></div>
     <figcaption class="caption" data-i18n="l.cover">LIAM lives inside the screen therapists already use during a session, on the tablet they already have in their hand. Screens show illustrative data.</figcaption>
   </figure>
   <div class="col reveal">
@@ -903,7 +916,7 @@
   </div>
 
   <figure class="shot narrow reveal">
-    <div class="frame"><img src="/assets/liam-ia-wall.webp" alt="A wall covered in paper notes mapping the existing clinical panel: every section of the therapist&#39;s workspace laid out so the team could decide where a voice note belongs inside it" loading="lazy" width="1264" height="843"></div>
+    <div class="frame"><img decoding="async" src="/assets/liam-ia-wall.webp" alt="A wall covered in paper notes mapping the existing clinical panel: every section of the therapist&#39;s workspace laid out so the team could decide where a voice note belongs inside it" loading="lazy" width="1264" height="843"></div>
     <figcaption class="caption" data-i18n="l.slot1.c">Mapping the clinical panel as it existed, section by section, so we could argue about where an audio note belongs inside a workspace therapists already use, instead of assuming it needed a new place of its own. Photo from the project.</figcaption>
   </figure>
 
@@ -933,7 +946,7 @@
 
   <figure class="shot reveal">
     <div class="frame">
-      <img src="/assets/liam-1.webp" alt="LIAM intervention screen with progress-tracking targets and an idle voice-recording control in the corner" width="1200" height="1267">
+      <img loading="lazy" decoding="async" src="/assets/liam-1.webp" alt="LIAM intervention screen with progress-tracking targets and an idle voice-recording control in the corner" width="1200" height="1267">
     </div>
     <figcaption class="caption" data-i18n="l.cap1">The intervention screen the therapist is already working in: recording starts from a single control here.</figcaption>
   </figure>
@@ -945,7 +958,7 @@
 
   <figure class="shot reveal">
     <div class="frame">
-      <img src="/assets/liam-4.webp" alt="LIAM session note form with each field pre-filled with an AI-drafted suggestion and a copy action" width="1200" height="2181">
+      <img loading="lazy" decoding="async" src="/assets/liam-4.webp" alt="LIAM session note form with each field pre-filled with an AI-drafted suggestion and a copy action" width="1200" height="2181">
     </div>
     <figcaption class="caption" data-i18n="l.cap4">The session-note form: every field carries a LIAM-drafted suggestion the therapist reviews and copies in, never submitted on their behalf.</figcaption>
   </figure>
@@ -957,7 +970,7 @@
 
   <figure class="shot reveal">
     <div class="frame">
-      <img src="/assets/liam-5.webp" alt="LIAM feedback modal asking whether the therapist likes the suggestions LIAM is generating, with a comment field" width="1200" height="800">
+      <img loading="lazy" decoding="async" src="/assets/liam-5.webp" alt="LIAM feedback modal asking whether the therapist likes the suggestions LIAM is generating, with a comment field" width="1200" height="800">
     </div>
     <figcaption class="caption" data-i18n="l.cap5">A direct feedback loop on the suggestions themselves: the mechanism that lets LIAM's output quality stay visible instead of assumed.</figcaption>
   </figure>

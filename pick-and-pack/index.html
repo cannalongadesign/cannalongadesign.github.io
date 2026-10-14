@@ -666,7 +666,7 @@
   @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
   @media (prefers-reduced-motion:no-preference){
     ::view-transition-old(root){animation:vt-out .16s ease both;}
-    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+    ::view-transition-new(root){animation:vt-in .26s cubic-bezier(.2,.7,.2,1) both;}
   }
   .btn:active{transform:scale(.98);}
 
@@ -768,6 +768,19 @@
     .js .meta-item:last-child .v{animation:outcome-mark .8s cubic-bezier(.2,.7,.2,1) .9s both;}
     /* annotated screens carry numbered pins placed on the image, so the image must not move under them */
     .js .shot.annot.reveal .frame > img{transform:none;}
+  }
+
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
+    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
+    .close-ctas .btn-link{justify-content:center; min-height:48px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .back-link,.nav-cta{position:relative;}
+    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
   }
 </style>
 <script type="application/ld+json">
@@ -931,7 +944,7 @@
 
   <figure class="shot annot reveal">
     <div class="frame annot-frame">
-      <img src="/assets/pp-store-board.webp" alt="Pick &amp; Pack store board: four columns (order received, picking, ready for pickup, in transit) with order cards showing late flags, status pills with the remaining SLA, and the carrier logo" loading="lazy" width="1800" height="1455">
+      <img decoding="async" src="/assets/pp-store-board.webp" alt="Pick &amp; Pack store board: four columns (order received, picking, ready for pickup, in transit) with order cards showing late flags, status pills with the remaining SLA, and the carrier logo" loading="lazy" width="1800" height="1455">
       <span class="pin" style="left:22.4%;top:25.7%">1</span>
       <span class="pin" style="left:20%;top:31.7%">2</span>
       <span class="pin" style="left:24.5%;top:34.8%">3</span>
@@ -958,7 +971,7 @@
 
   <figure class="shot annot reveal">
     <div class="frame annot-frame">
-      <img src="/assets/pp-dc-board-allocation.webp" alt="Pick &amp; Pack distribution-centre board with counters for late, invoicing, transport and proof-of-delivery problems across the top, cards showing who each order is allocated to, and a menu to unallocate or allocate to another user" loading="lazy" width="1800" height="1455">
+      <img decoding="async" src="/assets/pp-dc-board-allocation.webp" alt="Pick &amp; Pack distribution-centre board with counters for late, invoicing, transport and proof-of-delivery problems across the top, cards showing who each order is allocated to, and a menu to unallocate or allocate to another user" loading="lazy" width="1800" height="1455">
       <span class="pin" style="left:20.5%;top:12.6%">1</span>
       <span class="pin" style="left:43%;top:39.5%">2</span>
       <span class="pin" style="left:40%;top:49.5%">3</span>
@@ -980,7 +993,7 @@
 
   <figure class="shot reveal">
     <div class="frame">
-      <img src="/assets/pp-dc-table.webp" alt="Pick &amp; Pack distribution-centre table view: one row per order with a severity dot, store, modality, stage, status pill, carrier, creation time and time in queue, sortable by any column" loading="lazy" width="1800" height="1460">
+      <img decoding="async" src="/assets/pp-dc-table.webp" alt="Pick &amp; Pack distribution-centre table view: one row per order with a severity dot, store, modality, stage, status pill, carrier, creation time and time in queue, sortable by any column" loading="lazy" width="1800" height="1460">
     </div>
     <figcaption class="caption" data-i18n="k.an3.c">The same queue as a sortable table, for &ldquo;what has waited longest.&rdquo;</figcaption>
   </figure>
@@ -992,7 +1005,7 @@
 
   <figure class="shot reveal">
     <div class="frame">
-      <img src="/assets/pp-order-detail.webp" alt="Pick &amp; Pack order detail page: SLA countdown in red, time in current status flagged as late, customer and delivery data, order summary with products, a status history timeline and a comment thread with an attachment" loading="lazy" width="1440" height="1531">
+      <img decoding="async" src="/assets/pp-order-detail.webp" alt="Pick &amp; Pack order detail page: SLA countdown in red, time in current status flagged as late, customer and delivery data, order summary with products, a status history timeline and a comment thread with an attachment" loading="lazy" width="1440" height="1531">
     </div>
     <figcaption class="caption" data-i18n="k.an4.c">The order page, for the moment a delivery turns into a phone call.</figcaption>
   </figure>
@@ -1005,19 +1018,19 @@
   <figure class="shot states reveal">
     <div class="states-grid">
       <div class="state">
-        <img src="/assets/pp-modal-driver.webp" alt="Modal for an order ready for pickup, flagged late: driver name, ID and plate, and a state saying the ride has not started with a tracking link" loading="lazy" width="1100" height="925">
+        <img decoding="async" src="/assets/pp-modal-driver.webp" alt="Modal for an order ready for pickup, flagged late: driver name, ID and plate, and a state saying the ride has not started with a tracking link" loading="lazy" width="1100" height="925">
         <p><b data-i18n="k.st1.h">The driver took the package and the ride never started</b> <span data-i18n="k.st1.p">Who has it, what car, a plain sentence saying the ride hasn&rsquo;t begun, and tracking one click away. Used to be a call to the carrier.</span></p>
       </div>
       <div class="state">
-        <img src="/assets/pp-modal-proof.webp" alt="Modal for a delivered order awaiting proof of delivery: a file upload area accepting images and documents, an uploaded screenshot, and a Complete order button" loading="lazy" width="1100" height="1297">
+        <img decoding="async" src="/assets/pp-modal-proof.webp" alt="Modal for a delivered order awaiting proof of delivery: a file upload area accepting images and documents, an uploaded screenshot, and a Complete order button" loading="lazy" width="1100" height="1297">
         <p><b data-i18n="k.st2.h">Delivered, but not closed until there is proof</b> <span data-i18n="k.st2.p">An order closes when a photo or signature is attached, not when the driver says so. That is why &ldquo;proof pending&rdquo; is a counter on the distribution-centre home.</span></p>
       </div>
       <div class="state">
-        <img src="/assets/pp-modal-qr.webp" alt="Modal for a click-and-collect order awaiting pickup: a QR code the customer scans to open a form with their data and a signature before taking the order" loading="lazy" width="709" height="588">
+        <img decoding="async" src="/assets/pp-modal-qr.webp" alt="Modal for a click-and-collect order awaiting pickup: a QR code the customer scans to open a form with their data and a signature before taking the order" loading="lazy" width="709" height="588">
         <p><b data-i18n="k.st3.h">Someone is at the counter to collect</b> <span data-i18n="k.st3.p">A QR code opens a form with the buyer&rsquo;s data and signature, so the right person gets the product and the store keeps the record without a printer.</span></p>
       </div>
       <div class="state">
-        <img src="/assets/pp-modal-export.webp" alt="Export dialog for an order report with a warning that no orders were selected so all 104 will be exported, a name field and a Generating button" loading="lazy" width="1026" height="768">
+        <img decoding="async" src="/assets/pp-modal-export.webp" alt="Export dialog for an order report with a warning that no orders were selected so all 104 will be exported, a name field and a Generating button" loading="lazy" width="1026" height="768">
         <p><b data-i18n="k.st4.h">Someone still needs a spreadsheet</b> <span data-i18n="k.st4.p">Exports stayed, with one guardrail: with nothing selected, the dialog says all 104 orders are about to be exported. Parallel spreadsheets falling out of use became our adoption signal.</span></p>
       </div>
     </div>

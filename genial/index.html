@@ -614,7 +614,7 @@
   @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
   @media (prefers-reduced-motion:no-preference){
     ::view-transition-old(root){animation:vt-out .16s ease both;}
-    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+    ::view-transition-new(root){animation:vt-in .26s cubic-bezier(.2,.7,.2,1) both;}
   }
   .btn:active{transform:scale(.98);}
 
@@ -716,6 +716,19 @@
     .js .meta-item:last-child .v{animation:outcome-mark .8s cubic-bezier(.2,.7,.2,1) .9s both;}
     /* annotated screens carry numbered pins placed on the image, so the image must not move under them */
     .js .shot.annot.reveal .frame > img{transform:none;}
+  }
+
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
+    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
+    .close-ctas .btn-link{justify-content:center; min-height:48px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .back-link,.nav-cta{position:relative;}
+    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
   }
 </style>
 <script type="application/ld+json">
@@ -895,7 +908,7 @@
   <div class="col reveal"><h3 class="sub" data-i18n="g.ship1.h">Sessions + cancel: the MVP</h3></div>
   <figure class="shot shot-phone reveal">
     <div class="phone-row">
-      <img src="/assets/genial-sessions.webp" alt="Genial Care app home screen with upcoming sessions, and session detail showing therapists and the child's evolution note" width="1500" height="1944">
+      <img loading="lazy" decoding="async" src="/assets/genial-sessions.webp" alt="Genial Care app home screen with upcoming sessions, and session detail showing therapists and the child's evolution note" width="1500" height="1944">
     </div>
     <figcaption class="caption" data-i18n="g.cap1">The result of that first MVP: upcoming sessions and a therapist's note on the home screen, with cancellation now handled in-app instead of by phone.</figcaption>
   </figure>
@@ -907,7 +920,7 @@
 
   <figure class="shot shot-phone reveal">
     <div class="phone-row">
-      <img src="/assets/genial-pei.webp" alt="Genial Care app, PEI screen showing the child's individualized plan and the specific skills being worked on in sessions" width="1500" height="1981">
+      <img loading="lazy" decoding="async" src="/assets/genial-pei.webp" alt="Genial Care app, PEI screen showing the child's individualized plan and the specific skills being worked on in sessions" width="1500" height="1981">
     </div>
     <figcaption class="caption" data-i18n="g.cap2">The PEI, translated from clinical document into something a parent can read: concrete skills, in plain language, with dates. Illustrative data.</figcaption>
   </figure>
@@ -920,7 +933,7 @@
 
   <figure class="shot shot-phone reveal">
     <div class="phone-row">
-      <img src="/assets/genial-chat.webp" alt="Genial Junto support request flow and a conversation with a Genial advisor about a challenging behavior situation" width="1500" height="1996">
+      <img loading="lazy" decoding="async" src="/assets/genial-chat.webp" alt="Genial Junto support request flow and a conversation with a Genial advisor about a challenging behavior situation" width="1500" height="1996">
     </div>
     <figcaption class="caption" data-i18n="g.cap3">Genial Junto: support for the moments between sessions, with the response-time expectation stated before the parent writes anything.</figcaption>
   </figure>
@@ -936,7 +949,7 @@
       <span class="gr-lab" data-i18n="g.growth.label">weekly average daily active users</span>
     </div>
     <div class="frame growth-frame">
-      <img src="/assets/genial-growth.webp" alt="Weekly average daily-active-user chart for the Genial Care app, rising from 8.59% in June 2023 to 62.3% in July 2024, with release markers along the timeline" width="1200" height="487">
+      <img loading="lazy" decoding="async" src="/assets/genial-growth.webp" alt="Weekly average daily-active-user chart for the Genial Care app, rising from 8.59% in June 2023 to 62.3% in July 2024, with release markers along the timeline" width="1200" height="487">
       <span class="growth-veil" id="growthVeil"></span>
     </div>
     <figcaption class="caption" data-i18n="g.growth.caption">Weekly average share of families opening the app on a given day, Jun 2023 → Jul 2024: 8.59% to 62.3%. Star markers are releases: the growth tracks them, which is the point.</figcaption>

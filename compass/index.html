@@ -650,7 +650,7 @@
   @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
   @media (prefers-reduced-motion:no-preference){
     ::view-transition-old(root){animation:vt-out .16s ease both;}
-    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+    ::view-transition-new(root){animation:vt-in .26s cubic-bezier(.2,.7,.2,1) both;}
   }
   .btn:active{transform:scale(.98);}
 
@@ -752,6 +752,28 @@
     .js .meta-item:last-child .v{animation:outcome-mark .8s cubic-bezier(.2,.7,.2,1) .9s both;}
     /* annotated screens carry numbered pins placed on the image, so the image must not move under them */
     .js .shot.annot.reveal .frame > img{transform:none;}
+  }
+
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
+    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
+    .close-ctas .btn-link{justify-content:center; min-height:48px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .back-link,.nav-cta{position:relative;}
+    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
+  }
+  /* demo controls get finger-sized targets on touch screens */
+  @media (pointer:coarse), (max-width:640px){
+    .dsp-swatches{gap:10px;}
+    .dsp-swatches button{width:44px; height:44px; border-radius:10px;}
+    .dsp input[type=range]{height:44px; background:linear-gradient(var(--line-strong),var(--line-strong)) center / 100% 3px no-repeat;}
+    .dsp input[type=range]::-webkit-slider-thumb{width:26px; height:26px;}
+    .dsp input[type=range]::-moz-range-thumb{width:24px; height:24px;}
+    .dsp-seg button{min-height:40px; font-size:13px;}
   }
 </style>
 <script type="application/ld+json">
@@ -980,7 +1002,7 @@
   </div>
 
   <figure class="shot wide reveal">
-    <div class="frame"><img src="/assets/compass-tokens.webp" alt="Compass semantic token tables: each token named for its meaning, with the primitive value it resolves to" loading="lazy" width="1200" height="292"></div>
+    <div class="frame"><img decoding="async" src="/assets/compass-tokens.webp" alt="Compass semantic token tables: each token named for its meaning, with the primitive value it resolves to" loading="lazy" width="1200" height="292"></div>
     <figcaption class="caption" data-i18n="c.fig.tokens">The semantic layer, and the only one published to design files. <code>$typography.h1.medium</code> carries intent; <code>60px</code> carries appearance. A designer who reaches for the second one is guessing, and the guessing is where inconsistency comes back in.</figcaption>
     <span class="hint" data-i18n="c.hint">Drag to see the whole page</span>
   </figure>
@@ -991,7 +1013,7 @@
   </div>
 
   <figure class="shot wide reveal">
-    <div class="frame"><img src="/assets/compass-molecules.webp" alt="The Compass select documentation: multi-select variants composed from field, label, tooltip, chips, list and error state" loading="lazy" width="1200" height="561"></div>
+    <div class="frame"><img decoding="async" src="/assets/compass-molecules.webp" alt="The Compass select documentation: multi-select variants composed from field, label, tooltip, chips, list and error state" loading="lazy" width="1200" height="561"></div>
     <figcaption class="caption" data-i18n="c.fig.molecules">Molecules: the select composed from smaller pieces: field, label, tooltip, chip, list, error. Composing instead of redrawing is what makes a new variant cost minutes.</figcaption>
     <span class="hint" data-i18n="c.hint">Drag to see the whole page</span>
   </figure>

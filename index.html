@@ -693,7 +693,7 @@
   @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
   @media (prefers-reduced-motion:no-preference){
     ::view-transition-old(root){animation:vt-out .16s ease both;}
-    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+    ::view-transition-new(root){animation:vt-in .26s cubic-bezier(.2,.7,.2,1) both;}
   }
 
   /* ===== HERO D: who, the claim, the proof. Three rows, one job each. ===== */
@@ -741,10 +741,10 @@
     @keyframes mk-draw-s{from{background-size:0% .36em;} to{background-size:100% .36em;}}
     .js .reveal.in .mk.on{transition-delay:.75s;}
 
-    .js .card.reveal .card-media{clip-path:inset(5% round 18px); transition:clip-path 1s cubic-bezier(.2,.7,.2,1), filter .4s ease;}
+    .js .card.reveal .card-media{clip-path:inset(5% round 18px); transition:clip-path .75s cubic-bezier(.2,.7,.2,1), filter .4s ease;}
     .js .card.reveal.in .card-media{clip-path:inset(0 round 18px);}
     .js .card.reveal .card-shot{transform:scale(1.07);}
-    .js .card.reveal.in .card-shot{transform:none; transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+    .js .card.reveal.in .card-shot{transform:none; transition:transform .9s cubic-bezier(.2,.7,.2,1);}
     .js a.card.reveal.in:hover .card-shot{transform:scale(1.035); transition:transform .7s cubic-bezier(.2,.7,.2,1);}
 
     .js .quotes.reveal .quote-card{opacity:0; transform:translateY(16px);}
@@ -793,6 +793,23 @@
         animation:lit-fill linear both; animation-timeline:view(); animation-range:entry 30% cover 42%;
       }
     }
+  }
+
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .closing-actions{flex-direction:column; align-items:stretch;}
+    .closing-actions .btn{width:100%; min-height:56px; white-space:normal;}
+    .hero-d .hero-actions{display:flex; gap:10px; width:100%;}
+    .hero-d .hero-actions .btn{flex:1 1 0; min-height:52px; padding-left:16px; padding-right:16px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .nav-pill a,.nav-mark{position:relative;}
+    .nav-pill a::after{content:''; position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:44px;}
+    .nav-mark::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:140px; height:44px;}
+    .lang button{position:relative;}
+    .lang button::after{content:''; position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:44px;}
   }
 </style>
 <script type="application/ld+json">
@@ -986,7 +1003,7 @@
   <div class="wrap">
     <div class="hero-copy">
       <div class="who">
-        <img src="/assets/hero-portrait.jpg" alt="" width="240" height="240">
+        <img decoding="async" src="/assets/hero-portrait.jpg" alt="" width="240" height="240">
         <div><strong>Guilherme Cannalonga</strong><span data-i18n="hero.role">Senior Product Designer · Greater Boston, MA</span></div>
       </div>
       <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
@@ -1017,7 +1034,7 @@
 
       <a class="card reveal" href="/safe-site-detector/">
         <div class="card-media mint">
-          <img class="card-shot" src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" loading="lazy" width="2000" height="1599">
+          <img decoding="async" class="card-shot" src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" loading="lazy" width="2000" height="1599">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Safe Site Detector</h3><span class="cat" data-i18n="card.ssd.cat">Consumer trust</span></div>
@@ -1029,7 +1046,7 @@
 
       <a class="card reveal" href="/genial/">
         <div class="card-media peri">
-          <img class="card-shot" src="/assets/card-genial.webp" alt="Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child&#39;s evolution note" loading="lazy" width="1096" height="864">
+          <img decoding="async" class="card-shot" src="/assets/card-genial.webp" alt="Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child&#39;s evolution note" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Genial App</h3><span class="cat" data-i18n="card.genial.cat">Consumer healthcare</span></div>
@@ -1041,7 +1058,7 @@
 
       <a class="card reveal" href="/liam/">
         <div class="card-media sky">
-          <img class="card-shot" src="/assets/card-liam.webp" alt="LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session" loading="lazy" width="1096" height="864">
+          <img decoding="async" class="card-shot" src="/assets/card-liam.webp" alt="LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>LIAM</h3><span class="cat" data-i18n="card.liam.cat">Clinical AI</span></div>
@@ -1053,7 +1070,7 @@
 
       <a class="card reveal" href="/pick-and-pack/">
         <div class="card-media coral">
-          <img class="card-shot" src="/assets/card-kruzer.webp" alt="Pick &amp; Pack order queue on a desktop monitor: every order with status, carrier and waiting time" loading="lazy" width="1096" height="864">
+          <img decoding="async" class="card-shot" src="/assets/card-kruzer.webp" alt="Pick &amp; Pack order queue on a desktop monitor: every order with status, carrier and waiting time" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Pick &amp; Pack</h3><span class="cat" data-i18n="card.kruzer.cat">Enterprise logistics</span></div>
@@ -1070,7 +1087,7 @@
     <div class="grid">
       <a class="card reveal" href="/compass/">
         <div class="card-media indigo">
-          <img class="card-shot" src="/assets/card-compass.webp" alt="Compass design system documentation on a desktop monitor: the colour palette page with primitive and semantic tokens" loading="lazy" width="1096" height="864">
+          <img decoding="async" class="card-shot" src="/assets/card-compass.webp" alt="Compass design system documentation on a desktop monitor: the colour palette page with primitive and semantic tokens" loading="lazy" width="1096" height="864">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Compass</h3><span class="cat" data-i18n="card.compass.cat">Design system</span></div>
@@ -1082,7 +1099,7 @@
 
       <div class="card reveal">
         <div class="card-media ink">
-          <img class="card-shot" src="/assets/matri-app.webp" alt="Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen" loading="lazy" width="1400" height="1054">
+          <img decoding="async" class="card-shot" src="/assets/matri-app.webp" alt="Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen" loading="lazy" width="1400" height="1054">
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Matri Bank</h3><span class="cat" data-i18n="card.matri.cat">Fintech</span></div>
@@ -1140,7 +1157,7 @@
   <div class="wrap">
     <div class="about-grid reveal">
       <div>
-        <div class="about-photo"><img src="/assets/about-portrait.webp" alt="Guilherme Cannalonga" loading="lazy" width="780" height="892"></div>
+        <div class="about-photo"><img decoding="async" src="/assets/about-portrait.webp" alt="Guilherme Cannalonga" loading="lazy" width="780" height="892"></div>
         <p class="avail" data-i18n="hero.avail"><span class="dot" aria-hidden="true"></span>Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere</p>
       </div>
       <div class="about-text">
