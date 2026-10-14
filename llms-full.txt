@@ -1,145 +1,174 @@
 # Guilherme Cannalonga · Portfolio (full text)
 
-Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-08
+Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-14
 
-Guilherme Cannalonga · Senior Product Designer · Greater Boston, MA
+**Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA
 
 # Product design for systems where the wrong screen is expensive.
 
-I design the tools clinicians, operators and families use to decide fast when the stakes are real: from an AI assistant that drafts clinical records to a fulfillment platform across 80+ stores. Six-plus years in product design.
+R$1.7M → R$1.2k
 
-Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere
-
-See the work ↓
-LinkedIn ↗
+Monthly cost, projected vs. actual
 
 8.6% → 62.3%
-Families opening the app daily, as the base grew to ~500 · Genial Care
+
+Families opening the app daily
 
 Up to 2h → 25min
-Documentation per session, from up to 2h · LIAM
 
-4.2d → 2.5d
-Design-ticket cycle time · Compass design system
+Documentation per session
+
+See the work
+
+LinkedIn
 
 Selected work
 
-## Four products where the failure states mattered more than the demo.
+## Six products where a confusing screen had a real cost.
 
-Healthcare, logistics and fintech. Same job every time: find the real constraint, name the number that could veto the win, design the exceptions first.
+Consumer trust, healthcare, logistics and fintech. Same approach every time: find the real constraint, pick the number that proves it worked, and design for what goes wrong first.
+
+[Image: Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy]
+
+### Safe Site Detector
+
+Consumer trust
+
+R$1.7M → R$1.2k
+
+**Reclame AQUI.** An in-house AI detector that replaced a costly partner, and that more people decide with: 45.1% to 72.4%.
+
+Monthly cost, projected vs. actual
 
 [Image: Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child's evolution note]
 
 ### Genial App
 
-Consumer healthcare · Genial Care, autism therapy (Brazil)
+Consumer healthcare
 
-Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.
+8.6% → 62.3%
 
-Families opening the app daily 8.6% → 62.3%
+**Genial Care.** Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.
+
+Families opening the app daily
 
 [Image: LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session]
 
 ### LIAM
 
-AI clinical documentation · Genial Care, autism therapy (Brazil)
+Clinical AI
 
-Drafts the clinical record from the therapist's narration. Never signs it.
+Up to 2h → 25min
 
-Documentation per session Up to 2h → 25min
+**Genial Care.** Drafts the clinical record from the therapist's narration. Never signs it.
+
+Documentation per session
 
 [Image: Pick & Pack order queue on a desktop monitor: every order with status, carrier and waiting time]
 
 ### Pick & Pack
 
-Enterprise logistics · Kruzer, commerce platform, for retailer Fast Shop
+Enterprise logistics
 
-One order, three people, one screen each. Designed around the exceptions.
+80+
 
-Stores live, rolled out in waves over 3 months 80+
+**Kruzer, for Fast Shop.** One order, three people, one screen each. Designed around the exceptions.
+
+Stores live
+
+Also shipped
 
 [Image: Compass design system documentation on a desktop monitor: the colour palette page with primitive and semantic tokens]
 
 ### Compass
 
-Design system · Kruzer, commerce platform (Brazil)
+Design system
 
-Twenty blues in production to one semantic token layer, with governance.
+4.2d → 2.5d
 
-Design-ticket cycle time 4.2d → 2.5d
+**Kruzer.** Twenty blues in production to one semantic token layer, with governance.
 
-Also shipped · and now
+Design-ticket cycle time
 
 [Image: Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen]
 
 ### Matri Bank
 
-Fintech · Shock Tecnologia, white-label banking (Brazil)
+Fintech
 
-Redesigned the credit journey for a regulated product. Full case on request.
+18% → 63%
 
-Credit-journey completion 18% → 63%
+**Shock Tecnologia.** Redesigned the credit journey for a regulated product. Full case on request.
 
-[Image: Compra Confiável on a desktop monitor: the Reclame Aqui search and reputation homepage]
-
-### Compra Confiável Now
-
-Consumer trust · Reclame Aqui, Brazil’s closest equivalent to Trustpilot
-
-Senior Product Designer. I structure Reclame Aqui's data for people and for LLMs, so anyone can decide whether to buy, quickly and clearly. Under NDA.
-
-Since 2026
+Credit-journey completion
 
 How I decide
 
-## The instrument is chosen, not inherited.
+## Taste proposes. Evidence decides.
 
 I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.
 
-- Genial App: The app families use to follow their child's autism therapy. With a few hundred families, an A/B test would have been slow to teach us anything, so I tracked weekly usage and marked each release on the curve.
+- Safe Site Detector Reclame AQUI’s tool that tells people whether an online store is safe to buy from. Liking the screen wasn’t the point, understanding it was, so I tested comprehension: each person saw one version and judged a safe site. The refined version was read correctly by 74% of people, against 29%, and became V2.
 
-- LIAM: An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.
+- Genial App The app families use to follow their child's autism therapy. With a few hundred families, an A/B test would have been slow to teach us anything, so I tracked weekly usage and marked each release on the curve.
 
-- Pick & Pack: The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.
+- LIAM An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.
 
-- Compass: The design system shared by Kruzer's products. I measured it on the engineering team's own Jira board, not on a metric I made up: a design ticket went from 4.2 to 2.5 days.
+- Pick & Pack The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.
 
 What people say
 
 ## Words from people I've built with.
 
 As his design manager at Genial Care, I watched Guilherme's work grow **increasingly strategic**, always aligned to product and business goals, with a high bar for quality.
+
 Romulo Lebre
+
 Product Design Manager · Genial Care
 
 Guilherme has a sharp critical and creative eye, and a real commitment to what he ships. **Watching him work live in Figma was mesmerizing**, the speed of his vision and execution.
+
 Lívia Bomfim
+
 Product Manager · Genial Care
 
 Working with Guilherme was incredible. He has an exceptional ability to **translate user pain into effective solutions**, backing the team with concrete deliverables at every step.
+
 Arthur Togni
+
 Developer · Modal, client project at 7COMm
 
 [Image: Guilherme Cannalonga]
 
-Greater Boston, Massachusetts
+Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere
 
 About
+
 I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.
 
-I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now on Reclame Aqui's consumer-trust platform.
+I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.
 
 I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.
 
-**2026 –:** Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot
+2026 –:
 
-**2024 – 26:** Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products
+Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot
 
-**2023 – 25:** Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)
+2024 – 26:
 
-**2022 – 24:** Senior Product Designer · Genial Care · first designer, then leading design across two teams
+Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products
 
-**five years:** 7COMm · intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team
+2023 – 25:
+
+Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)
+
+2022 – 24:
+
+Senior Product Designer · Genial Care · first designer, then leading design across two teams
+
+five years:
+
+7COMm · intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team
 
 Hiring a Senior Product Designer?
 
@@ -850,3 +879,309 @@ The token naming decisions, the audit that started it, how long Compass took and
 
 Get in touch
 Read the Pick & Pack case
+
+---
+
+URL: https://cannalongadesign.github.io/safe-site-detector/
+
+Case study · Consumer trust · AI product
+
+# Safe Site Detector: from more data to a decision people can act on
+
+Reclame AQUI’s site detector had to be rebuilt in-house, fast. I led design for the AI-powered replacement and reframed it around one question: does the person understand the result well enough to decide whether to buy?
+
+Role
+
+Senior Product Designer
+
+Team
+
+PM · Head of Product · Engineering
+
+Company
+
+Reclame AQUI
+
+Timeline
+
+Jun 2026 – ongoing
+
+Outcome
+
+R$1.7M → R$1.2k a month · decision rate 45.1% → 72.4%
+
+In this case 7 min read
+
+Why it was hard
+
+An experiment in six weeks
+
+Decision: test comprehension
+
+Decision: a verdict built on evidence
+
+Designing for AI readers
+
+Impact
+
+What I’d do differently
+
+The short version
+
+Problem:
+
+The partner behind the site detector would start charging per query: R$1.7M a month at our volume. The detector had no way to show whether it helped anyone decide, and a yes-or-no verdict about a company is a heavy claim to make on a public page.
+
+What I did:
+
+Owned data discovery and design end to end: an AI-first experiment live in about six weeks, a comprehension test inside the product, a V2 whose verdict is built on protection shields and worded to state only what was verified, and a staged rollout to 100% of users, three months from first conversation to full launch.
+
+Outcome:
+
+Cost went from a projected **R$1.7M to R$1.2k a month** (-99.9%), the share of people who said the detector helped them decide went from **45.1% to 72.4%**, and citations in Google AI Overview rose **138%** across 30 companies. V2 is live for everyone on Reclame AQUI’s own engine.
+
+AI product design Trust & safety In-product research LLM-ready content
+
+[Image: Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy]
+
+The detector’s public home page. Everything below is told through the process and illustrations, not internal screens.
+
+### Try the detector live
+
+It’s public and free: paste any store’s address and see the shields.
+
+Open the detector →
+
+**01** · Why it was hard
+
+## A trust product that had to be rebuilt without losing trust
+
+Reclame AQUI is where Brazilian shoppers check a company’s reputation before buying, the closest local equivalent to Trustpilot. Its site detector tells people whether a store’s website looks safe. It ran on a partner’s engine, and when the partnership ended the partner would start charging about R$10 per query: R$1.7M a month at our volume.
+
+Speed was one constraint. The other was the nature of the answer. A detector that labels a company’s site as unreliable is making a strong public statement about that company, and the old product had no measure of whether its answers helped anyone decide.
+
+So I framed the work the way the business needed it, and held every decision below to it:
+
+- **Outcome** Retire the partner’s detector before its per-query price turned into R$1.7M a month. That was the main pain, and the deadline.
+
+- **Job to be done** “Is this site a scam or not, before I pay?” The screen had one job, and everything on it had to serve that answer.
+
+- **Who it had to work for** Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.
+
+- **Opportunity** The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.
+
+**02** · An experiment in six weeks
+
+## Live in about six weeks, measured from the start
+
+To move fast, engineering built the first version AI-first: a crawler collects public signals about the site and the company behind it, and a model writes the analysis from four of them:
+
+- **Site security** the technical security of the site itself.
+
+- **Phishing alerts** whether the address appears in phishing alerts.
+
+- **Company** public information about who runs it.
+
+- **Domain** domain data, such as how long it has existed.
+
+Before launch, I ran a short design critique to cut cognitive load and scroll. The experiment then replaced the partner’s detector for about a month, with the decision metric Reclame AQUI uses across its products attached: a question inside the product that asks whether the information helped the person decide whether to buy. For the first time the detector had a success metric, and a baseline: a **45.1% decision rate**.
+
+### More data, harder decisions
+
+The experiment collected far more information than before, but it never said what it concluded. Every signal was left for the user to interpret, so a tool built to help people decide handed the decision back to them. The design problem became helping people understand the conclusion quickly, and why the system reached it.
+
+**03** · Decision: test comprehension 1
+
+### Test whether people read the result correctly
+
+Problem
+
+The easy question was “how do we lay this out?” A preference test would have picked the nicest screen and said nothing about whether people understood it.
+
+Decision
+
+I reframed the work around the user’s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.
+
+Why
+
+A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.
+
+What it caught
+
+Faced with a site that was safe, 46% of people using the experiment chose “be careful” and 25% “I don’t know”. Its extra data was making a safe site look doubtful.
+
+Result
+
+The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.
+
+74% vs 29%
+
+Read a safe site correctly as safe: refined version vs the experiment
+
+52% vs 21%
+
+Would buy from that safe site
+
+6% vs 21%
+
+Would avoid buying from it
+
+**How to read it:** 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.
+
+### What the interviews added
+
+People who finished the test could volunteer for an interview. The script never put screens side by side, so it measured the screen rather than my explanation of it. Four findings:
+
+- **Reputation decides; the shields support it.** The analysis matters most where a company has no reputation yet.
+
+- **The verification seal didn’t explain itself.** People described it through outside references, like a social network’s verified badge.
+
+- **Trust and reputation only separated on a closer read.** At first glance, a mixed result looked contradictory.
+
+- **Shield colours confused people.** They expected a traffic light.
+
+Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analysed at the top, a seal that explains itself, and traffic-light colours.
+
+**04** · Decision: a verdict built on evidence 2
+
+### A clear verdict, worded to state only what was verified
+
+Problem
+
+Shoppers need a clear answer, but a wrong claim about a company can harm a legitimate business and give it grounds to sue. Showing raw data avoids the claim and leaves all the interpretation to the user.
+
+Decision
+
+Every analysis ends in a verdict, from 0 to 5 shields, and each shield shows the signal behind it. The copy states as fact only what the analysis can prove: a site is called a scam only when we confirm it is stealing people’s data. Everything else is described as what we found, so the message lands without claiming more than the evidence supports.
+
+Why
+
+The shields make the verdict easy to read and easy to check: people see the conclusion and the reason for it in seconds, and the company can see exactly which signal shaped the result. Every word was reviewed with that legal weight in mind.
+
+Result
+
+V2 kept the depth of the analysis and gave people a verdict they can act on, with every statement on the screen backed by what was verified.
+
+Before: every signal, no conclusion
+
+After: the verdict first, evidence below
+
+Abstract wireframes of the idea, not the product screens.
+
+### Five shields
+
+- **Brand imitation** whether the address tries to pass as a known brand, or shows signs of data theft.
+
+- **Site security** the site’s certificate and technical structure.
+
+- **Company identity** whether the company exists and its tax registration is active.
+
+- **Consumer behaviour** unrealistic offers, false urgency and suspicious contacts.
+
+- **Reputation and seal** the company’s reputation on Reclame AQUI and its verification seal.
+
+### Six levels, one report each
+
+**Signs of imitation** 0/5
+
+**High risk** 1/5
+
+**Low trust** 2/5
+
+**Partial trust** 3/5
+
+**Probably trustworthy** 4/5
+
+**Trustworthy** 5/5
+
+Every analysis lands on one of six levels, from 0 to 5 shields, each with its own report: what was checked, which shield the site didn’t pass, and what to do next. While the analysis runs, the screen shows each source being checked. When a site can’t be reached, an error says so and offers a retry.
+
+**05** · Designing for AI readers
+
+## A second reader: the AI answering for the shopper
+
+More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector’s data with JSON-LD, and I revised the interface to support it. Models favour question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.
+
+Across 30 companies, citations in Google AI Overview rose 138%, measured in Search Console. The same screen now serves two readers: the person deciding on a purchase, and the assistant answering on their behalf.
+
+**06** · Impact
+
+## Cheaper, live, and easier to decide with
+
+- 01 Experiment
+
+- 02 Critique
+
+- 03 Comprehension test
+
+- 04 Interviews
+
+- 05 V2
+
+- 06 Rollout 20%
+
+- 07 50%
+
+- 08 100%
+
+From first conversation to full launch in three months. An illustration of the process, not the product.
+
+V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI’s own engine.
+
+-99.9%
+
+Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses
+
+45.1% → 72.4%
+
+People who said the detector helped them decide, experiment vs V2
+
++138%
+
+Citations in Google AI Overview across 30 companies, after structuring the data for LLMs
+
+MetricBeforeV2Change Monthly costR$1.7M (projected)R$1.2k for 171.7k analyses-99.9%Cost per analysisR$10under R$0.01-99.9%Decision rate45.1% (experiment)72.4%+27.3 pp
+
+Three things changed:
+
+- **It answers the question people came with.** The verdict comes first, and the shields explain it.
+
+- **It is fair to the company being analysed.** The verdict states only what the analysis can prove, and each shield shows the signal behind it.
+
+- **It can be measured.** The decision metric gives the team a running read on whether the detector helps people decide, which the old product never had.
+
+The feedback loop is still running. Since reaching 100%, the back-end rules and the way the AI behaves have evolved considerably. When a corner case appears, we investigate whether the cause is ours or a configuration in that company’s own Reclame AQUI profile that is affecting the detector’s answer, and fix it at the right end.
+
+**How it was measured:** the R$1.7M is the partner’s per-query price applied to our volume, not an invoice we paid; the R$1.2k is V2’s actual monthly cost for 171.7k analyses. Both decision rates come from the same in-product decision question, read during the experiment and after V2: a before-and-after, not a controlled test. The +138% compares Google AI Overview citations in Search Console for the 30 companies in the experiment.
+
+**07** · What I’d do differently
+
+## Hold the screen to its job, and align earlier
+
+Most of what I would change is about focus and alignment, not the screen itself.
+
+- **Hold every version to the job from day one.** The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered “is this a scam?”. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.
+
+- **Bring every decision level in at the start.** Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.
+
+- **Look across journeys, not just my own.** Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.
+
+- **Ask the three-sided question first.** Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.
+
+- **Look at the input before designing the output.** Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector’s answer can only be as good as what goes into it.
+
+It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.
+
+### The team, and what was mine
+
+A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.
+
+## Questions this page doesn't answer?
+
+The rules behind each shield, how the test was built and how each number was measured: all of it is a 30-minute call away.
+
+Get in touch
+
+See all cases
+
+Try the detector live

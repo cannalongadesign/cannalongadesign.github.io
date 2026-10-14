@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Site Detector: Reclame AQUI case study · Guilherme Cannalonga</title>
+<meta name="author" content="Guilherme Cannalonga">
+<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: the in-house, AI-powered Safe Site Detector at Reclame AQUI. Monthly cost from a projected R$1.7M to R$1.2k, decision rate from 45.1% to 72.4%, and +138% citations in Google AI Overview.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#f7f6f1">
+
+<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Guilherme Cannalonga">
+<meta property="og:title" content="Safe Site Detector case study · from more data to a decision people can act on">
+<meta property="og:description" content="Rebuilding a site detector in-house, fast, and designing an answer people understand: a verdict built on protection shields, worded to state only what was verified.">
+<meta property="og:url" content="https://cannalongadesign.github.io/safe-site-detector/">
+<link rel="canonical" href="https://cannalongadesign.github.io/safe-site-detector/">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Safe Site Detector case study · from more data to a decision people can act on">
+<meta name="twitter:description" content="Rebuilding a site detector in-house, fast, and designing an answer people understand: a verdict built on protection shields, worded to state only what was verified.">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     cannalonga design — case study system
+     Paper ground, ink type, one acid field. DM Sans.
+     Hard rules: no shadow, no gradient, no glow, no translucency.
+     ============================================================ */
+  :root{
+    --paper:#f7f6f1; --paper-2:#edeae1; --ink:#14140f; --ink-2:#605e56;
+    --paper-3:#e4dfd3; --acid:#d9f24b; --peri:#c9cbf5; --sky:#d3e9ff; --coral:#ff8d8f; --indigo:#8ea5ff; --mint:#aae1cc; --line:rgba(20,20,15,0.14); --line-strong:rgba(20,20,15,0.28); --line-control:rgba(20,20,15,0.48);
+    --max:1200px; --text-col:648px; --pad:24px;
+
+    /* Spacing scale. Every margin and padding in this file is one of these
+       eleven values, all multiples of 8. Nothing is typed by hand, so the
+       vertical rhythm is auditable instead of accidental. */
+    --sp-1:4px;  --sp-2:8px;   --sp-3:16px;  --sp-4:24px;
+    --sp-5:32px; --sp-6:40px;  --sp-7:56px;  --sp-8:72px;
+    --sp-9:96px; --sp-10:120px; --sp-11:160px;
+
+    /* Type scale, on a 8px baseline: 18/32 body, 15/24 small, 13/20 micro. */
+    --fs-body:18px;   --lh-body:32px;
+    --fs-small:15px;  --lh-small:24px;
+    --fs-micro:13px;  --lh-micro:20px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'DM Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-weight:900; letter-spacing:-0.045em; line-height:1.0;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
+  .col{max-width:var(--text-col); margin:0 auto; padding:0 var(--pad);}
+  ::selection{background:var(--acid); color:var(--ink);}
+  :focus-visible{outline:3px solid var(--ink); outline-offset:3px; border-radius:4px;}
+
+  /* ============================================================
+     ACCESSIBILITY
+     Audited against WCAG 2.1 AA. Each rule below closes a specific
+     criterion, noted inline so the reasoning survives the next edit.
+     ============================================================ */
+  /* 2.4.1 Bypass Blocks — a fixed nav sits before 2,900 words of article,
+     so a keyboard user needs a way past it that does not cost eight tabs. */
+  .skip-link{
+    position:absolute; left:16px; top:-64px; z-index:200;
+    background:var(--ink); color:var(--paper); font-size:14px; font-weight:700;
+    padding:12px 20px; border-radius:100px; transition:top .16s ease;
+  }
+  .skip-link:focus{top:16px;}
+
+  /* 2.5.5 Target Size — the visible pill stays small; the hit area does not. */
+  .lang-toggle button{position:relative;}
+  .lang-toggle button::after{
+    content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:44px; height:44px;
+  }
+  .modal-close{position:relative;}
+  .modal-close::before{
+    content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:44px; height:44px;
+  }
+
+  /* 1.3.1 — the reveal animation must never be the reason content is missing. */
+  @media (scripting: none){ .reveal{opacity:1 !important; transform:none !important;} }
+
+  /* NAV */
+  nav{position:fixed; top:16px; left:0; right:0; z-index:100;}
+  /* The nav is the only element that floats over the article, and every
+     surface it passes over — notes, frames, device stages, comparison
+     blocks — is paper-2. Same value as the pill, so the bar dissolved into
+     whatever scrolled under it.
+     Two changes, and the second is the one that actually works. The pill
+     drops a step to paper-3, which separates it tonally from every content
+     surface. And it gets a real boundary: line-control reads 3.4:1 against
+     paper-2 and 3.8:1 against the page ground, both past the 3:1 that WCAG
+     1.4.11 asks of a component edge. A tone alone would break the next time
+     a block gets a new colour; an edge holds against anything. */
+  nav .wrap{
+    max-width:900px; background:var(--paper-3); border-radius:100px;
+    border:1px solid var(--line-control);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:8px 8px 8px 16px; gap:16px;
+  }
+    /* 2.5.5 — a standalone navigation link needs the full target, even when
+     the label is short. Padding does it here without moving anything. */
+/* ── Return path ──────────────────────────────────────────────
+     The back link used to be hardcoded to the home page, so arriving at
+     Compass from Pick & Pack and pressing "back" sent you somewhere you had
+     never been. It now reads the referrer and names the actual page you came
+     from, falling back to the portfolio when there isn't one. */
+  .crumbs{margin-bottom:var(--sp-4);}
+  .crumbs ol{list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2); margin:0; padding:0;}
+  .crumbs li{display:flex; align-items:center; gap:var(--sp-2); font-size:12.5px; color:var(--ink-2);}
+  .crumbs li + li::before{content:'/'; color:var(--line-control); font-weight:400;}
+  .crumbs a{color:var(--ink-2); text-decoration:underline; text-decoration-color:var(--line-control); text-underline-offset:3px;}
+  .crumbs a:hover{color:var(--ink); text-decoration-color:var(--ink);}
+  .crumbs [aria-current="page"]{color:var(--ink); font-weight:700;}
+    .back-link{
+    display:flex; align-items:center; gap:8px; padding:12px 4px;
+    font-size:13.5px; font-weight:500; opacity:.7;
+  }
+  .back-link:hover{opacity:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:inherit; font-size:14px; font-weight:500;
+    padding:12px 20px; border-radius:100px; border:1px solid transparent; cursor:pointer;
+    transition:background .15s, border-color .15s; white-space:nowrap;
+  }
+  /* Primary action on the paper background is the acid field, everywhere.
+     Ink pills stay for surfaces that are already dark or already acid. */
+  /* ── Action hierarchy ─────────────────────────────────────────
+     Wherever two actions sit together, exactly one is primary and it is
+     always the contact action. Everything else is the outline variant.
+     A pair of equal-weight choices (the contact chooser inside the modal)
+     is a different component on purpose: a chooser must not rank its
+     options. Re-check with: two .btn-primary as siblings is a bug. */
+  .btn-primary{background:var(--acid); color:var(--ink);}
+  .btn-primary:hover{background:#cbe63d;}
+  .btn-ghost{border-color:var(--line-control); color:var(--ink);}
+  .btn-ghost:hover{background:var(--paper-2);}
+  .nav-cta{font-size:13px; padding:8px 16px; background:var(--ink); color:var(--paper); border-radius:100px;}
+  .nav-cta:hover{background:#2c2c22;}
+  .lang-toggle{display:flex; gap:4px; background:rgba(20,20,15,.08); border-radius:100px; padding:4px;}
+  .lang-toggle button{
+    /* 1.4.3 — o idioma nao selecionado ficava em 2,7:1. Nao e um controle
+       desabilitado, e a outra opcao do par, entao precisa ser legivel. */
+    font-family:inherit; font-size:11px; font-weight:700; padding:4px 8px; border:none;
+    border-radius:100px; background:transparent; color:var(--ink); opacity:.65; cursor:pointer;
+  }
+  .lang-toggle button.active{background:var(--ink); color:var(--paper); opacity:1;}
+
+  /* ARTICLE HERO */
+  .article-hero{padding:148px 0 var(--sp-6);}
+  .kicker{
+    display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    background:var(--acid); color:var(--ink); padding:8px 12px; border-radius:100px; margin-bottom:24px;
+  }
+  .article-hero h1{font-size:clamp(34px,5.6vw,68px); margin-bottom:24px; max-width:18ch;}
+  .article-hero .dek{font-size:clamp(16px,1.7vw,20px); color:var(--ink-2); max-width:62ch; margin-bottom:32px;}
+  /* A five-cell spec strip. It used to be a wrapping flex row, which broke:
+     the items sized to their content, so the second line never lined up with
+     the first and the last item on a line kept a dangling divider. A grid with
+     a known column count fixes both — and because the rule is border-LEFT with
+     a first-of-row exception, there is no trailing divider at any breakpoint. */
+  .meta-row{
+    display:grid; grid-template-columns:repeat(5,1fr); row-gap:var(--sp-4);
+    padding-top:var(--sp-4); border-top:1px solid var(--line);
+  }
+  .meta-item{padding-inline:20px; border-left:1px solid var(--line); min-width:0;}
+  .meta-item:nth-child(5n+1){border-left:none; padding-left:0;}
+  .meta-item .k{font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2); margin-bottom:4px;}
+  .meta-item .v{font-size:14.5px; font-weight:500;}
+
+  /* BODY */
+  .article-body{padding:var(--sp-7) 0 var(--sp-5);}
+  .article-body p{font-size:var(--fs-body); line-height:var(--lh-body); color:var(--ink-2); margin-bottom:var(--sp-4);}
+  .article-body h2{font-size:clamp(25px,3.2vw,34px); line-height:1.12; margin:var(--sp-8) 0 var(--sp-4);}
+  .article-body h2:first-child{margin-top:0;}
+  .article-body ul{margin:0 0 var(--sp-4) var(--sp-4);}
+  .article-body li{font-size:var(--fs-body); line-height:var(--lh-body); color:var(--ink-2); margin-bottom:var(--sp-2);}
+  .article-body li strong{color:var(--ink); font-weight:700;}
+  .lead{font-size:21px !important; line-height:1.55 !important; color:var(--ink) !important;}
+  /* The spine marker. Every case walks the same eight stages, so a recruiter
+     skimming two cases sees the same argument twice with different evidence. */
+  .stage-label{
+    display:block; font-size:11px; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-2);
+    margin:var(--sp-10) 0 var(--sp-3); padding-top:var(--sp-5); border-top:1px solid var(--line);
+  }
+  .article-body > .col:first-child .stage-label:first-of-type{margin-top:var(--sp-8);}
+  .stage-label{scroll-margin-top:112px;}
+  .stage-label b{color:var(--ink); font-weight:900; margin-right:8px;}
+  .stage-label + h2{margin-top:0 !important;}
+
+  /* ============================================================
+     EDITORIAL LAYER
+     Recruiters scan before they read. These components give the page
+     a second, faster reading path on top of the prose: a summary that
+     stands alone, a jump index, one bold takeaway per stage, and a
+     compare block for the moments where a belief changed.
+     ============================================================ */
+
+  /* the short version — readable on its own in ~20 seconds */
+  .tldr{
+    max-width:var(--text-col); margin:0 auto 8px; padding:24px 28px;
+    background:var(--paper-2); border-radius:16px;
+  }
+  .tldr .k{font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); margin-bottom:16px; display:block;}
+  .tldr dl{display:grid; gap:16px;}
+  .tldr dt{font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); margin-bottom:4px;}
+  .tldr dd{font-size:16px; color:var(--ink); line-height:1.5;}
+  .tldr dd b{font-weight:700;}
+
+  /* jump index: the spine, visible before the first paragraph */
+  .index{max-width:var(--text-col); margin:32px auto 0; padding:0 var(--pad);}
+  .index .k{font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); display:block; margin-bottom:16px;}
+  .index .k{display:flex; justify-content:space-between; align-items:baseline; gap:16px;}
+  .index .k .rt{font-weight:700; letter-spacing:.1em; color:var(--ink);}
+  .index ol{list-style:none; counter-reset:ix; display:grid; grid-template-columns:1fr 1fr; gap:0 28px;}
+  .index li{counter-increment:ix; border-top:1px solid var(--line);}
+  .index li a{display:flex; gap:12px; align-items:baseline; padding:12px 0; font-size:14.5px; color:var(--ink-2); transition:color .15s;}
+  .index li a::before{content:'0' counter(ix); font-weight:900; font-size:11.5px; color:var(--ink); letter-spacing:.04em;}
+  .index li a:hover{color:var(--ink);}
+  
+  
+
+  /* one line per stage that a skimmer can read alone */
+  .article-body h3.sub{
+    font-size:19px; font-weight:900; letter-spacing:-0.03em; line-height:1.25;
+    margin:var(--sp-7) 0 var(--sp-3); color:var(--ink);
+  }
+  .receipts{list-style:none; margin:var(--sp-5) 0 var(--sp-2); display:grid; gap:0;}
+  .receipts li{
+    display:grid; grid-template-columns:minmax(132px,auto) 1fr; gap:var(--sp-2) var(--sp-4);
+    padding:var(--sp-3) 0; border-top:1px solid var(--line); align-items:baseline;
+  }
+  .receipts li:last-child{border-bottom:1px solid var(--line);}
+  .receipts b{font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2);}
+  .receipts span{font-size:15.5px; color:var(--ink);}
+  
+  .takeaway{
+    max-width:var(--text-col); margin:var(--sp-6) auto; padding:var(--sp-3) 0 var(--sp-3) var(--sp-4);
+    border-left:4px solid var(--acid);
+    font-size:17px; font-weight:700; line-height:1.45; letter-spacing:-0.015em; color:var(--ink);
+  }
+
+  /* the moment a belief changed, side by side */
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:0; margin:var(--sp-6) 0; border-top:1px solid var(--line);}
+  .compare > div{padding:var(--sp-4) var(--sp-4) var(--sp-4) 0; border-right:1px solid var(--line);}
+  .compare > div:last-child{border-right:none; padding-right:0; padding-left:var(--sp-4);}
+  .compare .k{display:block; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); margin-bottom:8px;}
+  .compare p{font-size:15.5px !important; color:var(--ink) !important; margin:0 !important;}
+  
+
+  /* shorter measure reads faster; 17.5px over 720px was a wide column */
+  .pull{
+    font-size:clamp(21px,2.7vw,30px); font-weight:900; letter-spacing:-0.04em; line-height:1.16; color:var(--ink);
+    border-left:4px solid var(--acid); padding-left:var(--sp-4); margin:var(--sp-7) 0; max-width:22ch;
+  }
+  .note{
+    font-size:var(--fs-small); line-height:var(--lh-small); color:var(--ink-2); background:var(--paper-2);
+    border-radius:12px; padding:var(--sp-4); margin:var(--sp-5) 0;
+  }
+  .note strong{color:var(--ink); font-weight:700;}
+
+  /* SHOTS — big, flat, hairline framed */
+    /* One rule for every picture in the article: it occupies exactly the text
+     column, so it starts where the paragraph starts and ends where it ends.
+     Nothing is ever bigger or smaller than the measure it interrupts. */
+  .shot{width:100%; max-width:1040px; margin:var(--sp-8) auto; padding:0 var(--pad);}
+  .shot.narrow{max-width:var(--text-col);}
+  /* The frame follows the picture instead of forcing every picture into 3:2.
+     A wide chart stops being letterboxed into dead space; a very tall screenshot
+     is capped by height so it can't take over the page. */
+  .shot .frame{
+    width:100%; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+    background:var(--paper-2); display:flex; justify-content:center; align-items:center;
+  }
+  .shot .frame > img{
+    display:block; width:100%; height:auto;
+    max-height:780px; object-fit:contain; object-position:center;
+  }
+  .shot img{width:100%; height:auto;}
+  .shot .shot-bar{
+    display:flex; align-items:center; gap:8px; padding:0 16px; height:34px;
+    background:var(--paper-2); border-bottom:1px solid var(--line);
+  }
+  .shot .shot-bar .dot{width:8px; height:8px; border-radius:50%; background:var(--line-strong);}
+  .shot .shot-bar span{font-size:11.5px; font-weight:500; color:var(--ink-2);}
+  .shot .caption{text-align:left; font-size:var(--fs-micro); line-height:var(--lh-micro); color:var(--ink-2); margin-top:var(--sp-3); max-width:70ch;}
+  /* Hero moment: transparent device mockup on a colour field.
+     Whole artwork, centred, never cropped. */
+  .shot-device{max-width:var(--text-col);}
+  /* The field hugs the artwork. A fixed ratio left a different amount of dead
+     colour around every mockup, depending on its proportions; a padded box that
+     follows the picture gives the same visual margin on all of them. */
+  .shot-device .stage{
+    position:relative; display:flex; align-items:center; justify-content:center;
+    background:var(--sky); border-radius:20px; overflow:hidden;
+    width:100%; padding:clamp(16px,3.6vw,40px);
+  }
+  .shot-device .stage img{
+    position:static; display:block; transform:none;
+    width:100%; height:auto; max-width:100%;
+  }
+  /* Artwork that was drawn to run off its own edges gets no padding. The
+     tablet is cut by the frame and the wrist leaves through the bottom, so
+     the picture reads as continuing past the crop instead of floating in a
+     pool of colour. A padded box is right for a mockup with air around it
+     and wrong for one composed to bleed. */
+  .shot-device .stage.bleed{padding:0;}
+  .shot-device .stage.sand{background:var(--paper-2);}
+  .shot-device .stage.sky{background:var(--sky);}
+  .shot-device .stage.coral{background:var(--coral);}
+  .shot-device .stage.indigo{background:var(--indigo);}
+  .shot-device .stage.mint{background:var(--mint);}
+  .shot-device .stage.peri{background:var(--peri);}
+  
+
+  /* phone shots sit on an acid field so they read as product, not decoration */
+  .shot-phone{max-width:var(--text-col);}
+  /* Phone groups keep their bleed off the bottom edge, but the field now hugs
+     them horizontally instead of leaving half the block as empty colour. */
+  .shot-phone .phone-row{
+    position:relative; width:100%; margin:0 auto;
+    display:flex; align-items:flex-end; justify-content:center;
+    padding:0 clamp(16px,3.6vw,40px);
+    background:var(--peri); border-radius:18px; overflow:hidden;
+  }
+  .shot-phone .phone-row img{
+    position:static; display:block; transform:none;
+    width:100%; height:auto; max-width:none;
+    margin-bottom:-8%;
+  }
+  
+  .img-pending{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    min-height:260px; padding:32px; text-align:center; background:var(--paper-2);
+    border:2px dashed var(--line-strong); border-radius:12px;
+  }
+  .img-pending .t{font-weight:700; font-size:14px;}
+  .img-pending .s{font-size:12.5px; color:var(--ink-2); max-width:340px;}
+
+  /* METRICS */
+  /* rule spans the container, content is inset on both sides */
+    /* Flex with flex:1 1 0 keeps every metric on one line regardless of how many
+     there are, which the auto-fit grid could not: at this column width it fitted
+     three and wrapped the fourth on its own. */
+  .metrics-strip{display:flex; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin:var(--sp-7) 0;}
+  .metrics-strip .m{flex:1 1 0; min-width:0; padding:var(--sp-4) var(--sp-3); border-right:1px solid var(--line);}
+  .metrics-strip .m:first-child{padding-left:0;}
+  .metrics-strip .m:last-child{border-right:none; padding-right:0;}
+  .metrics-strip .num{font-weight:900; font-size:clamp(16px,2.5vw,22px); letter-spacing:-0.045em; line-height:1.12;}
+  .metrics-strip .label{font-size:12px; color:var(--ink-2); margin-top:var(--sp-2); line-height:1.35;}
+
+  /* CALLOUTS */
+  .callout-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-3); margin:var(--sp-6) 0;}
+  .callout{background:var(--paper-2); border-radius:14px; padding:var(--sp-4);}
+  /* A card that links behaves like a card that links: the whole surface is the
+     target, and it carries the same corner affordance and hover as the cards on
+     the home page. The circle inverts to ink here because the card is light. */
+  a.callout{display:block; position:relative; padding-right:60px; transition:background .18s ease;}
+  a.callout::after{
+    content:'\2197'; position:absolute; top:20px; right:20px;
+    width:34px; height:34px; border-radius:50%; background:var(--ink); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:700; line-height:1;
+    opacity:.5; transition:opacity .2s ease, transform .2s ease;
+  }
+  a.callout:hover{background:#e7e3d9;}
+  a.callout:hover::after{opacity:1; transform:translate(2px,-2px);}
+  a.callout:hover h4{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
+  a.callout .go{
+    display:inline-block; margin-top:12px; font-size:13.5px; font-weight:700;
+    letter-spacing:-0.01em; color:var(--ink);
+  }
+  .callout h3{font-size:17px; line-height:1.3; margin-bottom:var(--sp-2);}
+  .callout p{font-size:var(--fs-small); line-height:var(--lh-small); color:var(--ink-2); margin:0;}
+
+  /* DEMO TAGS — "what this case demonstrates", scanned in under a second */
+  .demo-tags{display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 0;}
+  .demo-tags span{
+    font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+    padding:6px 12px; border-radius:100px; border:1px solid var(--line-control); color:var(--ink-2);
+  }
+
+  /* DECISION CARD — problem/decision/why/result, made scannable instead of proseful. */
+  .decision{margin:var(--sp-7) 0; border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+  .decision-head{display:flex; align-items:center; gap:12px; padding:18px 20px; background:var(--paper-2); border-bottom:1px solid var(--line);}
+  .decision-head .dn{
+    width:26px; height:26px; border-radius:50%; background:var(--acid); color:var(--ink);
+    font-weight:900; font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .decision-head h3{font-size:17px; line-height:1.3; margin:0;}
+  .decision-body{padding:4px 20px 22px; display:grid; gap:0;}
+  .decision-row{display:grid; grid-template-columns:128px 1fr; gap:20px; padding:16px 0; border-top:1px solid var(--line);}
+  .decision-row:first-child{border-top:none;}
+  .decision-row .dk{font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2); padding-top:2px;}
+  .decision-row .dv{font-size:15.5px; line-height:1.55; color:var(--ink); margin:0;}
+
+  /* PROCESS STEPS */
+  .process{list-style:none; counter-reset:step; margin:var(--sp-6) 0; display:grid; gap:var(--sp-2);}
+  .process li{counter-increment:step; position:relative; padding:var(--sp-4) var(--sp-4) var(--sp-4) 64px; background:var(--paper-2); border-radius:14px;}
+  .process li::before{
+    content:counter(step,decimal-leading-zero); position:absolute; left:24px; top:22px;
+    font-weight:900; font-size:15px; color:var(--ink); opacity:.42;
+  }
+  .process li h3{font-size:16.5px; margin-bottom:8px;}
+  .process li p{font-size:14.5px; color:var(--ink-2); margin:0;}
+
+  /* ARTIFACT TILES */
+  .artifact-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:28px 0 8px;}
+  .artifact-tile{background:var(--paper-2); border-radius:14px; padding:20px 16px 16px; display:flex; flex-direction:column; gap:16px; min-height:118px;}
+  .artifact-tile .a-label{font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2);}
+  .artifact-tile .a-visual{flex:1; display:flex; align-items:center; justify-content:center;}
+  .a-journey{display:flex; align-items:center; width:100%;}
+  .a-journey .seg{flex:1; height:2px; background:var(--line-strong);}
+  .a-journey .dot{width:9px; height:9px; border-radius:50%; background:var(--line-strong); flex-shrink:0;}
+  .a-journey .dot.on{background:var(--ink);}
+  .a-wire{display:flex; flex-direction:column; gap:8px; width:100%;}
+  .a-wire .row{height:7px; border-radius:3px; background:var(--line-strong);}
+  .a-wire .row.w70{width:70%;} .a-wire .row.w100{width:100%;} .a-wire .row.w45{width:45%;}
+  .a-wire .block{height:26px; border-radius:6px; background:var(--acid); margin-top:4px;}
+  .a-chat{position:relative; width:100%; height:60px;}
+  .a-chat .bub{position:absolute; border-radius:10px; height:16px;}
+  .a-chat .bub1{top:0; left:0; width:62%; background:var(--line-strong);}
+  .a-chat .bub2{top:24px; left:22%; width:70%; background:var(--acid);}
+  .a-chat .bub3{top:44px; left:0; width:40%; background:var(--line-strong);}
+
+  /* GENIAL growth reveal */
+  .growth-readout{display:flex; flex-direction:column; margin-bottom:16px;}
+  .gr-num{font-weight:900; font-size:clamp(40px,6vw,72px); letter-spacing:-0.055em; line-height:.9;}
+  .gr-lab{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-top:8px;}
+  .growth-frame{position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--line); background:#fff;}
+  .growth-veil{position:absolute; inset:0; background:var(--paper); transform-origin:right; transform:scaleX(1); transition:transform 2.1s cubic-bezier(.16,1,.3,1);}
+  .drawing .growth-veil{transform:scaleX(1);}
+  .drawn .growth-veil{transform:scaleX(0);}
+
+  /* KRUZER Compass playground */
+  .dsp{--dsp-accent:#14140f; --dsp-radius:10px; --dsp-pad:14px; --dsp-gap:12px;
+    max-width:1000px; margin:56px auto; padding:0 var(--pad);}
+  .dsp-shell{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--paper-2);}
+  .dsp-bar{display:flex; align-items:center; gap:8px; padding:0 16px; height:34px; border-bottom:1px solid var(--line);}
+  .dsp-bar .dot{width:8px; height:8px; border-radius:50%; background:var(--line-strong);}
+  .dsp-bar span{font-size:11.5px; font-weight:500; color:var(--ink-2);}
+  .dsp-body{display:grid; grid-template-columns:300px 1fr; gap:0;}
+  .dsp-tokens{padding:24px; border-right:1px solid var(--line); display:flex; flex-direction:column; gap:24px;}
+  .dsp-tokens .grp .lab{display:block; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-bottom:8px;}
+  .dsp-tokens .grp .lab .val{font-style:normal; color:var(--ink);}
+  .dsp-swatches{display:flex; gap:8px;}
+  .dsp-swatches button{width:30px; height:30px; border-radius:8px; border:2px solid transparent; cursor:pointer; padding:0;}
+  .dsp-swatches button[aria-pressed="true"]{border-color:var(--ink);}
+  .dsp input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:3px; border-radius:2px; background:var(--line-strong); outline:none; margin:0;}
+  .dsp input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; appearance:none; width:15px; height:15px; border-radius:50%; background:var(--ink); cursor:grab;}
+  .dsp input[type=range]::-moz-range-thumb{width:13px; height:13px; border-radius:50%; background:var(--ink); border:none; cursor:grab;}
+  .dsp-seg{display:flex; background:rgba(20,20,15,.07); border-radius:100px; padding:4px;}
+  .dsp-seg button{flex:1; font-family:inherit; font-size:11.5px; font-weight:500; padding:8px 4px; border:none; border-radius:100px; background:transparent; color:var(--ink); opacity:.55; cursor:pointer;}
+  .dsp-seg button[aria-pressed="true"]{background:var(--paper); opacity:1; font-weight:700;}
+  .dsp-preview{padding:24px; display:flex; flex-direction:column; gap:var(--dsp-gap); background:var(--paper);}
+  .dsp-card{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--dsp-radius); padding:var(--dsp-pad); display:flex; flex-direction:column; gap:calc(var(--dsp-gap) * 0.6);}
+  .dsp-card .row{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .dsp-card .title{font-weight:700; font-size:15px;}
+  .dsp-pill{display:inline-flex; align-items:center; gap:8px; font-size:11.5px; font-weight:700; padding:4px 8px; border-radius:var(--dsp-radius); background:var(--dsp-accent); color:var(--paper);}
+  .dsp-pill .d{width:6px; height:6px; border-radius:50%; background:currentColor;}
+  .dsp-meta{font-size:12.5px; color:var(--ink-2);}
+  .dsp-input{width:100%; font-family:inherit; font-size:13px; padding:var(--dsp-pad); border-radius:var(--dsp-radius); border:1px solid var(--line-strong); background:var(--paper); color:var(--ink-2);}
+  .dsp-actions{display:flex; gap:8px;}
+  .dsp-btn{font-family:inherit; font-size:13px; font-weight:700; padding:calc(var(--dsp-pad) * .7) var(--dsp-pad); border-radius:var(--dsp-radius); border:1px solid transparent; cursor:pointer;}
+  .dsp-btn.primary{background:var(--dsp-accent); color:var(--paper);}
+  .dsp-btn.ghost{background:transparent; border-color:var(--line-strong); color:var(--ink);}
+  .dsp-caption{font-size:13.5px; color:var(--ink-2); margin-top:16px; max-width:70ch;}
+  
+
+  /* CLOSE + FOOTER */
+  .article-close{padding:var(--sp-9) 0 var(--sp-9); border-top:1px solid var(--line); margin-top:var(--sp-9);}
+  .article-close h2{font-size:clamp(28px,4.4vw,48px); margin-bottom:16px; max-width:18ch;}
+  .article-close p{color:var(--ink-2); font-size:17px; margin-bottom:32px; max-width:60ch;}
+  .close-ctas{display:flex; gap:var(--sp-2); flex-wrap:wrap;}
+  footer{border-top:1px solid var(--line); padding:var(--sp-5) 0;}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:13px; color:var(--ink-2);}
+  .foot-links{display:flex; gap:24px;}
+  .foot-links a{font-weight:500;}
+  .foot-links a:hover{color:var(--ink);}
+
+  /* MODAL */
+  .contact-modal{position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(20,20,15,.55);}
+  .contact-modal.open{display:flex;}
+  .contact-modal-card{position:relative; width:100%; max-width:440px; background:var(--paper); border-radius:18px; padding:32px;}
+  .contact-modal-card h3{font-size:26px; margin:8px 0 8px;}
+  .contact-modal-card > p{font-size:14.5px; color:var(--ink-2); margin-bottom:24px;}
+  .contact-modal-close{position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%; background:var(--paper-2); border:none; color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer;}
+  .contact-modal-options{display:flex; flex-direction:column; gap:8px;}
+  .contact-option{display:flex; align-items:center; gap:16px; padding:16px; border-radius:12px; border:1px solid var(--line); transition:background .15s, border-color .15s;}
+  .contact-option:hover{background:var(--acid); border-color:var(--acid);}
+  .contact-option .co-icon{width:38px; height:38px; border-radius:10px; background:var(--paper-2); color:var(--ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .contact-option .co-body{flex:1; display:flex; flex-direction:column; gap:4px; min-width:0;}
+  .contact-option .co-title{font-size:14.5px; font-weight:700;}
+  .contact-option .co-sub{font-size:12.5px; color:var(--ink-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .contact-option .co-arrow{color:var(--ink-2); flex-shrink:0;}
+
+  /* MOTION */
+  .reveal{opacity:1; transform:none; transition:transform .45s ease, opacity .45s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+    .reveal{opacity:1; transform:none;}
+  }
+
+  /* ── Responsive. Ordenado do maior para o menor, para que a regra mais
+     específica de tela sempre venha depois na cascata. Antes desta
+     passagem havia inversões: em 375px a meta-row caía na regra de 900px
+     e renderizava três colunas onde deveria ter duas. ── */
+  /* ================= MOTION SIGNATURE: the acid marker ================= */
+  .takeaway,.pull{border-left:0; position:relative;}
+  .takeaway::before,.pull::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--acid);
+    transform-origin:top; transform:scaleY(1);
+  }
+  .js .takeaway::before,.js .pull::before{transform:scaleY(0); transition:transform .8s cubic-bezier(.2,.7,.2,1) .15s;}
+  .js .reveal.in .takeaway::before,.js .reveal.in .pull::before{transform:scaleY(1);}
+  @keyframes rise{from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:none;}}
+  .js .article-hero .col > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;}
+  .js .article-hero .col > :nth-child(2){animation-delay:.1s}
+  .js .article-hero .col > :nth-child(3){animation-delay:.2s}
+  .js .article-hero .col > :nth-child(4){animation-delay:.3s}
+  .js .article-hero .col > :nth-child(5){animation-delay:.4s}
+  .shot .frame > img, .shot-device .stage img{transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+  @media (prefers-reduced-motion:reduce){
+    .js .takeaway::before,.js .pull::before{transform:scaleY(1); transition:none;}
+    .js .article-hero .col > *{animation:none;}
+  }
+
+  .contact-modal-card{max-height:calc(100dvh - 40px); overflow:auto; outline:none;}
+  .contact-modal-options a{min-width:0;}
+  .co-body{min-width:0;}
+  .co-title,.co-sub{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block;}
+  body.modal-open nav,body.modal-open .to-top{visibility:hidden;}
+
+  /* ================= DATA PLACEHOLDERS (remove when filled) ================= */
+  .ph{
+    display:inline; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.82em; font-weight:600;
+    background:var(--acid); color:var(--ink); padding:1px 6px; border-radius:4px; outline:2px dashed var(--ink); outline-offset:1px;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  }
+  .metrics-strip .num .ph{font-size:.6em; vertical-align:middle;}
+
+
+  /* ── Breakpoints, do maior para o menor. A ordem importa: em CSS
+     duas regras de mesma especificidade empatam pela posição, então um
+     bloco de 900px depois de um de 640px vence no celular. ── */
+
+  @media (max-width:900px){
+    .callout-grid{grid-template-columns:1fr;}
+    .meta-row{grid-template-columns:repeat(3,1fr);}
+    .meta-item{padding-inline:16px; border-left:1px solid var(--line);}
+    .meta-item:nth-child(5n+1){border-left:1px solid var(--line); padding-left:16px;}
+    .meta-item:nth-child(3n+1){border-left:none; padding-left:0;}
+  }
+
+  @media (max-width:820px){ .dsp-body{grid-template-columns:1fr;} .dsp-tokens{border-right:none; border-bottom:1px solid var(--line);} }
+
+  @media (max-width:640px){ .index ol{grid-template-columns:1fr;} }
+
+  @media (max-width:640px){ .receipts li{grid-template-columns:1fr; gap:4px;} }
+  @media (max-width:640px){ .decision-row{grid-template-columns:1fr; gap:6px;} }
+
+  @media (max-width:640px){
+    .compare{grid-template-columns:1fr;}
+    .compare > div{border-right:none; border-bottom:1px solid var(--line); padding:20px 0;}
+    .compare > div:last-child{border-bottom:none; padding-left:0;}
+  }
+
+  @media (max-width:640px){
+  }
+
+  @media (max-width:640px){
+    .shot-phone .phone-row img{margin-bottom:-7%;}
+  }
+
+  @media (max-width:640px){
+    :root{--pad:20px;}
+    nav{top:10px;}
+    nav .wrap{width:calc(100% - 20px); margin:0 8px;}
+    .article-hero{padding:120px 0 36px;}
+    .artifact-row{grid-template-columns:1fr 1fr;}
+    .artifact-row .artifact-tile:last-child{grid-column:1 / -1;}
+    .close-ctas{flex-direction:column; align-items:stretch;}
+    .close-ctas .btn{justify-content:center;}
+    .metrics-strip{flex-direction:column;}
+    .metrics-strip .m{border-right:none; border-bottom:1px solid var(--line); padding:20px 0;}
+    .metrics-strip .m:first-child{padding-top:0;}
+    .metrics-strip .m:last-child{border-bottom:none; padding-bottom:0;}
+  }
+
+  @media (max-width:640px){
+    .contact-modal{padding:12px; align-items:flex-end;}
+    .contact-modal-card{padding:28px 20px 20px; border-radius:20px; max-height:calc(100dvh - 24px);}
+    .contact-modal-card h3{font-size:23px; padding-right:40px;}
+  }
+
+  @media (max-width:560px){
+    /* O nav estourava a pílula: em português "Voltar ao Pick & Pack" + toggle de
+       idioma + "Vamos conversar" somavam 418px num espaço de 323px. Com o
+       toggle de idioma agora restrito ao desktop, sobraram uns 60px e o rótulo
+       do voltar volta a caber acima de 380px — um link com nome vale mais que
+       uma seta solta. Abaixo disso ele volta a ficar visualmente oculto,
+       continuando legível por leitor de tela, então o link nunca perde o nome
+       acessível. */
+    nav .wrap{gap:8px; padding:8px 8px 8px 12px;}
+    .back-link{padding:12px 8px;}
+    .back-link span[data-i18n]{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0;
+    }
+    .nav-cta{font-size:12.5px; padding:8px 14px;}
+  }
+
+  @media (max-width:560px){
+    .meta-row{grid-template-columns:repeat(2,1fr); row-gap:20px;}
+    .meta-item{padding-inline:16px;}
+    .meta-item:nth-child(3n+1){border-left:1px solid var(--line); padding-left:16px;}
+    .meta-item:nth-child(2n+1){border-left:none; padding-left:0;}
+  }
+
+  /* ================= PAGE TRANSITIONS =================
+     Home to case and back is one document swap. A short cross-fade with a
+     small rise keeps it reading as one site instead of a hard cut. Browsers
+     without cross-document view transitions simply navigate. */
+  @view-transition{navigation:auto;}
+  @keyframes vt-out{to{opacity:0;}}
+  @keyframes vt-in{from{opacity:0; transform:translateY(10px);}}
+  @media (prefers-reduced-motion:no-preference){
+    ::view-transition-old(root){animation:vt-out .16s ease both;}
+    ::view-transition-new(root){animation:vt-in .34s cubic-bezier(.2,.7,.2,1) both;}
+  }
+  .btn:active{transform:scale(.98);}
+
+  /* ============================================================
+     v25 — same standard as the home
+     One grid. Everything hangs from the same left edge: the hero, the
+     summary, the prose and every image share one 720px column, so nothing
+     is ever wider than the text it sits between. The only thing outside
+     that column is the index, which rides in the right rail and follows
+     the reader down the page.
+     ============================================================ */
+  .kicker{background:none; border:1px solid var(--line-strong); color:var(--ink-2); font-size:12.5px; font-weight:500; letter-spacing:0; text-transform:none; padding:7px 12px;}
+  .article-hero h1{text-wrap:balance;}
+  .article-hero .dek{text-wrap:pretty;}
+  .meta-item .k{font-size:12.5px; font-weight:500; letter-spacing:0; text-transform:none; margin-bottom:6px;}
+  .meta-item .v{font-size:15px; line-height:1.4;}
+  /* the outcome is the one fact in the strip that is a result, so it carries the marker */
+  .meta-item:last-child .v{
+    display:inline; font-weight:900; letter-spacing:-0.02em; padding:0 .08em; margin:0 -.08em;
+    -webkit-box-decoration-break:clone; box-decoration-break:clone;
+    background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat;
+    background-position:0 88%; background-size:100% .42em;
+  }
+  .stage-label{font-size:0; letter-spacing:0;}
+  .stage-label b{font-size:13px; letter-spacing:.04em; margin-right:0;}
+  .tldr .k,.index .k{font-size:12.5px; letter-spacing:0; text-transform:none;}
+  .tldr dt,.decision-row .dk,.receipts b,.compare .k{font-size:13px; font-weight:700; letter-spacing:0; text-transform:none; color:var(--ink-2);}
+  .index .k .rt{letter-spacing:0; font-weight:500; color:var(--ink-2);}
+  .index li a.active{color:var(--ink); font-weight:700;}
+  .demo-tags span{font-size:12px; font-weight:500; letter-spacing:0; text-transform:none; background:var(--acid); border-color:var(--acid); color:var(--ink);}
+  .metrics-strip .num{font-size:clamp(20px,2.6vw,28px); letter-spacing:-0.05em; line-height:1.05; font-variant-numeric:tabular-nums;}
+  .metrics-strip .label{font-size:13px; line-height:1.45; margin-top:10px;}
+  .article-body h2,.article-close h2{text-wrap:balance;}
+  /* a third closing action is a text link, never a third button: one primary, one secondary, the rest read as links */
+  .close-ctas{align-items:center;}
+  .close-ctas .btn-link{display:inline-flex; align-items:center; gap:6px; padding:12px 6px; font-size:14px; font-weight:700; color:var(--ink); text-decoration:underline; text-decoration-color:var(--line-control); text-underline-offset:4px; text-decoration-thickness:1.5px; transition:text-decoration-color .15s;}
+  .close-ctas .btn-link:hover{text-decoration-color:var(--ink);}
+  /* the pull quote runs the full column, like everything around it */
+  .article-body .pull{max-width:none; text-wrap:pretty;}
+  /* sub-headings inside a section had no rule at all, so they sat flush against the paragraph under them */
+  .article-body h3.card-h{font-size:21px; line-height:1.25; letter-spacing:-0.035em; margin:var(--sp-7) 0 var(--sp-3);}
+  .article-body .col > h3.card-h:first-child{margin-top:0;}
+  /* the summary comes first in reading order on a phone, the index after it */
+  .case-intro{display:flex; flex-direction:column;}
+  .case-intro > .index{order:2;}
+  @media (min-width:1100px){
+    .article-hero{padding:164px 0 var(--sp-7);}
+    .article-hero .col,.article-close .col{max-width:1088px;}
+    .article-hero h1{font-size:clamp(44px,4.6vw,66px); line-height:.97; letter-spacing:-0.05em; max-width:22ch; margin-bottom:var(--sp-5);}
+    .article-hero .dek{font-size:21px; line-height:1.5; max-width:56ch; margin-bottom:var(--sp-7);}
+    .meta-row{padding-top:var(--sp-5); grid-template-columns:1fr 1.1fr 1fr .9fr 1.5fr;}
+
+    .article-body{max-width:1088px; margin:0 auto; padding:var(--sp-4) var(--pad) var(--sp-5); display:flow-root;}
+    .case-intro{display:contents;}
+    .article-body > .col,.article-body .case-intro > .col,.article-body > .shot,.article-body > .dsp{
+      max-width:720px; margin-left:0; margin-right:0; padding-left:0; padding-right:0;
+    }
+    /* device shots keep the column width; the stage is capped in height and the device sits inside it */
+    .article-body > .shot-device .stage{height:520px; padding:0;}
+    .article-body > .shot-device .stage img{width:auto; height:100%; max-width:100%; object-fit:contain;}
+    .article-body > .shot-phone .phone-row{height:520px; align-items:flex-start; padding-top:40px;}
+    .article-body > .shot-phone .phone-row img{width:auto; max-width:100%; height:auto; max-height:none; margin-bottom:0;}
+    nav .wrap{max-width:1040px;}
+    .article-body .shot .frame > img{max-height:640px;}
+    .article-body .shot .caption,.article-body .annot-list{margin-left:0; margin-right:0;}
+    .article-body .tldr{max-width:none; margin:0 0 var(--sp-7); padding:32px 36px;}
+    .article-body .takeaway{margin-left:0; margin-right:0;}
+
+    /* right rail: the index, sticky under the nav */
+    .article-body .index{
+      float:right; width:264px; max-width:none; margin:0; padding:0;
+      position:sticky; top:104px;
+    }
+    .article-body .index ol{grid-template-columns:1fr;}
+    .article-body .index li a{padding:11px 0; font-size:14px;}
+
+    .article-close h2{font-size:clamp(36px,4.2vw,56px); letter-spacing:-0.05em; line-height:.97; max-width:18ch; margin-bottom:var(--sp-4);}
+    .article-close p{font-size:18px; max-width:56ch;}
+  }
+
+  /* ================= MOTION, SECOND PASS =================
+     A reading-progress line under the top edge, and images that settle
+     into their frame as they enter. Gated on no-preference; the progress
+     line only exists where scroll-driven animation is supported. */
+  @media (prefers-reduced-motion:no-preference){
+    @supports (animation-timeline: scroll()){
+      @keyframes read-progress{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+      body::before{
+        content:''; position:fixed; top:0; left:0; right:0; height:3px; z-index:150;
+        background:var(--acid); transform-origin:0 50%; transform:scaleX(0);
+        animation:read-progress linear both; animation-timeline:scroll(root block);
+      }
+    }
+    .js .shot.reveal .frame > img,.js .shot.reveal .stage img,.js .shot.reveal .phone-row img{transform:scale(1.045); transition:transform 1.1s cubic-bezier(.2,.7,.2,1);}
+    .js .shot.reveal.in .frame > img,.js .shot.reveal.in .stage img,.js .shot.reveal.in .phone-row img{transform:none;}
+    .shot .stage,.shot .phone-row{overflow:hidden;}
+    /* the outcome is read first, then marked */
+    @keyframes outcome-mark{from{background-size:0% .42em;} to{background-size:100% .42em;}}
+    .js .meta-item:last-child .v{animation:outcome-mark .8s cubic-bezier(.2,.7,.2,1) .9s both;}
+    /* annotated screens carry numbered pins placed on the image, so the image must not move under them */
+    .js .shot.annot.reveal .frame > img{transform:none;}
+  }
+
+  /* ===== Safe Site Detector: neutral illustrations, no product imagery ===== */
+  .article-body ul:not(.receipts):not(.shield-list){margin-top:var(--sp-3);}
+  /* process flow, used as the cover */
+  .flow-stage{background:var(--mint); border-radius:20px; padding:clamp(20px,4vw,44px);}
+  .flow{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:10px 8px; align-items:center;}
+  .flow li{display:inline-flex; align-items:center; gap:8px; background:var(--paper); border-radius:100px; padding:9px 14px 9px 10px; font-size:14px; font-weight:700; letter-spacing:-0.01em; color:var(--ink);}
+  .flow li .fn{font-size:11px; font-weight:700; color:var(--ink-2); font-variant-numeric:tabular-nums;}
+  .flow li + li::before{content:'\2192'; margin:0 6px 0 -2px; color:rgba(20,20,15,.45); font-weight:700;}
+  .flow li + li{position:relative;}
+  .flow li.ro{background:var(--ink); color:var(--paper);}
+  .flow li.ro .fn{color:rgba(247,246,241,.6);}
+  .flow li.ro::before{color:rgba(247,246,241,.55);}
+  .flow li:last-child{background:var(--acid); color:var(--ink);}
+  .flow li:last-child .fn{color:var(--ink-2);}
+  /* abstract before / after wireframes */
+  .wire-stage{display:grid; grid-template-columns:1fr 1fr; gap:14px; background:var(--paper-2); border-radius:20px; padding:clamp(16px,3vw,28px);}
+  .wire{display:flex; flex-direction:column; gap:10px; min-width:0;}
+  .wire .wl{font-size:12.5px; font-weight:700; color:var(--ink-2); line-height:1.35;}
+  .wbox{background:var(--paper); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:9px; min-height:250px;}
+  .wbox .wh{height:10px; width:46%; border-radius:4px; background:rgba(20,20,15,.18); margin-bottom:4px;}
+  .wr{display:flex; align-items:center; gap:8px;}
+  .wr .sq{width:12px; height:12px; border-radius:3px; background:rgba(20,20,15,.12); flex-shrink:0;}
+  .wbox i.b{display:block; height:7px; border-radius:4px; background:rgba(20,20,15,.12);}
+  .wv{display:flex; flex-direction:column; gap:8px; padding:12px; border-radius:10px; background:#e6f3e9; margin-bottom:4px;}
+  .wsh{display:flex; gap:5px;}
+  .wsh i{width:14px; height:16px; background:#2f8a4a; clip-path:polygon(50% 0,100% 18%,100% 55%,50% 100%,0 55%,0 18%);}
+  .wv i.b{background:rgba(47,138,74,.35);}
+  @media (max-width:560px){ .wire-stage{grid-template-columns:1fr;} .wbox{min-height:0;} }
+  /* five shields */
+  .shield-list{list-style:none; margin:var(--sp-3) 0 var(--sp-2); padding:0; display:grid; gap:0;}
+  .shield-list li{display:grid; grid-template-columns:28px minmax(120px,170px) 1fr; gap:4px 14px; align-items:baseline; padding:14px 0; border-top:1px solid var(--line);}
+  .shield-list li:last-child{border-bottom:1px solid var(--line);}
+  .shield-ic{width:22px; height:22px; align-self:center; fill:#e6f3e9; stroke:#2f8a4a; stroke-width:1.6;}
+  .shield-ic .tick{fill:none; stroke:#2f8a4a; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round;}
+  .shield-list b{font-size:14.5px; font-weight:700; color:var(--ink);}
+  .shield-list span{font-size:15px; color:var(--ink-2); line-height:1.5;}
+  @media (max-width:560px){ .shield-list li{grid-template-columns:28px 1fr;} .shield-list span{grid-column:2;} }
+  /* every label column on this page has the same fixed width, so long labels wrap and all descriptions start on one line */
+  .article-body .receipts li{grid-template-columns:140px 1fr;}
+  @media (max-width:560px){ .receipts.framing li{grid-template-columns:1fr; gap:6px;} }
+  /* results table */
+  .data-table{width:100%; border-collapse:collapse; margin:var(--sp-5) 0; font-size:15px; font-variant-numeric:tabular-nums;}
+  .data-table th,.data-table td{text-align:left; padding:14px 12px 14px 0; border-bottom:1px solid var(--line); vertical-align:top;}
+  .data-table thead th{font-size:13px; font-weight:700; color:var(--ink-2); border-bottom:1px solid var(--line-strong);}
+  .data-table tbody th{font-weight:700; color:var(--ink);}
+  .data-table td{color:var(--ink-2);}
+  .data-table td:last-child{font-weight:900; color:var(--ink); white-space:nowrap;}
+  @media (max-width:640px){ .data-table{font-size:13.5px;} .data-table th,.data-table td{padding-right:8px;} }
+  /* six levels */
+  .levels{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; margin:var(--sp-4) 0 var(--sp-4);}
+  .lv{background:var(--paper-2); border-radius:12px; padding:14px 12px; display:flex; flex-direction:column; gap:10px; min-width:0;}
+  .lv .dots{display:flex; gap:3px;}
+  .lv .dots i{width:9px; height:9px; border-radius:50%; background:rgba(20,20,15,.14);}
+  .lv .dots i.on{background:var(--c);}
+  .lv:first-child .dots i{background:transparent; box-shadow:inset 0 0 0 1.5px var(--c);}
+  .lv b{font-size:13px; line-height:1.25; font-weight:700; color:var(--ink);}
+  .lv .n{font-size:12px; color:var(--ink-2); font-variant-numeric:tabular-nums; margin-top:auto;}
+  @media (max-width:700px){ .levels{grid-template-columns:repeat(3,minmax(0,1fr));} }
+  /* team box: a plain callout, not a link */
+  .team-box{margin-top:var(--sp-6);}
+  .team-box h3{margin-bottom:var(--sp-2);}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://cannalongadesign.github.io/safe-site-detector/#article",
+   "headline": "Safe Site Detector: from more data to a decision people can act on",
+   "description": "The in-house, AI-powered Safe Site Detector at Reclame AQUI, with a verdict built on protection shields, worded to state only what was verified, and tested for comprehension. Monthly cost from a projected R$1.7M to R$1.2k for 171.7k analyses, decision rate from 45.1% to 72.4%, +138% citations in Google AI Overview across 30 companies, and a staged rollout to 100% of users in September 2026.",
+   "url": "https://cannalongadesign.github.io/safe-site-detector/",
+   "mainEntityOfPage": "https://cannalongadesign.github.io/safe-site-detector/",
+   "author": {
+    "@type": "Person",
+    "@id": "https://cannalongadesign.github.io/#person",
+    "name": "Guilherme Cannalonga",
+    "url": "https://cannalongadesign.github.io/",
+    "sameAs": [
+     "https://www.linkedin.com/in/guilhermecannalonga"
+    ]
+   },
+   "publisher": {
+    "@id": "https://cannalongadesign.github.io/#person"
+   },
+   "isPartOf": {
+    "@id": "https://cannalongadesign.github.io/#website"
+   },
+   "inLanguage": "en",
+   "dateModified": "2026-10-15",
+   "image": "https://cannalongadesign.github.io/assets/card-ssd.webp",
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "Detector de Site Confiável (Safe Site Detector)",
+    "applicationCategory": "SecurityApplication",
+    "url": "https://www.reclameaqui.com.br/detector-site-confiavel/",
+    "description": "Free tool that checks a website before a purchase and shows protection shields based on public signals."
+   },
+   "keywords": "AI product design, trust and safety, in-product research, comprehension testing, structured data for LLMs, consumer protection",
+   "genre": "Product design case study",
+   "mentions": [
+    {
+     "@type": "Organization",
+     "name": "Reclame AQUI"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Guilherme Cannalonga · Portfolio",
+     "item": "https://cannalongadesign.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Safe Site Detector",
+     "item": "https://cannalongadesign.github.io/safe-site-detector/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
+</head>
+<body class="js">
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<nav id="siteNav">
+  <div class="wrap">
+    <a class="back-link" href="/#work">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span data-i18n="nav.back">Back to portfolio</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="a11y.lang">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
+      </div>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<header class="article-hero">
+  <div class="col">
+    <span class="kicker" data-i18n="hero.kicker">Case study · Consumer trust · AI product</span>
+    <h1 data-i18n="hero.h1">Safe Site Detector: from more data to a decision people can act on</h1>
+    <p class="dek" data-i18n="hero.dek">Reclame AQUI&rsquo;s site detector had to be rebuilt in-house, fast. I led design for the AI-powered replacement and reframed it around one question: does the person understand the result well enough to decide whether to buy?</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="k" data-i18n="meta.role">Role</div><div class="v" data-i18n="meta.v.role">Senior Product Designer</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.team">Team</div><div class="v" data-i18n="meta.v.team">PM · Head of Product · Engineering</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.company">Company</div><div class="v">Reclame AQUI</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.timeline">Timeline</div><div class="v" data-i18n="meta.v.time">Jun 2026 &ndash; ongoing</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.outcome">Outcome</div><div class="v" data-i18n="meta.v.out">R$1.7M &rarr; R$1.2k a month · decision rate 45.1% &rarr; 72.4%</div></div>
+    </div>
+  </div>
+</header>
+<article class="article-body">
+  <div class="case-intro">
+  <div class="index reveal">
+    <span class="k"><span data-i18n="ix.k">In this case</span><span class="rt" data-i18n="ix.time">7 min read</span></span>
+    <ol>
+      <li><a href="#s01" data-i18n="s.ix.1">Why it was hard</a></li>
+      <li><a href="#s02" data-i18n="s.ix.2">An experiment in six weeks</a></li>
+      <li><a href="#s03" data-i18n="s.ix.3">Decision: test comprehension</a></li>
+      <li><a href="#s04" data-i18n="s.ix.4">Decision: a verdict built on evidence</a></li>
+      <li><a href="#s05" data-i18n="s.ix.5">Designing for AI readers</a></li>
+      <li><a href="#s06" data-i18n="s.ix.6">Impact</a></li>
+      <li><a href="#s07" data-i18n="s.ix.7">What I&rsquo;d do differently</a></li>
+    </ol>
+  </div>
+  <div class="col reveal">
+    <div class="tldr">
+      <span class="k" data-i18n="tl.k">The short version</span>
+      <dl>
+        <div><dt data-i18n="tl.problem.k">Problem</dt><dd data-i18n="s.tl.problem">The partner behind the site detector would start charging per query: R$1.7M a month at our volume. The detector had no way to show whether it helped anyone decide, and a yes-or-no verdict about a company is a heavy claim to make on a public page.</dd></div>
+        <div><dt data-i18n="tl.did.k">What I did</dt><dd data-i18n="s.tl.did">Owned data discovery and design end to end: an AI-first experiment live in about six weeks, a comprehension test inside the product, a V2 whose verdict is built on protection shields and worded to state only what was verified, and a staged rollout to 100% of users, three months from first conversation to full launch.</dd></div>
+        <div><dt data-i18n="tl.out.k">Outcome</dt><dd data-i18n="s.tl.out">Cost went from a projected <b>R$1.7M to R$1.2k a month</b> (-99.9%), the share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and citations in Google AI Overview rose <b>138%</b> across 30 companies. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.</dd></div>
+      </dl>
+      <div class="demo-tags"><span data-i18n="s.demo.1">AI product design</span><span data-i18n="s.demo.2">Trust &amp; safety</span><span data-i18n="s.demo.3">In-product research</span><span data-i18n="s.demo.4">LLM-ready content</span></div>
+    </div>
+  </div>
+  </div>
+
+  <figure class="shot shot-device reveal">
+    <div class="stage mint bleed"><img src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" width="2000" height="1599"></div>
+    <figcaption class="caption" data-i18n="s.cover">The detector&rsquo;s public home page. Everything below is told through the process and illustrations, not internal screens.</figcaption>
+  </figure>
+  <div class="col reveal">
+    <a class="callout" href="https://www.reclameaqui.com.br/detector-site-confiavel/" target="_blank" rel="noopener">
+      <h3 data-i18n="s.live.h">Try the detector live</h3>
+      <p data-i18n="s.live.p">It&rsquo;s public and free: paste any store&rsquo;s address and see the shields.</p>
+      <span class="go" data-i18n="s.live.go">Open the detector &rarr;</span>
+    </a>
+
+    <span class="stage-label" id="s01"><b>01</b> &middot; <span data-i18n="s.ix.1">Why it was hard</span></span>
+    <h2 data-i18n="s.h2.ctx">A trust product that had to be rebuilt without losing trust</h2>
+    <p data-i18n="s.ctx.1">Reclame AQUI is where Brazilian shoppers check a company&rsquo;s reputation before buying, the closest local equivalent to Trustpilot. Its site detector tells people whether a store&rsquo;s website looks safe. It ran on a partner&rsquo;s engine, and when the partnership ended the partner would start charging about R$10 per query: R$1.7M a month at our volume.</p>
+    <p data-i18n="s.ctx.2">Speed was one constraint. The other was the nature of the answer. A detector that labels a company&rsquo;s site as unreliable is making a strong public statement about that company, and the old product had no measure of whether its answers helped anyone decide.</p>
+    <p data-i18n="s.ctx.3">So I framed the work the way the business needed it, and held every decision below to it:</p>
+    <ul class="receipts framing">
+      <li><b data-i18n="s.fr.1.k">Outcome</b><span data-i18n="s.fr.1.v">Retire the partner&rsquo;s detector before its per-query price turned into R$1.7M a month. That was the main pain, and the deadline.</span></li>
+      <li><b data-i18n="s.fr.2.k">Job to be done</b><span data-i18n="s.fr.2.v">&ldquo;Is this site a scam or not, before I pay?&rdquo; The screen had one job, and everything on it had to serve that answer.</span></li>
+      <li><b data-i18n="s.fr.3.k">Who it had to work for</b><span data-i18n="s.fr.3.v">Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.</span></li>
+      <li><b data-i18n="s.fr.4.k">Opportunity</b><span data-i18n="s.fr.4.v">The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.</span></li>
+    </ul>
+
+    <span class="stage-label" id="s02"><b>02</b> &middot; <span data-i18n="s.ix.2">An experiment in six weeks</span></span>
+    <h2 data-i18n="s.h2.exp">Live in about six weeks, measured from the start</h2>
+    <p data-i18n="s.exp.1">To move fast, engineering built the first version AI-first: a crawler collects public signals about the site and the company behind it, and a model writes the analysis from four of them:</p>
+    <ul class="receipts">
+      <li><b data-i18n="s.sig.1.k">Site security</b><span data-i18n="s.sig.1.v">the technical security of the site itself.</span></li>
+      <li><b data-i18n="s.sig.2.k">Phishing alerts</b><span data-i18n="s.sig.2.v">whether the address appears in phishing alerts.</span></li>
+      <li><b data-i18n="s.sig.3.k">Company</b><span data-i18n="s.sig.3.v">public information about who runs it.</span></li>
+      <li><b data-i18n="s.sig.4.k">Domain</b><span data-i18n="s.sig.4.v">domain data, such as how long it has existed.</span></li>
+    </ul>
+    <p data-i18n="s.exp.2">Before launch, I ran a short design critique to cut cognitive load and scroll. The experiment then replaced the partner&rsquo;s detector for about a month, with the decision metric Reclame AQUI uses across its products attached: a question inside the product that asks whether the information helped the person decide whether to buy. For the first time the detector had a success metric, and a baseline: a <strong>45.1% decision rate</strong>.</p>
+    <h3 class="card-h" data-i18n="s.h3.problem">More data, harder decisions</h3>
+    <p data-i18n="s.exp.3">The experiment collected far more information than before, but it never said what it concluded. Every signal was left for the user to interpret, so a tool built to help people decide handed the decision back to them. The design problem became helping people understand the conclusion quickly, and why the system reached it.</p>
+
+    <span class="stage-label" id="s03"><b>03</b> &middot; <span data-i18n="s.ix.3">Decision: test comprehension</span></span>
+    <div class="decision">
+      <div class="decision-head"><span class="dn">1</span><h3 data-i18n="s.d1.title">Test whether people read the result correctly</h3></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.problem">Problem</span><p class="dv" data-i18n="s.d1.problem">The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.decision">Decision</span><p class="dv" data-i18n="s.d1.decision">I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.why">Why</span><p class="dv" data-i18n="s.d1.why">A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.caught">What it caught</span><p class="dv" data-i18n="s.d1.caught">Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.result">Result</span><p class="dv" data-i18n="s.d1.result">The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.</p></div>
+      </div>
+    </div>
+    <div class="metrics-strip">
+      <div class="m"><div class="num" data-i18n="s.q.n1">74% vs 29%</div><div class="label" data-i18n="s.q.l1">Read a safe site correctly as safe: refined version vs the experiment</div></div>
+      <div class="m"><div class="num" data-i18n="s.q.n2">52% vs 21%</div><div class="label" data-i18n="s.q.l2">Would buy from that safe site</div></div>
+      <div class="m"><div class="num" data-i18n="s.q.n3">6% vs 21%</div><div class="label" data-i18n="s.q.l3">Would avoid buying from it</div></div>
+    </div>
+    <p class="note" data-i18n="s.q.note"><strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.</p>
+    <h3 class="card-h" data-i18n="s.h3.qual">What the interviews added</h3>
+    <p data-i18n="s.qual.p">People who finished the test could volunteer for an interview. The script never put screens side by side, so it measured the screen rather than my explanation of it. Four findings:</p>
+    <ul>
+      <li><span data-i18n="s.qi.1"><strong>Reputation decides; the shields support it.</strong> The analysis matters most where a company has no reputation yet.</span></li>
+      <li><span data-i18n="s.qi.2"><strong>The verification seal didn&rsquo;t explain itself.</strong> People described it through outside references, like a social network&rsquo;s verified badge.</span></li>
+      <li><span data-i18n="s.qi.3"><strong>Trust and reputation only separated on a closer read.</strong> At first glance, a mixed result looked contradictory.</span></li>
+      <li><span data-i18n="s.qi.4"><strong>Shield colours confused people.</strong> They expected a traffic light.</span></li>
+    </ul>
+    <p data-i18n="s.qual.dir">Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analysed at the top, a seal that explains itself, and traffic-light colours.</p>
+
+    <span class="stage-label" id="s04"><b>04</b> &middot; <span data-i18n="s.ix.4">Decision: a verdict built on evidence</span></span>
+    <div class="decision">
+      <div class="decision-head"><span class="dn">2</span><h3 data-i18n="s.d2.title">A clear verdict, worded to state only what was verified</h3></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.problem">Problem</span><p class="dv" data-i18n="s.d2.problem">Shoppers need a clear answer, but a wrong claim about a company can harm a legitimate business and give it grounds to sue. Showing raw data avoids the claim and leaves all the interpretation to the user.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.decision">Decision</span><p class="dv" data-i18n="s.d2.decision">Every analysis ends in a verdict, from 0 to 5 shields, and each shield shows the signal behind it. The copy states as fact only what the analysis can prove: a site is called a scam only when we confirm it is stealing people&rsquo;s data. Everything else is described as what we found, so the message lands without claiming more than the evidence supports.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.why">Why</span><p class="dv" data-i18n="s.d2.why">The shields make the verdict easy to read and easy to check: people see the conclusion and the reason for it in seconds, and the company can see exactly which signal shaped the result. Every word was reviewed with that legal weight in mind.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.result">Result</span><p class="dv" data-i18n="s.d2.result">V2 kept the depth of the analysis and gave people a verdict they can act on, with every statement on the screen backed by what was verified.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="shot wire-fig reveal">
+    <div class="wire-stage">
+      <div class="wire before"><span class="wl" data-i18n="s.wf.before">Before: every signal, no conclusion</span><span class="wbox"><span class="wh"></span><span class="wr"><i class="sq"></i><i class="b" style="width:78%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:62%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:84%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:55%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:70%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:66%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:81%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:58%"></i></span></span></div>
+      <div class="wire after"><span class="wl" data-i18n="s.wf.after">After: the verdict first, evidence below</span><span class="wbox"><span class="wh"></span><span class="wv"><span class="wsh"><i></i><i></i><i></i><i></i><i></i></span><i class="b" style="width:72%"></i><i class="b" style="width:48%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:64%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:52%"></i></span><span class="wr"><i class="sq"></i><i class="b" style="width:70%"></i></span></span></div>
+    </div>
+    <figcaption class="caption" data-i18n="s.wf.cap">Abstract wireframes of the idea, not the product screens.</figcaption>
+  </figure>
+
+  <div class="col reveal">
+    <h3 class="card-h" data-i18n="s.h3.shields">Five shields</h3>
+    <ul class="shield-list">
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.1.k">Brand imitation</b><span data-i18n="s.sh.1.v">whether the address tries to pass as a known brand, or shows signs of data theft.</span></li>
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.2.k">Site security</b><span data-i18n="s.sh.2.v">the site&rsquo;s certificate and technical structure.</span></li>
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.3.k">Company identity</b><span data-i18n="s.sh.3.v">whether the company exists and its tax registration is active.</span></li>
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.4.k">Consumer behaviour</b><span data-i18n="s.sh.4.v">unrealistic offers, false urgency and suspicious contacts.</span></li>
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.5.k">Reputation and seal</b><span data-i18n="s.sh.5.v">the company&rsquo;s reputation on Reclame AQUI and its verification seal.</span></li>
+    </ul>
+    <h3 class="card-h" data-i18n="s.h3.levels">Six levels, one report each</h3>
+    <div class="levels" role="list">
+      <div class="lv" role="listitem" style="--c:#c8433b"><span class="dots"><i></i><i></i><i></i><i></i><i></i></span><b data-i18n="s.lv.0">Signs of imitation</b><span class="n">0/5</span></div>
+      <div class="lv" role="listitem" style="--c:#d8642f"><span class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></span><b data-i18n="s.lv.1">High risk</b><span class="n">1/5</span></div>
+      <div class="lv" role="listitem" style="--c:#e08a23"><span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><b data-i18n="s.lv.2">Low trust</b><span class="n">2/5</span></div>
+      <div class="lv" role="listitem" style="--c:#cfa41c"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><b data-i18n="s.lv.3">Partial trust</b><span class="n">3/5</span></div>
+      <div class="lv" role="listitem" style="--c:#6aa03d"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><b data-i18n="s.lv.4">Probably trustworthy</b><span class="n">4/5</span></div>
+      <div class="lv" role="listitem" style="--c:#2f8a4a"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><b data-i18n="s.lv.5">Trustworthy</b><span class="n">5/5</span></div>
+    </div>
+    <p data-i18n="s.lv.p">Every analysis lands on one of six levels, from 0 to 5 shields, each with its own report: what was checked, which shield the site didn&rsquo;t pass, and what to do next. While the analysis runs, the screen shows each source being checked. When a site can&rsquo;t be reached, an error says so and offers a retry.</p>
+
+    <span class="stage-label" id="s05"><b>05</b> &middot; <span data-i18n="s.ix.5">Designing for AI readers</span></span>
+    <h2 data-i18n="s.h2.ai">A second reader: the AI answering for the shopper</h2>
+    <p data-i18n="s.ai.1">More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favour question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.</p>
+    <p class="takeaway" data-i18n="s.takeaway">Across 30 companies, citations in Google AI Overview rose 138%, measured in Search Console. The same screen now serves two readers: the person deciding on a purchase, and the assistant answering on their behalf.</p>
+
+    <span class="stage-label" id="s06"><b>06</b> &middot; <span data-i18n="s.ix.6">Impact</span></span>
+    <h2 data-i18n="s.h2.impact">Cheaper, live, and easier to decide with</h2>
+  </div>
+
+  <figure class="shot flow-fig reveal">
+    <div class="flow-stage">
+      <ol class="flow">
+        <li><span class="fn">01</span><span data-i18n="s.fl.1">Experiment</span></li>
+        <li><span class="fn">02</span><span data-i18n="s.fl.2">Critique</span></li>
+        <li><span class="fn">03</span><span data-i18n="s.fl.3">Comprehension test</span></li>
+        <li><span class="fn">04</span><span data-i18n="s.fl.4">Interviews</span></li>
+        <li><span class="fn">05</span><span data-i18n="s.fl.5">V2</span></li>
+        <li class="ro"><span class="fn">06</span><span data-i18n="s.fl.6">Rollout 20%</span></li>
+        <li class="ro"><span class="fn">07</span><span data-i18n="s.fl.7">50%</span></li>
+        <li class="ro"><span class="fn">08</span><span data-i18n="s.fl.8">100%</span></li>
+      </ol>
+    </div>
+    <figcaption class="caption" data-i18n="s.flow.cap">From first conversation to full launch in three months. An illustration of the process, not the product.</figcaption>
+  </figure>
+  <div class="col reveal">
+    <p data-i18n="s.imp.1">V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI&rsquo;s own engine.</p>
+    <div class="metrics-strip">
+      <div class="m"><div class="num">-99.9%</div><div class="label" data-i18n="s.m0">Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses</div></div>
+      <div class="m"><div class="num" data-i18n="s.m.n1">45.1% &rarr; 72.4%</div><div class="label" data-i18n="s.m1">People who said the detector helped them decide, experiment vs V2</div></div>
+      <div class="m"><div class="num">+138%</div><div class="label" data-i18n="s.m2">Citations in Google AI Overview across 30 companies, after structuring the data for LLMs</div></div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th scope="col" data-i18n="s.tbl.metric">Metric</th><th scope="col" data-i18n="s.tbl.before">Before</th><th scope="col" data-i18n="s.tbl.after">V2</th><th scope="col" data-i18n="s.tbl.change">Change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" data-i18n="s.tbl.r1.m">Monthly cost</th><td data-i18n="s.tbl.r1.b">R$1.7M (projected)</td><td data-i18n="s.tbl.r1.a">R$1.2k for 171.7k analyses</td><td data-i18n="s.tbl.r1.c">-99.9%</td></tr><tr><th scope="row" data-i18n="s.tbl.r2.m">Cost per analysis</th><td data-i18n="s.tbl.r2.b">R$10</td><td data-i18n="s.tbl.r2.a">under R$0.01</td><td data-i18n="s.tbl.r2.c">-99.9%</td></tr><tr><th scope="row" data-i18n="s.tbl.r3.m">Decision rate</th><td data-i18n="s.tbl.r3.b">45.1% (experiment)</td><td data-i18n="s.tbl.r3.a">72.4%</td><td data-i18n="s.tbl.r3.c">+27.3 pp</td></tr>
+      </tbody>
+    </table>
+    <p data-i18n="s.imp.why">Three things changed:</p>
+    <ul>
+      <li><span data-i18n="s.imp.l1"><strong>It answers the question people came with.</strong> The verdict comes first, and the shields explain it.</span></li>
+      <li><span data-i18n="s.imp.l2"><strong>It is fair to the company being analysed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.</span></li>
+      <li><span data-i18n="s.imp.l3"><strong>It can be measured.</strong> The decision metric gives the team a running read on whether the detector helps people decide, which the old product never had.</span></li>
+    </ul>
+    <p data-i18n="s.imp.2">The feedback loop is still running. Since reaching 100%, the back-end rules and the way the AI behaves have evolved considerably. When a corner case appears, we investigate whether the cause is ours or a configuration in that company&rsquo;s own Reclame AQUI profile that is affecting the detector&rsquo;s answer, and fix it at the right end.</p>
+    <p class="note" data-i18n="s.imp.note"><strong>How it was measured:</strong> the R$1.7M is the partner&rsquo;s per-query price applied to our volume, not an invoice we paid; the R$1.2k is V2&rsquo;s actual monthly cost for 171.7k analyses. Both decision rates come from the same in-product decision question, read during the experiment and after V2: a before-and-after, not a controlled test. The +138% compares Google AI Overview citations in Search Console for the 30 companies in the experiment.</p>
+
+    <span class="stage-label" id="s07"><b>07</b> &middot; <span data-i18n="s.ix.7">What I&rsquo;d do differently</span></span>
+    <h2 data-i18n="s.h2.dif">Hold the screen to its job, and align earlier</h2>
+    <p data-i18n="s.dif.p">Most of what I would change is about focus and alignment, not the screen itself.</p>
+    <ul>
+      <li><span data-i18n="s.dif.1"><strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.</span></li>
+      <li><span data-i18n="s.dif.2"><strong>Bring every decision level in at the start.</strong> Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.</span></li>
+      <li><span data-i18n="s.dif.3"><strong>Look across journeys, not just my own.</strong> Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.</span></li>
+      <li><span data-i18n="s.dif.4"><strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.</span></li>
+      <li><span data-i18n="s.dif.5"><strong>Look at the input before designing the output.</strong> Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector&rsquo;s answer can only be as good as what goes into it.</span></li>
+    </ul>
+    <p data-i18n="s.dif.close">It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.</p>
+    <div class="callout team-box">
+      <h3 data-i18n="s.team.h">The team, and what was mine</h3>
+      <p data-i18n="s.team.p">A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.</p>
+    </div>
+  </div>
+</article>
+
+<section class="article-close reveal">
+  <div class="col">
+    <h2 data-i18n="close.h2">Questions this page doesn't answer?</h2>
+    <p data-i18n="close.p.ssd">The rules behind each shield, how the test was built and how each number was measured: all of it is a 30-minute call away.</p>
+    <div class="close-ctas">
+      <a class="btn btn-primary" href="/#contact" data-contact-trigger data-i18n="close.cta1">Get in touch</a>
+      <a class="btn btn-ghost" href="/#work" data-i18n="close.cta.all">See all cases</a>
+      <a class="btn-link" href="https://www.reclameaqui.com.br/detector-site-confiavel/" target="_blank" rel="noopener"><span data-i18n="close.cta.live">Try the detector live</span> <span aria-hidden="true">&nearr;</span></a>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span><span data-i18n="footer.rights">© 2026 Guilherme Cannalonga. All rights reserved.</span></span>
+      <div class="foot-links">
+        <a href="/" data-i18n="footer.portfolio">Portfolio</a>
+        <a href="https://www.linkedin.com/in/guilhermecannalonga" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:cannalongadesign@gmail.com" data-contact-trigger data-i18n="footer.email">Email</a>
+        <a href="/colophon/" data-i18n="footer.colophon">How this site is built</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="contact-modal" id="contactModal">
+  <div class="contact-modal-card" tabindex="-1">
+    <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <h3 data-i18n="modal.h3">How would you like to connect?</h3>
+    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <div class="contact-modal-options">
+      <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
+        <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.email.title">Send an email</span><span class="co-sub">cannalongadesign@gmail.com</span></span>
+        <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a class="contact-option" href="mailto:cannalongadesign@gmail.com?subject=R%C3%A9sum%C3%A9%20request%3A%20Senior%20Product%20Designer&amp;body=Hi%20Guilherme%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20receive%20your%20r%C3%A9sum%C3%A9.%0D%0A%0D%0ARole%20%2F%20company%20%28optional%29%3A%20%0D%0A%0D%0AThanks%2C" data-resume-mail>
+        <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v12a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.resume.title">Request my résumé</span><span class="co-sub" data-i18n="modal.resume.sub">I&rsquo;ll send the PDF by email</span></span>
+        <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
+        <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1});
+  els.forEach(el=>io.observe(el));
+
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }, {passive:true});
+
+  // Contact modal: email vs. book a call
+  (function(){
+    const modal = document.getElementById('contactModal');
+    if(!modal) return;
+    const closeBtn = document.getElementById('contactModalClose');
+    function openModal(){
+      modal.classList.add('open');
+      requestAnimationFrame(()=> modal.classList.add('show'));
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+      const card = modal.querySelector('.contact-modal-card'); if(card) card.focus({preventScroll:true});
+    }
+    function closeModal(){
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+      setTimeout(()=> modal.classList.remove('open'), 250);
+    }
+    document.querySelectorAll('[data-contact-trigger]').forEach(el=>{
+      el.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+    });
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+  })();
+</script>
+
+<script>
+  /* ---- language toggle: English is the base language, Portuguese (Brazil) is opt-in ---- */
+  (function(){
+    const I18N = {
+      en: {
+        'footer.colophon':`How this site is built`,
+        'nav.back.genial':`Back to Genial App`,
+        'nav.back.liam':`Back to LIAM`,
+        'nav.back.kruzer':`Back to Pick &amp; Pack`,
+        'nav.back.compass':`Back to Compass`,
+        'a11y.skip':`Skip to content`,
+        'a11y.lang':`Language`,
+        'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
+        'meta.v.out':`R$1.7M &rarr; R$1.2k a month · decision rate 45.1% &rarr; 72.4%`,
+        'meta.v.role':`Senior Product Designer`,
+        'meta.v.team':`PM · Head of Product · Engineering`,
+        'ix.time':`7 min read`,
+        'ix.k':`In this case`,
+        'tl.k':`The short version`,
+        'tl.problem.k':`Problem`,
+        'tl.did.k':`What I did`,
+        'tl.out.k':`Outcome`,
+        'nav.back':`Back to portfolio`,
+        'nav.cta':`Let's talk`,
+        'hero.kicker':`Case study · Consumer trust · AI product`,
+        'hero.h1':`Safe Site Detector: from more data to a decision people can act on`,
+        'hero.dek':`Reclame AQUI&rsquo;s site detector had to be rebuilt in-house, fast. I led design for the AI-powered replacement and reframed it around one question: does the person understand the result well enough to decide whether to buy?`,
+        'meta.role':`Role`,
+        'meta.team':`Team`,
+        'meta.company':`Company`,
+        'meta.timeline':`Timeline`,
+        'meta.outcome':`Outcome`,
+        'close.h2':`Questions this page doesn't answer?`,
+        'close.cta1':`Get in touch`,
+        'footer.portfolio':`Portfolio`,
+        'footer.email':`Email`,
+        'modal.label':`Let's talk`,
+        'modal.h3':`How would you like to connect?`,
+        'modal.p':`Pick whichever's faster for you.`,
+        'modal.email.title':`Send an email`,
+        'modal.resume.title':`Request my résumé`,
+        'modal.resume.sub':`I&rsquo;ll send the PDF by email`,
+        'modal.call.title':`Book a 30-min call`,
+        'modal.call.sub':`Weekdays, flexible hours (ET)`,
+        'meta.v.time':`Jun 2026 &ndash; ongoing`,
+        'close.p.ssd':`The rules behind each shield, how the test was built and how each number was measured: all of it is a 30-minute call away.`,
+        'close.cta.live':`Try the detector live`,
+        'close.cta.all':`See all cases`,
+        'nav.back.ssd':`Back to Safe Site Detector`,
+        's.q.n1':`74% vs 29%`,
+        's.q.l1':`Read a safe site correctly as safe: refined version vs the experiment`,
+        's.q.n2':`52% vs 21%`,
+        's.q.l2':`Would buy from that safe site`,
+        's.q.n3':`6% vs 21%`,
+        's.q.l3':`Would avoid buying from it`,
+        's.m0':`Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses`,
+        's.m.n1':`45.1% &rarr; 72.4%`,
+        's.m1':`People who said the detector helped them decide, experiment vs V2`,
+        's.m2':`Citations in Google AI Overview across 30 companies, after structuring the data for LLMs`,
+        's.tbl.metric':`Metric`,
+        's.tbl.before':`Before`,
+        's.tbl.after':`V2`,
+        's.tbl.change':`Change`,
+        's.tbl.r1.m':`Monthly cost`,
+        's.tbl.r1.b':`R$1.7M (projected)`,
+        's.tbl.r1.a':`R$1.2k for 171.7k analyses`,
+        's.tbl.r1.c':`-99.9%`,
+        's.tbl.r2.m':`Cost per analysis`,
+        's.tbl.r2.b':`R$10`,
+        's.tbl.r2.a':`under R$0.01`,
+        's.tbl.r2.c':`-99.9%`,
+        's.tbl.r3.m':`Decision rate`,
+        's.tbl.r3.b':`45.1% (experiment)`,
+        's.tbl.r3.a':`72.4%`,
+        's.tbl.r3.c':`+27.3 pp`,
+        's.fr.1.k':`Outcome`,
+        's.fr.1.v':`Retire the partner&rsquo;s detector before its per-query price turned into R$1.7M a month. That was the main pain, and the deadline.`,
+        's.fr.2.k':`Job to be done`,
+        's.fr.2.v':`&ldquo;Is this site a scam or not, before I pay?&rdquo; The screen had one job, and everything on it had to serve that answer.`,
+        's.fr.3.k':`Who it had to work for`,
+        's.fr.3.v':`Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.`,
+        's.fr.4.k':`Opportunity`,
+        's.fr.4.v':`The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.`,
+        's.dk.problem':`Problem`,
+        's.dk.decision':`Decision`,
+        's.dk.why':`Why`,
+        's.dk.caught':`What it caught`,
+        's.dk.result':`Result`,
+        's.ix.1':`Why it was hard`,
+        's.ix.2':`An experiment in six weeks`,
+        's.ix.3':`Decision: test comprehension`,
+        's.ix.4':`Decision: a verdict built on evidence`,
+        's.ix.5':`Designing for AI readers`,
+        's.ix.6':`Impact`,
+        's.ix.7':`What I&rsquo;d do differently`,
+        's.tl.problem':`The partner behind the site detector would start charging per query: R$1.7M a month at our volume. The detector had no way to show whether it helped anyone decide, and a yes-or-no verdict about a company is a heavy claim to make on a public page.`,
+        's.tl.did':`Owned data discovery and design end to end: an AI-first experiment live in about six weeks, a comprehension test inside the product, a V2 whose verdict is built on protection shields and worded to state only what was verified, and a staged rollout to 100% of users, three months from first conversation to full launch.`,
+        's.tl.out':`Cost went from a projected <b>R$1.7M to R$1.2k a month</b> (-99.9%), the share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and citations in Google AI Overview rose <b>138%</b> across 30 companies. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.`,
+        's.demo.1':`AI product design`,
+        's.demo.2':`Trust &amp; safety`,
+        's.demo.3':`In-product research`,
+        's.demo.4':`LLM-ready content`,
+        's.fl.1':`Experiment`,
+        's.fl.2':`Critique`,
+        's.fl.3':`Comprehension test`,
+        's.fl.4':`Interviews`,
+        's.fl.5':`V2`,
+        's.fl.6':`Rollout 20%`,
+        's.fl.7':`50%`,
+        's.fl.8':`100%`,
+        's.cover':`The detector&rsquo;s public home page. Everything below is told through the process and illustrations, not internal screens.`,
+        's.live.h':`Try the detector live`,
+        's.live.p':`It&rsquo;s public and free: paste any store&rsquo;s address and see the shields.`,
+        's.live.go':`Open the detector &rarr;`,
+        's.h2.ctx':`A trust product that had to be rebuilt without losing trust`,
+        's.ctx.1':`Reclame AQUI is where Brazilian shoppers check a company&rsquo;s reputation before buying, the closest local equivalent to Trustpilot. Its site detector tells people whether a store&rsquo;s website looks safe. It ran on a partner&rsquo;s engine, and when the partnership ended the partner would start charging about R$10 per query: R$1.7M a month at our volume.`,
+        's.ctx.2':`Speed was one constraint. The other was the nature of the answer. A detector that labels a company&rsquo;s site as unreliable is making a strong public statement about that company, and the old product had no measure of whether its answers helped anyone decide.`,
+        's.ctx.3':`So I framed the work the way the business needed it, and held every decision below to it:`,
+        's.sig.1.k':`Site security`,
+        's.sig.1.v':`the technical security of the site itself.`,
+        's.sig.2.k':`Phishing alerts`,
+        's.sig.2.v':`whether the address appears in phishing alerts.`,
+        's.sig.3.k':`Company`,
+        's.sig.3.v':`public information about who runs it.`,
+        's.sig.4.k':`Domain`,
+        's.sig.4.v':`domain data, such as how long it has existed.`,
+        's.h2.exp':`Live in about six weeks, measured from the start`,
+        's.exp.1':`To move fast, engineering built the first version AI-first: a crawler collects public signals about the site and the company behind it, and a model writes the analysis from four of them:`,
+        's.exp.2':`Before launch, I ran a short design critique to cut cognitive load and scroll. The experiment then replaced the partner&rsquo;s detector for about a month, with the decision metric Reclame AQUI uses across its products attached: a question inside the product that asks whether the information helped the person decide whether to buy. For the first time the detector had a success metric, and a baseline: a <strong>45.1% decision rate</strong>.`,
+        's.h3.problem':`More data, harder decisions`,
+        's.exp.3':`The experiment collected far more information than before, but it never said what it concluded. Every signal was left for the user to interpret, so a tool built to help people decide handed the decision back to them. The design problem became helping people understand the conclusion quickly, and why the system reached it.`,
+        's.d1.title':`Test whether people read the result correctly`,
+        's.d1.problem':`The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.`,
+        's.d1.decision':`I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.`,
+        's.d1.why':`A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.`,
+        's.d1.caught':`Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.`,
+        's.d1.result':`The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.`,
+        's.q.note':`<strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.`,
+        's.h3.qual':`What the interviews added`,
+        's.qual.p':`People who finished the test could volunteer for an interview. The script never put screens side by side, so it measured the screen rather than my explanation of it. Four findings:`,
+        's.qi.1':`<strong>Reputation decides; the shields support it.</strong> The analysis matters most where a company has no reputation yet.`,
+        's.qi.2':`<strong>The verification seal didn&rsquo;t explain itself.</strong> People described it through outside references, like a social network&rsquo;s verified badge.`,
+        's.qi.3':`<strong>Trust and reputation only separated on a closer read.</strong> At first glance, a mixed result looked contradictory.`,
+        's.qi.4':`<strong>Shield colours confused people.</strong> They expected a traffic light.`,
+        's.qual.dir':`Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analysed at the top, a seal that explains itself, and traffic-light colours.`,
+        's.sh.1.k':`Brand imitation`,
+        's.sh.1.v':`whether the address tries to pass as a known brand, or shows signs of data theft.`,
+        's.sh.2.k':`Site security`,
+        's.sh.2.v':`the site&rsquo;s certificate and technical structure.`,
+        's.sh.3.k':`Company identity`,
+        's.sh.3.v':`whether the company exists and its tax registration is active.`,
+        's.sh.4.k':`Consumer behaviour`,
+        's.sh.4.v':`unrealistic offers, false urgency and suspicious contacts.`,
+        's.sh.5.k':`Reputation and seal`,
+        's.sh.5.v':`the company&rsquo;s reputation on Reclame AQUI and its verification seal.`,
+        's.lv.0':`Signs of imitation`,
+        's.lv.1':`High risk`,
+        's.lv.2':`Low trust`,
+        's.lv.3':`Partial trust`,
+        's.lv.4':`Probably trustworthy`,
+        's.lv.5':`Trustworthy`,
+        's.wf.before':`Before: every signal, no conclusion`,
+        's.wf.after':`After: the verdict first, evidence below`,
+        's.d2.title':`A clear verdict, worded to state only what was verified`,
+        's.d2.problem':`Shoppers need a clear answer, but a wrong claim about a company can harm a legitimate business and give it grounds to sue. Showing raw data avoids the claim and leaves all the interpretation to the user.`,
+        's.d2.decision':`Every analysis ends in a verdict, from 0 to 5 shields, and each shield shows the signal behind it. The copy states as fact only what the analysis can prove: a site is called a scam only when we confirm it is stealing people&rsquo;s data. Everything else is described as what we found, so the message lands without claiming more than the evidence supports.`,
+        's.d2.why':`The shields make the verdict easy to read and easy to check: people see the conclusion and the reason for it in seconds, and the company can see exactly which signal shaped the result. Every word was reviewed with that legal weight in mind.`,
+        's.d2.result':`V2 kept the depth of the analysis and gave people a verdict they can act on, with every statement on the screen backed by what was verified.`,
+        's.wf.cap':`Abstract wireframes of the idea, not the product screens.`,
+        's.h3.shields':`Five shields`,
+        's.h3.levels':`Six levels, one report each`,
+        's.lv.p':`Every analysis lands on one of six levels, from 0 to 5 shields, each with its own report: what was checked, which shield the site didn&rsquo;t pass, and what to do next. While the analysis runs, the screen shows each source being checked. When a site can&rsquo;t be reached, an error says so and offers a retry.`,
+        's.h2.ai':`A second reader: the AI answering for the shopper`,
+        's.ai.1':`More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favour question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.`,
+        's.takeaway':`Across 30 companies, citations in Google AI Overview rose 138%, measured in Search Console. The same screen now serves two readers: the person deciding on a purchase, and the assistant answering on their behalf.`,
+        's.h2.impact':`Cheaper, live, and easier to decide with`,
+        's.flow.cap':`From first conversation to full launch in three months. An illustration of the process, not the product.`,
+        's.imp.1':`V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI&rsquo;s own engine.`,
+        's.imp.why':`Three things changed:`,
+        's.imp.l1':`<strong>It answers the question people came with.</strong> The verdict comes first, and the shields explain it.`,
+        's.imp.l2':`<strong>It is fair to the company being analysed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.`,
+        's.imp.l3':`<strong>It can be measured.</strong> The decision metric gives the team a running read on whether the detector helps people decide, which the old product never had.`,
+        's.imp.2':`The feedback loop is still running. Since reaching 100%, the back-end rules and the way the AI behaves have evolved considerably. When a corner case appears, we investigate whether the cause is ours or a configuration in that company&rsquo;s own Reclame AQUI profile that is affecting the detector&rsquo;s answer, and fix it at the right end.`,
+        's.imp.note':`<strong>How it was measured:</strong> the R$1.7M is the partner&rsquo;s per-query price applied to our volume, not an invoice we paid; the R$1.2k is V2&rsquo;s actual monthly cost for 171.7k analyses. Both decision rates come from the same in-product decision question, read during the experiment and after V2: a before-and-after, not a controlled test. The +138% compares Google AI Overview citations in Search Console for the 30 companies in the experiment.`,
+        's.h2.dif':`Hold the screen to its job, and align earlier`,
+        's.dif.p':`Most of what I would change is about focus and alignment, not the screen itself.`,
+        's.dif.1':`<strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.`,
+        's.dif.2':`<strong>Bring every decision level in at the start.</strong> Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.`,
+        's.dif.3':`<strong>Look across journeys, not just my own.</strong> Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.`,
+        's.dif.4':`<strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.`,
+        's.dif.5':`<strong>Look at the input before designing the output.</strong> Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector&rsquo;s answer can only be as good as what goes into it.`,
+        's.dif.close':`It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.`,
+        's.team.h':`The team, and what was mine`,
+        's.team.p':`A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.`
+      },
+      pt: {
+        'footer.colophon':`Como este site foi feito`,
+        'nav.back.genial':`Voltar ao Genial App`,
+        'nav.back.liam':`Voltar ao LIAM`,
+        'nav.back.kruzer':`Voltar ao Pick &amp; Pack`,
+        'nav.back.compass':`Voltar ao Compass`,
+        'a11y.skip':`Pular para o conteúdo`,
+        'a11y.lang':`Idioma`,
+        'footer.rights':`© 2026 Guilherme Cannalonga. Todos os direitos reservados.`,
+        'meta.v.out':`R$1,7M &rarr; R$1,2 mil por mês · taxa de decisão 45,1% &rarr; 72,4%`,
+        'meta.v.role':`Senior Product Designer`,
+        'meta.v.team':`PM · Head of Product · Engenharia`,
+        'ix.time':`7 min de leitura`,
+        'ix.k':`Neste case`,
+        'tl.k':`A versão curta`,
+        'tl.problem.k':`Problema`,
+        'tl.did.k':`O que eu fiz`,
+        'tl.out.k':`Resultado`,
+        'nav.back':`Voltar ao portfólio`,
+        'nav.cta':`Vamos conversar`,
+        'hero.kicker':`Case study · Confiança do consumidor · Produto de IA`,
+        'hero.h1':`Detector de Site Confiável: de mais dados a uma decisão que as pessoas conseguem tomar`,
+        'hero.dek':`O detector de sites do Reclame AQUI precisava ser reconstruído internamente, e rápido. Liderei o design do substituto com IA e reorganizei o trabalho em torno de uma pergunta: a pessoa entende o resultado bem o bastante para decidir se compra?`,
+        'meta.role':`Papel`,
+        'meta.team':`Time`,
+        'meta.company':`Empresa`,
+        'meta.timeline':`Período`,
+        'meta.outcome':`Resultado`,
+        'close.h2':`Ficou alguma pergunta?`,
+        'close.cta1':`Entrar em contato`,
+        'footer.portfolio':`Portfólio`,
+        'footer.email':`Email`,
+        'modal.label':`Vamos conversar`,
+        'modal.h3':`Como você prefere falar comigo?`,
+        'modal.p':`Escolha o que for mais rápido pra você.`,
+        'modal.email.title':`Mandar um email`,
+        'modal.resume.title':`Pedir meu currículo`,
+        'modal.resume.sub':`Envio o PDF por email`,
+        'modal.call.title':`Agendar uma call de 30 min`,
+        'modal.call.sub':`Dias úteis, horário flexível (ET)`,
+        'meta.v.time':`Jun 2026 &ndash; em andamento`,
+        'close.p.ssd':`As regras por trás de cada escudo, como o teste foi montado e como cada número foi medido: tudo isso cabe em uma call de 30 minutos.`,
+        'close.cta.live':`Testar o detector ao vivo`,
+        'close.cta.all':`Ver todos os cases`,
+        'nav.back.ssd':`Voltar ao Detector de Site Confiável`,
+        's.q.n1':`74% vs 29%`,
+        's.q.l1':`Leram um site seguro corretamente como seguro: versão refinada vs o experimento`,
+        's.q.n2':`52% vs 21%`,
+        's.q.l2':`Comprariam desse site seguro`,
+        's.q.n3':`6% vs 21%`,
+        's.q.l3':`Evitariam comprar dele`,
+        's.m0':`Custo mensal, de R$1,7M projetados para R$1,2 mil em 171,7 mil análises`,
+        's.m.n1':`45,1% &rarr; 72,4%`,
+        's.m1':`Pessoas que disseram que o detector ajudou a decidir, experimento vs V2`,
+        's.m2':`Citações no Google AI Overview em 30 empresas, depois de estruturar os dados para LLMs`,
+        's.tbl.metric':`Métrica`,
+        's.tbl.before':`Antes`,
+        's.tbl.after':`V2`,
+        's.tbl.change':`Variação`,
+        's.tbl.r1.m':`Custo mensal`,
+        's.tbl.r1.b':`R$1,7M (projetado)`,
+        's.tbl.r1.a':`R$1,2 mil para 171,7 mil análises`,
+        's.tbl.r1.c':`-99,9%`,
+        's.tbl.r2.m':`Custo por análise`,
+        's.tbl.r2.b':`R$10`,
+        's.tbl.r2.a':`menos de R$0,01`,
+        's.tbl.r2.c':`-99,9%`,
+        's.tbl.r3.m':`Taxa de decisão`,
+        's.tbl.r3.b':`45,1% (experimento)`,
+        's.tbl.r3.a':`72,4%`,
+        's.tbl.r3.c':`+27,3 p.p.`,
+        's.fr.1.k':`Outcome`,
+        's.fr.1.v':`Tirar o detector do parceiro do ar antes que o preço por consulta virasse R$1,7M por mês. Essa era a dor principal, e o prazo.`,
+        's.fr.2.k':`Job to be done`,
+        's.fr.2.v':`&ldquo;Esse site é golpe ou não, antes de eu pagar?&rdquo; A tela tinha um trabalho, e tudo nela precisava servir a essa resposta.`,
+        's.fr.3.k':`Para quem precisava funcionar`,
+        's.fr.3.v':`A Dona Neide, do interior do Acre, conferindo se a loja que vende a saia que ela quer é segura. Se fosse simples e claro para ela, seria simples e claro para todo mundo.`,
+        's.fr.4.k':`Oportunidade`,
+        's.fr.4.v':`A reconstrução veio forçada pelo custo, então aproveitamos para quitar o débito que a página carregava: acessibilidade, uma identidade visual que não seguia o design system, e débito técnico pelo caminho.`,
+        's.dk.problem':`Problema`,
+        's.dk.decision':`Decisão`,
+        's.dk.why':`Por quê`,
+        's.dk.caught':`O que a rodada pegou`,
+        's.dk.result':`Resultado`,
+        's.ix.1':`Por que era difícil`,
+        's.ix.2':`Um experimento em seis semanas`,
+        's.ix.3':`Decisão: testar entendimento`,
+        's.ix.4':`Decisão: um veredito baseado em evidência`,
+        's.ix.5':`Desenhando para leitores de IA`,
+        's.ix.6':`Impacto`,
+        's.ix.7':`O que eu faria diferente`,
+        's.tl.problem':`O parceiro por trás do detector de sites passaria a cobrar por consulta: R$1,7M por mês no nosso volume. O detector não tinha como mostrar se ajudava alguém a decidir, e um veredito de sim ou não sobre uma empresa é uma afirmação pesada numa página pública.`,
+        's.tl.did':`Fui dono da descoberta de dados e do design de ponta a ponta: um experimento com IA no centro, no ar em cerca de seis semanas, um teste de entendimento dentro do produto, uma V2 cujo veredito é construído sobre escudos de proteção e escrito para afirmar só o que foi verificado, e um rollout em etapas até 100% dos usuários, três meses entre a primeira conversa e o lançamento completo.`,
+        's.tl.out':`O custo foi de uma projeção de <b>R$1,7M para R$1,2 mil por mês</b> (-99,9%), a parcela de pessoas que disse que o detector ajudou a decidir foi de <b>45,1% para 72,4%</b>, e as citações no Google AI Overview subiram <b>138%</b> em 30 empresas. A V2 está no ar para todo mundo no motor próprio do Reclame AQUI.`,
+        's.demo.1':`Design de produto com IA`,
+        's.demo.2':`Confiança e segurança`,
+        's.demo.3':`Pesquisa no produto`,
+        's.demo.4':`Conteúdo para LLMs`,
+        's.fl.1':`Experimento`,
+        's.fl.2':`Critique`,
+        's.fl.3':`Teste de entendimento`,
+        's.fl.4':`Entrevistas`,
+        's.fl.5':`V2`,
+        's.fl.6':`Rollout 20%`,
+        's.fl.7':`50%`,
+        's.fl.8':`100%`,
+        's.cover':`A página inicial pública do detector. Todo o resto é contado pelo processo e por ilustrações, não por telas internas.`,
+        's.live.h':`Teste o detector ao vivo`,
+        's.live.p':`É público e gratuito: cole o endereço de qualquer loja e veja os escudos.`,
+        's.live.go':`Abrir o detector &rarr;`,
+        's.h2.ctx':`Um produto de confiança que precisava ser refeito sem perder a confiança`,
+        's.ctx.1':`O Reclame AQUI é onde o consumidor brasileiro confere a reputação de uma empresa antes de comprar. O detector de sites diz se o site de uma loja parece seguro. Ele rodava no motor de um parceiro, e com o fim da parceria o parceiro passaria a cobrar cerca de R$10 por consulta: R$1,7M por mês no nosso volume.`,
+        's.ctx.2':`A velocidade era uma restrição. A outra era a natureza da resposta. Um detector que rotula o site de uma empresa como não confiável faz uma afirmação pública forte sobre ela, e o produto antigo não tinha como medir se as respostas ajudavam alguém a decidir.`,
+        's.ctx.3':`Então enquadrei o trabalho do jeito que o negócio precisava, e cobrei cada decisão abaixo contra isso:`,
+        's.sig.1.k':`Segurança do site`,
+        's.sig.1.v':`a segurança técnica do próprio site.`,
+        's.sig.2.k':`Alertas de phishing`,
+        's.sig.2.v':`se o endereço aparece em alertas de phishing.`,
+        's.sig.3.k':`Empresa`,
+        's.sig.3.v':`informações públicas sobre quem está por trás.`,
+        's.sig.4.k':`Domínio`,
+        's.sig.4.v':`dados do domínio, como há quanto tempo existe.`,
+        's.h2.exp':`No ar em cerca de seis semanas, medido desde o início`,
+        's.exp.1':`Para andar rápido, a engenharia construiu a primeira versão com IA no centro: um crawler coleta sinais públicos sobre o site e a empresa por trás dele, e um modelo escreve a análise a partir de quatro deles:`,
+        's.exp.2':`Antes de ir ao ar, fiz uma design critique curta para reduzir a carga cognitiva e o scroll. Depois o experimento substituiu o detector do parceiro por cerca de um mês, com a métrica de decisão que o Reclame AQUI usa nos seus produtos: uma pergunta dentro do produto que pergunta se a informação ajudou a pessoa a decidir se compra ou não. Pela primeira vez o detector tinha uma métrica de sucesso, e uma linha de base: <strong>45,1% de taxa de decisão</strong>.`,
+        's.h3.problem':`Mais dados, decisões mais difíceis`,
+        's.exp.3':`O experimento coletava muito mais informação do que antes, mas nunca dizia o que concluía. Cada sinal ficava para o usuário interpretar, então uma ferramenta feita para ajudar a decidir devolvia a decisão para ele. O problema de design passou a ser ajudar as pessoas a entender a conclusão rápido, e por que o sistema chegou a ela.`,
+        's.d1.title':`Testar se as pessoas leem o resultado corretamente`,
+        's.d1.problem':`A pergunta fácil era &ldquo;como organizamos isso?&rdquo;. Um teste de preferência escolheria a tela mais bonita e não diria nada sobre se as pessoas entendiam.`,
+        's.d1.decision':`Reorganizei o trabalho em torno do que o usuário precisa fazer nesta tela e testei desempenho: a pessoa lê o veredito corretamente, e age de acordo com ele? No Useberry, cada pessoa viu uma versão: o experimento, uma versão refinada que desenhei a partir da critique, ou uma versão técnica para heavy users, lida à parte. Acertar o veredito, agir de acordo e o esforço decidiram a vencedora.`,
+        's.d1.why':`Um mapa de calor da página anterior mostrou a atenção quase toda no campo do link e no botão de analisar, e um benchmark de ferramentas públicas como ScamAdviser e ScamDoc mostrou como outros estruturam um resultado de segurança. Os dois mostravam para onde as pessoas olham. Nenhum mostrava se elas entendiam o que viam, que é do que um produto de confiança depende.`,
+        's.d1.caught':`Diante de um site seguro, 46% das pessoas no experimento escolheram &ldquo;cautela&rdquo; e 25% &ldquo;não sei&rdquo;. O excesso de dados fazia um site seguro parecer duvidoso.`,
+        's.d1.result':`A versão refinada foi lida corretamente por 74% das pessoas, contra 29% no experimento, e virou a base da V2.`,
+        's.q.note':`<strong>Como ler:</strong> 55 respostas de 450 acessos, então a diferença é grande e direcional, não um número populacional. 43% de quem viu a versão refinada se ofereceu para entrevista, contra 17%.`,
+        's.h3.qual':`O que as entrevistas acrescentaram`,
+        's.qual.p':`Quem terminava o teste podia se oferecer para uma entrevista. O roteiro nunca colocava telas lado a lado, para medir a tela e não a minha explicação dela. Quatro achados:`,
+        's.qi.1':`<strong>A reputação decide; os escudos apoiam.</strong> A análise importa mais onde a empresa ainda não tem reputação.`,
+        's.qi.2':`<strong>O selo de verificação não se explicava sozinho.</strong> As pessoas o descreviam com referências de fora, como o selo de verificado de uma rede social.`,
+        's.qi.3':`<strong>Confiança e reputação só se separavam numa leitura atenta.</strong> No primeiro olhar, um resultado misto parecia contraditório.`,
+        's.qi.4':`<strong>As cores dos escudos confundiam.</strong> As pessoas esperavam um semáforo.`,
+        's.qual.dir':`Os achados voltaram para as critiques, e um MaxDiff ordenou quais perguntas sobre uma empresa merecem espaço na página. Cada achado virou uma direção para a V2: o veredito antes do detalhe, o site analisado no topo, um selo que se explica sozinho e cores de semáforo.`,
+        's.sh.1.k':`Imitação de marca`,
+        's.sh.1.v':`se o endereço tenta se passar por uma marca conhecida, ou mostra indícios de roubo de dados.`,
+        's.sh.2.k':`Segurança do site`,
+        's.sh.2.v':`o certificado e a estrutura técnica do site.`,
+        's.sh.3.k':`Identidade da empresa`,
+        's.sh.3.v':`se a empresa existe e se o CNPJ está ativo.`,
+        's.sh.4.k':`Comportamento com o consumidor`,
+        's.sh.4.v':`ofertas irreais, falsa urgência e contatos suspeitos.`,
+        's.sh.5.k':`Reputação e selo`,
+        's.sh.5.v':`a reputação da empresa no Reclame AQUI e o selo de verificação.`,
+        's.lv.0':`Indícios de imitação`,
+        's.lv.1':`Alto risco`,
+        's.lv.2':`Pouca confiança`,
+        's.lv.3':`Confiança parcial`,
+        's.lv.4':`Provavelmente confiável`,
+        's.lv.5':`Confiável`,
+        's.wf.before':`Antes: todos os sinais, nenhuma conclusão`,
+        's.wf.after':`Depois: o veredito primeiro, a evidência abaixo`,
+        's.d2.title':`Um veredito claro, escrito para afirmar só o que foi verificado`,
+        's.d2.problem':`O consumidor precisa de uma resposta clara, mas uma afirmação errada sobre uma empresa pode prejudicar um negócio legítimo e dar a ela base para processar. Mostrar dado bruto evita a afirmação e deixa toda a interpretação com o usuário.`,
+        's.d2.decision':`Toda análise termina num veredito, de 0 a 5 escudos, e cada escudo mostra o sinal por trás dele. O texto só afirma como fato o que a análise consegue provar: um site só é chamado de golpe quando confirmamos que ele está roubando dados das pessoas. Todo o resto é descrito como o que encontramos, para a mensagem chegar sem afirmar mais do que a evidência sustenta.`,
+        's.d2.why':`Os escudos deixam o veredito fácil de ler e fácil de checar: as pessoas veem a conclusão e o motivo dela em segundos, e a empresa consegue ver exatamente qual sinal pesou no resultado. Cada palavra foi revisada pensando nesse peso jurídico.`,
+        's.d2.result':`A V2 manteve a profundidade da análise e deu às pessoas um veredito em que conseguem agir, com cada afirmação da tela sustentada pelo que foi verificado.`,
+        's.wf.cap':`Wireframes abstratos da ideia, não as telas do produto.`,
+        's.h3.shields':`Cinco escudos`,
+        's.h3.levels':`Seis níveis, um relatório para cada`,
+        's.lv.p':`Toda análise cai em um de seis níveis, de 0 a 5 escudos, cada um com o próprio relatório: o que foi checado, qual escudo o site não passou e o que fazer a seguir. Enquanto a análise roda, a tela mostra cada fonte sendo checada. Quando um site não responde, um erro avisa e oferece tentar de novo.`,
+        's.h2.ai':`Um segundo leitor: a IA que responde pelo consumidor`,
+        's.ai.1':`Cada vez mais gente pergunta a um assistente de IA se uma loja é confiável antes de abrir qualquer site. A engenharia estruturou os dados do detector com JSON-LD, e eu revisei a interface para sustentar isso. Modelos favorecem conteúdo em perguntas e respostas, então a página agora abre com a pergunta que as pessoas de fato fazem, se o site é confiável, e responde primeiro a quatro perguntas curtas: é confiável, a empresa existe, qual é a reputação, tem o selo.`,
+        's.takeaway':`Em 30 empresas, as citações no Google AI Overview subiram 138%, medidas no Search Console. A mesma tela agora serve dois leitores: a pessoa decidindo uma compra, e o assistente respondendo por ela.`,
+        's.h2.impact':`Mais barato, no ar, e mais fácil de decidir com ele`,
+        's.flow.cap':`Da primeira conversa ao lançamento completo em três meses. Uma ilustração do processo, não do produto.`,
+        's.imp.1':`A V2, a versão que saiu da pesquisa, entrou no ar em etapas: 20% dos usuários, depois 50%, depois 100% em setembro de 2026. A cada etapa acompanhávamos erros e relatos de usuários e ajustávamos antes de ampliar, para que uma resposta errada sobre uma empresa chegasse ao menor número possível de pessoas. Hoje ela roda para todo mundo no motor próprio do Reclame AQUI.`,
+        's.imp.why':`Três coisas mudaram:`,
+        's.imp.l1':`<strong>Responde à pergunta com que a pessoa chegou.</strong> O veredito vem primeiro, e os escudos explicam.`,
+        's.imp.l2':`<strong>É justa com a empresa analisada.</strong> O veredito afirma só o que a análise consegue provar, e cada escudo mostra o sinal por trás dele.`,
+        's.imp.l3':`<strong>Pode ser medida.</strong> A métrica de decisão dá ao time uma leitura contínua de se o detector ajuda a decidir, coisa que o produto antigo nunca teve.`,
+        's.imp.2':`O ciclo de feedback continua rodando. Desde os 100%, as regras do back-end e o comportamento da IA evoluíram bastante. Quando aparece um caso de borda, investigamos se a causa é nossa ou alguma configuração no perfil daquela empresa no próprio Reclame AQUI que está afetando a resposta do detector, e corrigimos na ponta certa.`,
+        's.imp.note':`<strong>Como foi medido:</strong> os R$1,7M são o preço por consulta do parceiro aplicado ao nosso volume, não uma fatura que pagamos; os R$1,2 mil são o custo mensal real da V2 para 171,7 mil análises. As duas taxas de decisão vêm da mesma pergunta de decisão dentro do produto, lidas durante o experimento e depois da V2: um antes e depois, não um teste controlado. O +138% compara as citações no Google AI Overview no Search Console das 30 empresas do experimento.`,
+        's.h2.dif':`Manter a tela no seu job, e alinhar antes`,
+        's.dif.p':`Quase tudo o que eu mudaria é sobre foco e alinhamento, não sobre a tela em si.`,
+        's.dif.1':`<strong>Cobrar cada versão contra o job desde o primeiro dia.</strong> O crawler conseguia trazer muito mais do que a tela precisava, e até as versões refinadas queriam mostrar mais. Foram várias rodadas de design para voltar ao que respondia &ldquo;é golpe?&rdquo;. Eu usaria o job como filtro de cada informação desde o primeiro rascunho, para manter a carga cognitiva baixa desde o início.`,
+        's.dif.2':`<strong>Trazer todos os níveis de decisão no começo.</strong> As decisões de produto e design passavam por vários níveis, e uma direção aprovada num deles podia encontrar um contexto novo no seguinte e voltar para retrabalho. Eu reuniria antes as pessoas que influenciam a decisão, para o contexto chegar antes do design, e não depois.`,
+        's.dif.3':`<strong>Olhar para as jornadas vizinhas, não só a minha.</strong> Cada time do Reclame AQUI cuida de uma parte da experiência: B2C, B2B, área logada e outras. O detector encosta em várias delas, e envolver esses times antes teria poupado rodadas.`,
+        's.dif.4':`<strong>Fazer a pergunta dos três lados primeiro.</strong> Toda decisão precisa ser boa para o Reclame AQUI, para a empresa analisada e para o consumidor. Se um dos três fica desprotegido, a ideia normalmente precisa ser repensada, e fazer essa pergunta no começo evita retrabalho depois.`,
+        's.dif.5':`<strong>Olhar a entrada antes de desenhar a saída.</strong> Alguns dos casos de borda mais difíceis vinham dos dados que as empresas fornecem sobre si mesmas, e eu só olhei de perto para eles depois do lançamento. A resposta de um detector só é tão boa quanto o que entra nele.`,
+        's.dif.close':`Foi a minha primeira vez desenhando dentro de uma líder de mercado desse tamanho, onde muitos times e níveis de decisão moldam uma mesma jornada. Aprender a trabalhar entre essas camadas, e a me adaptar quando o contexto mudava, é o que levo para o próximo projeto.`,
+        's.team.h':`O time, e o que foi meu`,
+        's.team.p':`Um PM e o Head of Product eram donos do escopo e das prioridades, e a engenharia construiu o experimento, o pipeline de análise e os dados estruturados. Meu: a descoberta de dados, a design critique, o plano de pesquisa e o teste de entendimento, a versão refinada, a estrutura de escudos e a explicação de cada nível, e as mudanças de interface para leitores de IA.`
+      }
+    };
+
+    function apply(lang){
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      const dict = I18N[lang] || I18N.en;
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+        const v = dict[el.dataset.i18nAria];
+        if(v !== undefined) el.setAttribute('aria-label', v);   /* rótulos de leitor de tela também traduzem */
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const v = dict[el.dataset.i18n];
+        if(v !== undefined) el.innerHTML = v;
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(b=>{
+        const on = b.dataset.lang === lang;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');   /* 4.1.2 state, not just style */
+      });
+      document.dispatchEvent(new CustomEvent('langchange', {detail:{lang}}));
+    }
+    window.applyLang=function(){ apply(window.currentLang()); };
+    window.currentLang = function(){ return localStorage.getItem('site-lang') === 'pt' ? 'pt' : 'en'; };
+    document.querySelectorAll('.lang-toggle button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        localStorage.setItem('site-lang', b.dataset.lang);
+        apply(b.dataset.lang);
+      });
+    });
+    apply(window.currentLang());
+  })();
+
+  (function(){
+    /* The label and the destination must agree. If the visitor came from
+       another case on this site, "back" means that case; otherwise it means
+       the portfolio. Same-origin only, and a refresh is not a journey. */
+    const link=document.querySelector('.back-link'); if(!link) return;
+    const label=link.querySelector('[data-i18n]'); if(!label) return;
+    const MAP={'genial':'nav.back.genial','liam':'nav.back.liam',
+               'pick-and-pack':'nav.back.kruzer','compass':'nav.back.compass','safe-site-detector':'nav.back.ssd'};
+    try{
+      if(!document.referrer) return;
+      const u=new URL(document.referrer);
+      if(u.origin!==location.origin) return;
+      const seg=p=>p.replace(/\/(index\.html)?$/,'').split('/').pop();
+      const from=seg(u.pathname);
+      if(!from || from===seg(location.pathname)) return;
+      const key=MAP[from]; if(!key) return;
+      link.setAttribute('href', '/'+from+'/');
+      label.dataset.i18n=key;
+      if(window.applyLang) window.applyLang();
+    }catch(e){ /* a malformed referrer just leaves the default in place */ }
+  })();
+</script>
+
+<script>
+  /* ---- résumé request: pre-filled email (to, subject, body) in the visitor's language ---- */
+  (function(){
+    const MAIL={
+      en:{s:`Résumé request: Senior Product Designer`, b:`Hi Guilherme,\n\nI came across your portfolio and would like to receive your résumé.\n\nRole / company (optional): \n\nThanks,`},
+      pt:{s:`Pedido de currículo: Senior Product Designer`, b:`Olá, Guilherme,\n\nVi seu portfólio e gostaria de receber seu currículo.\n\nVaga / empresa (opcional): \n\nAbraço,`}
+    };
+    function set(lang){
+      const m=MAIL[lang]||MAIL.en;
+      const href='mailto:cannalongadesign@gmail.com?subject='+encodeURIComponent(m.s)+'&body='+encodeURIComponent(m.b.replace(/\n/g,'\r\n'));
+      document.querySelectorAll('[data-resume-mail]').forEach(a=>a.setAttribute('href',href));
+    }
+    set(window.currentLang ? window.currentLang() : 'en');
+    document.addEventListener('langchange', e=>set(e.detail && e.detail.lang));
+  })();
+</script>
+<script>
+  /* index: mark the section being read */
+  (function(){
+    const links=[...document.querySelectorAll('.index a[href^="#"]')]; if(!links.length||!('IntersectionObserver' in window)) return;
+    const map=new Map(links.map(a=>[document.querySelector(a.getAttribute('href')),a]));
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const a=map.get(e.target); if(a) a.classList.add('active'); } });},{rootMargin:'-20% 0px -70% 0px'});
+    map.forEach((a,el)=>{ if(el) io.observe(el); });
+  })();
+</script>
+</body>
+</html>

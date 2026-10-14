@@ -233,7 +233,7 @@
   .stat:last-child{border-bottom:none; padding-bottom:0;}
   .stat .n{font-weight:900; font-size:clamp(26px,2.8vw,40px); letter-spacing:-0.05em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
   .stat .n span{font-weight:700; font-size:.72em; letter-spacing:0;}
-  .stat .n span.morph,.stat .n span[data-i18n]{font-weight:900; font-size:1em; letter-spacing:inherit;}
+  .stat .n span.morph,.stat .n span.after,.stat .n span[data-i18n]{font-weight:900; font-size:1em; letter-spacing:inherit;}
   .stat .l{font-size:12.5px; color:var(--ink-2); line-height:1.45; max-width:26ch;}
   
   
@@ -497,6 +497,11 @@
   .js .stats{animation:rise .7s cubic-bezier(.2,.7,.2,1) .65s both;}
   .morph{display:inline-block; min-width:2.6ch; text-align:left; font-variant-numeric:tabular-nums;}
   /* the same acid marker as the headline, under the number that moved */
+  .stat .after{
+    padding:0 .08em; margin:0 -.08em;
+    background-image:linear-gradient(var(--acid),var(--acid));
+    background-repeat:no-repeat; background-position:0 86%; background-size:100% .36em;
+  }
   .stat .morph{
     padding:0 .08em; margin:0 -.08em;
     background-image:linear-gradient(var(--acid),var(--acid));
@@ -613,6 +618,10 @@
   }
 
   @media (max-width:980px){ .hero-row{grid-template-columns:1fr; gap:var(--s4); align-items:start;} }
+  /* two cards side by side always share the same two-line description, so the
+     rows stay level; on narrower two-column widths the text uses the full card */
+  @media (max-width:1099px){ .card-cap .card-sum{padding-right:0;} }
+  @media (min-width:821px) and (max-width:1099px){ .card-cap .card-sum{min-height:calc(4.5em + 18px);} }
   @media (max-width:820px){ .card-sum{min-height:0; padding-right:0;} }
   @media (max-width:560px){ .stat{grid-template-columns:1fr; gap:8px;} .stat .l{max-width:none;} }
 
@@ -725,6 +734,8 @@
     .js .hero-d h1 .mk{background-size:0% .38em; transition:none; animation:mk-draw .8s cubic-bezier(.2,.7,.2,1) 1.4s both;}
     .js .stat .morph{background-size:0% .36em; transition:background-size .7s cubic-bezier(.2,.7,.2,1) .12s;}
     .js .stat .morph.done{background-size:100% .36em;}
+    .js .stat .after{animation:mk-draw-s .7s cubic-bezier(.2,.7,.2,1) 1.9s both;}
+    @keyframes mk-draw-s{from{background-size:0% .36em;} to{background-size:100% .36em;}}
     .js .reveal.in .mk.on{transition-delay:.75s;}
 
     .js .card.reveal .card-media{clip-path:inset(5% round 18px); transition:clip-path 1s cubic-bezier(.2,.7,.2,1), filter .4s ease;}
@@ -978,9 +989,9 @@
       <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
       <div class="hero-foot">
         <div class="stats">
+          <div class="stat"><div class="n" data-i18n="stat.ssd.n">R$1.7M &rarr; <span class="after">R$1.2k</span></div><div class="l" data-i18n="stat.ssd.label">Monthly cost, projected vs. actual</div></div>
           <div class="stat"><div class="n">8.6% &rarr; <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><div class="l" data-i18n="card.genial.metname">Families opening the app daily</div></div>
           <div class="stat"><div class="n"><span data-i18n="stat.liam.from">Up to 2h &rarr;</span> <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="card.liam.metname">Documentation per session</div></div>
-          <div class="stat"><div class="n">4.2d &rarr; <span class="morph" data-from="4.2" data-to="2.5" data-dec="1" data-suffix="d">2.5d</span></div><div class="l" data-i18n="card.compass.metname">Design-ticket cycle time</div></div>
         </div>
         <div class="hero-actions">
           <a class="btn btn-acid" href="#work"><span data-i18n="hero.cta1">See the work</span> <span aria-hidden="true">&darr;</span></a>
@@ -995,11 +1006,23 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="label" data-i18n="work.label">Selected work</span>
-      <h2 data-i18n="work.h2">Four products where the failure states mattered more than the demo.</h2>
-      <p data-i18n="work.p">Healthcare, logistics and fintech. Same job every time: find the real constraint, name the number that could veto the win, design the exceptions first.</p>
+      <h2 data-i18n="work.h2">Six products where a confusing screen had a real cost.</h2>
+      <p data-i18n="work.p">Consumer trust, healthcare, logistics and fintech. Same approach every time: find the real constraint, pick the number that proves it worked, and design for what goes wrong first.</p>
     </div>
 
     <div class="grid">
+
+      <a class="card reveal" href="/safe-site-detector/">
+        <div class="card-media mint">
+          <img class="card-shot" src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" loading="lazy" width="2000" height="1599">
+        </div>
+        <div class="card-cap">
+          <div class="card-head"><h3>Safe Site Detector</h3><span class="cat" data-i18n="card.ssd.cat">Consumer trust</span></div>
+          <span class="met-v" data-i18n="card.ssd.met">R$1.7M &rarr; R$1.2k</span>
+          <p class="card-sum"><strong>Reclame AQUI.</strong> <span data-i18n="card.ssd.sum">An in-house AI detector that replaced a costly partner, and that more people decide with: 45.1% to 72.4%.</span></p>
+          <span class="met-n" data-i18n="card.ssd.metname">Monthly cost, projected vs. actual</span>
+        </div>
+      </a>
 
       <a class="card reveal" href="/genial/">
         <div class="card-media peri">
@@ -1036,7 +1059,12 @@
           <span class="met-n" data-i18n="card.kruzer.metname">Stores live</span>
         </div>
       </a>
+    </div>
 
+    <div class="sec-head sub reveal">
+      <span class="label" data-i18n="more.label">Also shipped</span>
+    </div>
+    <div class="grid">
       <a class="card reveal" href="/compass/">
         <div class="card-media indigo">
           <img class="card-shot" src="/assets/card-compass.webp" alt="Compass design system documentation on a desktop monitor: the colour palette page with primitive and semantic tokens" loading="lazy" width="1096" height="864">
@@ -1048,12 +1076,7 @@
           <span class="met-n" data-i18n="card.compass.metname">Design-ticket cycle time</span>
         </div>
       </a>
-    </div>
 
-    <div class="sec-head sub reveal">
-      <span class="label" data-i18n="more.label">Also shipped · and now</span>
-    </div>
-    <div class="grid">
       <div class="card reveal">
         <div class="card-media ink">
           <img class="card-shot" src="/assets/matri-app.webp" alt="Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen" loading="lazy" width="1400" height="1054">
@@ -1065,18 +1088,6 @@
           <span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span>
         </div>
       </div>
-
-      <div class="card reveal">
-        <div class="card-media mint">
-          <img class="card-shot" src="/assets/card-ra.webp" alt="Compra Confiável on a desktop monitor: the Reclame Aqui search and reputation homepage" loading="lazy" width="1096" height="864">
-        </div>
-        <div class="card-cap">
-          <div class="card-head"><h3>Compra Confiável</h3><span class="cat" data-i18n="card.ra.cat">Consumer trust</span></div>
-          <span class="met-v" data-i18n="card.ra.met">Since 2026</span>
-          <p class="card-sum"><strong>Reclame Aqui.</strong> <span data-i18n="card.ra.sum">Senior Product Designer. I structure Reclame Aqui's data for people and for LLMs, so anyone can decide whether to buy, quickly and clearly.</span></p>
-          <span class="met-n" data-i18n="card.ra.metname">Current role, under NDA</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1086,14 +1097,14 @@
     <div class="method-grid reveal">
       <div class="sec-head">
         <span class="label" data-i18n="method.label">How I decide</span>
-        <h2 data-i18n="method.h2">The instrument is <mark class="mk on">chosen</mark>, not inherited.</h2>
+        <h2 data-i18n="method.h2">Taste proposes. <mark class="mk on">Evidence</mark> decides.</h2>
         <p data-i18n="method.p">I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.</p>
       </div>
       <ul class="instruments">
+        <li><span class="k" data-i18n="method.ssd.k">Safe Site Detector</span><span class="v" data-i18n="method.ssd">Reclame AQUI&rsquo;s tool that tells people whether an online store is safe to buy from. Liking the screen wasn&rsquo;t the point, understanding it was, so I tested comprehension: each person saw one version and judged a safe site. The refined version was read correctly by 74% of people, against 29%, and became V2.</span></li>
         <li><span class="k">Genial App</span><span class="v" data-i18n="method.1">The app families use to follow their child's autism therapy. With a few hundred families, an A/B test would have been slow to teach us anything, so I tracked weekly usage and marked each release on the curve.</span></li>
         <li><span class="k">LIAM</span><span class="v" data-i18n="method.2">An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.</span></li>
         <li><span class="k">Pick &amp; Pack</span><span class="v" data-i18n="method.3">The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.</span></li>
-        <li><span class="k">Compass</span><span class="v" data-i18n="method.4">The design system shared by Kruzer's products. I measured it on the engineering team's own Jira board, not on a metric I made up: a design ticket went from 4.2 to 2.5 days.</span></li>
       </ul>
     </div>
   </div>
@@ -1132,7 +1143,7 @@
       <div class="about-text">
         <span class="label" style="margin-bottom:18px" data-i18n="about.label">About</span>
         <p data-i18n="about.p1">I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.</p>
-        <p data-i18n="about.p2">I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now on Reclame Aqui's consumer-trust platform.</p>
+        <p data-i18n="about.p2">I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.</p>
         <p data-i18n="about.p3">I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.</p>
         <dl class="timeline">
           <div><dt>2026 –</dt><dd data-i18n="tl.1">Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot</dd></div>
@@ -1306,11 +1317,15 @@
         'stat.compass.label':`Design-ticket cycle time · Compass design system`,
         'stat.pp.n':'stores',
         'stat.pp.label':`Rolled out on growing volume, 2-hour promise · Pick &amp; Pack`,
-        'work.label':'Selected work', 'work.h2':`Four products where the failure states mattered more than the demo.`,
-        'work.p':`Healthcare, logistics and fintech. Same job every time: find the real constraint, name the number that could veto the win, design the exceptions first.`,
+        'work.label':'Selected work', 'work.h2':`Six products where a confusing screen had a real cost.`,
+        'work.p':`Consumer trust, healthcare, logistics and fintech. Same approach every time: find the real constraint, pick the number that proves it worked, and design for what goes wrong first.`,
+        'card.ssd.cat':`Consumer trust`, 'card.ssd.met':`R$1.7M &rarr; R$1.2k`,
+        'card.ssd.sum':`An in-house AI detector that replaced a costly partner, and that more people decide with: 45.1% to 72.4%.`,
+        'card.ssd.metname':`Monthly cost, projected vs. actual`,
         'card.liam.cat':`Clinical AI`,
         'card.liam.sum':`Drafts the clinical record from the therapist's narration. Never signs it.`,
         'stat.liam.from':`Up to 2h &rarr;`, 'card.liam.met':`Up to 2h &rarr; 25min`,
+        'stat.ssd.n':`R$1.7M &rarr; <span class="after">R$1.2k</span>`, 'stat.ssd.label':`Monthly cost, projected vs. actual`,
         'card.liam.metname':'Documentation per session',
         'card.kruzer.cat':`Enterprise logistics`,
         'card.kruzer.sum':`One order, three people, one screen each. Designed around the exceptions.`,
@@ -1321,19 +1336,19 @@
         'card.compass.cat':`Design system`,
         'card.compass.sum':`Twenty blues in production to one semantic token layer, with governance.`,
         'card.compass.metname':'Design-ticket cycle time', 'card.compass.met':'4.2d &rarr; 2.5d',
-        'more.label':'Also shipped · and now',
+        'more.label':'Also shipped',
         'card.matri.cat':`Fintech`,
         'card.matri.sum':`Redesigned the credit journey for a regulated product. Full case on request.`,
         'card.matri.metname':'Credit-journey completion',
         'card.ra.now':'Now', 'card.ra.cat':`Consumer trust`,
         'card.ra.sum':`Senior Product Designer. I structure Reclame Aqui's data for people and for LLMs, so anyone can decide whether to buy, quickly and clearly.`,
         'card.ra.metname':`Current role, under NDA`, 'card.ra.met':`Since 2026`,
-        'method.label':'How I decide', 'method.h2':`The instrument is <mark class="mk on">chosen</mark>, not inherited.`,
+        'method.label':'How I decide', 'method.h2':`Taste proposes. <mark class="mk on">Evidence</mark> decides.`,
         'method.p':`I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.`,
+        'method.ssd.k':`Safe Site Detector`, 'method.ssd':`Reclame AQUI&rsquo;s tool that tells people whether an online store is safe to buy from. Liking the screen wasn&rsquo;t the point, understanding it was, so I tested comprehension: each person saw one version and judged a safe site. The refined version was read correctly by 74% of people, against 29%, and became V2.`,
         'method.1':`The app families use to follow their child's autism therapy. With a few hundred families, an A/B test would have been slow to teach us anything, so I tracked weekly usage and marked each release on the curve.`,
         'method.2':`An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.`,
         'method.3':`The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.`,
-        'method.4':`The design system shared by Kruzer's products. I measured it on the engineering team's own Jira board, not on a metric I made up: a design ticket went from 4.2 to 2.5 days.`,
         'tst.label':'What people say', 'tst.h2':`Words from people I've built with.`,
         'tst.1.quote':`As his design manager at Genial Care, I watched Guilherme's work grow <strong>increasingly strategic</strong>, always aligned to product and business goals, with a high bar for quality.`,
         'tst.1.role':'Product Design Manager · Genial Care',
@@ -1343,7 +1358,7 @@
         'tst.3.role':'Developer · Modal, client project at 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'About',
         'about.p1':`I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.`,
-        'about.p2':`I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now on Reclame Aqui's consumer-trust platform.`,
+        'about.p2':`I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.`,
         'about.p3':`I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.`,
         'tl.1':`Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot`,
         'tl.2':`Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products`,
@@ -1371,11 +1386,15 @@
         'stat.compass.label':`Tempo de ciclo de ticket de design · design system Compass`,
         'stat.pp.n':'lojas',
         'stat.pp.label':`Lançado com o volume crescendo, promessa de 2 horas · Pick &amp; Pack`,
-        'work.label':'Projetos selecionados', 'work.h2':`Quatro produtos em que os estados de falha importavam mais do que a demo.`,
-        'work.p':`Saúde, logística e fintech. O mesmo trabalho toda vez: achar a restrição real, nomear o número que poderia vetar a vitória, desenhar as exceções primeiro.`,
+        'work.label':'Projetos selecionados', 'work.h2':`Seis produtos em que uma tela confusa tinha um custo real.`,
+        'work.p':`Confiança do consumidor, saúde, logística e fintech. O mesmo método toda vez: achar a restrição real, escolher o número que prova que funcionou e desenhar primeiro para o que dá errado.`,
+        'card.ssd.cat':`Confiança do consumidor`, 'card.ssd.met':`R$1,7M &rarr; R$1,2 mil`,
+        'card.ssd.sum':`Detector próprio com IA que substituiu um parceiro caro e levou a decisão de 45,1% para 72,4%.`,
+        'card.ssd.metname':`Custo mensal, projetado vs. real`,
         'card.liam.cat':`IA clínica`,
         'card.liam.sum':`Rascunha o registro clínico a partir da narração do terapeuta. Nunca assina por ele.`,
         'stat.liam.from':`Até 2h &rarr;`, 'card.liam.met':`Até 2h &rarr; 25min`,
+        'stat.ssd.n':`R$1,7M &rarr; <span class="after">R$1,2 mil</span>`, 'stat.ssd.label':`Custo mensal, projetado vs. real`,
         'card.liam.metname':'Documentação por sessão',
         'card.kruzer.cat':`Logística empresarial`,
         'card.kruzer.sum':`Um pedido, três pessoas, uma tela para cada. Desenhado a partir das exceções.`,
@@ -1386,19 +1405,19 @@
         'card.compass.cat':`Design system`,
         'card.compass.sum':`De vinte azuis em produção para uma camada de tokens semânticos, com governança.`,
         'card.compass.metname':'Tempo de ciclo de ticket de design', 'card.compass.met':'4,2d &rarr; 2,5d',
-        'more.label':'Também entreguei · e agora',
+        'more.label':'Também entreguei',
         'card.matri.cat':`Fintech`,
         'card.matri.sum':`Redesenhei a jornada de crédito de um produto regulado. Case completo sob consulta.`,
         'card.matri.metname':'Conclusão da jornada de crédito',
         'card.ra.now':'Agora', 'card.ra.cat':`Confiança do consumidor`,
         'card.ra.sum':`Senior Product Designer. Estruturo os dados do Reclame Aqui para pessoas e para LLMs, para que qualquer um decida se compra ou não, de forma rápida e clara.`,
         'card.ra.metname':`Cargo atual, sob NDA`, 'card.ra.met':`Desde 2026`,
-        'method.label':'Como decido', 'method.h2':`O instrumento é <mark class="mk on">escolhido</mark>, não herdado.`,
+        'method.label':'Como decido', 'method.h2':`O gosto propõe. A <mark class="mk on">evidência</mark> decide.`,
         'method.p':`Não coloco uma decisão no ar só pelo meu gosto. Para cada produto escolho a evidência mais simples que ainda consegue me provar errado, e ela muda a cada vez.`,
+        'method.ssd.k':`Detector de Site Confiável`, 'method.ssd':`A ferramenta do Reclame AQUI que diz se uma loja online é segura para comprar. O que importava não era gostar da tela, era entender, então testei compreensão: cada pessoa viu uma versão e avaliou um site seguro. A versão refinada foi lida corretamente por 74% das pessoas, contra 29%, e virou a V2.`,
         'method.1':`O app que as famílias usam para acompanhar a terapia de autismo do filho. Com poucas centenas de famílias, um teste A/B demoraria para ensinar alguma coisa, então acompanhei o uso semanal e marquei cada release na curva.`,
         'method.2':`Um assistente de IA que rascunha o registro clínico a partir da narração do terapeuta. Com cerca de 80 terapeutas, testei a primeira versão direto com eles, e o que apareceu foi que o rascunho precisava ser legível. Depois do lançamento, uma pergunta dentro do fluxo mostra se eles continuam confiando nas sugestões.`,
         'method.3':`A plataforma que loja, centro de distribuição e entrega usam para cumprir os pedidos de duas horas da Fast Shop. Não dá para dividir tráfego em um armazém, então uma loja foi primeiro e comparamos com as lojas que ainda estavam no processo antigo.`,
-        'method.4':`O design system compartilhado pelos produtos da Kruzer. Medi no board de Jira do próprio time de engenharia, não em uma métrica inventada por mim: um ticket de design foi de 4,2 para 2,5 dias.`,
         'tst.label':'O que dizem sobre mim', 'tst.h2':'Palavras de quem já construiu comigo.',
         'tst.1.quote':`Como gestor de design dele na Genial Care, vi o trabalho do Guilherme ficar <strong>cada vez mais estratégico</strong>, sempre alinhado aos objetivos de produto e negócio, com uma régua de qualidade alta.`,
         'tst.1.role':'Product Design Manager · Genial Care',
@@ -1408,7 +1427,7 @@
         'tst.3.role':'Desenvolvedor · Modal, projeto de cliente na 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'Sobre',
         'about.p1':`Comecei no suporte a sistemas corporativos, passei pelo front-end e encontrei no design o trabalho que eu queria para a vida. Comecei pela interface e fui para a usabilidade, para entender quem usa. Daí fui para produto, para entender como aquelas telas fazem sentido para a empresa no fim do mês e qual ponteiro elas mexem. Duas pós-graduações depois, o caminho tem sido cada vez mais métricas, estratégia e negócio.`,
-        'about.p2':`Fui o primeiro ou o único designer mais vezes do que não: primeiro Senior Product Designer da Genial Care, depois liderando design em dois times; designer único de quatro produtos na Kruzer; agora na plataforma de confiança do consumidor do Reclame Aqui.`,
+        'about.p2':`Fui o primeiro ou o único designer mais vezes do que não: primeiro Senior Product Designer da Genial Care, depois liderando design em dois times; designer único de quatro produtos na Kruzer; agora no Reclame Aqui, uma plataforma de confiança do consumidor que mais de 30 milhões de pessoas acessam todos os meses.`,
         'about.p3':`Sou entusiasta de IA e trabalho com LLMs e agentes todos os dias: para pensar decisões, acelerar pesquisa e análise de dados, criar protótipos funcionais e colocar alguns deles em produção. Claude e Claude Code são onde vou mais fundo (este site foi feito com eles), também já trabalhei com GPT e Gemini, e testo modelos e ferramentas novos conforme são lançados.`,
         'tl.1':`Senior Product Designer · Reclame Aqui · confiança e decisão de compra do consumidor`,
         'tl.2':'Senior Product Designer · Kruzer · plataforma de logística para a Fast Shop, designer único de quatro produtos',

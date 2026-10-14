@@ -648,6 +648,10 @@
   .metrics-strip .num{font-size:clamp(20px,2.6vw,28px); letter-spacing:-0.05em; line-height:1.05; font-variant-numeric:tabular-nums;}
   .metrics-strip .label{font-size:13px; line-height:1.45; margin-top:10px;}
   .article-body h2,.article-close h2{text-wrap:balance;}
+  /* a third closing action is a text link, never a third button: one primary, one secondary, the rest read as links */
+  .close-ctas{align-items:center;}
+  .close-ctas .btn-link{display:inline-flex; align-items:center; gap:6px; padding:12px 6px; font-size:14px; font-weight:700; color:var(--ink); text-decoration:underline; text-decoration-color:var(--line-control); text-underline-offset:4px; text-decoration-thickness:1.5px; transition:text-decoration-color .15s;}
+  .close-ctas .btn-link:hover{text-decoration-color:var(--ink);}
   /* the pull quote runs the full column, like everything around it */
   .article-body .pull{max-width:none; text-wrap:pretty;}
   /* sub-headings inside a section had no rule at all, so they sat flush against the paragraph under them */
