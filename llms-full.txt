@@ -1,6 +1,6 @@
 # Guilherme Cannalonga · Portfolio (full text)
 
-Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-14
+Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-15
 
 **Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA
 
@@ -36,7 +36,7 @@ Consumer trust
 
 45.1% → 72.4%
 
-**Reclame AQUI.** An in-house AI detector that replaced a R$1.7M-a-month partner, tested for comprehension, not taste.
+**Reclame AQUI.** An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.
 
 Said it helped them decide
 
