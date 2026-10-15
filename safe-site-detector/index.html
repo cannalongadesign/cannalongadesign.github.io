@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Safe Site Detector: Reclame AQUI case study · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
-<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: the in-house, AI-powered Safe Site Detector at Reclame AQUI. Monthly cost from a projected R$1.7M to R$1.2k, decision rate from 45.1% to 72.4%, and +138% citations in Google AI Overview.">
+<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: the in-house, AI-powered Safe Site Detector at Reclame AQUI. Decision rate from 45.1% to 72.4%, a comprehension test where the refined version was read correctly by 74% against 29%, and monthly cost from a projected R$1.7M to R$1.2k.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -747,6 +747,19 @@
     .js .shot.annot.reveal .frame > img{transform:none;}
   }
 
+  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
+  @media (max-width:640px){
+    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
+    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
+    .close-ctas .btn-link{justify-content:center; min-height:48px;}
+    .foot-links{gap:4px 20px; flex-wrap:wrap;}
+    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
+  }
+  @media (pointer:coarse), (max-width:640px){
+    .back-link,.nav-cta{position:relative;}
+    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
+  }
+
   /* ===== Safe Site Detector: neutral illustrations, no product imagery ===== */
   .article-body ul:not(.receipts):not(.shield-list){margin-top:var(--sp-3);}
   /* process flow, used as the cover */
@@ -808,19 +821,6 @@
   /* team box: a plain callout, not a link */
   .team-box{margin-top:var(--sp-6);}
   .team-box h3{margin-bottom:var(--sp-2);}
-
-  /* ===== Touch: full-width closing actions and 44px+ targets on phones ===== */
-  @media (max-width:640px){
-    .close-ctas{flex-direction:column; align-items:stretch; gap:12px;}
-    .close-ctas .btn{width:100%; justify-content:center; min-height:52px; font-size:15px;}
-    .close-ctas .btn-link{justify-content:center; min-height:48px;}
-    .foot-links{gap:4px 20px; flex-wrap:wrap;}
-    .foot-links a{display:inline-flex; align-items:center; min-height:44px;}
-  }
-  @media (pointer:coarse), (max-width:640px){
-    .back-link,.nav-cta{position:relative;}
-    .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
-  }
 </style>
 <script type="application/ld+json">
 {
@@ -830,7 +830,7 @@
    "@type": "Article",
    "@id": "https://cannalongadesign.github.io/safe-site-detector/#article",
    "headline": "Safe Site Detector: from more data to a decision people can act on",
-   "description": "The in-house, AI-powered Safe Site Detector at Reclame AQUI, with a verdict built on protection shields, worded to state only what was verified, and tested for comprehension. Monthly cost from a projected R$1.7M to R$1.2k for 171.7k analyses, decision rate from 45.1% to 72.4%, +138% citations in Google AI Overview across 30 companies, and a staged rollout to 100% of users in September 2026.",
+   "description": "The in-house, AI-powered Safe Site Detector at Reclame AQUI, with a verdict built on protection shields, worded to state only what was verified, and tested for comprehension. Decision rate from 45.1% to 72.4%, monthly cost from a projected R$1.7M to R$1.2k for 171.7k analyses, +138% citations in Google AI Overview across 30 companies, and a staged rollout to 100% of users in September 2026.",
    "url": "https://cannalongadesign.github.io/safe-site-detector/",
    "mainEntityOfPage": "https://cannalongadesign.github.io/safe-site-detector/",
    "author": {
@@ -920,7 +920,7 @@
       <div class="meta-item"><div class="k" data-i18n="meta.team">Team</div><div class="v" data-i18n="meta.v.team">PM · Head of Product · Engineering</div></div>
       <div class="meta-item"><div class="k" data-i18n="meta.company">Company</div><div class="v">Reclame AQUI</div></div>
       <div class="meta-item"><div class="k" data-i18n="meta.timeline">Timeline</div><div class="v" data-i18n="meta.v.time">Jun 2026 &ndash; ongoing</div></div>
-      <div class="meta-item"><div class="k" data-i18n="meta.outcome">Outcome</div><div class="v" data-i18n="meta.v.out">R$1.7M &rarr; R$1.2k a month · decision rate 45.1% &rarr; 72.4%</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.outcome">Outcome</div><div class="v" data-i18n="meta.v.out">Decision rate 45.1% &rarr; 72.4% · cost R$1.7M &rarr; R$1.2k a month</div></div>
     </div>
   </div>
 </header>
@@ -944,7 +944,7 @@
       <dl>
         <div><dt data-i18n="tl.problem.k">Problem</dt><dd data-i18n="s.tl.problem">The partner behind the site detector would start charging per query: R$1.7M a month at our volume. The detector had no way to show whether it helped anyone decide, and a yes-or-no verdict about a company is a heavy claim to make on a public page.</dd></div>
         <div><dt data-i18n="tl.did.k">What I did</dt><dd data-i18n="s.tl.did">Owned data discovery and design end to end: an AI-first experiment live in about six weeks, a comprehension test inside the product, a V2 whose verdict is built on protection shields and worded to state only what was verified, and a staged rollout to 100% of users, three months from first conversation to full launch.</dd></div>
-        <div><dt data-i18n="tl.out.k">Outcome</dt><dd data-i18n="s.tl.out">Cost went from a projected <b>R$1.7M to R$1.2k a month</b> (-99.9%), the share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and citations in Google AI Overview rose <b>138%</b> across 30 companies. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.</dd></div>
+        <div><dt data-i18n="tl.out.k">Outcome</dt><dd data-i18n="s.tl.out">The share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and in the comprehension test the refined version was read correctly by <b>74% of people, against 29%</b>. The rebuild also took the projected cost from R$1.7M to R$1.2k a month. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.</dd></div>
       </dl>
       <div class="demo-tags"><span data-i18n="s.demo.1">AI product design</span><span data-i18n="s.demo.2">Trust &amp; safety</span><span data-i18n="s.demo.3">In-product research</span><span data-i18n="s.demo.4">LLM-ready content</span></div>
     </div>
@@ -970,7 +970,7 @@
     <ul class="receipts framing">
       <li><b data-i18n="s.fr.1.k">Outcome</b><span data-i18n="s.fr.1.v">Retire the partner&rsquo;s detector before its per-query price turned into R$1.7M a month. That was the main pain, and the deadline.</span></li>
       <li><b data-i18n="s.fr.2.k">Job to be done</b><span data-i18n="s.fr.2.v">&ldquo;Is this site a scam or not, before I pay?&rdquo; The screen had one job, and everything on it had to serve that answer.</span></li>
-      <li><b data-i18n="s.fr.3.k">Who it had to work for</b><span data-i18n="s.fr.3.v">Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.</span></li>
+      <li><b data-i18n="s.fr.3.k">Who it had to work for</b><span data-i18n="s.fr.3.v">Dona Neide, an older woman in a small town in Acre, deep in Brazil&rsquo;s interior, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.</span></li>
       <li><b data-i18n="s.fr.4.k">Opportunity</b><span data-i18n="s.fr.4.v">The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.</span></li>
     </ul>
 
@@ -992,7 +992,7 @@
       <div class="decision-head"><span class="dn">1</span><h3 data-i18n="s.d1.title">Test whether people read the result correctly</h3></div>
       <div class="decision-body">
         <div class="decision-row"><span class="dk" data-i18n="s.dk.problem">Problem</span><p class="dv" data-i18n="s.d1.problem">The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="s.dk.decision">Decision</span><p class="dv" data-i18n="s.d1.decision">I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.decision">Decision</span><p class="dv" data-i18n="s.d1.decision">I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, or a refined version I designed from the critique. Getting the verdict right, acting on it and effort decided the winner.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.why">Why</span><p class="dv" data-i18n="s.d1.why">A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.caught">What it caught</span><p class="dv" data-i18n="s.d1.caught">Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.result">Result</span><p class="dv" data-i18n="s.d1.result">The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.</p></div>
@@ -1003,7 +1003,7 @@
       <div class="m"><div class="num" data-i18n="s.q.n2">52% vs 21%</div><div class="label" data-i18n="s.q.l2">Would buy from that safe site</div></div>
       <div class="m"><div class="num" data-i18n="s.q.n3">6% vs 21%</div><div class="label" data-i18n="s.q.l3">Would avoid buying from it</div></div>
     </div>
-    <p class="note" data-i18n="s.q.note"><strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.</p>
+    <p class="note" data-i18n="s.q.note"><strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number.</p>
     <h3 class="card-h" data-i18n="s.h3.qual">What the interviews added</h3>
     <p data-i18n="s.qual.p">People who finished the test could volunteer for an interview. The script never put screens side by side, so it measured the screen rather than my explanation of it. Four findings:</p>
     <ul>
@@ -1081,9 +1081,8 @@
   <div class="col reveal">
     <p data-i18n="s.imp.1">V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI&rsquo;s own engine.</p>
     <div class="metrics-strip">
-      <div class="m"><div class="num">-99.9%</div><div class="label" data-i18n="s.m0">Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses</div></div>
       <div class="m"><div class="num" data-i18n="s.m.n1">45.1% &rarr; 72.4%</div><div class="label" data-i18n="s.m1">People who said the detector helped them decide, experiment vs V2</div></div>
-      <div class="m"><div class="num">+138%</div><div class="label" data-i18n="s.m2">Citations in Google AI Overview across 30 companies, after structuring the data for LLMs</div></div>
+      <div class="m"><div class="num">-99.9%</div><div class="label" data-i18n="s.m0">Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses</div></div>
     </div>
     <table class="data-table">
       <thead><tr><th scope="col" data-i18n="s.tbl.metric">Metric</th><th scope="col" data-i18n="s.tbl.before">Before</th><th scope="col" data-i18n="s.tbl.after">V2</th><th scope="col" data-i18n="s.tbl.change">Change</th></tr></thead>
@@ -1105,12 +1104,10 @@
     <p data-i18n="s.dif.p">Most of what I would change is about focus and alignment, not the screen itself.</p>
     <ul>
       <li><span data-i18n="s.dif.1"><strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.</span></li>
-      <li><span data-i18n="s.dif.2"><strong>Bring every decision level in at the start.</strong> Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.</span></li>
-      <li><span data-i18n="s.dif.3"><strong>Look across journeys, not just my own.</strong> Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.</span></li>
+      <li><span data-i18n="s.dif.2"><strong>Bring every decision level, and the neighbouring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.</span></li>
       <li><span data-i18n="s.dif.4"><strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.</span></li>
-      <li><span data-i18n="s.dif.5"><strong>Look at the input before designing the output.</strong> Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector&rsquo;s answer can only be as good as what goes into it.</span></li>
     </ul>
-    <p data-i18n="s.dif.close">It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.</p>
+    <p data-i18n="s.dif.close">I would also look at the data companies send about themselves before designing the answer: a detector is only as good as what goes into it. It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.</p>
     <div class="callout team-box">
       <h3 data-i18n="s.team.h">The team, and what was mine</h3>
       <p data-i18n="s.team.p">A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.</p>
@@ -1229,7 +1226,7 @@
         'a11y.skip':`Skip to content`,
         'a11y.lang':`Language`,
         'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
-        'meta.v.out':`R$1.7M &rarr; R$1.2k a month · decision rate 45.1% &rarr; 72.4%`,
+        'meta.v.out':`Decision rate 45.1% &rarr; 72.4% · cost R$1.7M &rarr; R$1.2k a month`,
         'meta.v.role':`Senior Product Designer`,
         'meta.v.team':`PM · Head of Product · Engineering`,
         'ix.time':`7 min read`,
@@ -1296,7 +1293,7 @@
         's.fr.2.k':`Job to be done`,
         's.fr.2.v':`&ldquo;Is this site a scam or not, before I pay?&rdquo; The screen had one job, and everything on it had to serve that answer.`,
         's.fr.3.k':`Who it had to work for`,
-        's.fr.3.v':`Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.`,
+        's.fr.3.v':`Dona Neide, an older woman in a small town in Acre, deep in Brazil&rsquo;s interior, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.`,
         's.fr.4.k':`Opportunity`,
         's.fr.4.v':`The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.`,
         's.dk.problem':`Problem`,
@@ -1313,7 +1310,7 @@
         's.ix.7':`What I&rsquo;d do differently`,
         's.tl.problem':`The partner behind the site detector would start charging per query: R$1.7M a month at our volume. The detector had no way to show whether it helped anyone decide, and a yes-or-no verdict about a company is a heavy claim to make on a public page.`,
         's.tl.did':`Owned data discovery and design end to end: an AI-first experiment live in about six weeks, a comprehension test inside the product, a V2 whose verdict is built on protection shields and worded to state only what was verified, and a staged rollout to 100% of users, three months from first conversation to full launch.`,
-        's.tl.out':`Cost went from a projected <b>R$1.7M to R$1.2k a month</b> (-99.9%), the share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and citations in Google AI Overview rose <b>138%</b> across 30 companies. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.`,
+        's.tl.out':`The share of people who said the detector helped them decide went from <b>45.1% to 72.4%</b>, and in the comprehension test the refined version was read correctly by <b>74% of people, against 29%</b>. The rebuild also took the projected cost from R$1.7M to R$1.2k a month. V2 is live for everyone on Reclame AQUI&rsquo;s own engine.`,
         's.demo.1':`AI product design`,
         's.demo.2':`Trust &amp; safety`,
         's.demo.3':`In-product research`,
@@ -1349,11 +1346,11 @@
         's.exp.3':`The experiment collected far more information than before, but it never said what it concluded. Every signal was left for the user to interpret, so a tool built to help people decide handed the decision back to them. The design problem became helping people understand the conclusion quickly, and why the system reached it.`,
         's.d1.title':`Test whether people read the result correctly`,
         's.d1.problem':`The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.`,
-        's.d1.decision':`I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.`,
+        's.d1.decision':`I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, or a refined version I designed from the critique. Getting the verdict right, acting on it and effort decided the winner.`,
         's.d1.why':`A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.`,
         's.d1.caught':`Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.`,
         's.d1.result':`The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.`,
-        's.q.note':`<strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.`,
+        's.q.note':`<strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number.`,
         's.h3.qual':`What the interviews added`,
         's.qual.p':`People who finished the test could volunteer for an interview. The script never put screens side by side, so it measured the screen rather than my explanation of it. Four findings:`,
         's.qi.1':`<strong>Reputation decides; the shields support it.</strong> The analysis matters most where a company has no reputation yet.`,
@@ -1403,11 +1400,9 @@
         's.h2.dif':`Hold the screen to its job, and align earlier`,
         's.dif.p':`Most of what I would change is about focus and alignment, not the screen itself.`,
         's.dif.1':`<strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.`,
-        's.dif.2':`<strong>Bring every decision level in at the start.</strong> Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.`,
-        's.dif.3':`<strong>Look across journeys, not just my own.</strong> Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.`,
+        's.dif.2':`<strong>Bring every decision level, and the neighbouring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.`,
         's.dif.4':`<strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.`,
-        's.dif.5':`<strong>Look at the input before designing the output.</strong> Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector&rsquo;s answer can only be as good as what goes into it.`,
-        's.dif.close':`It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.`,
+        's.dif.close':`I would also look at the data companies send about themselves before designing the answer: a detector is only as good as what goes into it. It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.`,
         's.team.h':`The team, and what was mine`,
         's.team.p':`A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.`
       },
@@ -1420,7 +1415,7 @@
         'a11y.skip':`Pular para o conteúdo`,
         'a11y.lang':`Idioma`,
         'footer.rights':`© 2026 Guilherme Cannalonga. Todos os direitos reservados.`,
-        'meta.v.out':`R$1,7M &rarr; R$1,2 mil por mês · taxa de decisão 45,1% &rarr; 72,4%`,
+        'meta.v.out':`Taxa de decisão 45,1% &rarr; 72,4% · custo R$1,7M &rarr; R$1,2 mil por mês`,
         'meta.v.role':`Senior Product Designer`,
         'meta.v.team':`PM · Head of Product · Engenharia`,
         'ix.time':`7 min de leitura`,
@@ -1504,7 +1499,7 @@
         's.ix.7':`O que eu faria diferente`,
         's.tl.problem':`O parceiro por trás do detector de sites passaria a cobrar por consulta: R$1,7M por mês no nosso volume. O detector não tinha como mostrar se ajudava alguém a decidir, e um veredito de sim ou não sobre uma empresa é uma afirmação pesada numa página pública.`,
         's.tl.did':`Fui dono da descoberta de dados e do design de ponta a ponta: um experimento com IA no centro, no ar em cerca de seis semanas, um teste de entendimento dentro do produto, uma V2 cujo veredito é construído sobre escudos de proteção e escrito para afirmar só o que foi verificado, e um rollout em etapas até 100% dos usuários, três meses entre a primeira conversa e o lançamento completo.`,
-        's.tl.out':`O custo foi de uma projeção de <b>R$1,7M para R$1,2 mil por mês</b> (-99,9%), a parcela de pessoas que disse que o detector ajudou a decidir foi de <b>45,1% para 72,4%</b>, e as citações no Google AI Overview subiram <b>138%</b> em 30 empresas. A V2 está no ar para todo mundo no motor próprio do Reclame AQUI.`,
+        's.tl.out':`A parcela de pessoas que disse que o detector ajudou a decidir foi de <b>45,1% para 72,4%</b>, e no teste de entendimento a versão refinada foi lida corretamente por <b>74% das pessoas, contra 29%</b>. A reconstrução também levou o custo projetado de R$1,7M para R$1,2 mil por mês. A V2 está no ar para todo mundo no motor próprio do Reclame AQUI.`,
         's.demo.1':`Design de produto com IA`,
         's.demo.2':`Confiança e segurança`,
         's.demo.3':`Pesquisa no produto`,
@@ -1540,11 +1535,11 @@
         's.exp.3':`O experimento coletava muito mais informação do que antes, mas nunca dizia o que concluía. Cada sinal ficava para o usuário interpretar, então uma ferramenta feita para ajudar a decidir devolvia a decisão para ele. O problema de design passou a ser ajudar as pessoas a entender a conclusão rápido, e por que o sistema chegou a ela.`,
         's.d1.title':`Testar se as pessoas leem o resultado corretamente`,
         's.d1.problem':`A pergunta fácil era &ldquo;como organizamos isso?&rdquo;. Um teste de preferência escolheria a tela mais bonita e não diria nada sobre se as pessoas entendiam.`,
-        's.d1.decision':`Reorganizei o trabalho em torno do que o usuário precisa fazer nesta tela e testei desempenho: a pessoa lê o veredito corretamente, e age de acordo com ele? No Useberry, cada pessoa viu uma versão: o experimento, uma versão refinada que desenhei a partir da critique, ou uma versão técnica para heavy users, lida à parte. Acertar o veredito, agir de acordo e o esforço decidiram a vencedora.`,
+        's.d1.decision':`Reorganizei o trabalho em torno do que o usuário precisa fazer nesta tela e testei desempenho: a pessoa lê o veredito corretamente, e age de acordo com ele? No Useberry, cada pessoa viu uma versão: o experimento, ou uma versão refinada que desenhei a partir da critique. Acertar o veredito, agir de acordo e o esforço decidiram a vencedora.`,
         's.d1.why':`Um mapa de calor da página anterior mostrou a atenção quase toda no campo do link e no botão de analisar, e um benchmark de ferramentas públicas como ScamAdviser e ScamDoc mostrou como outros estruturam um resultado de segurança. Os dois mostravam para onde as pessoas olham. Nenhum mostrava se elas entendiam o que viam, que é do que um produto de confiança depende.`,
         's.d1.caught':`Diante de um site seguro, 46% das pessoas no experimento escolheram &ldquo;cautela&rdquo; e 25% &ldquo;não sei&rdquo;. O excesso de dados fazia um site seguro parecer duvidoso.`,
         's.d1.result':`A versão refinada foi lida corretamente por 74% das pessoas, contra 29% no experimento, e virou a base da V2.`,
-        's.q.note':`<strong>Como ler:</strong> 55 respostas de 450 acessos, então a diferença é grande e direcional, não um número populacional. 43% de quem viu a versão refinada se ofereceu para entrevista, contra 17%.`,
+        's.q.note':`<strong>Como ler:</strong> 55 respostas de 450 acessos, então a diferença é grande e direcional, não um número populacional.`,
         's.h3.qual':`O que as entrevistas acrescentaram`,
         's.qual.p':`Quem terminava o teste podia se oferecer para uma entrevista. O roteiro nunca colocava telas lado a lado, para medir a tela e não a minha explicação dela. Quatro achados:`,
         's.qi.1':`<strong>A reputação decide; os escudos apoiam.</strong> A análise importa mais onde a empresa ainda não tem reputação.`,
@@ -1594,11 +1589,9 @@
         's.h2.dif':`Manter a tela no seu job, e alinhar antes`,
         's.dif.p':`Quase tudo o que eu mudaria é sobre foco e alinhamento, não sobre a tela em si.`,
         's.dif.1':`<strong>Cobrar cada versão contra o job desde o primeiro dia.</strong> O crawler conseguia trazer muito mais do que a tela precisava, e até as versões refinadas queriam mostrar mais. Foram várias rodadas de design para voltar ao que respondia &ldquo;é golpe?&rdquo;. Eu usaria o job como filtro de cada informação desde o primeiro rascunho, para manter a carga cognitiva baixa desde o início.`,
-        's.dif.2':`<strong>Trazer todos os níveis de decisão no começo.</strong> As decisões de produto e design passavam por vários níveis, e uma direção aprovada num deles podia encontrar um contexto novo no seguinte e voltar para retrabalho. Eu reuniria antes as pessoas que influenciam a decisão, para o contexto chegar antes do design, e não depois.`,
-        's.dif.3':`<strong>Olhar para as jornadas vizinhas, não só a minha.</strong> Cada time do Reclame AQUI cuida de uma parte da experiência: B2C, B2B, área logada e outras. O detector encosta em várias delas, e envolver esses times antes teria poupado rodadas.`,
+        's.dif.2':`<strong>Trazer todos os níveis de decisão, e os times vizinhos, no começo.</strong> As decisões passavam por vários níveis, e uma direção aprovada num deles podia encontrar um contexto novo no seguinte e voltar para retrabalho. O detector também encosta em jornadas de outros times, do B2C ao B2B e à área logada. Eu reuniria antes as pessoas que influenciam a decisão, para o contexto chegar antes do design, e não depois.`,
         's.dif.4':`<strong>Fazer a pergunta dos três lados primeiro.</strong> Toda decisão precisa ser boa para o Reclame AQUI, para a empresa analisada e para o consumidor. Se um dos três fica desprotegido, a ideia normalmente precisa ser repensada, e fazer essa pergunta no começo evita retrabalho depois.`,
-        's.dif.5':`<strong>Olhar a entrada antes de desenhar a saída.</strong> Alguns dos casos de borda mais difíceis vinham dos dados que as empresas fornecem sobre si mesmas, e eu só olhei de perto para eles depois do lançamento. A resposta de um detector só é tão boa quanto o que entra nele.`,
-        's.dif.close':`Foi a minha primeira vez desenhando dentro de uma líder de mercado desse tamanho, onde muitos times e níveis de decisão moldam uma mesma jornada. Aprender a trabalhar entre essas camadas, e a me adaptar quando o contexto mudava, é o que levo para o próximo projeto.`,
+        's.dif.close':`Eu também olharia os dados que as empresas enviam sobre si mesmas antes de desenhar a resposta: um detector só é tão bom quanto o que entra nele. Foi a minha primeira vez desenhando dentro de uma líder de mercado desse tamanho, onde muitos times e níveis de decisão moldam uma mesma jornada. Aprender a trabalhar entre essas camadas, e a me adaptar quando o contexto mudava, é o que levo para o próximo projeto.`,
         's.team.h':`O time, e o que foi meu`,
         's.team.p':`Um PM e o Head of Product eram donos do escopo e das prioridades, e a engenharia construiu o experimento, o pipeline de análise e os dados estruturados. Meu: a descoberta de dados, a design critique, o plano de pesquisa e o teste de entendimento, a versão refinada, a estrutura de escudos e a explicação de cada nível, e as mudanças de interface para leitores de IA.`
       }

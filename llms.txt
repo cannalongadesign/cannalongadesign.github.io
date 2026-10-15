@@ -13,7 +13,7 @@ Key facts:
 - Contact: cannalongadesign@gmail.com
 
 Selected outcomes (each explained, with how it was measured, on the case pages):
-- Safe Site Detector (Reclame AQUI): monthly cost from a projected R$1.7M to R$1.2k (-99.9%), decision rate from 45.1% to 72.4%, +138% citations in Google AI Overview
+- Safe Site Detector (Reclame AQUI): decision rate from 45.1% to 72.4%, comprehension test 74% vs 29% read the verdict correctly, monthly cost from a projected R$1.7M to R$1.2k (-99.9%)
 - Genial App: daily active families from 8.59% to 62.3% in 13 months
 - LIAM (AI clinical documentation): from up to 2 hours to about 25 minutes per session
 - Pick & Pack: fulfillment platform rolled out to 80+ stores in 3 months
@@ -21,7 +21,7 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 
 ## Case studies
 
-- [Safe Site Detector](https://cannalongadesign.github.io/safe-site-detector/): Reclame AQUI's in-house, AI-powered site detector, redesigned around a verdict built on protection shields, worded to state only what was verified, and tested for comprehension; cost from a projected R$1.7M to R$1.2k a month and decision rate from 45.1% to 72.4%
+- [Safe Site Detector](https://cannalongadesign.github.io/safe-site-detector/): Reclame AQUI's in-house, AI-powered site detector, redesigned around a verdict built on protection shields, worded to state only what was verified, and tested for comprehension; decision rate from 45.1% to 72.4% and cost from a projected R$1.7M to R$1.2k a month
 - [Genial App](https://cannalongadesign.github.io/genial/): How the Genial Care family app went from 8.59% to 62.3% daily active families in 13 months by fixing a scheduling bottleneck instead of redesigning content.
 - [LIAM](https://cannalongadesign.github.io/liam/): A human-in-the-loop AI assistant that drafts clinical records from a therapist's narration; documentation went from up to 2 hours to about 25 minutes per session, as reported by the clinical team.
 - [Pick & Pack](https://cannalongadesign.github.io/pick-and-pack/): The fulfillment platform behind Fast Shop's 2-hour delivery, designed for store, distribution centre and driver at once, rolled out to 80+ stores in 3 months.

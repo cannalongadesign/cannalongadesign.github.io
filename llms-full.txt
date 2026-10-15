@@ -6,9 +6,9 @@ Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-14
 
 # Product design for systems where the wrong screen is expensive.
 
-R$1.7M → R$1.2k
+45.1% → 72.4%
 
-Monthly cost, projected vs. actual
+Said it helped them decide
 
 8.6% → 62.3%
 
@@ -34,11 +34,11 @@ Consumer trust, healthcare, logistics and fintech. Different products, the same 
 
 Consumer trust
 
-R$1.7M → R$1.2k
+45.1% → 72.4%
 
-**Reclame AQUI.** An in-house AI detector that replaced a costly partner, and that more people decide with: 45.1% to 72.4%.
+**Reclame AQUI.** An in-house AI detector that replaced a R$1.7M-a-month partner, tested for comprehension, not taste.
 
-Monthly cost, projected vs. actual
+Said it helped them decide
 
 [Image: Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child's evolution note]
 
@@ -175,7 +175,6 @@ Hiring a Senior Product Designer?
 ## Let's talk.
 
 cannalongadesign@gmail.com ↗
-
 
 ---
 
@@ -908,7 +907,7 @@ Jun 2026 – ongoing
 
 Outcome
 
-R$1.7M → R$1.2k a month · decision rate 45.1% → 72.4%
+Decision rate 45.1% → 72.4% · cost R$1.7M → R$1.2k a month
 
 In this case 7 min read
 
@@ -938,7 +937,7 @@ Owned data discovery and design end to end: an AI-first experiment live in about
 
 Outcome:
 
-Cost went from a projected **R$1.7M to R$1.2k a month** (-99.9%), the share of people who said the detector helped them decide went from **45.1% to 72.4%**, and citations in Google AI Overview rose **138%** across 30 companies. V2 is live for everyone on Reclame AQUI’s own engine.
+The share of people who said the detector helped them decide went from **45.1% to 72.4%**, and in the comprehension test the refined version was read correctly by **74% of people, against 29%**. The rebuild also took the projected cost from R$1.7M to R$1.2k a month. V2 is live for everyone on Reclame AQUI’s own engine.
 
 AI product design Trust & safety In-product research LLM-ready content
 
@@ -966,7 +965,7 @@ So I framed the work the way the business needed it, and held every decision bel
 
 - **Job to be done** “Is this site a scam or not, before I pay?” The screen had one job, and everything on it had to serve that answer.
 
-- **Who it had to work for** Mrs. Nancy, in a small town in rural Minnesota, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.
+- **Who it had to work for** Dona Neide, an older woman in a small town in Acre, deep in Brazil’s interior, checking whether the store selling the skirt she wants is safe. If it was simple and clear for her, it was simple and clear for everyone.
 
 - **Opportunity** The rebuild was forced by cost, so we used it to clear the debt the page carried: accessibility, a visual identity that did not follow the design system, and technical debt along the way.
 
@@ -1000,7 +999,7 @@ The easy question was “how do we lay this out?” A preference test would have
 
 Decision
 
-I reframed the work around the user’s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, a refined version I designed from the critique, or a technical version for heavy users, read separately. Getting the verdict right, acting on it and effort decided the winner.
+I reframed the work around the user’s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, or a refined version I designed from the critique. Getting the verdict right, acting on it and effort decided the winner.
 
 Why
 
@@ -1026,7 +1025,7 @@ Would buy from that safe site
 
 Would avoid buying from it
 
-**How to read it:** 55 answers from 450 visits, so the gap is large and directional, not a population number. 43% of the people who saw the refined version volunteered for an interview, against 17%.
+**How to read it:** 55 answers from 450 visits, so the gap is large and directional, not a population number.
 
 ### What the interviews added
 
@@ -1128,17 +1127,13 @@ From first conversation to full launch in three months. An illustration of the p
 
 V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI’s own engine.
 
--99.9%
-
-Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses
-
 45.1% → 72.4%
 
 People who said the detector helped them decide, experiment vs V2
 
-+138%
+-99.9%
 
-Citations in Google AI Overview across 30 companies, after structuring the data for LLMs
+Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses
 
 MetricBeforeV2Change Monthly costR$1.7M (projected)R$1.2k for 171.7k analyses-99.9%Cost per analysisR$10under R$0.01-99.9%Decision rate45.1% (experiment)72.4%+27.3 pp
 
@@ -1162,15 +1157,11 @@ Most of what I would change is about focus and alignment, not the screen itself.
 
 - **Hold every version to the job from day one.** The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered “is this a scam?”. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.
 
-- **Bring every decision level in at the start.** Product and design decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.
-
-- **Look across journeys, not just my own.** Each team at Reclame AQUI owns one part of the experience: B2C, B2B, the logged-in area and more. The detector touches several of them, and involving those teams earlier would have saved rounds.
+- **Bring every decision level, and the neighbouring teams, in at the start.** Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.
 
 - **Ask the three-sided question first.** Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.
 
-- **Look at the input before designing the output.** Some of the hardest edge cases came from the data companies provide about themselves, and I only looked closely at it after launch. A detector’s answer can only be as good as what goes into it.
-
-It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.
+I would also look at the data companies send about themselves before designing the answer: a detector is only as good as what goes into it. It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.
 
 ### The team, and what was mine
 
