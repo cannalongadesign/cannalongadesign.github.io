@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guilherme Cannalonga · Senior Product Designer · Boston</title>
 <meta name="author" content="Guilherme Cannalonga">
-<meta name="description" content="Guilherme Cannalonga is a Senior Product Designer in Greater Boston, authorized to work in the US and Brazil. Case studies in consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems: decision rate 45.1% to 72.4%, 8.6% to 62.3% daily use, up to 2h to 25min documentation.">
+<meta name="description" content="Guilherme Cannalonga is a Senior Product Designer based in Greater Boston, MA. Case studies in consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems: decision rate 45.1% to 72.4%, 8.6% to 62.3% daily use, up to 2h to 25min documentation.">
 
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -15,20 +15,20 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Guilherme Cannalonga · Senior Product Designer">
-<meta property="og:description" content="Product design for systems where the wrong screen is expensive. Consumer trust, clinical AI, consumer healthcare, enterprise logistics and fintech. Open to Senior Product Designer roles in the US.">
+<meta property="og:description" content="Product design for systems where the wrong screen is expensive. Consumer trust, clinical AI, consumer healthcare, enterprise logistics and fintech. Based in Greater Boston, MA.">
 <meta property="og:url" content="https://cannalongadesign.github.io/">
 <link rel="canonical" href="https://cannalongadesign.github.io/">
-<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Guilherme Cannalonga · Senior Product Designer">
-<meta name="twitter:description" content="Product design for systems where the wrong screen is expensive. Open to Senior Product Designer roles in the US.">
-<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta name="twitter:description" content="Product design for systems where the wrong screen is expensive. Based in Greater Boston, MA.">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design
@@ -766,8 +766,7 @@
      Three quiet effects tied to the scrollbar itself, so they move exactly
      as fast as the reader does and stop when the reader stops. The hero
      recedes as the work arrives. Case images drift a few percent inside
-     their frames, which reads as depth. Two statements fill with ink as
-     they are reached. Native CSS scroll-driven animation only: where it is
+     their frames, which reads as depth. Native CSS scroll-driven animation only: where it is
      not supported, or motion is reduced, none of this exists and the page
      is simply still. */
   @media (prefers-reduced-motion:no-preference){
@@ -785,13 +784,6 @@
       /* a whole device in frame can drift both ways around its centre */
       .card-media.indigo .card-shot,.card-media.mint .card-shot{animation-name:shot-drift-bleed;}
 
-      @keyframes lit-fill{to{background-size:100% 100%;}}
-      .lit{
-        color:rgb(20 20 15 / .2);
-        background-image:linear-gradient(var(--ink),var(--ink)); background-repeat:no-repeat; background-size:0% 100%;
-        -webkit-background-clip:text; background-clip:text;
-        animation:lit-fill linear both; animation-timeline:view(); animation-range:entry 30% cover 42%;
-      }
     }
   }
 
@@ -811,6 +803,93 @@
     .lang button{position:relative;}
     .lang button::after{content:''; position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); height:44px;}
   }
+
+  /* ================= REFINEMENT PASS =================
+     Same paper, ink and acid; a finer finish. Mono carries the small print
+     (labels, sources, dates) so reading type and system type never compete.
+     The hero is shorter, so the work starts in the first screen, and each
+     number in it links to the case that proves it. */
+  :root{--mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+  .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0;}
+
+  /* labels: mono, one step larger, numbered where they open a section */
+  .label{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.08em;}
+  .label[data-num]::before{content:attr(data-num) " · "; color:var(--ink);}
+  .label-row{display:flex; align-items:baseline; justify-content:space-between; gap:6px var(--s2); flex-wrap:wrap;}
+  .updated{font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--ink-2);}
+
+  /* hero: same claim, same type, less height */
+  .hero-d{padding:128px 0 32px;}
+  .hero-d .who{margin-bottom:24px;}
+  .hero-d h1{font-size:clamp(44px,6.2vw,88px); margin-bottom:32px;}
+  .hero-d .hero-foot{padding-top:22px; align-items:flex-end;}
+  #work{padding-top:32px;}
+  #work > .wrap > .sec-head{margin-bottom:var(--s4);}
+
+  /* evidence row: the number, a bar from before to after (the tick is where
+     it started), what it measures, and the case that proves it */
+  .hero-d a.stat{display:block; min-width:172px; color:inherit; border-radius:6px;}
+  .hero-d .stat .bar{display:block; position:relative; height:3px; margin:11px 0 10px; border-radius:3px; background:var(--line);}
+  .hero-d .stat .bar::before{content:''; position:absolute; left:0; top:0; bottom:0; width:var(--now); border-radius:3px; background:var(--ink);}
+  .hero-d .stat .bar::after{content:''; position:absolute; top:-3px; left:calc(var(--from) - 1px); width:2px; height:9px; border-radius:1px; background:var(--ink-2);}
+  .hero-d .stat .l{display:block; margin-top:0; font-size:13px;}
+  .hero-d .stat .src{display:block; margin-top:6px; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); transition:color .2s ease;}
+  .hero-d a.stat:hover .src{color:var(--ink);}
+  .hero-d a.stat:hover .l{color:var(--ink);}
+
+  /* how I work with AI: two lists, the product and the process */
+  .ai-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s4) var(--s5);}
+  .ai-col h3{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.08em; line-height:1.4; text-transform:uppercase; color:var(--ink-2); margin-bottom:14px;}
+  .ai-list{list-style:none; counter-reset:ai; border-top:1px solid var(--line);}
+  .ai-list li{counter-increment:ai; display:grid; grid-template-columns:34px minmax(0,1fr); gap:var(--s2); padding:16px 0; border-bottom:1px solid var(--line); font-size:15px; line-height:1.5; color:var(--ink-2);}
+  .ai-list li::before{content:counter(ai, decimal-leading-zero); font-family:var(--mono); font-size:12px; line-height:1.9; color:var(--ink);}
+  .ai-list strong{color:var(--ink); font-weight:700;}
+  .ai-list a{color:var(--ink); font-weight:500; text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line-control); white-space:nowrap;}
+  .ai-list a:hover{text-decoration-color:var(--ink);}
+
+  /* contact: the address is the action, copying it is part of the same control */
+  .mail-split{display:inline-flex; align-items:stretch; border-radius:100px; background:var(--acid);}
+  .mail-split .btn{border-radius:100px 0 0 100px; padding-right:22px;}
+  .copy-btn{display:inline-flex; align-items:center; gap:8px; padding:0 24px 0 20px; border:none; border-left:1px solid rgba(20,20,15,.2); border-radius:0 100px 100px 0; background:var(--acid); color:var(--ink); font:inherit; font-size:14px; font-weight:500; cursor:pointer; transition:background .2s ease;}
+  .copy-btn:hover{background:#cbe63c;}
+  .copy-btn svg{flex-shrink:0;}
+  .copy-btn .i-done{display:none;}
+  .copy-btn.done .i-copy{display:none;}
+  .copy-btn.done .i-done{display:block;}
+  @media (scripting:none){ .copy-btn{display:none;} .mail-split .btn{border-radius:100px;} }
+
+  @media (prefers-reduced-motion:no-preference){
+    /* reveals: quicker and shorter, so nothing waits on the animation */
+    .js .reveal{transform:translateY(10px);}
+    .js .reveal.in{transform:none; transition:opacity .4s cubic-bezier(.2,.7,.2,1), transform .4s cubic-bezier(.2,.7,.2,1);}
+    .js .reveal.in .mk.on{transition-delay:.3s;}
+    .js .quotes.reveal.in .quote-card{transition-duration:.4s;}
+    .js .card.reveal .card-media{transition:clip-path .6s cubic-bezier(.2,.7,.2,1), filter .4s ease;}
+    @keyframes pop{from{transform:scale(.6); opacity:0;} to{transform:none; opacity:1;}}
+    .copy-btn.done .i-done{animation:pop .3s cubic-bezier(.2,.7,.2,1);}
+  }
+
+  @media (max-width:820px){ .ai-grid{grid-template-columns:1fr;} }
+
+  @media (max-width:640px){
+    .hero-d{padding:124px 0 var(--s3);}
+    .hero-d .who{margin-bottom:20px;}
+    .hero-d h1{margin-bottom:var(--s3);}
+    .hero-d .hero-foot{gap:var(--s3); padding-top:var(--s2);}
+    .hero-d a.stat{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:var(--s2); align-items:baseline; min-width:0;}
+    .hero-d .stat .n{grid-column:1; grid-row:1;}
+    .hero-d .stat .l{grid-column:2; grid-row:1; text-align:right;}
+    .hero-d .stat .bar{grid-column:1 / -1; grid-row:2; margin:10px 0 0;}
+    .hero-d .stats{gap:18px;}
+    .hero-d .stat,.hero-d .stat:last-child{border-bottom:none; padding:0;}   /* on a phone the bar is the divider */
+    .hero-d .stat .src{display:none;}
+    .hero-d .hero-actions{flex-direction:column;}
+    .hero-d .hero-actions .btn{flex:none; width:100%;}
+    #work{padding-top:var(--s3);}
+    .mail-split{display:flex; width:100%;}
+    .mail-split .btn{flex:1 1 auto; width:auto; min-width:0; padding-left:20px; padding-right:16px;}
+    .copy-btn{min-height:56px; padding:0 20px 0 16px;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -826,7 +905,7 @@
     "Gui Cannalonga"
    ],
    "jobTitle": "Senior Product Designer",
-   "description": "Senior Product Designer based in Greater Boston, MA, authorized to work in the US and Brazil. Designs products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.",
+   "description": "Senior Product Designer based in Greater Boston, MA. Designs products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.",
    "url": "https://cannalongadesign.github.io/",
    "image": "https://cannalongadesign.github.io/assets/about-portrait.webp",
    "email": "mailto:cannalongadesign@gmail.com",
@@ -845,7 +924,7 @@
    ],
    "worksFor": {
     "@type": "Organization",
-    "name": "Reclame Aqui",
+    "name": "Reclame AQUI",
     "url": "https://www.reclameaqui.com.br/"
    },
    "hasOccupation": {
@@ -923,7 +1002,7 @@
    "mainEntity": {
     "@id": "https://cannalongadesign.github.io/#person"
    },
-   "dateModified": "2026-10-08",
+   "dateModified": "2026-10-28",
    "inLanguage": "en",
    "about": {
     "@id": "https://cannalongadesign.github.io/#person"
@@ -1015,13 +1094,13 @@
       <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
       <div class="hero-foot">
         <div class="stats">
-          <div class="stat"><div class="n">45.1% &rarr; <span class="morph" data-from="45.1" data-to="72.4" data-dec="1" data-suffix="%">72.4%</span></div><div class="l" data-i18n="card.ssd.metname">Said it helped them decide</div></div>
-          <div class="stat"><div class="n">8.6% &rarr; <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><div class="l" data-i18n="card.genial.metname">Families opening the app daily</div></div>
-          <div class="stat"><div class="n"><span data-i18n="stat.liam.from">Up to 2h &rarr;</span> <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><div class="l" data-i18n="card.liam.metname">Documentation per session</div></div>
+          <a class="stat" href="/safe-site-detector/"><div class="n" aria-hidden="true"><span data-i18n="stat.ssd.from">45.1% &rarr;</span> <span class="morph" data-from="45.1" data-to="72.4" data-dec="1" data-suffix="%">72.4%</span></div><span class="bar" aria-hidden="true" data-max="100" style="--from:45.1%;--now:72.4%"></span><span class="sr-only" data-i18n="stat.ssd.sr">45.1% to 72.4%:</span> <span class="l" data-i18n="card.ssd.metname">Said it helped them decide</span> <span class="src"><span data-i18n="stat.ssd.src">Safe Site Detector</span> <span aria-hidden="true">&rarr;</span></span></a>
+          <a class="stat" href="/genial/"><div class="n" aria-hidden="true"><span data-i18n="stat.genial.from">8.6% &rarr;</span> <span class="morph" data-from="8.6" data-to="62.3" data-dec="1" data-suffix="%">62.3%</span></div><span class="bar" aria-hidden="true" data-max="100" style="--from:8.6%;--now:62.3%"></span><span class="sr-only" data-i18n="stat.genial.sr">8.6% to 62.3%:</span> <span class="l" data-i18n="card.genial.metname">Families opening the app daily</span> <span class="src">Genial App <span aria-hidden="true">&rarr;</span></span></a>
+          <a class="stat" href="/liam/"><div class="n" aria-hidden="true"><span data-i18n="stat.liam.from">Up to 2h &rarr;</span> <span class="morph" data-from="120" data-to="25" data-suffix="min">25min</span></div><span class="bar" aria-hidden="true" data-max="120" style="--from:100%;--now:20.83%"></span><span class="sr-only" data-i18n="stat.liam.sr">Up to 2 hours to 25 minutes:</span> <span class="l" data-i18n="card.liam.metname">Documentation per session</span> <span class="src">LIAM <span aria-hidden="true">&rarr;</span></span></a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-acid" href="#work"><span data-i18n="hero.cta1">See the work</span> <span aria-hidden="true">&darr;</span></a>
-          <a class="btn btn-line" href="https://www.linkedin.com/in/guilhermecannalonga" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a>
+          <a class="btn btn-line" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener"><span data-i18n="hero.call">Book a 30-min call</span> <span aria-hidden="true">&nearr;</span></a>
         </div>
       </div>
     </div>
@@ -1031,7 +1110,7 @@
 <section id="work" class="section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="work.label">Selected work</span>
+      <div class="label-row"><span class="label" data-num="01" data-i18n="work.label">Selected work</span><span class="updated" data-i18n="work.updated">Updated October 2026</span></div>
       <h2 data-i18n="work.h2">Six products where a confusing screen had a real cost.</h2>
       <p data-i18n="work.p">Consumer trust, healthcare, logistics and fintech. Different products, the same starting point: what the person needs to decide on that screen, and which number shows whether they could.</p>
     </div>
@@ -1044,7 +1123,7 @@
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Safe Site Detector</h3><span class="cat" data-i18n="card.ssd.cat">Consumer trust</span></div>
-          <span class="met-v">45.1% &rarr; 72.4%</span>
+          <span class="met-v" data-i18n="card.ssd.met">45.1% &rarr; 72.4%</span>
           <p class="card-sum"><strong>Reclame AQUI.</strong> <span data-i18n="card.ssd.sum">An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.</span></p>
           <span class="met-n" data-i18n="card.ssd.metname">Said it helped them decide</span>
         </div>
@@ -1056,7 +1135,7 @@
         </div>
         <div class="card-cap">
           <div class="card-head"><h3>Genial App</h3><span class="cat" data-i18n="card.genial.cat">Consumer healthcare</span></div>
-          <span class="met-v">8.6% &rarr; 62.3%</span>
+          <span class="met-v" data-i18n="card.genial.met">8.6% &rarr; 62.3%</span>
           <p class="card-sum"><strong>Genial Care.</strong> <span data-i18n="card.genial.sum">Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.</span></p>
           <span class="met-n" data-i18n="card.genial.metname">Families opening the app daily</span>
         </div>
@@ -1110,7 +1189,7 @@
         <div class="card-cap">
           <div class="card-head"><h3>Matri Bank</h3><span class="cat" data-i18n="card.matri.cat">Fintech</span></div>
           <span class="met-v">18% &rarr; 63%</span>
-          <p class="card-sum"><strong>Shock Tecnologia.</strong> <span data-i18n="card.matri.sum">Redesigned the credit journey for a regulated product. Full case on request.</span></p>
+          <p class="card-sum"><strong>Shock Tecnologia.</strong> <span data-i18n="card.matri.sum">Redesigned the credit journey for a regulated product. Details on a call.</span></p>
           <span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span>
         </div>
       </div>
@@ -1122,7 +1201,7 @@
   <div class="wrap">
     <div class="method-grid reveal">
       <div class="sec-head">
-        <span class="label" data-i18n="method.label">How I decide</span>
+        <span class="label" data-num="02" data-i18n="method.label">How I decide</span>
         <h2 data-i18n="method.h2">Taste proposes. <mark class="mk on">Evidence</mark> decides.</h2>
         <p data-i18n="method.p">I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.</p>
       </div>
@@ -1136,10 +1215,40 @@
   </div>
 </section>
 
+<section id="ai" class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label" data-num="03" data-i18n="ai.label">How I work with AI</span>
+      <h2 data-i18n="ai.h2">AI on both sides of the screen.</h2>
+      <p data-i18n="ai.p">In the products I design, and in the way I design them.</p>
+    </div>
+    <div class="ai-grid reveal">
+      <div class="ai-col">
+        <h3 data-i18n="ai.prod.h">In the product</h3>
+        <ol class="ai-list">
+          <li><span data-i18n="ai.prod.1"><strong>LIAM</strong> drafts the clinical record from the therapist&rsquo;s narration and never signs it: each field arrives pre-filled, and the therapist edits and decides.</span></li>
+          <li><span data-i18n="ai.prod.2"><strong>Safe Site Detector</strong> gives an AI-powered verdict, worded to state only what was verified.</span></li>
+          <li><span data-i18n="ai.prod.3"><strong>Designing for AI readers:</strong> the detector&rsquo;s pages were structured so AI assistants quote them correctly. Citations in Google AI Overview rose 138% across 30 companies.</span></li>
+        </ol>
+      </div>
+      <div class="ai-col">
+        <h3 data-i18n="ai.proc.h">In my process</h3>
+        <ol class="ai-list">
+          <li><span data-i18n="ai.proc.1"><strong>Thinking decisions through</strong> with LLMs and agents, every day.</span></li>
+          <li><span data-i18n="ai.proc.2"><strong>Research and data analysis</strong>, faster.</span></li>
+          <li><span data-i18n="ai.proc.3"><strong>Functional prototypes</strong>, and some of them shipped to production.</span></li>
+          <li><span data-i18n="ai.proc.4"><strong>Claude and Claude Code</strong> are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.</span></li>
+          <li><span data-i18n="ai.proc.5"><strong>This site</strong> was built with them, and it is set up so AI assistants read it correctly. <a href="/colophon/">How it&rsquo;s built</a></span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="words" class="section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="label" data-i18n="tst.label">What people say</span>
+      <span class="label" data-num="04" data-i18n="tst.label">What people say</span>
       <h2 data-i18n="tst.h2">Words from people I've built with.</h2>
     </div>
     <div class="quotes reveal">
@@ -1164,15 +1273,13 @@
     <div class="about-grid reveal">
       <div>
         <div class="about-photo"><img decoding="async" src="/assets/about-portrait.webp" alt="Guilherme Cannalonga" loading="lazy" width="780" height="892"></div>
-        <p class="avail" data-i18n="hero.avail"><span class="dot" aria-hidden="true"></span>Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere</p>
       </div>
       <div class="about-text">
-        <span class="label" style="margin-bottom:18px" data-i18n="about.label">About</span>
+        <span class="label" style="margin-bottom:18px" data-num="05" data-i18n="about.label">About</span>
         <p data-i18n="about.p1">I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.</p>
-        <p data-i18n="about.p2">I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.</p>
-        <p data-i18n="about.p3">I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.</p>
+        <p data-i18n="about.p2">I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame AQUI, a consumer-trust platform more than 30 million people visit every month.</p>
         <dl class="timeline">
-          <div><dt>2026 –</dt><dd data-i18n="tl.1">Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot</dd></div>
+          <div><dt>2026 –</dt><dd data-i18n="tl.1">Senior Product Designer · Reclame AQUI · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot</dd></div>
           <div><dt>2024 – 26</dt><dd data-i18n="tl.2">Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products</dd></div>
           <div><dt data-i18n="tl.4.d">2023 – 25</dt><dd data-i18n="tl.4">Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)</dd></div>
           <div><dt>2022 – 24</dt><dd data-i18n="tl.3">Senior Product Designer · Genial Care · first designer, then leading design across two teams</dd></div>
@@ -1185,11 +1292,20 @@
 
 <section class="closing" id="contact">
   <div class="wrap">
-    <span class="label" data-i18n="contact.label">Hiring a Senior Product Designer?</span>
+    <span class="label" data-num="06" data-i18n="contact.label">Get in touch</span>
     <h2 data-i18n="contact.h2">Let's talk.</h2>
     <div class="closing-actions">
-      <a class="btn btn-acid" href="mailto:cannalongadesign@gmail.com" data-contact-trigger>cannalongadesign@gmail.com &nearr;</a>
+      <div class="mail-split">
+        <a class="btn btn-acid" href="mailto:cannalongadesign@gmail.com">cannalongadesign@gmail.com</a>
+        <button type="button" class="copy-btn" data-copy="cannalongadesign@gmail.com" aria-label="Copy email address" data-i18n-aria="contact.copy.aria">
+          <svg class="i-copy" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" stroke="currentColor" stroke-width="2"/></svg>
+          <svg class="i-done" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="copy-txt" data-i18n="contact.copy">Copy</span>
+        </button>
+      </div>
+      <a class="btn btn-line" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener"><span data-i18n="contact.call">Book a 30-min call</span> <span aria-hidden="true">&nearr;</span></a>
     </div>
+    <p class="sr-only" id="copyStatus" role="status" aria-live="polite"></p>
   </div>
 </section>
 
@@ -1238,21 +1354,28 @@
 </div>
 
 <script>
-  /* ---- motion: marker + before→after counters ---- */
+  /* ---- motion: marker + before→after counters. The bar under each number moves with it,
+     and the numbers follow the reader's language (decimal comma in Portuguese). ---- */
   (function(){
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hero=document.querySelector('.hero');
     requestAnimationFrame(()=>requestAnimationFrame(()=>hero&&hero.classList.add('ready')));
+    const pt=()=>document.documentElement.lang==='pt-BR';
+    const fmt=(v,dec)=>{ const t=dec? v.toFixed(dec).replace(/\.0$/,'') : Math.round(v).toString(); return pt()? t.replace('.',',') : t; };
+    const barOf=el=>{ const st=el.closest('.stat'); return st && st.querySelector('.bar'); };
+    const setBar=(el,v)=>{ const b=barOf(el); if(b) b.style.setProperty('--now', Math.max(0,Math.min(100, v/parseFloat(b.dataset.max||100)*100)).toFixed(2)+'%'); };
+    const settle=el=>{ el.textContent=fmt(parseFloat(el.dataset.to),+(el.dataset.dec||0))+(el.dataset.suffix||''); };
+    document.addEventListener('langchange',()=>document.querySelectorAll('.morph').forEach(el=>{ if(!el.classList.contains('running')) settle(el); }));
     if(reduce) return;
-    const fmt=(v,dec)=>dec? v.toFixed(dec).replace(/\.0$/,'') : Math.round(v).toString();
     function morph(el){
       const from=parseFloat(el.dataset.from), to=parseFloat(el.dataset.to), dec=+(el.dataset.dec||0), sfx=el.dataset.suffix||'';
       const dur=1500, t0=performance.now();
-      el.textContent=fmt(from,dec)+sfx;
+      el.classList.add('running');
+      el.textContent=fmt(from,dec)+sfx; setBar(el,from);
       (function tick(now){
-        const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,4);
-        el.textContent=fmt(from+(to-from)*e,dec)+sfx;
-        if(p<1) requestAnimationFrame(tick); else { el.textContent=fmt(to,dec)+sfx; el.classList.add('done'); }
+        const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,4), v=from+(to-from)*e;
+        el.textContent=fmt(v,dec)+sfx; setBar(el,v);
+        if(p<1) requestAnimationFrame(tick); else { settle(el); setBar(el,to); el.classList.remove('running'); el.classList.add('done'); }
       })(t0);
     }
     const mo=new IntersectionObserver((es)=>{es.forEach(e=>{ if(e.isIntersecting){ morph(e.target); mo.unobserve(e.target);} });},{threshold:.6});
@@ -1336,8 +1459,23 @@
         'hero.h1':`Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.`,
         'hero.bio':`I design the tools clinicians, operators and families use to decide fast when the stakes are real: from an AI assistant that drafts clinical records to a fulfillment platform across 80+ stores. Six-plus years in product design.`,
         'hero.role':`Senior Product Designer · Greater Boston, MA`,
-        'hero.avail':`<span class="dot" aria-hidden="true"></span>Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere`,
-        'hero.cta1':'See the work', 'hero.cta3':'Book 30 minutes',
+        'hero.cta1':'See the work', 'hero.cta3':'Book 30 minutes', 'hero.call':`Book a 30-min call`,
+        'stat.ssd.from':`45.1% &rarr;`, 'stat.genial.from':`8.6% &rarr;`,
+        'stat.ssd.sr':`45.1% to 72.4%:`, 'stat.genial.sr':`8.6% to 62.3%:`, 'stat.liam.sr':`Up to 2 hours to 25 minutes:`,
+        'stat.ssd.src':`Safe Site Detector`,
+        'work.updated':`Updated October 2026`,
+        'card.ssd.met':`45.1% &rarr; 72.4%`, 'card.genial.met':`8.6% &rarr; 62.3%`,
+        'ai.label':`How I work with AI`, 'ai.h2':`AI on both sides of the screen.`, 'ai.p':`In the products I design, and in the way I design them.`,
+        'ai.prod.h':`In the product`, 'ai.proc.h':`In my process`,
+        'ai.prod.1':`<strong>LIAM</strong> drafts the clinical record from the therapist&rsquo;s narration and never signs it: each field arrives pre-filled, and the therapist edits and decides.`,
+        'ai.prod.2':`<strong>Safe Site Detector</strong> gives an AI-powered verdict, worded to state only what was verified.`,
+        'ai.prod.3':`<strong>Designing for AI readers:</strong> the detector&rsquo;s pages were structured so AI assistants quote them correctly. Citations in Google AI Overview rose 138% across 30 companies.`,
+        'ai.proc.1':`<strong>Thinking decisions through</strong> with LLMs and agents, every day.`,
+        'ai.proc.2':`<strong>Research and data analysis</strong>, faster.`,
+        'ai.proc.3':`<strong>Functional prototypes</strong>, and some of them shipped to production.`,
+        'ai.proc.4':`<strong>Claude and Claude Code</strong> are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.`,
+        'ai.proc.5':`<strong>This site</strong> was built with them, and it is set up so AI assistants read it correctly. <a href="/colophon/">How it&rsquo;s built</a>`,
+        'contact.call':`Book a 30-min call`, 'contact.copy':`Copy`, 'contact.copied':`Copied`, 'contact.copy.aria':`Copy email address`, 'contact.copied.sr':`Email address copied`,
         'stat.genial.label':`Families opening the app daily, as the base grew to ~500 · Genial Care`,
         'stat.liam.label':`Documentation per session, from up to 2h · LIAM`,
         'stat.compass.label':`Design-ticket cycle time · Compass design system`,
@@ -1364,7 +1502,7 @@
         'card.compass.metname':'Design-ticket cycle time', 'card.compass.met':'4.2d &rarr; 2.5d',
         'more.label':'Also shipped',
         'card.matri.cat':`Fintech`,
-        'card.matri.sum':`Redesigned the credit journey for a regulated product. Full case on request.`,
+        'card.matri.sum':`Redesigned the credit journey for a regulated product. Details on a call.`,
         'card.matri.metname':'Credit-journey completion',
         'method.label':'How I decide', 'method.h2':`Taste proposes. <mark class="mk on">Evidence</mark> decides.`,
         'method.p':`I don't ship a decision on taste alone. For each product I pick the simplest evidence that could prove me wrong, and it is a different one every time.`,
@@ -1381,15 +1519,14 @@
         'tst.3.role':'Developer · Modal, client project at 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'About',
         'about.p1':`I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.`,
-        'about.p2':`I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.`,
-        'about.p3':`I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.`,
-        'tl.1':`Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot`,
+        'about.p2':`I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame AQUI, a consumer-trust platform more than 30 million people visit every month.`,
+        'tl.1':`Senior Product Designer · Reclame AQUI · consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot`,
         'tl.2':`Senior Product Designer · Kruzer · enterprise logistics platform for Fast Shop, sole designer for four products`,
         'tl.3':'Senior Product Designer · Genial Care · first designer, then leading design across two teams',
         'tl.4':`Senior Product Designer (freelance, after hours) · Shock Tecnologia · white-label banking (Matri)`,
         'tl.5':`7COMm &middot; intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team`,
         'about.book':'Book 30 minutes', 'tl.4.d':`2023 – 25`, 'tl.5.d':'five years',
-        'contact.label':`Hiring a Senior Product Designer?`, 'contact.h2':`Let's talk.`,
+        'contact.label':`Get in touch`, 'contact.h2':`Let's talk.`,
         'foot.made':'Made by Guilherme Cannalonga', 'footer.email':'Email',
         'modal.label':`Let's talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever's faster for you.`,
         'modal.email.title':'Send an email', 'modal.resume.title':`Request my résumé`, 'modal.resume.sub':`I&rsquo;ll send the PDF by email`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Weekdays, flexible hours (ET)`, 'modal.li.title':'Connect on LinkedIn'
@@ -1402,8 +1539,23 @@
         'hero.h1':`Design de produto para sistemas onde <mark class="mk">a tela errada</mark> custa caro.`,
         'hero.bio':`Desenho as ferramentas que clínicos, operadores e famílias usam para decidir rápido quando o risco é real: de um assistente de IA que rascunha registros clínicos a uma plataforma de fulfillment em 80+ lojas. Mais de seis anos em design de produto.`,
         'hero.role':`Senior Product Designer · Grande Boston, MA`,
-        'hero.avail':`<span class="dot" aria-hidden="true"></span>Aberto a vagas de Senior Product Designer · Autorizado a trabalhar nos EUA e no Brasil · Remoto de qualquer lugar`,
-        'hero.cta1':'Ver os projetos', 'hero.cta3':'Agendar 30 minutos',
+        'hero.cta1':'Ver os projetos', 'hero.cta3':'Agendar 30 minutos', 'hero.call':`Agendar uma call de 30 min`,
+        'stat.ssd.from':`45,1% &rarr;`, 'stat.genial.from':`8,6% &rarr;`,
+        'stat.ssd.sr':`De 45,1% para 72,4%:`, 'stat.genial.sr':`De 8,6% para 62,3%:`, 'stat.liam.sr':`De até 2 horas para 25 minutos:`,
+        'stat.ssd.src':`Detector de Site Confiável`,
+        'work.updated':`Atualizado em outubro de 2026`,
+        'card.ssd.met':`45,1% &rarr; 72,4%`, 'card.genial.met':`8,6% &rarr; 62,3%`,
+        'ai.label':`Como trabalho com IA`, 'ai.h2':`IA dos dois lados da tela.`, 'ai.p':`Nos produtos que eu desenho, e no jeito como eu desenho.`,
+        'ai.prod.h':`No produto`, 'ai.proc.h':`No meu processo`,
+        'ai.prod.1':`O <strong>LIAM</strong> rascunha o registro clínico a partir da narração do terapeuta e nunca assina por ele: cada campo chega preenchido, e o terapeuta edita e decide.`,
+        'ai.prod.2':`O <strong>Detector de Site Confiável</strong> dá um veredito com IA, escrito para afirmar só o que foi verificado.`,
+        'ai.prod.3':`<strong>Desenhar para leitores de IA:</strong> as páginas do detector foram estruturadas para que assistentes de IA citem corretamente. As citações no Google AI Overview subiram 138% em 30 empresas.`,
+        'ai.proc.1':`<strong>Pensar decisões</strong> com LLMs e agentes, todos os dias.`,
+        'ai.proc.2':`<strong>Pesquisa e análise de dados</strong>, mais rápidas.`,
+        'ai.proc.3':`<strong>Protótipos funcionais</strong>, e alguns deles foram para produção.`,
+        'ai.proc.4':`<strong>Claude e Claude Code</strong> são onde vou mais fundo. Também já trabalhei com GPT e Gemini, e testo modelos e ferramentas novos conforme são lançados.`,
+        'ai.proc.5':`<strong>Este site</strong> foi feito com eles, e está preparado para assistentes de IA lerem corretamente. <a href="/colophon/">Como ele foi feito</a>`,
+        'contact.call':`Agendar uma call de 30 min`, 'contact.copy':`Copiar`, 'contact.copied':`Copiado`, 'contact.copy.aria':`Copiar endereço de email`, 'contact.copied.sr':`Endereço de email copiado`,
         'stat.genial.label':`Famílias abrindo o app por dia, com a base crescendo para ~500 · Genial Care`,
         'stat.liam.label':`Documentação por sessão, de até 2h · LIAM`,
         'stat.compass.label':`Tempo de ciclo de ticket de design · design system Compass`,
@@ -1430,7 +1582,7 @@
         'card.compass.metname':'Tempo de ciclo de ticket de design', 'card.compass.met':'4,2d &rarr; 2,5d',
         'more.label':'Também entreguei',
         'card.matri.cat':`Fintech`,
-        'card.matri.sum':`Redesenhei a jornada de crédito de um produto regulado. Case completo sob consulta.`,
+        'card.matri.sum':`Redesenhei a jornada de crédito de um produto regulado. Detalhes numa conversa.`,
         'card.matri.metname':'Conclusão da jornada de crédito',
         'method.label':'Como decido', 'method.h2':`O gosto propõe. A <mark class="mk on">evidência</mark> decide.`,
         'method.p':`Não coloco uma decisão no ar só pelo meu gosto. Para cada produto escolho a evidência mais simples que ainda consegue me provar errado, e ela muda a cada vez.`,
@@ -1447,15 +1599,14 @@
         'tst.3.role':'Desenvolvedor · Modal, projeto de cliente na 7COMm',
         'about.location':'Greater Boston, Massachusetts', 'about.label':'Sobre',
         'about.p1':`Comecei no suporte a sistemas corporativos, passei pelo front-end e encontrei no design o trabalho que eu queria para a vida. Comecei pela interface e fui para a usabilidade, para entender quem usa. Daí fui para produto, para entender como aquelas telas fazem sentido para a empresa no fim do mês e qual ponteiro elas mexem. Duas pós-graduações depois, o caminho tem sido cada vez mais métricas, estratégia e negócio.`,
-        'about.p2':`Fui o primeiro ou o único designer mais vezes do que não: primeiro Senior Product Designer da Genial Care, depois liderando design em dois times; designer único de quatro produtos na Kruzer; agora no Reclame Aqui, uma plataforma de confiança do consumidor que mais de 30 milhões de pessoas acessam todos os meses.`,
-        'about.p3':`Sou entusiasta de IA e trabalho com LLMs e agentes todos os dias: para pensar decisões, acelerar pesquisa e análise de dados, criar protótipos funcionais e colocar alguns deles em produção. Claude e Claude Code são onde vou mais fundo (este site foi feito com eles), também já trabalhei com GPT e Gemini, e testo modelos e ferramentas novos conforme são lançados.`,
-        'tl.1':`Senior Product Designer · Reclame Aqui · confiança e decisão de compra do consumidor`,
+        'about.p2':`Fui o primeiro ou o único designer mais vezes do que não: primeiro Senior Product Designer da Genial Care, depois liderando design em dois times; designer único de quatro produtos na Kruzer; agora no Reclame AQUI, uma plataforma de confiança do consumidor que mais de 30 milhões de pessoas acessam todos os meses.`,
+        'tl.1':`Senior Product Designer · Reclame AQUI · confiança e decisão de compra do consumidor`,
         'tl.2':'Senior Product Designer · Kruzer · plataforma de logística para a Fast Shop, designer único de quatro produtos',
         'tl.3':'Senior Product Designer · Genial Care · primeiro designer, depois liderando design em dois times',
         'tl.4':`Senior Product Designer (freelance, fora do horário) · Shock Tecnologia · banking white-label (Matri)`,
         'tl.5':`7COMm &middot; de estagiário a Senior UX/UI Designer: do suporte, passando pelo front-end, até apoiar a liderança do time de UX design`,
         'about.book':'Agendar 30 minutos', 'tl.4.d':`2023 – 25`, 'tl.5.d':'cinco anos',
-        'contact.label':`Contratando um Senior Product Designer?`, 'contact.h2':'Vamos conversar.',
+        'contact.label':`Fale comigo`, 'contact.h2':'Vamos conversar.',
         'foot.made':'Feito por Guilherme Cannalonga', 'footer.email':'Email',
         'modal.label':'Vamos conversar', 'modal.h3':'Como você prefere falar comigo?', 'modal.p':'Escolha o que for mais rápido pra você.',
         'modal.email.title':'Mandar um email', 'modal.resume.title':`Pedir meu currículo`, 'modal.resume.sub':`Envio o PDF por email`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Dias úteis, horário flexível (ET)`, 'modal.li.title':'Conectar no LinkedIn'
@@ -1464,6 +1615,7 @@
     function apply(lang){
       document.documentElement.lang = lang==='pt' ? 'pt-BR' : 'en';
       const d=I18N[lang]||I18N.en;
+      window.I18N_CURRENT=d;
       document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
         const v = d[el.dataset.i18nAria];
         if(v !== undefined) el.setAttribute('aria-label', v);
@@ -1528,22 +1680,35 @@
   })();
 </script>
 <script>
-  /* statements that fill with ink on scroll: wrap their text in one inline span, again after a language switch */
+  /* ---- copy email: the button confirms in place, and a status line tells a screen reader ---- */
   (function(){
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if(!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'))) return;
-    const sel='[data-i18n="work.h2"],[data-i18n="about.p1"]';
-    function wrap(){
-      document.querySelectorAll(sel).forEach(el=>{
-        if(el.firstElementChild && el.firstElementChild.classList.contains('lit') && el.childNodes.length===1) return;
-        const s=document.createElement('span'); s.className='lit';
-        while(el.firstChild) s.appendChild(el.firstChild);
-        el.appendChild(s);
-      });
+    const btn=document.querySelector('.copy-btn'), status=document.getElementById('copyStatus');
+    if(!btn) return;
+    const say=k=>{ const d=(window.I18N_CURRENT||{}); return d[k]; };
+    let timer=null;
+    function done(){
+      btn.classList.add('done');
+      const txt=btn.querySelector('.copy-txt'); if(txt) txt.textContent=say('contact.copied')||'Copied';
+      if(status) status.textContent=say('contact.copied.sr')||'Email address copied';
+      clearTimeout(timer);
+      timer=setTimeout(()=>{ btn.classList.remove('done'); if(txt) txt.textContent=say('contact.copy')||'Copy'; if(status) status.textContent=''; },2000);
     }
-    wrap();
-    document.addEventListener('langchange',wrap);
+    function fallback(text){
+      const t=document.createElement('textarea'); t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(e){} t.remove(); return ok;
+    }
+    btn.addEventListener('click',()=>{
+      const text=btn.dataset.copy;
+      if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(done,()=>{ if(fallback(text)) done(); }); }
+      else if(fallback(text)) done();
+    });
   })();
+</script>
+<script>
+  /* for whoever opens the console */
+  console.log('%ccannalonga%c\nHi. You inspect things too.\nThis site is plain HTML, CSS and a little JavaScript: no framework, no build step, built with Claude Code.\nHow it is built: https://cannalongadesign.github.io/colophon/',
+    'font:900 20px "DM Sans",sans-serif;letter-spacing:-0.06em;color:#14140f;background:#d9f24b;padding:4px 10px;border-radius:6px',
+    'font:12px "DM Mono",ui-monospace,monospace;color:#605e56;line-height:1.6');
 </script>
 </body>
 </html>

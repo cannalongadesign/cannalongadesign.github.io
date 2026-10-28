@@ -19,16 +19,16 @@
 <meta property="og:description" content="Built to be read by people, and by the AI tools they ask.">
 <meta property="og:url" content="https://cannalongadesign.github.io/colophon/">
 <link rel="canonical" href="https://cannalongadesign.github.io/colophon/">
-<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How this site is built · Guilherme Cannalonga">
 <meta name="twitter:description" content="Built to be read by people, and by the AI tools they ask.">
-<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design — case study system
@@ -768,6 +768,88 @@
     .back-link,.nav-cta{position:relative;}
     .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
   }
+
+  /* ================= REFINEMENT PASS =================
+     The same small print as the home: mono, uppercase, one size. A shorter
+     header, so the short version is on the first screen. A clean printout,
+     because cases get saved as PDF and passed to the people who interview. */
+  :root{--mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+  .kicker-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 16px; margin-bottom:24px;}
+  .kicker-row .kicker{margin-bottom:0;}
+  .kicker{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase;}
+  .updated{font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--ink-2);}
+  .meta-item .k,.tldr .k,.index .k,.tldr dt,.decision-row .dk,.receipts b,.compare .k{
+    font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .meta-item .k{margin-bottom:8px;}
+  .index .k .rt{font-weight:400;}
+  .index li a::before{font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.02em;}
+  .stage-label b{font-family:var(--mono); font-weight:500; font-size:12px; letter-spacing:.06em;}
+
+  .article-hero{padding:128px 0 var(--sp-5);}
+  @media (min-width:1100px){
+    .article-hero{padding:136px 0 var(--sp-5);}
+    .article-hero h1{margin-bottom:var(--sp-4);}
+    .article-hero .dek{margin-bottom:var(--sp-5);}
+    .meta-row{padding-top:var(--sp-4);}
+  }
+  @media (max-width:640px){
+    .article-hero{padding:100px 0 var(--sp-4);}
+    .article-hero .dek{margin-bottom:var(--sp-4);}
+    .meta-row{row-gap:16px; padding-top:var(--sp-3);}
+    .article-body{padding-top:var(--sp-4);}
+    .kicker{border:none; padding:0; border-radius:0;}   /* a pill that wraps to two lines reads as broken */
+    .kicker-row{gap:6px 16px; margin-bottom:18px;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .js .shot.reveal .frame > img,.js .shot.reveal .stage img,.js .shot.reveal .phone-row img{transition-duration:.7s;}
+  }
+
+  .print-url{display:none;}
+  @media print{
+    @page{margin:16mm 14mm;}
+    html,body{background:#fff !important;}
+    *,*::before,*::after{animation:none !important; transition:none !important;}
+    nav,.skip-link,.contact-modal,.to-top,.index,.close-ctas,.lang-toggle,.foot-links,body::before{display:none !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    .print-url{display:block; font-family:var(--mono); font-size:9pt; color:#555; margin:0 0 10pt;}
+    .article-hero{padding:0 0 12pt !important;}
+    .article-body{padding-top:0 !important;}
+    .tldr{background:none !important; border:1px solid #ccc;}
+    .tldr,.shot,figure,.decision,.metrics-strip,.receipts li,table,.process li,.callout{break-inside:avoid;}
+    h2,h3,.stage-label{break-after:avoid;}
+    img{max-height:110mm; object-fit:contain;}
+    .article-body p a[href^="http"]::after,.article-body li a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8.5pt; color:#555; word-break:break-all;}
+  }
+
+  /* the system behind it: tokens shown from the live stylesheet */
+  .system{margin-top:var(--sp-9); padding-top:var(--sp-6); border-top:1px solid var(--line);}
+  .system h2{margin-top:0 !important;}
+  .sys-k{font-family:var(--mono); font-size:11.5px; font-weight:500; line-height:1.4; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin:var(--sp-6) 0 var(--sp-3);}
+  .sys-swatches{list-style:none; margin:0 !important; display:grid; gap:0; border-top:1px solid var(--line);}
+  .sys-swatches li{display:grid; grid-template-columns:44px minmax(0,1fr) auto; gap:var(--sp-3); align-items:center; padding:14px 0; margin:0 !important; border-bottom:1px solid var(--line);}
+  .sys-swatches .sw{width:44px; height:44px; border-radius:12px; background:var(--sw); box-shadow:inset 0 0 0 1px var(--line);}
+  .sys-swatches .nm{display:flex; flex-direction:column; gap:2px; min-width:0;}
+  .sys-swatches .nm b{font-size:15px; font-weight:700; color:var(--ink); line-height:1.35;}
+  .sys-swatches code,.sys-space code{font-family:var(--mono); font-size:12px; color:var(--ink-2);}
+  .sys-swatches .val{display:flex; flex-direction:column; align-items:flex-end; gap:2px; font-family:var(--mono); font-size:12px; color:var(--ink-2); text-align:right;}
+  .sys-swatches .hex{color:var(--ink); font-weight:500;}
+  .sys-swatches .ratio{color:var(--ink); font-weight:500;}
+  .sys-type{display:grid; gap:var(--sp-3); border-top:1px solid var(--line); padding-top:var(--sp-4);}
+  .sys-type p{margin:0 !important; display:flex; align-items:baseline; justify-content:space-between; gap:var(--sp-3); flex-wrap:wrap; color:var(--ink) !important;}
+  .sys-type .t-display{font-weight:900; font-size:56px !important; letter-spacing:-0.05em; line-height:1 !important;}
+  .sys-type .t-display span,.sys-type .t-meta{font-family:var(--mono); font-weight:400; font-size:12px; letter-spacing:.04em; color:var(--ink-2);}
+  .sys-type .t-mono > span:first-child{font-family:var(--mono); font-size:13px; letter-spacing:.06em; text-transform:uppercase;}
+  .sys-space{list-style:none; margin:0 !important; display:grid; gap:6px; border-top:1px solid var(--line); padding-top:var(--sp-4) !important;}
+  .sys-space li{display:grid; grid-template-columns:minmax(0,160px) 64px 1fr; gap:var(--sp-3); align-items:center; margin:0 !important; font-size:13px !important; line-height:1.6 !important;}
+  .sys-space .bar{display:block; height:10px; width:var(--w); border-radius:2px; background:var(--ink);}
+  .sys-space .px{font-family:var(--mono); font-size:12px; color:var(--ink-2);}
+  @media (max-width:640px){
+    .sys-swatches li{grid-template-columns:40px minmax(0,1fr); }
+    .sys-swatches .sw{width:40px; height:40px;}
+    .sys-swatches .val{grid-column:2; align-items:flex-start; text-align:left;}
+    .sys-type .t-display{font-size:44px !important;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -834,9 +916,10 @@
 </nav>
 
 <main id="main">
+<p class="print-url">https://cannalongadesign.github.io/colophon/</p>
 <header class="article-hero">
   <div class="col">
-    <span class="kicker" data-i18n="hero.kicker">Behind the site</span>
+    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Behind the site</span><span class="updated" data-i18n="case.updated">Updated October 2026</span></div>
     <h1 data-i18n="hero.h1">Built to be read by people, and by the AI tools they ask</h1>
     <p class="dek" data-i18n="hero.dek">More and more recruiters ask an AI assistant about a candidate before they open a portfolio. This site is set up so that, when they do, the answer is correct and points back here.</p>
   </div>
@@ -855,6 +938,41 @@
       <li><h3 data-i18n="co.7h">Only numbers I can back up</h3><p data-i18n="co.7p">Every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.</p></li>
     </ol>
     <p class="takeaway" data-i18n="co.outro">It is the same principle as my product work: decide what the reader needs, then make it impossible to miss.</p>
+
+    <section class="system" aria-labelledby="sysTitle">
+      <h2 id="sysTitle" data-i18n="sys.h2">The system behind it</h2>
+      <p data-i18n="sys.p">Three colours, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.</p>
+
+      <h3 class="sys-k" data-i18n="sys.color">Colour</h3>
+      <ul class="sys-swatches">
+        <li data-token="--paper" data-on="--ink"><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.paper">Background</b><code>--paper</code></span><span class="val"><span class="hex">#F7F6F1</span><span class="cr"><span data-i18n="sys.inkon">Ink on it</span> <b class="ratio">17.07:1</b></span></span></li>
+        <li data-token="--ink" data-on="--paper" data-swap><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.ink">Text and interface</b><code>--ink</code></span><span class="val"><span class="hex">#14140F</span><span class="cr"><span data-i18n="sys.onpaper">On the background</span> <b class="ratio">17.07:1</b></span></span></li>
+        <li data-token="--ink-2" data-on="--paper" data-swap><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.ink2">Secondary text</b><code>--ink-2</code></span><span class="val"><span class="hex">#605E56</span><span class="cr"><span data-i18n="sys.onpaper">On the background</span> <b class="ratio">6.00:1</b></span></span></li>
+        <li data-token="--acid" data-on="--ink"><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.acid">Accent, used as punctuation</b><code>--acid</code></span><span class="val"><span class="hex">#D9F24B</span><span class="cr"><span data-i18n="sys.inkon">Ink on it</span> <b class="ratio">14.74:1</b></span></span></li>
+      </ul>
+
+      <h3 class="sys-k" data-i18n="sys.type">Type</h3>
+      <div class="sys-type">
+        <p class="t-display">Aa <span>DM Sans 900</span></p>
+        <p class="t-text"><span data-i18n="sys.text">Reading text, 18 on 32</span> <span class="t-meta">DM Sans 400</span></p>
+        <p class="t-mono"><span data-i18n="sys.mono">Labels, sources and dates</span> <span class="t-meta">DM Mono 500</span></p>
+      </div>
+
+      <h3 class="sys-k" data-i18n="sys.space">Spacing</h3>
+      <ol class="sys-space" aria-label="Spacing scale" data-i18n-aria="sys.space.aria">
+        <li data-token="--sp-1"><span class="bar" aria-hidden="true"></span><code>--sp-1</code><span class="px">4px</span></li>
+        <li data-token="--sp-2"><span class="bar" aria-hidden="true"></span><code>--sp-2</code><span class="px">8px</span></li>
+        <li data-token="--sp-3"><span class="bar" aria-hidden="true"></span><code>--sp-3</code><span class="px">16px</span></li>
+        <li data-token="--sp-4"><span class="bar" aria-hidden="true"></span><code>--sp-4</code><span class="px">24px</span></li>
+        <li data-token="--sp-5"><span class="bar" aria-hidden="true"></span><code>--sp-5</code><span class="px">32px</span></li>
+        <li data-token="--sp-6"><span class="bar" aria-hidden="true"></span><code>--sp-6</code><span class="px">40px</span></li>
+        <li data-token="--sp-7"><span class="bar" aria-hidden="true"></span><code>--sp-7</code><span class="px">56px</span></li>
+        <li data-token="--sp-8"><span class="bar" aria-hidden="true"></span><code>--sp-8</code><span class="px">72px</span></li>
+        <li data-token="--sp-9"><span class="bar" aria-hidden="true"></span><code>--sp-9</code><span class="px">96px</span></li>
+        <li data-token="--sp-10"><span class="bar" aria-hidden="true"></span><code>--sp-10</code><span class="px">120px</span></li>
+        <li data-token="--sp-11"><span class="bar" aria-hidden="true"></span><code>--sp-11</code><span class="px">160px</span></li>
+      </ol>
+    </section>
   </div>
 </article>
 
@@ -970,6 +1088,7 @@
         'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
         'nav.back':`Back to portfolio`,
         'nav.cta':`Let's talk`,
+        'case.updated':`Updated October 2026`,
         'hero.kicker':`Behind the site`,
         'hero.h1':`Built to be read by people, and by the AI tools they ask`,
         'hero.dek':`More and more recruiters ask an AI assistant about a candidate before they open a portfolio. This site is set up so that, when they do, the answer is correct and points back here.`,
@@ -1002,6 +1121,11 @@
         'co.7h':`Only numbers I can back up`,
         'co.7p':`Every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.`,
         'co.intro':`Seven things make that work:`,
+        'sys.h2':`The system behind it`, 'sys.p':`Three colours, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.`,
+        'sys.color':`Colour`, 'sys.type':`Type`, 'sys.space':`Spacing`, 'sys.space.aria':`Spacing scale`,
+        'sys.paper':`Background`, 'sys.ink':`Text and interface`, 'sys.ink2':`Secondary text`, 'sys.acid':`Accent, used as punctuation`,
+        'sys.inkon':`Ink on it`, 'sys.onpaper':`On the background`,
+        'sys.text':`Reading text, 18 on 32`, 'sys.mono':`Labels, sources and dates`,
         'co.outro':`It is the same principle as my product work: decide what the reader needs, then make it impossible to miss.`
       },
       pt: {
@@ -1015,6 +1139,7 @@
         'footer.rights':`© 2026 Guilherme Cannalonga. Todos os direitos reservados.`,
         'nav.back':`Voltar ao portfólio`,
         'nav.cta':`Vamos conversar`,
+        'case.updated':`Atualizado em outubro de 2026`,
         'hero.kicker':`Por trás do site`,
         'hero.h1':`Feito para ser lido por pessoas, e pelas IAs que elas consultam`,
         'hero.dek':`Cada vez mais recrutadores perguntam a um assistente de IA sobre um candidato antes de abrir o portfólio. Este site foi preparado para que, quando isso acontecer, a resposta esteja certa e aponte para cá.`,
@@ -1047,6 +1172,11 @@
         'co.7h':`Só números que eu consigo sustentar`,
         'co.7p':`Todo resultado diz como foi medido, e o que eu não consegui verificar fica de fora. Uma IA repete o que encontra, então a página precisa estar certa primeiro.`,
         'co.intro':`Sete coisas fazem isso funcionar:`,
+        'sys.h2':`O sistema por trás`, 'sys.p':`Três cores, duas fontes e uma escala de espaçamento. Os valores abaixo são lidos da própria folha de estilo desta página, então sempre batem com o que você vê.`,
+        'sys.color':`Cor`, 'sys.type':`Tipografia`, 'sys.space':`Espaçamento`, 'sys.space.aria':`Escala de espaçamento`,
+        'sys.paper':`Fundo`, 'sys.ink':`Texto e interface`, 'sys.ink2':`Texto secundário`, 'sys.acid':`Destaque, usado como pontuação`,
+        'sys.inkon':`Tinta sobre ele`, 'sys.onpaper':`Sobre o fundo`,
+        'sys.text':`Texto de leitura, 18 em 32`, 'sys.mono':`Rótulos, fontes e datas`,
         'co.outro':`É o mesmo princípio do meu trabalho de produto: decidir do que quem lê precisa e tornar impossível não ver.`
       }
     };
@@ -1127,6 +1257,32 @@
     const io=new IntersectionObserver(es=>{es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('active')); const a=map.get(e.target); if(a) a.classList.add('active'); } });},{rootMargin:'-20% 0px -70% 0px'});
     map.forEach((a,el)=>{ if(el) io.observe(el); });
   })();
+</script>
+<script>
+  /* the system section reads the live tokens, so the page can never describe a colour it does not use */
+  (function(){
+    const root=getComputedStyle(document.documentElement);
+    const tok=n=>root.getPropertyValue(n).trim();
+    const hex=c=>{ const m=c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i); if(!m) return null; let h=m[1]; if(h.length===3) h=h.split('').map(x=>x+x).join(''); return '#'+h.toUpperCase(); };
+    const lum=h=>{ const v=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(c=>c<=0.03928? c/12.92 : Math.pow((c+0.055)/1.055,2.4)); return 0.2126*v[0]+0.7152*v[1]+0.0722*v[2]; };
+    const ratio=(a,b)=>{ const x=lum(a), y=lum(b); return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05); };
+    document.querySelectorAll('.sys-swatches li').forEach(li=>{
+      const h=hex(tok(li.dataset.token)), on=hex(tok(li.dataset.on)); if(!h) return;
+      li.style.setProperty('--sw',h);
+      li.querySelector('.hex').textContent=h;
+      if(on) li.querySelector('.ratio').textContent=ratio(h,on).toFixed(2)+':1';
+    });
+    document.querySelectorAll('.sys-space li').forEach(li=>{
+      const v=tok(li.dataset.token); if(!v) return;
+      li.style.setProperty('--w',v); li.querySelector('.px').textContent=v;
+    });
+  })();
+</script>
+<script>
+  /* for whoever opens the console */
+  console.log('%ccannalonga%c\nHi. You inspect things too.\nThis site is plain HTML, CSS and a little JavaScript: no framework, no build step, built with Claude Code.',
+    'font:900 20px "DM Sans",sans-serif;letter-spacing:-0.06em;color:#14140f;background:#d9f24b;padding:4px 10px;border-radius:6px',
+    'font:12px "DM Mono",ui-monospace,monospace;color:#605e56;line-height:1.6');
 </script>
 </body>
 </html>

@@ -19,17 +19,17 @@
 <meta property="og:description" content="How a forgotten app became the tool 62% of families open every day, by fixing a scheduling bottleneck instead of redesigning the app.">
 <meta property="og:url" content="https://cannalongadesign.github.io/genial/">
 <link rel="canonical" href="https://cannalongadesign.github.io/genial/">
-<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Genial App case study · from 8% to 62% daily active users">
 <meta name="twitter:description" content="How a forgotten app became the tool 62% of families open every day.">
-<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga.jpg">
+<meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design — case study system
@@ -730,6 +730,59 @@
     .back-link,.nav-cta{position:relative;}
     .back-link::after,.nav-cta::after{content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max(100%,44px); height:max(100%,44px);}
   }
+
+  /* ================= REFINEMENT PASS =================
+     The same small print as the home: mono, uppercase, one size. A shorter
+     header, so the short version is on the first screen. A clean printout,
+     because cases get saved as PDF and passed to the people who interview. */
+  :root{--mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+  .kicker-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 16px; margin-bottom:24px;}
+  .kicker-row .kicker{margin-bottom:0;}
+  .kicker{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase;}
+  .updated{font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--ink-2);}
+  .meta-item .k,.tldr .k,.index .k,.tldr dt,.decision-row .dk,.receipts b,.compare .k{
+    font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .meta-item .k{margin-bottom:8px;}
+  .index .k .rt{font-weight:400;}
+  .index li a::before{font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.02em;}
+  .stage-label b{font-family:var(--mono); font-weight:500; font-size:12px; letter-spacing:.06em;}
+
+  .article-hero{padding:128px 0 var(--sp-5);}
+  @media (min-width:1100px){
+    .article-hero{padding:136px 0 var(--sp-5);}
+    .article-hero h1{margin-bottom:var(--sp-4);}
+    .article-hero .dek{margin-bottom:var(--sp-5);}
+    .meta-row{padding-top:var(--sp-4);}
+  }
+  @media (max-width:640px){
+    .article-hero{padding:100px 0 var(--sp-4);}
+    .article-hero .dek{margin-bottom:var(--sp-4);}
+    .meta-row{row-gap:16px; padding-top:var(--sp-3);}
+    .article-body{padding-top:var(--sp-4);}
+    .kicker{border:none; padding:0; border-radius:0;}   /* a pill that wraps to two lines reads as broken */
+    .kicker-row{gap:6px 16px; margin-bottom:18px;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .js .shot.reveal .frame > img,.js .shot.reveal .stage img,.js .shot.reveal .phone-row img{transition-duration:.7s;}
+  }
+
+  .print-url{display:none;}
+  @media print{
+    @page{margin:16mm 14mm;}
+    html,body{background:#fff !important;}
+    *,*::before,*::after{animation:none !important; transition:none !important;}
+    nav,.skip-link,.contact-modal,.to-top,.index,.close-ctas,.lang-toggle,.foot-links,body::before{display:none !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    .print-url{display:block; font-family:var(--mono); font-size:9pt; color:#555; margin:0 0 10pt;}
+    .article-hero{padding:0 0 12pt !important;}
+    .article-body{padding-top:0 !important;}
+    .tldr{background:none !important; border:1px solid #ccc;}
+    .tldr,.shot,figure,.decision,.metrics-strip,.receipts li,table,.process li,.callout{break-inside:avoid;}
+    h2,h3,.stage-label{break-after:avoid;}
+    img{max-height:110mm; object-fit:contain;}
+    .article-body p a[href^="http"]::after,.article-body li a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8.5pt; color:#555; word-break:break-all;}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -818,9 +871,10 @@
 </nav>
 
 <main id="main">
+<p class="print-url">https://cannalongadesign.github.io/genial/</p>
 <header class="article-hero">
   <div class="col">
-    <span class="kicker" data-i18n="hero.kicker">Case study · Healthcare · Product Growth</span>
+    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Case study · Healthcare · Product Growth</span><span class="updated" data-i18n="case.updated">Updated October 2026</span></div>
     <h1 data-i18n="hero.h1">Turning a forgotten app into the tool 62% of families open every day</h1>
     <p class="dek" data-i18n="hero.dek">The Genial Care family app went from an 8% daily-active rate to 62% in a year by fixing a scheduling bottleneck that was overloading operations, then letting usage decide what came next.</p>
     <div class="meta-row">
@@ -1205,6 +1259,7 @@
         'g.tl.did':`Found the real bottleneck in scheduling, shipped a one-month MVP that let families see and cancel sessions, then ran a continuous loop of small bets read against a weekly behaviour curve.`,
         'g.tl.out':`Daily active families went from <b>8.59% to 62.3%</b> in 13 months, in a staircase that tracks releases rather than one redesign spike.`,
         'nav.back':'Back to portfolio', 'nav.cta':`Let's talk`,
+        'case.updated':`Updated October 2026`,
         'hero.kicker':'Case study · Healthcare · Product Growth',
         'hero.h1':'Turning a forgotten app into the tool 62% of families open every day',
         'hero.dek':`The Genial Care family app went from an 8% daily-active rate to 62% in a year by fixing a scheduling bottleneck that was overloading operations, then letting usage decide what came next.`,
@@ -1357,6 +1412,7 @@
         'g.tl.did':`Achei o gargalo real na agenda, entreguei um MVP de um mês que deixou as famílias verem e cancelarem sessões, e rodei um ciclo contínuo de apostas pequenas lidas contra uma curva semanal de comportamento.`,
         'g.tl.out':`As famílias ativas por dia foram de <b>8,59% para 62,3%</b> em 13 meses, numa escada que acompanha os releases em vez de um pico de redesenho.`,
         'nav.back':'Voltar ao portfólio', 'nav.cta':'Vamos conversar',
+        'case.updated':`Atualizado em outubro de 2026`,
         'hero.kicker':'Case study · Saúde · Crescimento de Produto',
         'hero.h1':'Transformando um app esquecido na ferramenta que 62% das famílias abrem todo dia',
         'hero.dek':`O app das famílias na Genial Care foi de 8% de uso diário para 62% em um ano corrigindo um gargalo de agendamento que sobrecarregava a operação, e deixando o uso real decidir o próximo passo.`,

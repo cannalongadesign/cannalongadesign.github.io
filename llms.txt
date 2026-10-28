@@ -1,13 +1,14 @@
 # Guilherme Cannalonga
 
-> Guilherme Cannalonga is a Senior Product Designer based in Greater Boston, Massachusetts, authorized to work in the United States and Brazil. He designs products where the wrong screen is expensive: AI clinical documentation, consumer healthcare, enterprise logistics and design systems. Six-plus years in product design, after five years in enterprise support and front-end development. Open to Senior Product Designer roles in the US.
+> Guilherme Cannalonga is a Senior Product Designer based in Greater Boston, Massachusetts. He designs products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems. Six-plus years in product design, after five years in enterprise support and front-end development.
 
 Key facts:
 - Name: Guilherme Cannalonga (also "Gui Cannalonga"; portfolio brand "cannalonga")
-- Role: Senior Product Designer, currently at Reclame Aqui (consumer trust and purchase-decision platform, Brazil)
-- Location: Greater Boston, MA, USA; authorized to work in the US and Brazil; open to remote roles
+- Role: Senior Product Designer, currently at Reclame AQUI (consumer trust and purchase-decision platform, Brazil)
+- Location: Greater Boston, MA, USA
 - Previously: Senior Product Designer at Kruzer (enterprise commerce platform; sole designer for four products) and Genial Care (autism therapy platform; first Senior Product Designer); Senior Product Designer (freelance, after hours) at Shock Tecnologia (white-label banking)
-- Strengths: product strategy and discovery, AI product design with human-in-the-loop, complex B2B workflows, design systems and tokens
+- Strengths: product strategy and discovery, AI product design with human-in-the-loop, designing for AI readers (structured data, llms.txt), complex B2B workflows, design systems and tokens
+- Works with AI daily: LLMs and agents to think decisions through, research and data analysis, functional prototypes (some shipped to production); Claude and Claude Code most deeply, also GPT and Gemini
 - Languages: English, Portuguese
 - LinkedIn: https://www.linkedin.com/in/guilhermecannalonga
 - Contact: cannalongadesign@gmail.com
@@ -29,8 +30,8 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 
 ## About this site
 
-- [Portfolio home](https://cannalongadesign.github.io/): positioning, outcomes, how he decides, testimonials, career timeline
-- [How this site is built](https://cannalongadesign.github.io/colophon/): structured data and AI-search practices used on this site
+- [Portfolio home](https://cannalongadesign.github.io/): positioning, outcomes, how he decides, how he works with AI, testimonials, career timeline
+- [How this site is built](https://cannalongadesign.github.io/colophon/): structured data and AI-search practices used on this site, and the design tokens behind it
 
 ## Optional
 

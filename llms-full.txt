@@ -1,28 +1,22 @@
 # Guilherme Cannalonga · Portfolio (full text)
 
-Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-15
+Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-28
 
 **Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA
 
 # Product design for systems where the wrong screen is expensive.
 
-45.1% → 72.4%
+45.1% to 72.4%: Said it helped them decide Safe Site Detector
 
-Said it helped them decide
+8.6% to 62.3%: Families opening the app daily Genial App
 
-8.6% → 62.3%
-
-Families opening the app daily
-
-Up to 2h → 25min
-
-Documentation per session
+Up to 2 hours to 25 minutes: Documentation per session LIAM
 
 See the work
 
-LinkedIn
+Book a 30-min call
 
-Selected work
+Selected work Updated October 2026
 
 ## Six products where a confusing screen had a real cost.
 
@@ -98,7 +92,7 @@ Fintech
 
 18% → 63%
 
-**Shock Tecnologia.** Redesigned the credit journey for a regulated product. Full case on request.
+**Shock Tecnologia.** Redesigned the credit journey for a regulated product. Details on a call.
 
 Credit-journey completion
 
@@ -115,6 +109,32 @@ I don't ship a decision on taste alone. For each product I pick the simplest evi
 - LIAM An AI assistant that drafts the clinical record from the therapist's narration. With about 80 therapists, I tested the first version with them directly, and what it showed was that the drafts had to be readable. After launch, a question inside the flow tells us whether they still trust the suggestions.
 
 - Pick & Pack The platform store, distribution-centre and delivery teams use to fulfil Fast Shop's two-hour orders. You can't split traffic in a warehouse, so one store went first and we compared it with the stores still on the old process.
+
+How I work with AI
+
+## AI on both sides of the screen.
+
+In the products I design, and in the way I design them.
+
+### In the product
+
+- **LIAM** drafts the clinical record from the therapist’s narration and never signs it: each field arrives pre-filled, and the therapist edits and decides.
+
+- **Safe Site Detector** gives an AI-powered verdict, worded to state only what was verified.
+
+- **Designing for AI readers:** the detector’s pages were structured so AI assistants quote them correctly. Citations in Google AI Overview rose 138% across 30 companies.
+
+### In my process
+
+- **Thinking decisions through** with LLMs and agents, every day.
+
+- **Research and data analysis**, faster.
+
+- **Functional prototypes**, and some of them shipped to production.
+
+- **Claude and Claude Code** are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.
+
+- **This site** was built with them, and it is set up so AI assistants read it correctly. How it’s built
 
 What people say
 
@@ -140,19 +160,15 @@ Developer · Modal, client project at 7COMm
 
 [Image: Guilherme Cannalonga]
 
-Open to Senior Product Designer roles · Authorized to work in the US and Brazil · Remote from anywhere
-
 About
 
 I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specialisations later, the path has been more and more metrics, strategy and business.
 
-I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame Aqui, a consumer-trust platform more than 30 million people visit every month.
-
-I'm an AI enthusiast and I work with LLMs and agents every day: to think decisions through, run research and data analysis faster, build functional prototypes, and ship some of them to production. Claude and Claude Code are where I go deepest (this site was built with them), I have worked with GPT and Gemini too, and I test new models and tools as they launch.
+I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame AQUI, a consumer-trust platform more than 30 million people visit every month.
 
 2026 –:
 
-Senior Product Designer · Reclame Aqui · consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot
+Senior Product Designer · Reclame AQUI · consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot
 
 2024 – 26:
 
@@ -170,46 +186,43 @@ five years:
 
 7COMm · intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team
 
-Hiring a Senior Product Designer?
+Get in touch
 
 ## Let's talk.
 
-cannalongadesign@gmail.com ↗
+cannalongadesign@gmail.com
+
+Book a 30-min call
 
 ---
 
 URL: https://cannalongadesign.github.io/genial/
 
-Case study · Healthcare · Product Growth
+Case study · Healthcare · Product Growth Updated October 2026
 
 # Turning a forgotten app into the tool 62% of families open every day
 
 The Genial Care family app went from an 8% daily-active rate to 62% in a year by fixing a scheduling bottleneck that was overloading operations, then letting usage decide what came next.
 
 Role
+
 Senior Product Designer
 
 Team
+
 PM · Ops lead · Eng squad · Clinical
 
 Company
+
 Genial Care
 
 Timeline
+
 2022 – 2024
 
 Outcome
+
 8% → 62% DAU
-
-The short version
-
-**Problem:** A content app almost nobody opened, on top of an operations team building every family's weekly schedule by hand.
-
-**What I did:** Found the real bottleneck in scheduling, shipped a one-month MVP that let families see and cancel sessions, then ran a continuous loop of small bets read against a weekly behaviour curve.
-
-**Outcome:** Daily active families went from **8.59% to 62.3%** in 13 months, in a staircase that tracks releases rather than one redesign spike.
-
-Product strategy 0→1 Consumer healthcare Growth
 
 In this case 6 min read
 
@@ -224,6 +237,22 @@ In this case 6 min read
 - Impact
 
 - What I’d do differently
+
+The short version
+
+Problem:
+
+A content app almost nobody opened, on top of an operations team building every family's weekly schedule by hand.
+
+What I did:
+
+Found the real bottleneck in scheduling, shipped a one-month MVP that let families see and cancel sessions, then ran a continuous loop of small bets read against a weekly behaviour curve.
+
+Outcome:
+
+Daily active families went from **8.59% to 62.3%** in 13 months, in a staircase that tracks releases rather than one redesign spike.
+
+Product strategy 0→1 Consumer healthcare Growth
 
 I joined Genial Care, an ABA therapy platform for autism care, as its first Senior Product Designer, brought in to build the Atípico design system from scratch, improve the family-facing app, and stand up the clinical panel therapists use to run sessions (the same panel LIAM would later live inside). This case is about the app half of that mandate.
 
@@ -241,33 +270,57 @@ I joined Genial Care, an ABA therapy platform for autism care, as its first Seni
 
 ## Scope the MVP around two actions, not a redesign
 
+1
+
 ### Give families a reason to act, not just read
 
-**Problem:** A full redesign was the obvious ask. Defending three weeks of mapping the operations team’s week (with nothing visible shipping) was hard.
+Problem
 
-**Decision:** I scoped the first release around exactly two actions: showing each child’s upcoming sessions, and letting a family cancel one themselves instead of calling. Shipped in one month, discovery to build.
+A full redesign was the obvious ask. Defending three weeks of mapping the operations team’s week (with nothing visible shipping) was hard.
 
-**Why:** Those two actions were driving most of the manual back-and-forth between families and operations. Nobody opens a healthcare app to read about autism: they open it to find out what happens with their child on Thursday.
+Decision
 
-**What won the argument:** A map of the operations team’s week. Once the team could see the hours a single reschedule cost, nobody wanted to talk about the content grid anymore.
+I scoped the first release around exactly two actions: showing each child’s upcoming sessions, and letting a family cancel one themselves instead of calling. Shipped in one month, discovery to build.
 
-**Result:** Families used it immediately, and cancellations started arriving through the app instead of by phone within a few months. Proved the actual lever: give families a reason to act, not just read.
+Why
+
+Those two actions were driving most of the manual back-and-forth between families and operations. Nobody opens a healthcare app to read about autism: they open it to find out what happens with their child on Thursday.
+
+What won the argument
+
+A map of the operations team’s week. Once the team could see the hours a single reschedule cost, nobody wanted to talk about the content grid anymore.
+
+Result
+
+Families used it immediately, and cancellations started arriving through the app instead of by phone within a few months. Proved the actual lever: give families a reason to act, not just read.
 
 **03** · Decision: skip the A/B test
 
 ## Read behaviour against a weekly curve, not an A/B test
 
+2
+
 ### The funnel said what changed. Interviews said why.
 
-**Problem:** The textbook answer is to split traffic and A/B test each release.
+Problem
 
-**Decision:** I didn’t. Every release became its own before/after against a weekly funnel-and-curve instead: who came in, what they opened, where they stopped.
+The textbook answer is to split traffic and A/B test each release.
 
-**Why:** At this scale, splitting the base in half doubles the wait for a result that already needs weeks. That's not worth it on a product whose whole advantage was learning fast.
+Decision
 
-**What it caught:** What the interviews kept returning to was rescheduling. Booking and rebooking was hard, calendars kept falling out of sync, and sometimes a therapist travelled to a session a parent had tried to cancel at the last minute, because the cancellation never reached them in time. That made cancelling a scheduling-sync problem first.
+I didn’t. Every release became its own before/after against a weekly funnel-and-curve instead: who came in, what they opened, where they stopped.
 
-**Result:** The funnel showed which releases moved daily use; the interviews explained why. Families came back for the schedule, and every release after the MVP was chosen against that.
+Why
+
+At this scale, splitting the base in half doubles the wait for a result that already needs weeks. That's not worth it on a product whose whole advantage was learning fast.
+
+What it caught
+
+What the interviews kept returning to was rescheduling. Booking and rebooking was hard, calendars kept falling out of sync, and sometimes a therapist travelled to a session a parent had tried to cancel at the last minute, because the cancellation never reached them in time. That made cancelling a scheduling-sync problem first.
+
+Result
+
+The funnel showed which releases moved daily use; the interviews explained why. Families came back for the schedule, and every release after the MVP was chosen against that.
 
 **04** · What shipped
 
@@ -300,25 +353,26 @@ The decision I’d defend here: a visible response-time badge. An open-ended “
 Genial Junto: support for the moments between sessions, with the response-time expectation stated before the parent writes anything.
 
 **05** · Impact
-Each addition shipped narrow, then was measured before the next one started. The weekly active-user chart below is the honest version of that story, release markers and all: it is a staircase with visible dips, where each step up follows a release.
 
-8.59%
-weekly average daily active users
+Each addition shipped narrow, then was measured before the next one started. The weekly active-user chart below is the honest version of that story, release markers and all: it is a staircase with visible dips, where each step up follows a release.
 
 [Image: Weekly average daily-active-user chart for the Genial Care app, rising from 8.59% in June 2023 to 62.3% in July 2024, with release markers along the timeline]
 
 Weekly average share of families opening the app on a given day, Jun 2023 → Jul 2024: 8.59% to 62.3%. Star markers are releases: the growth tracks them, which is the point.
 
 8.59%
+
 Families opening the app on a given day, June 2023 baseline
 
 62.3%
+
 Families opening the app on a given day, July 2024, weekly average
 
 1 month
+
 Discovery, prototype and build for the first release
 
-**How it was measured:** the share of families on the platform opening the app on a given day, tracked in Metabase and read as a weekly average across the 13 months from the June 2023 baseline to July 2024. The chart above is the raw weekly series (its axis labels are in Portuguese: Semana is week, Meta is the target line). Two things it does not show, stated on purpose. The first is that the base moved underneath the rate: around 30 families when I joined, around 500 when I left. The share climbed while the denominator grew roughly sixteen times, which makes the rise harder to achieve, not easier, but it does mean the 8.59% baseline sits on a much smaller base than the 62.3%. The second is that the operations-hours saving, the other pointer, was never instrumented; the operations lead s recollection is that rescheduling work went from about six hours to one, and I present it as that. One guardrail we agreed before launch: a cancellation rate above roughly 10% would have meant the change made things worse. I don’t have the closed-out reading.
+**How it was measured:** the share of families on the platform opening the app on a given day, tracked in Metabase and read as a weekly average across the 13 months from the June 2023 baseline to July 2024. The chart above is the raw weekly series (its axis labels are in Portuguese: Semana is week, Meta is the target line). Two things it does not show, stated on purpose. The first is that the base moved underneath the rate: around 30 families when I joined, around 500 when I left. The share climbed while the denominator grew roughly sixteen times, which makes the rise harder to achieve, not easier, but it does mean the 8.59% baseline sits on a much smaller base than the 62.3%. The second is that the operations-hours saving, the other pointer, was never instrumented; the operations lead’s recollection is that rescheduling work went from about six hours to one, and I present it as that. One guardrail we agreed before launch: a cancellation rate above roughly 10% would have meant the change made things worse. I don’t have the closed-out reading.
 
 **06** · What I’d do differently
 
@@ -343,43 +397,38 @@ Read the case →
 The interview findings, the features that didn't work, the guardrail numbers and how I argued against the redesign everyone wanted: all of it is a 30-minute call away.
 
 Get in touch
-Read the Kruzer case
 
+Read the Kruzer case
 
 ---
 
 URL: https://cannalongadesign.github.io/liam/
 
-Case study · Healthcare · AI Design
+Case study · Healthcare · AI Design Updated October 2026
 
 # LIAM: turning up to 2 hours of clinical paperwork into a 25-minute review
 
 Therapists at Genial Care were losing up to two hours after every session reconstructing it from memory for mandatory clinical reports. LIAM lets them narrate instead, and hands back a draft they review and sign.
 
 Role
+
 Senior Product Designer
 
 Team
+
 PM · AI eng squad · Clinical
 
 Company
+
 Genial Care
 
 Timeline
+
 2023 – 2024
 
 Outcome
+
 Up to 2h → 25min per session
-
-The short version
-
-**Problem:** Therapists were losing up to two hours after every session reconstructing clinical records from memory, at the end of a full day.
-
-**What I did:** Designed an AI assistant that lives inside the session screen: the therapist narrates, LIAM drafts, and the clinician reviews and signs. Most of the design time went into the failure states.
-
-**Outcome:** Documentation went from **up to 2 hours to a 25-minute review** per session, as reported by the clinical team a quarter after rollout, with an in-product feedback loop so quality drift shows up in usage instead of months later.
-
-AI product design Human-in-the-loop Healthcare Trust & safety
 
 In this case 7 min read
 
@@ -394,6 +443,22 @@ In this case 7 min read
 - Impact
 
 - What I’d do differently
+
+The short version
+
+Problem:
+
+Therapists were losing up to two hours after every session reconstructing clinical records from memory, at the end of a full day.
+
+What I did:
+
+Designed an AI assistant that lives inside the session screen: the therapist narrates, LIAM drafts, and the clinician reviews and signs. Most of the design time went into the failure states.
+
+Outcome:
+
+Documentation went from **up to 2 hours to a 25-minute review** per session, as reported by the clinical team a quarter after rollout, with an in-product feedback loop so quality drift shows up in usage instead of months later.
+
+AI product design Human-in-the-loop Healthcare Trust & safety
 
 [Image: LIAM running on a tablet: the intervention screen a therapist works in during a session]
 
@@ -411,37 +476,57 @@ The number worth moving was documentation time per session, because of what sits
 
 An AI feature in a clinical context fails on governance long before it fails on usability. Before I designed a screen, the team had to agree who signs the record, what the clinical record needed to contain, and how long a session recording is retained. Faster notes that said less would have moved the metric and damaged the product, so the clinical lead held a veto: a time saving bought with thinner records counted as a failure, not a win.
 
-**02** · Decision: LIAM proposes, the clinician decides
+**02** · Decision: LIAM proposes, the clinician decides 1
 
 ### LIAM proposes. The clinician decides.
 
-**Problem:** If LIAM drafts and submits on its own, authorship blurs, and a wrong clinical record with no clear author is a liability, not a convenience.
+Problem
 
-**Decision:** LIAM drafts every required field as a suggestion. A therapist reads, corrects, and submits. Nothing reaches the record unread.
+If LIAM drafts and submits on its own, authorship blurs, and a wrong clinical record with no clear author is a liability, not a convenience.
 
-**Why:** The real design question was what happens the first time it’s confidently wrong. That produced four interface rules: every field is a suggestion copied in by hand, never pre-submitted; the source recording stays attached so a therapist can check a line against what was actually said; nothing reaches the record without a person reading it; and an in-flow prompt asks whether the suggestions are still good, so quality drift shows up as a falling answer rate instead of a habit that quietly dies.
+Decision
 
-**What it caught:** Before touching the recording flow, we mapped the existing clinical panel section by section on a wall, to argue concretely about where a voice note belongs inside a workspace therapists already use, instead of assuming it needed a place of its own.
+LIAM drafts every required field as a suggestion. A therapist reads, corrects, and submits. Nothing reaches the record unread.
 
-**Result:** The interaction model held through launch: LIAM proposes, the clinician decides, and record quality stayed the clinical lead’s to veto.
+Why
+
+The real design question was what happens the first time it’s confidently wrong. That produced four interface rules: every field is a suggestion copied in by hand, never pre-submitted; the source recording stays attached so a therapist can check a line against what was actually said; nothing reaches the record without a person reading it; and an in-flow prompt asks whether the suggestions are still good, so quality drift shows up as a falling answer rate instead of a habit that quietly dies.
+
+What it caught
+
+Before touching the recording flow, we mapped the existing clinical panel section by section on a wall, to argue concretely about where a voice note belongs inside a workspace therapists already use, instead of assuming it needed a place of its own.
+
+Result
+
+The interaction model held through launch: LIAM proposes, the clinician decides, and record quality stayed the clinical lead’s to veto.
 
 [Image: A wall covered in paper notes mapping the existing clinical panel: every section of the therapist's workspace laid out so the team could decide where a voice note belongs inside it]
 
 Mapping the clinical panel as it existed, section by section, so we could argue about where an audio note belongs inside a workspace therapists already use, instead of assuming it needed a new place of its own. Photo from the project.
 
-**03** · Decision: how I read trust
+**03** · Decision: how I read trust 2
 
 ### Put the trust signal inside the flow
 
-**Problem:** On the family app, behavior showed up in a weekly funnel. Here the population is the ~80 therapists on staff, the event happens a handful of times a day, and the real risk (a therapist quietly losing trust in a draft) never shows up in a funnel at all.
+Problem
 
-**Decision:** Put a lightweight prompt in the flow itself, asking whether LIAM’s suggestions are still good, so suggestion quality could be read from real usage after launch.
+On the family app, behavior showed up in a weekly funnel. Here the population is the ~80 therapists on staff, the event happens a handful of times a day, and the real risk (a therapist quietly losing trust in a draft) never shows up in a funnel at all.
 
-**Why:** What a therapist needs from an AI here is to keep what just happened while it’s still accurate. That made trust the thing actually at risk, more than writing quality, and a funnel can’t see a therapist who quietly stops trusting a draft but keeps clicking.
+Decision
 
-**What it caught:** Therapists tested the first version and the response was positive, with one consistent problem: LIAM transcribed the narration literally, so some passages read as fragments that didn’t make sense in a clinical record. We added a step that restructures the narration into cohesive sentences that fit the context of the session before it reaches the form, so therapists stopped rewriting the wording by hand.
+Put a lightweight prompt in the flow itself, asking whether LIAM’s suggestions are still good, so suggestion quality could be read from real usage after launch.
 
-**Result:** The prompt shipped with LIAM. I left Genial Care before there was a quarter of data to read, so I don’t claim what it showed.
+Why
+
+What a therapist needs from an AI here is to keep what just happened while it’s still accurate. That made trust the thing actually at risk, more than writing quality, and a funnel can’t see a therapist who quietly stops trusting a draft but keeps clicking.
+
+What it caught
+
+Therapists tested the first version and the response was positive, with one consistent problem: LIAM transcribed the narration literally, so some passages read as fragments that didn’t make sense in a clinical record. We added a step that restructures the narration into cohesive sentences that fit the context of the session before it reaches the form, so therapists stopped rewriting the wording by hand.
+
+Result
+
+The prompt shipped with LIAM. I left Genial Care before there was a quarter of data to read, so I don’t claim what it showed.
 
 **04** · What shipped
 
@@ -478,12 +563,15 @@ A direct feedback loop on the suggestions themselves: the mechanism that lets LI
 ## Impact
 
 Up to 2h
+
 Writing the record from memory after a full day, per session, before LIAM (self-reported)
 
 ~25min
+
 Reviewing and submitting LIAM's draft, per session, after
 
 ~80
+
 Therapists on the clinical team: the before-and-after covers all of them, not a sample
 
 **How it was measured, and what the number leaves out:** the two hours are the upper end of the therapists’ own self-reported time to write a session report from memory before LIAM, not the typical session; the 25 minutes are their review-and-submit time with LIAM’s draft in place, read by the team one quarter after rollout. I had left Genial Care by then: I designed and shipped LIAM, and the 25-minute figure is what the clinical team reported back. It is not a like-for-like total: narrating during the session adds a few minutes that the 25 does not include, and the population is the clinical team on staff, so this is a before-and-after with everyone, not a sample. The clinical lead’s verdict after launch was that record quality improved rather than merely held: a record written minutes after the session carries detail that one written from memory at 9pm does not.
@@ -505,44 +593,40 @@ LIAM shipped after the family-facing app had already gone from 8% to 62% daily u
 How the model was chosen, how we handled clinical-language accuracy, how the rollout reached the whole clinical team and what the feedback prompt was built to catch: all of it is a 30-minute call away.
 
 Get in touch
-Read the Genial App case
-Read the Pick & Pack case
 
+Read the Genial App case
+
+Read the Pick & Pack case
 
 ---
 
 URL: https://cannalongadesign.github.io/pick-and-pack/
 
-Case study · Enterprise logistics · B2B
+Case study · Enterprise logistics · B2B Updated October 2026
 
 # Pick & Pack: one order, three people, one screen each
 
 Fast Shop sells two-hour delivery, and the process behind that promise ran on phone calls and spreadsheets. I designed the platform that replaced them for the store, the distribution centre and the driver at once, with the exceptions treated as first-class screens.
 
 Role
+
 Sole product designer
 
 Team
+
 PM · Eng teams · Fast Shop ops
 
 Client
+
 Fast Shop
 
 Timeline
+
 Sep 2024 – Feb 2026
 
 Scope
+
 80+ stores · 22,000+ SKUs · web
-
-The short version
-
-**Problem:** Checkout promised delivery in two hours. Behind it, nobody could tell where an order was without a phone call, and a failed delivery had no defined next step.
-
-**What I did:** Designed Pick & Pack for three roles at once instead of one primary user, treated the exception states as first-class screens, and rolled it out store by store.
-
-**Outcome:** The two-hour promise held across 80+ stores on more volume than the operation had ever handled; operators stopped keeping parallel spreadsheets; a class of failed deliveries that had no name got a status and a next step.
-
-Enterprise SaaS 0→1 platform Logistics Systems design
 
 In this case 7 min read
 
@@ -560,6 +644,22 @@ In this case 7 min read
 
 - What I'd do differently
 
+The short version
+
+Problem:
+
+Checkout promised delivery in two hours. Behind it, nobody could tell where an order was without a phone call, and a failed delivery had no defined next step.
+
+What I did:
+
+Designed Pick & Pack for three roles at once instead of one primary user, treated the exception states as first-class screens, and rolled it out store by store.
+
+Outcome:
+
+The two-hour promise held across 80+ stores on more volume than the operation had ever handled; operators stopped keeping parallel spreadsheets; a class of failed deliveries that had no name got a status and a next step.
+
+Enterprise SaaS 0→1 platform Logistics Systems design
+
 **01** · Why it was hard
 
 ## Two hours, promised before anyone in a store knows the order exists
@@ -570,17 +670,25 @@ The number worth moving was time-to-detect: how long it takes an operator to fin
 
 I spent time with store operators asking where an order actually stops and what happens when a delivery fails. The honest answer was a manual loop: cancel the ride in the courier app, request a new one, track the driver by hand. Two things couldn’t change: the carrier integrations and the fiscal documents every order carries.
 
-**02** · Decision: three roles, not one primary user
+**02** · Decision: three roles, not one primary user 1
 
 ### One platform, three homes, one order
 
-**Problem:** “Design it for the store operator and the rest will adapt” was a perfectly reasonable default. Most fulfilment tools pick one job and make the other two adapt to it.
+Problem
 
-**Decision:** Design for three jobs at once. A store sees its own queue, the distribution centre sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colours, different first screen.
+“Design it for the store operator and the rest will adapt” was a perfectly reasonable default. Most fulfilment tools pick one job and make the other two adapt to it.
 
-**Why:** The store needs to clear the queue before the courier arrives, the distribution centre needs to route around what’s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.
+Decision
 
-**Result:** One platform shipped with a different home per role, and no store, distribution centre or driver had to translate someone else's workflow into their own.
+Design for three jobs at once. A store sees its own queue, the distribution centre sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colours, different first screen.
+
+Why
+
+The store needs to clear the queue before the courier arrives, the distribution centre needs to route around what’s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.
+
+Result
+
+One platform shipped with a different home per role, and no store, distribution centre or driver had to translate someone else's workflow into their own.
 
 **03** · The store board
 
@@ -590,15 +698,17 @@ After the first round of deliveries, store operators came back with two requests
 
 [Image: Pick & Pack store board: four columns (order received, picking, ready for pickup, in transit) with order cards showing late flags, status pills with the remaining SLA, and the carrier logo]
 
-- **1**“Late in this status” is the first thing on the card, in red, because it is the first question an operator asks.
+1 2 3 4 5
 
-- **2**Two pills, two questions: what is happening to the order, and how much of the promise is left (UltraFast · 1h).
+- **1** “Late in this status” is the first thing on the card, in red, because it is the first question an operator asks.
 
-- **3**The carrier logo sits last. You only need it once you have decided to act.
+- **2** Two pills, two questions: what is happening to the order, and how much of the promise is left (UltraFast · 1h).
 
-- **4**Columns follow the store’s own steps: received, picking, ready for pickup, in transit.
+- **3** The carrier logo sits last. You only need it once you have decided to act.
 
-- **5**Click & Collect orders live on the same board with their own pill (“Retira”), so a store never runs two tools.
+- **4** Columns follow the store’s own steps: received, picking, ready for pickup, in transit.
+
+- **5** Click & Collect orders live on the same board with their own pill (“Retira”), so a store never runs two tools.
 
 The store board as shipped.
 
@@ -614,13 +724,15 @@ The distribution centre sees every store at once, so its first screen is four co
 
 [Image: Pick & Pack distribution-centre board with counters for late, invoicing, transport and proof-of-delivery problems across the top, cards showing who each order is allocated to, and a menu to unallocate or allocate to another user]
 
-- **1**Four counters, each a filter: late, invoicing, transport, proof pending.
+1 2 3 4
 
-- **2**Allocation on the card: take an order off someone or hand it over in two clicks.
+- **1** Four counters, each a filter: late, invoicing, transport, proof pending.
 
-- **3**“Allocated to” on every card, so “is anyone on this?” stops being a shout across the floor.
+- **2** Allocation on the card: take an order off someone or hand it over in two clicks.
 
-- **4**Someone else’s card fades back: visible, not grabbable.
+- **3** “Allocated to” on every card, so “is anyone on this?” stops being a shout across the floor.
+
+- **4** Someone else’s card fades back: visible, not grabbable.
 
 The distribution-centre board: the store’s cards plus ownership.
 
@@ -646,19 +758,19 @@ In logistics, the exceptions decide whether an operator trusts the screen or wor
 
 [Image: Modal for an order ready for pickup, flagged late: driver name, ID and plate, and a state saying the ride has not started with a tracking link]
 
-The driver took the package and the ride never started Who has it, what car, a plain sentence saying the ride hasn’t begun, and tracking one click away. Used to be a call to the carrier.
+**The driver took the package and the ride never started** Who has it, what car, a plain sentence saying the ride hasn’t begun, and tracking one click away. Used to be a call to the carrier.
 
 [Image: Modal for a delivered order awaiting proof of delivery: a file upload area accepting images and documents, an uploaded screenshot, and a Complete order button]
 
-Delivered, but not closed until there is proof An order closes when a photo or signature is attached, not when the driver says so. That is why “proof pending” is a counter on the distribution-centre home.
+**Delivered, but not closed until there is proof** An order closes when a photo or signature is attached, not when the driver says so. That is why “proof pending” is a counter on the distribution-centre home.
 
 [Image: Modal for a click-and-collect order awaiting pickup: a QR code the customer scans to open a form with their data and a signature before taking the order]
 
-Someone is at the counter to collect A QR code opens a form with the buyer’s data and signature, so the right person gets the product and the store keeps the record without a printer.
+**Someone is at the counter to collect** A QR code opens a form with the buyer’s data and signature, so the right person gets the product and the store keeps the record without a printer.
 
 [Image: Export dialog for an order report with a warning that no orders were selected so all 104 will be exported, a name field and a Generating button]
 
-Someone still needs a spreadsheet Exports stayed, with one guardrail: with nothing selected, the dialog says all 104 orders are about to be exported. Parallel spreadsheets falling out of use became our adoption signal.
+**Someone still needs a spreadsheet** Exports stayed, with one guardrail: with nothing selected, the dialog says all 104 orders are about to be exported. Parallel spreadsheets falling out of use became our adoption signal.
 
 Four of the 15 statuses in the shipped platform: the ones that replaced the most phone calls.
 
@@ -677,10 +789,14 @@ Each wave surfaced cases the first version didn’t handle, and each became a st
 Three months after rollout, the platform was running the two-hour promise across 80+ stores on more volume than the operation had ever handled. Operators stopped keeping parallel spreadsheets, and a failed delivery went from invisible to a status with a next step.
 
 80+ stores
+
 Rolled out in waves over three months, running the two-hour promise on top of Fast Shop’s existing 22,000+ SKU catalogue
 
 Chased → flagged
+
 Time to detect an at-risk order: before, whenever someone happened to notice; after, the moment it enters “Late”
+
+15
 
 Statuses in the shipped taxonomy, four of them exceptions that replaced phone calls
 
@@ -711,43 +827,38 @@ Read the Compass case →
 The research, the driver’s screen, how the rollout waves were sequenced and how we prioritised against Fast Shop’s OKRs: all of it is a 30-minute call away.
 
 Get in touch
-See all cases
 
+See all cases
 
 ---
 
 URL: https://cannalongadesign.github.io/compass/
 
-Case study · Design Systems · Enterprise platform
+Case study · Design Systems · Enterprise platform Updated October 2026
 
 # Compass: from one-off screens to a system three teams could build on
 
 Before Compass, every screen at Kruzer was rebuilt from zero and nothing quite agreed with anything else. Building the system, and the semantic token scale underneath it, cut the cycle time on a design ticket from 4.2 to 2.5 days, measured in Jira.
 
 Role
+
 Senior Product Designer
 
 Team
+
 PM · Eng teams · Design
 
 Client
+
 Kruzer · Fast Shop
 
 Timeline
+
 Sep 2024 – Feb 2026
 
 Outcome
+
 4.2d → 2.5d cycle time, measured in Jira
-
-The short version
-
-**Problem:** Every screen started from an empty frame, so the same component was redrawn with small differences nobody had decided on.
-
-**What I did:** Built the system from scratch: an audit with real counts, a three-layer semantic token scale where only the middle layer is allowed in design files, then migration and governance rules.
-
-**Outcome:** Design-ticket cycle time dropped from **4.2 to 2.5 days**, measured in the Jira the engineering team already used.
-
-Design systems Design tokens Platform design Governance
 
 In this case 7 min read
 
@@ -763,6 +874,22 @@ In this case 7 min read
 
 - What I'd do differently
 
+The short version
+
+Problem:
+
+Every screen started from an empty frame, so the same component was redrawn with small differences nobody had decided on.
+
+What I did:
+
+Built the system from scratch: an audit with real counts, a three-layer semantic token scale where only the middle layer is allowed in design files, then migration and governance rules.
+
+Outcome:
+
+Design-ticket cycle time dropped from **4.2 to 2.5 days**, measured in the Jira the engineering team already used.
+
+Design systems Design tokens Platform design Governance
+
 Compass is the design system I built from scratch at Kruzer, the platform behind Fast Shop's fulfillment operation. It started as a way to stop rebuilding the same status pill for the third time, and ended up as the layer that let three products stay coherent while the platform scaled to 80+ stores.
 
 **01** · Why it was hard
@@ -777,29 +904,45 @@ A design system that designers love and engineers route around is a failed one, 
 
 “Consistency” is not a business case. Delivery speed is, and it can be proven wrong.
 
-**02** · Decision: only the semantic layer ships
+**02** · Decision: only the semantic layer ships 1
 
 ### Only the semantic layer is allowed in a design file
 
-**Problem:** Naming tokens after what they look like (blue-500) tells you nothing about when to use them. People guess, and the guessing is where inconsistency comes back in.
+Problem
 
-**Decision:** Split three layers. Primitive: raw values like blue-500, space-4, referenced but never designed with directly. Semantic: what a value means (action-primary, status-success), the only layer a designer or engineer touches. Component: rare, purpose-built overrides.
+Naming tokens after what they look like (blue-500) tells you nothing about when to use them. People guess, and the guessing is where inconsistency comes back in.
 
-**Why:** Asking “what breaks if we rebrand, or add dark mode” early is what forced the token layer to exist before the components. A system that can’t survive a colour change was never a system.
+Decision
 
-**Result:** Changing the meaning of “success” across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a colour is there.
+Split three layers. Primitive: raw values like blue-500, space-4, referenced but never designed with directly. Semantic: what a value means (action-primary, status-success), the only layer a designer or engineer touches. Component: rare, purpose-built overrides.
 
-**03** · Decision: governance is part of the deliverable
+Why
+
+Asking “what breaks if we rebrand, or add dark mode” early is what forced the token layer to exist before the components. A system that can’t survive a colour change was never a system.
+
+Result
+
+Changing the meaning of “success” across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a colour is there.
+
+**03** · Decision: governance is part of the deliverable 2
 
 ### A library without governance is just a folder
 
-**Problem:** The part teams skip is the part that decides whether the system is alive in a year. A component nobody owns rots; a library with no rule against “just one more variant” drifts back into a folder.
+Problem
 
-**Decision:** Ship rules with the files, not after them: a new component has to prove it appears in at least two products, a change to a semantic token goes through review because it moves everything downstream, and anything deprecated gets a removal date instead of sitting there forever. Documentation counts as part of the component: a “use this when” that doesn’t exist is a component that will be misused.
+The part teams skip is the part that decides whether the system is alive in a year. A component nobody owns rots; a library with no rule against “just one more variant” drifts back into a folder.
 
-**Why:** I asked engineers what they were actually missing when a spec arrived, and the answers shaped the documentation more than any design-system article did.
+Decision
 
-**Result:** Componentisation is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.
+Ship rules with the files, not after them: a new component has to prove it appears in at least two products, a change to a semantic token goes through review because it moves everything downstream, and anything deprecated gets a removal date instead of sitting there forever. Documentation counts as part of the component: a “use this when” that doesn’t exist is a component that will be misused.
+
+Why
+
+I asked engineers what they were actually missing when a spec arrived, and the answers shaped the documentation more than any design-system article did.
+
+Result
+
+Componentisation is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.
 
 **04** · What shipped
 
@@ -815,13 +958,11 @@ Radius 10px
 
 Density
 
-Order #48213
-In transit
+Order #48213 In transit
 
 Distribution center · SLA 1h 42m remaining
 
-Order #48219
-Returning to store
+Order #48219 Returning to store
 
 Failed delivery · needs a next step
 
@@ -831,6 +972,8 @@ A live slice of Compass. Every component here reads from the same three tokens, 
 
 The semantic layer, and the only one published to design files. $typography.h1.medium carries intent; 60px carries appearance. A designer who reaches for the second one is guessing, and the guessing is where inconsistency comes back in.
 
+Drag to see the whole page
+
 The component engineering questioned hardest was the data table. These products carry huge volumes of data, so advanced filters and user-customisable columns were a constant challenge, and the first versions didn’t serve every product. Getting to the right model took benchmarking against mature data-heavy products and testing several component variants until one worked for all three.
 
 Composition is where the atom-and-molecule distinction stops being vocabulary. A select is not one component; it is a field, a label, a tooltip, a chip, a list and an error state composed together. Getting the composition right is what made a new select variant cost minutes instead of an afternoon.
@@ -838,6 +981,8 @@ Composition is where the atom-and-molecule distinction stops being vocabulary. A
 [Image: The Compass select documentation: multi-select variants composed from field, label, tooltip, chips, list and error state]
 
 Molecules: the select composed from smaller pieces: field, label, tooltip, chip, list, error. Composing instead of redrawing is what makes a new variant cost minutes.
+
+Drag to see the whole page
 
 **05** · Impact
 
@@ -848,14 +993,19 @@ There's no usability test for a design system, and no funnel: the evidence came 
 The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and colour to whether the flow was right. What that number can't prove, and I'd say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.
 
 4.2d → 2.5d
+
 Cycle time on the same class of design ticket, before and after adoption: the harder number, found late
 
 40%
+
 Design-ticket throughput in Jira after adoption, same class of work; a tracker delta, not a controlled experiment
+
+3
 
 Products on one shared foundation
 
 ~20
+
 Near-identical blues counted live in production before the audit, the baseline that turned a feeling into a number
 
 **How it was measured:** both numbers come from the Jira board engineering already used to track demand, comparing the same class of design ticket before and after adoption: 40% on throughput, 4.2 days down to 2.5 on cycle time. Neither is a controlled experiment, and both are readings I recall rather than a report I can still pull. The measurement had to belong to someone other than me, or it would have been marketing; the confounds above are named on purpose.
@@ -877,13 +1027,14 @@ The argument I had to win was with engineering, because a system is adopted by p
 The token naming decisions, the audit that started it, how long Compass took and what it displaced, and how I handled the components teams did not want to give up: all of it is a 30-minute call away.
 
 Get in touch
+
 Read the Pick & Pack case
 
 ---
 
 URL: https://cannalongadesign.github.io/safe-site-detector/
 
-Case study · Consumer trust · AI product
+Case study · Consumer trust · AI product Updated October 2026
 
 # Safe Site Detector: from more data to a decision people can act on
 
@@ -909,21 +1060,21 @@ Outcome
 
 Decision rate 45.1% → 72.4% · cost R$1.7M → R$1.2k a month
 
-In this case 7 min read
+In this case 9 min read
 
-Why it was hard
+- Why it was hard
 
-An experiment in six weeks
+- An experiment in six weeks
 
-Decision: test comprehension
+- Decision: test comprehension
 
-Decision: a verdict built on evidence
+- Decision: a verdict built on evidence
 
-Designing for AI readers
+- Designing for AI readers
 
-Impact
+- Impact
 
-What I’d do differently
+- What I’d do differently
 
 The short version
 
@@ -949,9 +1100,7 @@ The detector’s public home page. Everything below is told through the process 
 
 It’s public and free: paste any store’s address and see the shields.
 
-Open the detector →
-
-**01** · Why it was hard
+Open the detector → **01** · Why it was hard
 
 ## A trust product that had to be rebuilt without losing trust
 
@@ -1135,7 +1284,13 @@ People who said the detector helped them decide, experiment vs V2
 
 Monthly cost, from a projected R$1.7M to R$1.2k for 171.7k analyses
 
-MetricBeforeV2Change Monthly costR$1.7M (projected)R$1.2k for 171.7k analyses-99.9%Cost per analysisR$10under R$0.01-99.9%Decision rate45.1% (experiment)72.4%+27.3 pp
+Metric Before V2 Change
+
+Monthly cost R$1.7M (projected) R$1.2k for 171.7k analyses -99.9%
+
+Cost per analysis R$10 under R$0.01 -99.9%
+
+Decision rate 45.1% (experiment) 72.4% +27.3 pp
 
 Three things changed:
 
