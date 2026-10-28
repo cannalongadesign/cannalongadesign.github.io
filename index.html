@@ -899,6 +899,17 @@
   .hero-d .stat .bar::before{background:var(--ink-2);}
   .hero-d .stat .bar::after{top:-2px; height:6px; width:1.5px; background:var(--ink-2); opacity:.7;}
   .hero-d .stat .l{font-size:12.5px;}
+
+  /* phone: the name line stays on one line (smaller portrait, then smaller type), and the
+     contact button is the address alone: the split control did not fit a narrow screen */
+  @media (max-width:640px){
+    .hero-d .who{gap:12px;}
+    .hero-d .who img{width:44px; height:44px;}
+    .hero-d .who span{font-size:min(13px,3.25vw); white-space:nowrap;}
+    .copy-btn{display:none;}
+    .mail-split{background:none;}
+    .mail-split .btn{border-radius:100px; padding-left:20px; padding-right:20px; justify-content:center;}
+  }
 </style>
 <script type="application/ld+json">
 {
