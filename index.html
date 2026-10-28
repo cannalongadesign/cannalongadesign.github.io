@@ -890,6 +890,15 @@
     .mail-split .btn{flex:1 1 auto; width:auto; min-width:0; padding-left:20px; padding-right:16px;}
     .copy-btn{min-height:56px; padding:0 20px 0 16px;}
   }
+
+  /* hero, option A: one focal point. The acid stays on the headline only; the
+     evidence row drops to a supporting voice (lighter numbers, hairline bars). */
+  .hero-d .stat .n,.hero-d .stat .n span,.hero-d .stat .n span.morph,.hero-d .stat .n span[data-i18n]{font-size:clamp(16px,1.35vw,19px); font-weight:700; letter-spacing:-0.025em;}
+  .hero-d .stat .morph,.js .hero-d .stat .morph,.js .hero-d .stat .morph.done{background-image:none; padding:0; margin:0;}
+  .hero-d .stat .bar{height:2px; margin:10px 0 9px;}
+  .hero-d .stat .bar::before{background:var(--ink-2);}
+  .hero-d .stat .bar::after{top:-2px; height:6px; width:1.5px; background:var(--ink-2); opacity:.7;}
+  .hero-d .stat .l{font-size:12.5px;}
 </style>
 <script type="application/ld+json">
 {
