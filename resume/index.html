@@ -874,6 +874,10 @@
   .res-out a .o-s::after{content:" \2192";}
   .job{display:grid; grid-template-columns:120px minmax(0,1fr); gap:var(--sp-4); padding:var(--sp-4) 0; border-bottom:1px solid var(--line);}
   .job:last-child{border-bottom:none;}
+  .job{grid-template-columns:minmax(0,1fr) !important;}
+  .job .what{display:grid; grid-template-columns:120px minmax(0,1fr); column-gap:var(--sp-4);}
+  .job .what > *{grid-column:2;}
+  .job .what > .when{grid-column:1; grid-row:1 / span 3;}
   .job .when{font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--ink-2); padding-top:4px;}
   .job h3{font-size:19px; font-weight:900; letter-spacing:-0.03em; line-height:1.25; margin:0 0 6px;}
   .res-body .job .ctx{font-size:15px; line-height:1.5; color:var(--ink-2); margin:0 0 10px;}
@@ -897,23 +901,49 @@
     .res-meta .v a{overflow-wrap:normal;}
     .res-out{grid-template-columns:1fr;}
     .job,.res-skills > div{grid-template-columns:1fr; gap:6px;}
+    .job .what{grid-template-columns:1fr;}
+    .job .what > .when{grid-column:1; grid-row:auto; order:-1; margin-bottom:4px;}
+    .job .what{display:flex; flex-direction:column;}
     .res-actions{flex-direction:column;}
     .res-actions .btn{width:100%; justify-content:center; min-height:52px;}
   }
+  .print-contact{display:none;}
+  /* PRINT = the PDF. One column in reading order, standard section names, real text with
+     normal letter spacing (tight tracking makes ATS parsers glue words together), one rule
+     per section and nowhere else, US Letter. */
   @media print{
-    body{font-size:10pt;}
-    .res-actions,.article-close,footer{display:none !important;}
-    .res-hero h1{font-size:26pt !important; margin-bottom:6pt !important;}
-    .res-hero .dek{font-size:11pt !important; margin-bottom:10pt !important;}
-    .res-meta{grid-template-columns:repeat(5,minmax(0,1fr)) !important; padding-top:8pt !important;}
-    .res-sec{margin-top:12pt !important; padding-top:8pt !important;}
-    .res-out{grid-template-columns:1fr 1fr 1fr !important;}
-    .res-out .o-n{font-size:13pt;}
-    .job{padding:8pt 0 !important; break-inside:avoid; grid-template-columns:90px 1fr !important;}
-    .res-skills > div{grid-template-columns:90px 1fr !important; padding:5pt 0 !important;}
-    .res-body .job li,.res-skills dd,.res-out .o-l{font-size:9.5pt !important;}
-    .res-out a .o-s::after{content:"";}
-    .article-body a[href^="http"]::after{content:"" !important;}
+    @page{size:Letter; margin:0.55in 0.6in;}
+    html,body{background:#fff !important;}
+    body{font-size:10pt; line-height:1.4; color:#14140f;}
+    *,*::before,*::after{letter-spacing:normal !important; word-spacing:normal !important;}
+    .print-url,.kicker-row,.res-meta,.res-actions,.article-close,footer,nav,.res-sec-out{display:none !important;}
+    .article-hero,.res-hero{padding:0 !important; margin:0 !important; border:0 !important;}
+    .article-hero .col,.res-body .col,.article-body{max-width:none !important; padding:0 !important; margin:0 !important;}
+    .res-hero h1{font-size:22pt !important; line-height:1.1 !important; margin:0 0 4pt !important; font-weight:900;}
+    .res-hero .dek{font-size:10pt !important; line-height:1.4 !important; color:#14140f !important; margin:0 0 4pt !important; max-width:none !important;}
+    .print-contact{display:block; font-size:9.5pt; color:#14140f; margin:0 0 10pt;}
+    .res-sec{border-top:1px solid #14140f; padding-top:6pt !important; margin-top:10pt !important;}
+    .res-sec:first-child{margin-top:0 !important;}
+    .res-body h2.res-k{font-family:'DM Sans',sans-serif !important; font-size:9.5pt !important; font-weight:700 !important; color:#14140f !important; text-transform:uppercase; margin:0 0 5pt !important;}
+    .res-body .res-sum{font-size:10pt !important; line-height:1.45 !important;}
+    .job{display:block !important; padding:0 0 7pt !important; border:0 !important; break-inside:avoid;}
+    .job .what{display:block;}
+    .job h3{font-size:10.5pt !important; margin:0 !important; font-weight:700;}
+    .job .when{display:block; font-family:'DM Sans',sans-serif !important; font-size:9.5pt !important; color:#14140f !important; padding:0 !important; margin:1pt 0 0; float:none;}
+    .res-body .job .ctx{font-size:9.5pt !important; margin:0 0 3pt !important; color:#3d3c36 !important;}
+    .res-body .job ul{margin:0 0 0 14pt !important;}
+    .res-body .job li{font-size:9.5pt !important; line-height:1.4 !important; margin:0 0 2pt !important;}
+    .job .what{display:flex; flex-direction:column;}
+    .job .what > *{order:3;}
+    .job .what > h3{order:1;} .job .what > .when{order:2; margin:0 0 2pt !important;}
+    .job{padding:0 0 9pt !important;}
+    .res-skills > div{display:block !important; padding:0 0 2pt !important; border:0 !important;}
+    .res-skills dt{display:inline; font-family:'DM Sans',sans-serif !important; font-size:9.5pt !important; font-weight:700; text-transform:none !important; color:#14140f !important;}
+    .res-skills dt::after{content:": ";}
+    .res-skills dd{display:inline; font-size:9.5pt !important;}
+    .res-body .res-edu li{font-size:9.5pt !important; margin:0 0 2pt !important;}
+    a{color:inherit !important; text-decoration:none !important;}
+    .article-body a[href^="http"]::after,.article-body p a[href^="http"]::after,.article-body li a[href^="http"]::after{content:"" !important;}
   }
 </style>
 <script type="application/ld+json">
@@ -983,6 +1013,7 @@
     <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Résumé</span><span class="updated" data-i18n="case.updated">Updated October 2026</span></div>
     <h1>Guilherme Cannalonga</h1>
     <p class="dek" data-i18n="res.dek">Senior Product Designer. I design products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.</p>
+    <p class="print-contact">Greater Boston, MA · cannalongadesign@gmail.com · linkedin.com/in/guilhermecannalonga · cannalongadesign.github.io</p>
     <div class="meta-row res-meta">
       <div class="meta-item"><div class="k" data-i18n="res.based">Based in</div><div class="v">Greater Boston, MA</div></div>
       <div class="meta-item"><div class="k" data-i18n="res.email">Email</div><div class="v"><a href="mailto:cannalongadesign@gmail.com">cannalongadesign@gmail.com</a></div></div>
@@ -1003,7 +1034,7 @@
       <h2 class="res-k" data-i18n="res.sum.k">Summary</h2>
       <p class="res-sum" data-i18n="res.sum">Six-plus years in product design, after five years in enterprise support and front-end development. More often than not the first or only designer on the team. For each product I pick the simplest evidence that could prove a decision wrong, and I work with AI on both sides of the screen: in the products I design and in the way I design them.</p>
     </section>
-    <section class="res-sec reveal">
+    <section class="res-sec res-sec-out reveal">
       <h2 class="res-k" data-i18n="res.out.k">Selected outcomes</h2>
       <ul class="res-out">
         <li><a href="/safe-site-detector/"><span class="o-n" data-i18n="res.o1.n">45.1% &rarr; 72.4%</span><span class="o-l" data-i18n="res.o1.l">People who said the detector helped them decide</span><span class="o-s" data-i18n="res.o1.s">Safe Site Detector · Reclame AQUI</span></a></li>
@@ -1017,24 +1048,19 @@
     <section class="res-sec reveal">
       <h2 class="res-k" data-i18n="res.exp.k">Experience</h2>
       <div class="job">
-        <span class="when" data-i18n="res.j1.w">2026 &ndash;</span>
-        <div class="what"><h3 data-i18n="res.j1.r">Senior Product Designer · Reclame AQUI</h3><p class="ctx" data-i18n="res.j1.c">Consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot.</p><ul><li><span data-i18n="res.j1.b1">Led design for the in-house, AI-powered Safe Site Detector: the share of people who said it helped them decide went from 45.1% to 72.4%.</span></li><li><span data-i18n="res.j1.b2">Tested comprehension inside the product: the refined version was read correctly by 74% of people, against 29%.</span></li><li><span data-i18n="res.j1.b3">Replaced a partner set to cost R$1.7M a month; the in-house version runs at R$1.2k a month.</span></li><li><span data-i18n="res.j1.b4">Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.</span></li></ul></div>
+        <div class="what"><h3 data-i18n="res.j1.r">Senior Product Designer · Reclame AQUI</h3><span class="when" data-i18n="res.j1.w">2026 &ndash; Present</span><p class="ctx" data-i18n="res.j1.c">Consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot.</p><ul><li><span data-i18n="res.j1.b1">Led design for the in-house, AI-powered Safe Site Detector: the share of people who said it helped them decide went from 45.1% to 72.4%.</span></li><li><span data-i18n="res.j1.b2">Tested comprehension inside the product: the refined version was read correctly by 74% of people, against 29%.</span></li><li><span data-i18n="res.j1.b3">Replaced a partner set to cost R$1.7M a month; the in-house version runs at R$1.2k a month.</span></li><li><span data-i18n="res.j1.b4">Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.</span></li></ul></div>
       </div>
       <div class="job">
-        <span class="when" data-i18n="res.j2.w">2024 &ndash; 26</span>
-        <div class="what"><h3 data-i18n="res.j2.r">Senior Product Designer · Kruzer</h3><p class="ctx" data-i18n="res.j2.c">Enterprise logistics platform for Fast Shop. Sole designer for four products.</p><ul><li><span data-i18n="res.j2.b1">Pick &amp; Pack: the fulfilment platform behind Fast Shop&rsquo;s two-hour delivery, one screen each for store, distribution centre and driver, rolled out to 80+ stores in 3 months.</span></li><li><span data-i18n="res.j2.b2">Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.</span></li></ul></div>
+        <div class="what"><h3 data-i18n="res.j2.r">Senior Product Designer · Kruzer</h3><span class="when" data-i18n="res.j2.w">2024 &ndash; 2026</span><p class="ctx" data-i18n="res.j2.c">Enterprise logistics platform for Fast Shop. Sole designer for four products.</p><ul><li><span data-i18n="res.j2.b1">Pick &amp; Pack: the fulfilment platform behind Fast Shop&rsquo;s two-hour delivery, one screen each for store, distribution centre and driver, rolled out to 80+ stores in 3 months.</span></li><li><span data-i18n="res.j2.b2">Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.</span></li></ul></div>
       </div>
       <div class="job">
-        <span class="when" data-i18n="res.j3.w">2023 &ndash; 25</span>
-        <div class="what"><h3 data-i18n="res.j3.r">Senior Product Designer (freelance, after hours) · Shock Tecnologia</h3><p class="ctx" data-i18n="res.j3.c">White-label banking (Matri).</p><ul><li><span data-i18n="res.j3.b1">Redesigned the credit journey for a regulated product: completion went from 18% to 63%.</span></li></ul></div>
+        <div class="what"><h3 data-i18n="res.j3.r">Senior Product Designer (freelance, after hours) · Shock Tecnologia</h3><span class="when" data-i18n="res.j3.w">2023 &ndash; 2025</span><p class="ctx" data-i18n="res.j3.c">White-label banking (Matri).</p><ul><li><span data-i18n="res.j3.b1">Redesigned the credit journey for a regulated product: completion went from 18% to 63%.</span></li></ul></div>
       </div>
       <div class="job">
-        <span class="when" data-i18n="res.j4.w">2022 &ndash; 24</span>
-        <div class="what"><h3 data-i18n="res.j4.r">Senior Product Designer · Genial Care</h3><p class="ctx" data-i18n="res.j4.c">Autism therapy platform. First designer, then leading design across two teams.</p><ul><li><span data-i18n="res.j4.b1">Family app: daily active families went from 8.6% to 62.3% in 13 months, by fixing the scheduling bottleneck first.</span></li><li><span data-i18n="res.j4.b2">LIAM: an AI assistant that drafts the clinical record from the therapist&rsquo;s narration; documentation went from up to 2 hours to 25 minutes per session.</span></li><li><span data-i18n="res.j4.b3">Built the Atípico design system from scratch.</span></li></ul></div>
+        <div class="what"><h3 data-i18n="res.j4.r">Senior Product Designer · Genial Care</h3><span class="when" data-i18n="res.j4.w">2022 &ndash; 2024</span><p class="ctx" data-i18n="res.j4.c">Autism therapy platform. First designer, then leading design across two teams.</p><ul><li><span data-i18n="res.j4.b1">Family app: daily active families went from 8.6% to 62.3% in 13 months, by fixing the scheduling bottleneck first.</span></li><li><span data-i18n="res.j4.b2">LIAM: an AI assistant that drafts the clinical record from the therapist&rsquo;s narration; documentation went from up to 2 hours to 25 minutes per session.</span></li><li><span data-i18n="res.j4.b3">Built the Atípico design system from scratch.</span></li></ul></div>
       </div>
       <div class="job">
-        <span class="when" data-i18n="res.j5.w">Five years</span>
-        <div class="what"><h3 data-i18n="res.j5.r">7COMm</h3><p class="ctx" data-i18n="res.j5.c">Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.</p></div>
+        <div class="what"><h3 data-i18n="res.j5.r">7COMm</h3><span class="when" data-i18n="res.j5.w">Five years</span><p class="ctx" data-i18n="res.j5.c">Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.</p></div>
       </div>
     </section>
     <section class="res-sec reveal">
@@ -1149,7 +1175,6 @@
   (function(){
     const I18N = {
       en: {
-        'footer.colophon':`How this site is built`,
         'nav.back.genial':`Back to Genial App`,
         'nav.back.liam':`Back to LIAM`,
         'nav.back.kruzer':`Back to Pick &amp; Pack`,
@@ -1204,26 +1229,26 @@
         'res.j1.b2':`Tested comprehension inside the product: the refined version was read correctly by 74% of people, against 29%.`,
         'res.j1.b3':`Replaced a partner set to cost R$1.7M a month; the in-house version runs at R$1.2k a month.`,
         'res.j1.b4':`Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.`,
-        'res.j1.w':`2026 &ndash;`,
         'res.j1.r':`Senior Product Designer · Reclame AQUI`,
+        'res.j1.w':`2026 &ndash; Present`,
         'res.j1.c':`Consumer trust and purchase decisions, Brazil&rsquo;s closest equivalent to Trustpilot.`,
         'res.j2.b1':`Pick &amp; Pack: the fulfilment platform behind Fast Shop&rsquo;s two-hour delivery, one screen each for store, distribution centre and driver, rolled out to 80+ stores in 3 months.`,
         'res.j2.b2':`Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.`,
-        'res.j2.w':`2024 &ndash; 26`,
         'res.j2.r':`Senior Product Designer · Kruzer`,
+        'res.j2.w':`2024 &ndash; 2026`,
         'res.j2.c':`Enterprise logistics platform for Fast Shop. Sole designer for four products.`,
         'res.j3.b1':`Redesigned the credit journey for a regulated product: completion went from 18% to 63%.`,
-        'res.j3.w':`2023 &ndash; 25`,
         'res.j3.r':`Senior Product Designer (freelance, after hours) · Shock Tecnologia`,
+        'res.j3.w':`2023 &ndash; 2025`,
         'res.j3.c':`White-label banking (Matri).`,
         'res.j4.b1':`Family app: daily active families went from 8.6% to 62.3% in 13 months, by fixing the scheduling bottleneck first.`,
         'res.j4.b2':`LIAM: an AI assistant that drafts the clinical record from the therapist&rsquo;s narration; documentation went from up to 2 hours to 25 minutes per session.`,
         'res.j4.b3':`Built the Atípico design system from scratch.`,
-        'res.j4.w':`2022 &ndash; 24`,
         'res.j4.r':`Senior Product Designer · Genial Care`,
+        'res.j4.w':`2022 &ndash; 2024`,
         'res.j4.c':`Autism therapy platform. First designer, then leading design across two teams.`,
-        'res.j5.w':`Five years`,
         'res.j5.r':`7COMm`,
+        'res.j5.w':`Five years`,
         'res.j5.c':`Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.`,
         'res.skills.k':`Skills`,
         'res.s1.k':`Product`,
@@ -1244,7 +1269,6 @@
         'footer.resume':`Résumé`,
       },
       pt: {
-        'footer.colophon':`Como este site foi feito`,
         'nav.back.genial':`Voltar ao Genial App`,
         'nav.back.liam':`Voltar ao LIAM`,
         'nav.back.kruzer':`Voltar ao Pick &amp; Pack`,
@@ -1299,26 +1323,26 @@
         'res.j1.b2':`Testei compreensão dentro do produto: a versão refinada foi lida corretamente por 74% das pessoas, contra 29%.`,
         'res.j1.b3':`Substituiu um parceiro que passaria a custar R$1,7M por mês; a versão própria custa R$1,2 mil por mês.`,
         'res.j1.b4':`Estruturei as páginas para leitores de IA: as citações no Google AI Overview subiram 138% em 30 empresas.`,
-        'res.j1.w':`2026 &ndash;`,
         'res.j1.r':`Senior Product Designer · Reclame AQUI`,
+        'res.j1.w':`2026 &ndash; atual`,
         'res.j1.c':`Confiança e decisão de compra do consumidor, o equivalente brasileiro mais próximo do Trustpilot.`,
         'res.j2.b1':`Pick &amp; Pack: a plataforma de fulfillment por trás da entrega em duas horas da Fast Shop, uma tela para cada loja, centro de distribuição e entregador, levada a 80+ lojas em 3 meses.`,
         'res.j2.b2':`Compass: um design system com camada de tokens semânticos e governança; o tempo de ciclo de um ticket de design foi de 4,2 para 2,5 dias, medido no Jira.`,
-        'res.j2.w':`2024 &ndash; 26`,
         'res.j2.r':`Senior Product Designer · Kruzer`,
+        'res.j2.w':`2024 &ndash; 2026`,
         'res.j2.c':`Plataforma de logística empresarial para a Fast Shop. Designer único de quatro produtos.`,
         'res.j3.b1':`Redesenhei a jornada de crédito de um produto regulado: a conclusão foi de 18% para 63%.`,
-        'res.j3.w':`2023 &ndash; 25`,
         'res.j3.r':`Senior Product Designer (freelance, fora do horário) · Shock Tecnologia`,
+        'res.j3.w':`2023 &ndash; 2025`,
         'res.j3.c':`Banking white-label (Matri).`,
         'res.j4.b1':`App das famílias: as famílias ativas por dia foram de 8,6% para 62,3% em 13 meses, resolvendo primeiro o gargalo da agenda.`,
         'res.j4.b2':`LIAM: um assistente de IA que rascunha o registro clínico a partir da narração do terapeuta; a documentação foi de até 2 horas para 25 minutos por sessão.`,
         'res.j4.b3':`Construí do zero o design system Atípico.`,
-        'res.j4.w':`2022 &ndash; 24`,
         'res.j4.r':`Senior Product Designer · Genial Care`,
+        'res.j4.w':`2022 &ndash; 2024`,
         'res.j4.c':`Plataforma de terapia para autismo. Primeiro designer, depois liderando design em dois times.`,
-        'res.j5.w':`Cinco anos`,
         'res.j5.r':`7COMm`,
+        'res.j5.w':`Cinco anos`,
         'res.j5.c':`De estagiário a Senior UX/UI Designer: do suporte, passando pelo front-end, até apoiar a liderança do time de UX design.`,
         'res.skills.k':`Competências`,
         'res.s1.k':`Produto`,
@@ -1425,7 +1449,13 @@
 </script>
 <script>
   /* Save as PDF: the browser's own print dialog, with a print stylesheet made for one or two pages */
-  (function(){ const b=document.getElementById('savePdf'); if(b) b.addEventListener('click',()=>window.print()); })();
+  (function(){
+    const track=(name)=>{ try{ if(window.umami && umami.track) umami.track(name,{lang:document.documentElement.lang}); }catch(e){} };
+    let fromButton=false;
+    const b=document.getElementById('savePdf');
+    if(b) b.addEventListener('click',()=>{ fromButton=true; track('resume-pdf'); window.print(); setTimeout(()=>{fromButton=false;},1000); });
+    window.addEventListener('beforeprint',()=>{ if(!fromButton) track('resume-print'); });
+  })();
 </script>
 </body>
 </html>
