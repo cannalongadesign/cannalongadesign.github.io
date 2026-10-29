@@ -913,6 +913,24 @@
 
   .res-link{display:inline-flex; align-items:center; gap:6px; min-height:44px; font-size:15px; font-weight:700; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1.5px; text-decoration-color:var(--line-control);}
   .res-link:hover{text-decoration-color:var(--ink);}
+
+  /* hero, simplified: number and what it measures, nothing else. The bar and the case
+     name made the row a second headline; the cards below already carry that context.
+     More air between the hero and the work, so the two read as separate moments. */
+  .hero-d .stat .bar,.hero-d .stat .src{display:none !important;}
+  .hero-d .stat .n,.hero-d .stat .n span,.hero-d .stat .n span.morph,.hero-d .stat .n span[data-i18n]{font-size:clamp(15px,1.2vw,17px); font-weight:700;}
+  .hero-d .stat .l{margin-top:4px; font-size:12.5px;}
+  .hero-d .stats{gap:var(--s5);}
+  .hero-d{padding-bottom:var(--s5);}
+  #work{padding-top:var(--s6);}
+  @media (max-width:640px){
+    .hero-d .stats{gap:12px;}
+    .hero-d .stat,.hero-d .stat:last-child{padding:0 0 12px; border-bottom:1px solid var(--line);}
+    .hero-d .stat:last-child{border-bottom:none; padding-bottom:0;}
+    .hero-d a.stat{border-radius:0;}
+    .hero-d{padding-bottom:var(--s4);}
+    #work{padding-top:var(--s5);}
+  }
 </style>
 <script type="application/ld+json">
 {
