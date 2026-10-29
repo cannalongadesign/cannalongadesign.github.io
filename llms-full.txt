@@ -1342,13 +1342,13 @@ Résumé Updated October 2026
 
 # Guilherme Cannalonga
 
-Senior Product Designer. I design products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.
+Senior Product Designer @ Reclame AQUI | Product Design | Product Discovery | Design Systems | AI-First Design
 
-Greater Boston, MA · cannalongadesign@gmail.com · linkedin.com/in/guilhermecannalonga · cannalongadesign.github.io
+Greater Boston · cannalongadesign@gmail.com · www.linkedin.com/in/guilhermecannalonga · cannalongadesign.github.io
 
-Based in
+Location
 
-Greater Boston, MA
+Greater Boston
 
 Email
 
@@ -1368,103 +1368,187 @@ English, Portuguese
 
 Get in touch
 
-## Summary
+Same text as my LinkedIn profile.
 
-Six-plus years in product design, after five years in enterprise support and front-end development. More often than not the first or only designer on the team. For each product I pick the simplest evidence that could prove a decision wrong, and I work with AI on both sides of the screen: in the products I design and in the way I design them.
+## About
 
-## Selected outcomes
+I design products where the wrong screen is expensive: a purchase decision, a clinical record, a fulfillment order, a regulated credit.
 
-- 45.1% → 72.4% People who said the detector helped them decide Safe Site Detector · Reclame AQUI
+I'm a Senior Product Designer with 6+ years in product design, after 5 years in enterprise support and front-end development. I've been the first or only designer on most of my teams, and I like owning a problem end to end, from discovery to the number that shows whether it worked.
 
-- 8.6% → 62.3% Families opening the app daily Genial App · Genial Care
+Some of that work:
 
-- Up to 2h → 25min Documentation per session LIAM · Genial Care
+- Safe Site Detector at Reclame AQUI, the Trustpilot of Latin America (30M+ monthly visits). People who said it helped them decide went from 45.1% to 72.4%, and the in-house AI rebuild runs at about R$1.2k a month instead of a projected R$1.7M.
 
-- 80+ Stores live, rolled out in 3 months Pick & Pack · Kruzer, for Fast Shop
+- Genial Care family app: daily active families from 8.59% to 62.3% in 13 months.
 
-- 4.2d → 2.5d Design-ticket cycle time, measured in Jira Compass · Kruzer
+- LIAM, an AI clinical assistant with human review: documentation from up to 2 hours to about 25 minutes per session, across ~80 therapists.
 
-18% → 63% Credit-journey completion Matri Bank · Shock Tecnologia
+- Pick & Pack for Fast Shop: a fulfillment platform rolled out to 80+ stores.
+
+- Two design systems built from scratch: Compass and Atípico.
+
+I work with AI every day, from research synthesis to functional prototypes, and before I ship I pick the simplest evidence that could prove me wrong.
+
+Case studies: cannalongadesign.github.io
 
 ## Experience
 
-### Senior Product Designer · Reclame AQUI
+### Senior Product Designer
 
-2026 – Present
+Reclame AQUI · Full-time Feb 2026 - Present · 9 mos São Paulo, Brasil · Remote
 
-Consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot.
+Consumer-trust platform, the Trustpilot of Latin America: 30M+ monthly visits, 750K+ registered companies.
 
-- Led design for the in-house, AI-powered Safe Site Detector: the share of people who said it helped them decide went from 45.1% to 72.4%.
+- Led design of the Safe Site Detector, the AI-powered in-house rebuild of a partner integration that was ending. Keeping the partner service would have cost about R$1.7M a month at our volume; the new version runs at about R$1.2k a month.
 
-- Tested comprehension inside the product: the refined version was read correctly by 74% of people, against 29%.
+- People who said the detector helped them decide whether to buy went from 45.1% to 72.4%.
 
-- Replaced a partner set to cost R$1.7M a month; the in-house version runs at R$1.2k a month.
+- Shipped an AI-first experiment in about six weeks, then a V2 whose verdict is built on protection shields and states only what was verified, rolled out to 100% of users three months from first conversation.
 
-- Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.
+- Redesigned the page for a second reader, AI assistants: question-first content on structured data lifted Google AI Overview citations by 138% across 30 companies.
 
-### Senior Product Designer · Kruzer
+- Partner with Product, Engineering and Data on discovery and validation, using LLM workflows and custom AI agents to pressure-test concepts before they take engineering time.
 
-2024 – 2026
+### Senior Product Designer
 
-Enterprise logistics platform for Fast Shop. Sole designer for four products.
+Kruzer · Full-time Sep 2024 - Feb 2026 · 1 yr 6 mos São Paulo, Brasil · On-site
 
-- Pick & Pack: the fulfilment platform behind Fast Shop’s two-hour delivery, one screen each for store, distribution centre and driver, rolled out to 80+ stores in 3 months.
+Enterprise commerce platform (OMS, PIM, DevTools) for Brazilian retailers, including Fast Shop: 80+ stores, 22,000+ SKUs, ~2,500 orders a day. Sole designer across 4 products.
 
-- Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.
+- Led end-to-end design of Pick & Pack, Fast Shop's fulfillment platform, for 3 operational roles instead of one primary user. It runs a 2-hour delivery promise on more volume than the operation had ever handled.
 
-### Senior Product Designer (freelance, after hours) · Shock Tecnologia
+- Rolled it out to 80+ stores in waves over 3 months, designing the exception states first: 15 operational statuses, 4 of them replacing recurring phone calls.
 
-2023 – 2025
+- Designed "returning to store", which replaced a manual cancel-and-rebook loop in the courier app with an automated return tracked on the panel.
 
-White-label banking (Matri).
+- Built the Compass design system from scratch: tokens, components, documentation and governance. Design-ticket cycle time dropped from ~4.2 to ~2.5 days across 3 products.
 
-- Redesigned the credit journey for a regulated product: completion went from 18% to 63%.
+- Wrote the governance it runs on: a component ships only once it appears in 2 products, and semantic-token changes go through review.
 
-### Senior Product Designer · Genial Care
+### Senior Product Designer
 
-2022 – 2024
+Shock Tecnologia · Freelance Oct 2023 - Dec 2025 · 2 yrs 3 mos São Paulo, Brasil · Remote
 
-Autism therapy platform. First designer, then leading design across two teams.
+White-label digital banking for financial institutions across Brazil, alongside my full-time roles.
 
-- Family app: daily active families went from 8.6% to 62.3% in 13 months, by fixing the scheduling bottleneck first.
+- Redesigned the credit journey for products backed by court-ordered government payments: completion went from 18% to 63%.
 
-- LIAM: an AI assistant that drafts the clinical record from the therapist’s narration; documentation went from up to 2 hours to 25 minutes per session.
+- Built the Matri design system so Matri Bank and Startec Bank could each launch a full banking product without rebuilding core patterns.
 
-- Built the Atípico design system from scratch.
+- Turned regulatory and financial constraints into web and mobile experiences that multiple institutions launch under their own brand.
 
-### 7COMm
+### Senior Product Designer
 
-Five years
+Genial Care · Full-time May 2022 - Aug 2024 · 2 yrs 4 mos São Paulo, Brasil
 
-Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.
+ABA therapy platform for autism care. First Senior Product Designer; later led design across 2 teams.
 
-## Skills
+- Took daily active families from 8.59% to 62.3% in 13 months by fixing a scheduling bottleneck instead of redesigning content: a 1-month MVP, then small bets read against a weekly behavior curve.
 
-Product:
+- Cut manual scheduling work in operations from about 6 hours a week to about 1, while the base grew from ~30 to ~500 families.
 
-Product strategy, product discovery, experimentation, product analytics
+- Led design of LIAM, an AI assistant that drafts the clinical record from the therapist's narration: from up to 2 hours to about 25 minutes per session across ~80 therapists, as reported by the clinical team after rollout.
 
-AI:
+- Defined LIAM's human-in-the-loop model: every field is a suggestion a clinician reviews and signs.
 
-AI product design, human-in-the-loop design, LLM workflows, designing for AI readers
+- Built the Atípico design system from scratch and scaled it across product teams for iOS, Android and web.
 
-Systems:
+### 7COMm - Serviços e Soluções em TI
 
-Design systems, design tokens, accessibility (WCAG 2.1 AA)
+5 yrs 9 mos · São Paulo, Brasil
 
-Research:
+Senior UX/UI Designer
 
-User research, comprehension testing, interviews
+Full-time Jan 2021 - Aug 2021 · 8 mos
 
-Tools:
+B2B technology consultancy. Promoted to Senior UX/UI Designer after taking over an abandoned agency project mid-flight and shipping it.
 
-Figma, Claude, Claude Code, GPT, Gemini, Metabase, Useberry, Jira
+- Built high-fidelity prototypes for mobile and web in Figma and Adobe XD, translating requirements into clear interfaces.
+
+- Designed interactive user flows and navigable prototypes to support product validation and cross-functional alignment.
+
+- Partnered with Product Managers, Product Owners, Team Leads and Engineers, and validated implementations with Engineering for visual quality.
+
+- Improved usability and information architecture to streamline user flows and navigation.
+
+- Mentored interns and set the team's quality standard.
+
+Junior Programmer Analyst
+
+Full-time Jun 2019 - Jan 2021 · 1 yr 8 mos
+
+Front-end work that led me into design.
+
+- Built and maintained WordPress platforms, front end and back end, and led the redesign of the company website, improving structure and usability.
+
+- Designed new pages and landing pages in Figma, validated them with stakeholders, then built them for marketing and lead-generation campaigns.
+
+Junior Support Analyst
+
+Full-time Apr 2016 - Jun 2019 · 3 yrs 3 mos
+
+- Worked as a resident analyst in Grupo Pão de Açúcar's NOC, monitoring overnight operations to ensure system stability;
+
+- Monitored file-transfer traffic across retail stores, distribution centers and mainframe systems, and supported automation routines in Unix/Linux environments;
+
+- Escalated critical N2/N3 incidents and joined troubleshooting sessions to optimize file-processing routines and workflows.
+
+Intern
+
+Internship Dec 2015 - Apr 2016 · 5 mos
+
+- Delivered technical training sessions for clients to support product adoption and operational efficiency.
+
+- Provided customer support through chat, phone and email channels, ensuring effective issue resolution and user satisfaction.
 
 ## Education
 
-- Universidade Presbiteriana Mackenzie
+- **TheStarter - Cursos Avançados de UX Design** Postgraduate Degree, Product Design Apr 2024 – Jun 2024 · Grade: 20/20
 
-- Universidade Anhembi Morumbi
+- **PM3** Product Analytics Oct 2023 – Nov 2023
+
+- **Universidade Anhembi Morumbi** Postgraduate Degree, UX Design Jan 2021 – Jun 2022 · Grade: 9.0
+
+- **Universidade Presbiteriana Mackenzie** Bachelor's Degree, Information Technology Aug 2017 – Jun 2020 · Grade: 8.5
+
+## Licenses & certifications
+
+- **Formação Minha Primeira Liderança** · Alura · Issued Oct 2024
+
+- **International Certification UX-PM - Level 2** · UXalliance · Issued Oct 2023
+
+- **Criação de Protótipos no Figma - Avançado** · Curso de Figma ✦ cfPRO® · Issued Oct 2022
+
+- **Design Thinking** · FIAP · Issued Apr 2022
+
+- **User Experience** · FIAP · Issued Apr 2022
+
+- **International Certification UX-PM - Level 1** · UXalliance · Issued Jan 2022
+
+- **Competências do Líder: Combinando Hard e Soft Skills** · Ânima Educação · Issued Sep 2021
+
+- **Formação Identidade Visual** · Alura · Issued Oct 2020
+
+- **Formação Adobe XD** · Alura · Issued Mar 2020
+
+- **Formação UX/UI Design** · Alura · Issued Sep 2019
+
+## Skills
+
+Top skills:
+
+Product Design, Product Strategy
+
+Services:
+
+User Experience Design (UED), Interaction Design, UX Research, Visual Design
+
+## Languages
+
+- **English** · Full professional proficiency
+
+- **Portuguese** · Native or bilingual proficiency
 
 ## Want the story behind these numbers?
 
