@@ -468,7 +468,7 @@
   .dsp input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; appearance:none; width:15px; height:15px; border-radius:50%; background:var(--ink); cursor:grab;}
   .dsp input[type=range]::-moz-range-thumb{width:13px; height:13px; border-radius:50%; background:var(--ink); border:none; cursor:grab;}
   .dsp-seg{display:flex; background:rgba(20,20,15,.07); border-radius:100px; padding:4px;}
-  .dsp-seg button{flex:1; font-family:inherit; font-size:11.5px; font-weight:500; padding:8px 4px; border:none; border-radius:100px; background:transparent; color:var(--ink); opacity:.55; cursor:pointer;}
+  .dsp-seg button{flex:1; font-family:inherit; font-size:11.5px; font-weight:500; padding:8px 4px; border:none; border-radius:100px; background:transparent; color:var(--ink); opacity:.78; cursor:pointer;}
   .dsp-seg button[aria-pressed="true"]{background:var(--paper); opacity:1; font-weight:700;}
   .dsp-preview{padding:var(--sp-4); display:flex; flex-direction:column; gap:var(--dsp-gap); background:var(--paper);}
   .dsp-card{background:var(--paper-2); border:1px solid var(--line); border-radius:var(--dsp-radius); padding:var(--dsp-pad); display:flex; flex-direction:column; gap:calc(var(--dsp-gap) * 0.6);}
@@ -1056,8 +1056,8 @@
   </div>
 
   <figure class="shot wide reveal">
-    <div class="frame"><img decoding="async" src="/assets/compass-tokens.webp" alt="Compass semantic token tables: each token named for its meaning, with the primitive value it resolves to" loading="lazy" width="1200" height="292"></div>
-    <figcaption class="caption" data-i18n="c.fig.tokens">The semantic layer, and the only one published to design files. <code>$typography.h1.medium</code> carries intent; <code>60px</code> carries appearance. A designer who reaches for the second one is guessing, and the guessing is where inconsistency comes back in.</figcaption>
+    <div class="frame" tabindex="0" role="region" aria-labelledby="cap-tokens"><img decoding="async" src="/assets/compass-tokens.webp" alt="Compass semantic token tables: each token named for its meaning, with the primitive value it resolves to" loading="lazy" width="1200" height="292"></div>
+    <figcaption class="caption" id="cap-tokens" data-i18n="c.fig.tokens">The semantic layer, and the only one published to design files. <code>$typography.h1.medium</code> carries intent; <code>60px</code> carries appearance. A designer who reaches for the second one is guessing, and the guessing is where inconsistency comes back in.</figcaption>
     <span class="hint" data-i18n="c.hint">Drag to see the whole page</span>
   </figure>
 
@@ -1067,8 +1067,8 @@
   </div>
 
   <figure class="shot wide reveal">
-    <div class="frame"><img decoding="async" src="/assets/compass-molecules.webp" alt="The Compass select documentation: multi-select variants composed from field, label, tooltip, chips, list and error state" loading="lazy" width="1200" height="561"></div>
-    <figcaption class="caption" data-i18n="c.fig.molecules">Molecules: the select composed from smaller pieces: field, label, tooltip, chip, list, error. Composing instead of redrawing is what makes a new variant cost minutes.</figcaption>
+    <div class="frame" tabindex="0" role="region" aria-labelledby="cap-molecules"><img decoding="async" src="/assets/compass-molecules.webp" alt="The Compass select documentation: multi-select variants composed from field, label, tooltip, chips, list and error state" loading="lazy" width="1200" height="561"></div>
+    <figcaption class="caption" id="cap-molecules" data-i18n="c.fig.molecules">Molecules: the select composed from smaller pieces: field, label, tooltip, chip, list, error. Composing instead of redrawing is what makes a new variant cost minutes.</figcaption>
     <span class="hint" data-i18n="c.hint">Drag to see the whole page</span>
   </figure>
 
@@ -1214,7 +1214,7 @@
         'nav.back.liam':`Back to LIAM`,
         'nav.back.kruzer':`Back to Pick &amp; Pack`,
         'nav.back.compass':`Back to Compass`,
-        'a11y.skip':`Skip to content`, 'a11y.lang':`Language`,
+        'a11y.scroll':`Scrollable image`, 'a11y.skip':`Skip to content`, 'a11y.lang':`Language`,
         'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
         'meta.v.role':`Senior Product Designer`,
         'meta.v.time':`Sep 2024 – Feb 2026`,
@@ -1299,7 +1299,7 @@
         'nav.back.liam':`Voltar ao LIAM`,
         'nav.back.kruzer':`Voltar ao Pick &amp; Pack`,
         'nav.back.compass':`Voltar ao Compass`,
-        'a11y.skip':`Pular para o conteúdo`, 'a11y.lang':`Idioma`,
+        'a11y.scroll':`Imagem com rolagem horizontal`, 'a11y.skip':`Pular para o conteúdo`, 'a11y.lang':`Idioma`,
         'footer.rights':`© 2026 Guilherme Cannalonga. Todos os direitos reservados.`,
         'meta.v.role':`Product Designer Sênior`,
         'meta.v.time':`Set 2024 – Fev 2026`,

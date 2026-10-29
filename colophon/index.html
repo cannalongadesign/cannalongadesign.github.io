@@ -417,7 +417,7 @@
     content:counter(step,decimal-leading-zero); position:absolute; left:24px; top:22px;
     font-weight:900; font-size:15px; color:var(--ink); opacity:.42;
   }
-  .process li h3{font-size:16.5px; margin-bottom:8px;}
+  .process li h3,.article-body .process li h2{font-size:16.5px; line-height:1.25; letter-spacing:-0.03em; margin:0 0 8px;}
   .process li p{font-size:14.5px; color:var(--ink-2); margin:0;}
 
   /* ARTIFACT TILES */
@@ -929,13 +929,13 @@
   <div class="col reveal">
     <p class="lead" data-i18n="co.intro">Seven things make that work:</p>
     <ol class="process">
-      <li><h3 data-i18n="co.1h">The same me, everywhere</h3><p data-i18n="co.1p">My name, title and location are written exactly the same way here, on my résumé and on LinkedIn, and the pages tell search engines that these profiles belong to one person. That way an AI does not mix me up with someone else.</p></li>
-      <li><h3 data-i18n="co.2h">A label for machines on every page</h3><p data-i18n="co.2p">Behind each page there is a small block of structured data, called JSON-LD, a standard format that search engines read. It says who I am, what each case is about and what it achieved. People never see it; search engines and AI tools rely on it.</p></li>
-      <li><h3 data-i18n="co.3h">The answer comes first</h3><p data-i18n="co.3p">Every case starts with a short version: the problem, what I did and the result, with the numbers written as plain sentences. Anyone skimming, person or machine, gets the point in seconds.</p></li>
-      <li><h3 data-i18n="co.4h">Works even without JavaScript</h3><p data-i18n="co.4p">All the English text is in the page itself; the EN/PT switch only swaps the language. Tools that do not run scripts read the same content you do.</p></li>
-      <li><h3 data-i18n="co.5h">A summary written for AI</h3><p data-i18n="co.5p"><a href="/llms.txt">llms.txt</a> is a short plain-text summary of the site made for language models, and <a href="/llms-full.txt">llms-full.txt</a> has the full text of every case.</p></li>
-      <li><h3 data-i18n="co.6h">AI search tools are welcome</h3><p data-i18n="co.6p">The site&rsquo;s rules for crawlers explicitly let search engines and AI assistants read it, from OpenAI, Anthropic and Perplexity to Google, Apple and Microsoft, and a sitemap lists every page with its last update.</p></li>
-      <li><h3 data-i18n="co.7h">Only numbers I can back up</h3><p data-i18n="co.7p">Every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.</p></li>
+      <li><h2 data-i18n="co.1h">The same me, everywhere</h2><p data-i18n="co.1p">My name, title and location are written exactly the same way here, on my résumé and on LinkedIn, and the pages tell search engines that these profiles belong to one person. That way an AI does not mix me up with someone else.</p></li>
+      <li><h2 data-i18n="co.2h">A label for machines on every page</h2><p data-i18n="co.2p">Behind each page there is a small block of structured data, called JSON-LD, a standard format that search engines read. It says who I am, what each case is about and what it achieved. People never see it; search engines and AI tools rely on it.</p></li>
+      <li><h2 data-i18n="co.3h">The answer comes first</h2><p data-i18n="co.3p">Every case starts with a short version: the problem, what I did and the result, with the numbers written as plain sentences. Anyone skimming, person or machine, gets the point in seconds.</p></li>
+      <li><h2 data-i18n="co.4h">Works even without JavaScript</h2><p data-i18n="co.4p">All the English text is in the page itself; the EN/PT switch only swaps the language. Tools that do not run scripts read the same content you do.</p></li>
+      <li><h2 data-i18n="co.5h">A summary written for AI</h2><p data-i18n="co.5p"><a href="/llms.txt">llms.txt</a> is a short plain-text summary of the site made for language models, and <a href="/llms-full.txt">llms-full.txt</a> has the full text of every case.</p></li>
+      <li><h2 data-i18n="co.6h">AI search tools are welcome</h2><p data-i18n="co.6p">The site&rsquo;s rules for crawlers explicitly let search engines and AI assistants read it, from OpenAI, Anthropic and Perplexity to Google, Apple and Microsoft, and a sitemap lists every page with its last update.</p></li>
+      <li><h2 data-i18n="co.7h">Only numbers I can back up</h2><p data-i18n="co.7p">Every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.</p></li>
     </ol>
     <p class="takeaway" data-i18n="co.outro">It is the same principle as my product work: decide what the reader needs, then make it impossible to miss.</p>
 

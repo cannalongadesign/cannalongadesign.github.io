@@ -1098,7 +1098,7 @@ AI product design Trust & safety In-product research LLM-ready content
 
 The detector’s public home page. Everything below is told through the process and illustrations, not internal screens.
 
-### Try the detector live
+**Try the detector live**
 
 It’s public and free: paste any store’s address and see the shields.
 
@@ -1344,6 +1344,8 @@ Résumé Updated October 2026
 
 Senior Product Designer. I design products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.
 
+Greater Boston, MA · cannalongadesign@gmail.com · linkedin.com/in/guilhermecannalonga · cannalongadesign.github.io
+
 Based in
 
 Greater Boston, MA
@@ -1386,9 +1388,9 @@ Six-plus years in product design, after five years in enterprise support and fro
 
 ## Experience
 
-2026 –
-
 ### Senior Product Designer · Reclame AQUI
+
+2026 – Present
 
 Consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot.
 
@@ -1400,9 +1402,9 @@ Consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpil
 
 - Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.
 
-2024 – 26
-
 ### Senior Product Designer · Kruzer
+
+2024 – 2026
 
 Enterprise logistics platform for Fast Shop. Sole designer for four products.
 
@@ -1410,17 +1412,17 @@ Enterprise logistics platform for Fast Shop. Sole designer for four products.
 
 - Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.
 
-2023 – 25
-
 ### Senior Product Designer (freelance, after hours) · Shock Tecnologia
+
+2023 – 2025
 
 White-label banking (Matri).
 
 - Redesigned the credit journey for a regulated product: completion went from 18% to 63%.
 
-2022 – 24
-
 ### Senior Product Designer · Genial Care
+
+2022 – 2024
 
 Autism therapy platform. First designer, then leading design across two teams.
 
@@ -1430,9 +1432,9 @@ Autism therapy platform. First designer, then leading design across two teams.
 
 - Built the Atípico design system from scratch.
 
-Five years
-
 ### 7COMm
+
+Five years
 
 Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.
 
