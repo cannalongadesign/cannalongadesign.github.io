@@ -186,6 +186,8 @@ five years:
 
 7COMm · intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team
 
+Full résumé
+
 Get in touch
 
 ## Let's talk.
@@ -1331,3 +1333,141 @@ Get in touch
 See all cases
 
 Try the detector live
+
+---
+
+URL: https://cannalongadesign.github.io/resume/
+
+Résumé Updated October 2026
+
+# Guilherme Cannalonga
+
+Senior Product Designer. I design products where the wrong screen is expensive: consumer trust, AI clinical documentation, consumer healthcare, enterprise logistics and design systems.
+
+Based in
+
+Greater Boston, MA
+
+Email
+
+cannalongadesign@gmail.com
+
+LinkedIn
+
+/in/guilhermecannalonga
+
+Portfolio
+
+cannalongadesign.github.io
+
+Languages
+
+English, Portuguese
+
+Get in touch
+
+## Summary
+
+Six-plus years in product design, after five years in enterprise support and front-end development. More often than not the first or only designer on the team. For each product I pick the simplest evidence that could prove a decision wrong, and I work with AI on both sides of the screen: in the products I design and in the way I design them.
+
+## Selected outcomes
+
+- 45.1% → 72.4% People who said the detector helped them decide Safe Site Detector · Reclame AQUI
+
+- 8.6% → 62.3% Families opening the app daily Genial App · Genial Care
+
+- Up to 2h → 25min Documentation per session LIAM · Genial Care
+
+- 80+ Stores live, rolled out in 3 months Pick & Pack · Kruzer, for Fast Shop
+
+- 4.2d → 2.5d Design-ticket cycle time, measured in Jira Compass · Kruzer
+
+18% → 63% Credit-journey completion Matri Bank · Shock Tecnologia
+
+## Experience
+
+2026 –
+
+### Senior Product Designer · Reclame AQUI
+
+Consumer trust and purchase decisions, Brazil’s closest equivalent to Trustpilot.
+
+- Led design for the in-house, AI-powered Safe Site Detector: the share of people who said it helped them decide went from 45.1% to 72.4%.
+
+- Tested comprehension inside the product: the refined version was read correctly by 74% of people, against 29%.
+
+- Replaced a partner set to cost R$1.7M a month; the in-house version runs at R$1.2k a month.
+
+- Structured the pages for AI readers: citations in Google AI Overview rose 138% across 30 companies.
+
+2024 – 26
+
+### Senior Product Designer · Kruzer
+
+Enterprise logistics platform for Fast Shop. Sole designer for four products.
+
+- Pick & Pack: the fulfilment platform behind Fast Shop’s two-hour delivery, one screen each for store, distribution centre and driver, rolled out to 80+ stores in 3 months.
+
+- Compass: a design system with a semantic token layer and governance; design-ticket cycle time went from 4.2 to 2.5 days, measured in Jira.
+
+2023 – 25
+
+### Senior Product Designer (freelance, after hours) · Shock Tecnologia
+
+White-label banking (Matri).
+
+- Redesigned the credit journey for a regulated product: completion went from 18% to 63%.
+
+2022 – 24
+
+### Senior Product Designer · Genial Care
+
+Autism therapy platform. First designer, then leading design across two teams.
+
+- Family app: daily active families went from 8.6% to 62.3% in 13 months, by fixing the scheduling bottleneck first.
+
+- LIAM: an AI assistant that drafts the clinical record from the therapist’s narration; documentation went from up to 2 hours to 25 minutes per session.
+
+- Built the Atípico design system from scratch.
+
+Five years
+
+### 7COMm
+
+Intern to Senior UX/UI Designer: from support, through front-end, to helping lead the UX design team.
+
+## Skills
+
+Product:
+
+Product strategy, product discovery, experimentation, product analytics
+
+AI:
+
+AI product design, human-in-the-loop design, LLM workflows, designing for AI readers
+
+Systems:
+
+Design systems, design tokens, accessibility (WCAG 2.1 AA)
+
+Research:
+
+User research, comprehension testing, interviews
+
+Tools:
+
+Figma, Claude, Claude Code, GPT, Gemini, Metabase, Useberry, Jira
+
+## Education
+
+- Universidade Presbiteriana Mackenzie
+
+- Universidade Anhembi Morumbi
+
+## Want the story behind these numbers?
+
+Every outcome above has a case study that says how it was measured. Happy to walk you through any of them in a 30-minute call.
+
+Get in touch
+
+See all cases

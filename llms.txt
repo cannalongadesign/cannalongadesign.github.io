@@ -31,6 +31,7 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 ## About this site
 
 - [Portfolio home](https://cannalongadesign.github.io/): positioning, outcomes, how he decides, how he works with AI, testimonials, career timeline
+- [Résumé](https://cannalongadesign.github.io/resume/): experience, selected outcomes, skills and education on one page, with a PDF version
 - [How this site is built](https://cannalongadesign.github.io/colophon/): structured data and AI-search practices used on this site, and the design tokens behind it
 
 ## Optional
