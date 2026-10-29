@@ -931,6 +931,16 @@
     .hero-d{padding-bottom:var(--s4);}
     #work{padding-top:var(--s5);}
   }
+
+  /* one row at every desktop width and in both languages: the numbers give way (their
+     labels wrap), the two actions never drop below them */
+  @media (min-width:1041px){
+    .hero-d .hero-foot{flex-wrap:nowrap; align-items:center;}
+    .hero-d .stats{gap:40px; flex:1 1 auto; min-width:0;}
+    .hero-d a.stat{flex:0 1 auto; min-width:0;}
+    .hero-d .stat .l{white-space:normal; max-width:22ch;}
+    .hero-d .hero-actions{flex:none; flex-wrap:nowrap;}
+  }
 </style>
 <script type="application/ld+json">
 {
