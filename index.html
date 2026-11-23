@@ -331,7 +331,7 @@
   .card-met .ev{margin-top:4px; font-size:9.5px; color:rgba(247,246,241,.66);}
   .card-met .ev::before{background:var(--acid);}
   .card-met .ev.reported::before{background:transparent; box-shadow:inset 0 0 0 1.5px var(--acid);}
-  .card-media.ink .card-met{background:var(--paper); color:var(--ink);}
+  .card-media.ink .card-met{background:var(--paper-2); color:var(--ink);}
   .card-media.ink .card-met .met-v{color:var(--ink);}
   .card-media.ink .card-met .met-n{color:var(--ink-2);}
   .card-media.ink .card-met .ev{color:var(--ink-2);}
@@ -340,6 +340,13 @@
   /* Compass is the one shot with room around the device: it steps up and left to clear the label.
      The others reach the edge of their picture, so moving them would cut the device. */
   .card-media.indigo .card-shot{scale:.88; translate:-9% -8%; transform-origin:50% 50%;}
+  /* LIAM: tablet and hand slide left, still anchored to the bottom edge, so the label sits beside the hand */
+  .card-media.sky .card-shot{translate:-13% 0;}
+  /* Pick & Pack: the monitor rises to clear the label. Its stand runs off the bottom of the picture,
+     so the same picture sits behind it as the card background: the stand continues, no cut. */
+  .card-media.coral{background:var(--coral) url(/assets/card-kruzer.webp) center / cover no-repeat;}
+  .card-media.coral .card-shot{scale:1; translate:0 -5%;}
+  a.card:hover .card-media.coral .card-shot{transform:none;}
   @media (max-width:520px){
     .card-met{right:10px; bottom:10px; padding:7px 9px 6px; border-radius:9px; gap:1px;}
     .card-met .met-v{font-size:14px;} .card-met .met-n{font-size:10.5px;} .card-met .ev{font-size:8.5px; margin-top:3px; gap:5px;}
