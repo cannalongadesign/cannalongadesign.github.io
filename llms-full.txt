@@ -122,9 +122,9 @@ LIAM drafts clinical records; the Safe Site Detector gives a verdict that states
 
 ### In my process
 
-AI challenge champion
-
 qa-design, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.
+
+AI challenge champion
 
 ### For AI readers
 
