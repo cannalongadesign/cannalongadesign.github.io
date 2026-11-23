@@ -30,18 +30,19 @@
 .article-body .process li p{line-height:1.55;}
 
 /* ---------- the highlight ----------
-   One mark, used the same way everywhere: the acid band under the words that carry
-   the point, like the hero's "the wrong screen". In the About it marks the facts,
-   in the testimonials the phrase each person chose to stress. It draws in once,
-   when its block reaches the screen; with reduced motion or no JavaScript it is simply there. */
+   One mark, exactly the hero's: same acid, same band (.38em at 78% of the line), same draw.
+   In the About it marks the facts, in the testimonials the phrase each person chose to stress.
+   Each one draws when it reaches the screen (index.html adds .on); with reduced motion or
+   no JavaScript it is simply there. */
 mark.hl,.quote strong{
-  background:none; color:var(--ink); padding:0 .06em; margin:0 -.06em;
-  background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat;
-  background-position:0 88%; background-size:100% .38em;
+  background-color:transparent; color:var(--ink); padding:0 .06em; margin:0 -.06em;
   -webkit-box-decoration-break:clone; box-decoration-break:clone;
+  background-image:linear-gradient(var(--acid),var(--acid));
+  background-repeat:no-repeat; background-position:0 78%; background-size:100% .38em;
 }
-.js .reveal mark.hl,.js .reveal .quote strong{background-size:0% .38em; transition:background-size .8s cubic-bezier(.2,.7,.2,1) .25s;}
-.js .reveal.in mark.hl,.js .reveal.in .quote strong{background-size:100% .38em;}
+@keyframes hl-draw{from{background-size:0% .38em;} to{background-size:100% .38em;}}
+.js mark.hl,.js .quote strong{background-size:0% .38em;}
+.js mark.hl.on,.js .quote strong.on{animation:hl-draw .8s cubic-bezier(.2,.7,.2,1) .15s both;}
 @media (prefers-reduced-motion:reduce){
-  .js .reveal mark.hl,.js .reveal .quote strong{background-size:100% .38em; transition:none;}
+  .js mark.hl,.js .quote strong{background-size:100% .38em; animation:none !important;}
 }

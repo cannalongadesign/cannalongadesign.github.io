@@ -1439,6 +1439,19 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -4% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+  /* highlights draw as their text reaches the screen, the same way the hero's does.
+     The text element is watched, not the mark: switching language rewrites the marks inside it. */
+  (function(){
+    const SEL='mark.hl, .quote strong';
+    const hosts=new Set([...document.querySelectorAll(SEL)].map(m=>m.closest('[data-i18n]')||m.parentElement));
+    const light=h=>h.querySelectorAll(SEL).forEach(m=>m.classList.add('on'));
+    const seen=new Set();
+    if(!('IntersectionObserver' in window)){ hosts.forEach(light); document.addEventListener('langchange',()=>hosts.forEach(light)); return; }
+    const ho=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ seen.add(e.target); light(e.target); ho.unobserve(e.target); } }),{threshold:0, rootMargin:'0px 0px -18% 0px'});
+    hosts.forEach(h=>ho.observe(h));
+    document.addEventListener('langchange',()=>seen.forEach(light));
+  })();
+
   (function(){
     const links=Array.from(document.querySelectorAll('#navPill a[href^="#"]'));
     const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
