@@ -34,7 +34,7 @@ Consumer trust
 
 **Reclame AQUI.** An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.
 
-Said the detector helped them decide
+Said the detector helped them decide self-reported · in-product question
 
 [Image: Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child’s evolution note]
 
@@ -46,7 +46,7 @@ Consumer healthcare
 
 **Genial Care.** Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.
 
-Families opening the app daily
+Families opening the app daily measured · Metabase
 
 [Image: LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session]
 
@@ -58,7 +58,7 @@ Up to 2h → 25min
 
 **Genial Care.** Drafts the clinical record from the therapist’s narration. Never signs it.
 
-Documentation per session
+Documentation per session reported by the clinical team
 
 [Image: Pick & Pack order queue on a desktop monitor: every order with status, carrier and waiting time]
 
@@ -70,7 +70,7 @@ Enterprise logistics
 
 **Kruzer, for Fast Shop.** One order, three people, one screen each. Designed around the exceptions.
 
-Stores live
+Stores live counted · staged rollout
 
 Also shipped
 
@@ -84,7 +84,7 @@ Design system
 
 **Kruzer.** Twenty blues in production to one semantic token layer, with governance.
 
-Design-ticket cycle time
+Design-ticket cycle time measured · Jira
 
 [Image: Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen]
 

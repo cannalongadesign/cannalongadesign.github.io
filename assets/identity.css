@@ -1,0 +1,107 @@
+/* ============================================================
+   cannalonga · identity layer
+   Loaded after each page's own stylesheet, so this is the one place the
+   identity lives. The idea: the site behaves like the products I design.
+   Color only where it means something, numbers say how they were measured,
+   and motion only where it explains a state.
+   ============================================================ */
+:root{
+  /* type: IBM Plex, built for engineering software. Mono carries data, labels and sources */
+  --font-sans:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mono:var(--font-mono);
+
+  /* one brand color, two strengths. --brand acts (buttons, links, focus), --mark annotates
+     (highlights, rules, step markers). --acid is kept as an alias so every page's
+     existing rules pick up the new mark without being rewritten. */
+  --brand:#0e5e5a;  --brand-hover:#0a4a47;  --brand-ink:#ffffff;
+  --mark:#a9d8d1;   --acid:var(--mark);
+  --brand-soft:#e3eeec;
+
+  /* state colors exist for data only: a status, an error, a measured result. Never decoration. */
+  --state-bad:#b3261e;
+
+  --radius-m:8px;
+  --t-fast:150ms;
+}
+
+body{font-family:var(--font-sans);}
+::selection{background:var(--brand-soft); color:var(--ink);}
+
+/* ---------- actions ---------- */
+.btn-primary,.btn-acid,.mail-split,.copy-btn{background:var(--brand); color:var(--brand-ink);}
+.btn-primary:hover,.btn-acid:hover,.copy-btn:hover{background:var(--brand-hover);}
+.mail-split .btn,.mail-split .btn:hover{background:transparent; color:var(--brand-ink);}
+.copy-btn{border-left-color:rgba(255,255,255,.28);}
+.btn,.nav-cta,.copy-btn,.contact-option{transition:background-color var(--t-fast) ease, border-color var(--t-fast) ease, color var(--t-fast) ease;}
+:focus-visible{outline:2px solid var(--brand) !important; outline-offset:3px;}
+
+/* links inside reading text carry the brand; navigation stays ink */
+.article-body p a:not(.btn),.article-body .col > ul li a,.article-body .col > ol li a,.note a{
+  color:var(--brand); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px;
+  text-decoration-color:color-mix(in srgb, var(--brand) 45%, transparent);
+}
+.article-body p a:not(.btn):hover,.article-body .col > ul li a:hover,.article-body .col > ol li a:hover,.note a:hover{text-decoration-color:var(--brand);}
+
+/* numbers read like an instrument: same width per digit, so before and after line up */
+.num,.n,.stat .n,.metrics-strip .num,.big{font-variant-numeric:tabular-nums;}
+
+/* ---------- the signature detail ----------
+   "the wrong screen" is flagged the way a review flags an error: a red squiggle,
+   the one place a state color appears in the hero, because here it means "wrong".
+   It settles in once after load; with reduced motion it is simply there. */
+.mk{
+  background:none !important; padding:0 !important; margin:0 !important;
+  text-decoration-line:underline; text-decoration-style:wavy; text-decoration-skip-ink:none;
+  text-decoration-thickness:.055em; text-underline-offset:.16em;
+  text-decoration-color:var(--state-bad);
+  animation:flag 700ms cubic-bezier(.2,.7,.2,1) 350ms both !important;
+}
+@keyframes flag{
+  from{text-decoration-color:transparent; text-underline-offset:.42em;}
+  to{text-decoration-color:var(--state-bad); text-underline-offset:.16em;}
+}
+
+/* ---------- evidence: how each number was measured ----------
+   A mono label with a dot. Filled dot: measured by a system (Metabase, Jira, Search Console).
+   Ring: reported by people (a survey answer, the team's own count). No traffic-light colors:
+   the type is information, not a warning. */
+.ev{display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:10.5px; font-weight:500;
+  letter-spacing:.04em; line-height:1; color:var(--ink-2); white-space:nowrap;}
+.ev::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--brand); flex:none;}
+.ev.reported::before{background:transparent; box-shadow:inset 0 0 0 1.5px var(--brand);}
+
+/* ---------- motion: only where it explains a state ----------
+   Entrance fades and counting numbers are gone: content is there when the page is,
+   for a recruiter skimming and for a crawler reading. Hover and focus stay, at 150ms. */
+.reveal,.js .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
+.js .article-hero .col > *,.js .hero-d .hero-copy > *,.js .hero .hero-copy > *{animation:none !important;}
+.js .shot.reveal .frame > img,.js .shot.reveal .stage img,.js .shot.reveal .phone-row img{transform:none !important; transition:none !important;}
+.js .reveal.in .takeaway::before,.js .reveal.in .pull::before,.js .takeaway::before,.js .pull::before{transform:none !important; transition:none !important;}
+.js .stat .morph,.js .stat .morph.done{transition:none !important;}
+.js .hero-copy > *,.js .stats,.js .hero-d h1 .w{animation:none !important;}
+.js .stat .after{animation:none !important; background-size:100% .36em !important;}
+.js .meta-item:last-child .v{animation:none !important;}
+/* scroll-driven decoration (heading growing, hero receding, shots drifting) is gone too.
+   What stays moves because something changed: reading progress, a copied email, a page swap. */
+.closing h2,.hero-d > .wrap,.card-shot{animation:none !important;}
+
+@media (prefers-reduced-motion:reduce){
+  .mk{animation:none !important;}
+  *,*::before,*::after{transition-duration:0s !important;}
+}
+@media print{
+  .mk{text-decoration-color:var(--state-bad); animation:none !important;}
+}
+
+/* ---------- small fixes the old styles left behind ---------- */
+/* headings inside numbered lists and takeaways were inheriting the gray of body text */
+.article-body .process li h2,.article-body .process li h3,.article-body .takeaway{color:var(--ink);}
+.article-body .process li p{line-height:1.55;}
+/* Plex has a taller x-height than DM Sans: the display leading DM needed reads cramped here */
+h1{line-height:1.05 !important;}
+h2{line-height:1.12 !important;}
+/* Plex sets wider than DM Sans: balance headings so no line ends on one orphan word,
+   and keep the flagged phrase in one piece wherever the line is long enough to hold it */
+h1,h2{text-wrap:balance;}
+@media (min-width:600px){ .mk{white-space:nowrap;} }
