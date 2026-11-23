@@ -7,7 +7,7 @@
 <title>Guilherme Cannalonga · 15-second reel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design — 15-second reel
@@ -21,19 +21,19 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   html,body{height:100%;}
   body{background:#0c0c09; display:flex; align-items:center; justify-content:center; overflow:hidden;
-       font-family:'IBM Plex Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:var(--ink);}
+       font-family:'DM Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; color:var(--ink);}
   .stage{position:relative; height:min(100vh,125vw); aspect-ratio:4/5; background:var(--paper); overflow:hidden; container-type:size; cursor:pointer;}
   .scene{position:absolute; inset:0; padding:9cqw; display:flex; flex-direction:column; justify-content:center; opacity:0;
          animation:scene var(--d) linear var(--t) both;}
   @keyframes scene{0%{opacity:0;} 6%{opacity:1;} 90%{opacity:1;} 100%{opacity:0;}}
   .up{opacity:0; animation:up .8s var(--ease) both; animation-delay:var(--at);}
   @keyframes up{from{opacity:0; transform:translateY(3.2cqw);} to{opacity:1; transform:none;}}
-  h1,h2,.big{font-weight:600; letter-spacing:-0.02em; line-height:.92;}
+  h1,h2,.big{font-weight:900; letter-spacing:-0.055em; line-height:.92;}
 
   /* 1 · who */
   .s1{align-items:center; text-align:center; gap:3cqw;}
   .s1 img{width:26cqw; height:26cqw; border-radius:50%; object-fit:cover;}
-  .s1 .name{font-size:7cqw; font-weight:600; letter-spacing:-0.02em; line-height:1;}
+  .s1 .name{font-size:7cqw; font-weight:900; letter-spacing:-0.05em; line-height:1;}
   .s1 .role{font-size:3.5cqw; color:var(--ink-2);}
 
   /* 2 · the claim */
@@ -51,8 +51,8 @@
           animation:scene var(--d) linear var(--t) both;}
   .metric .case{font-size:3.4cqw; font-weight:700; color:var(--ink-2);}
   .metric .big{font-size:16cqw; white-space:nowrap; font-variant-numeric:tabular-nums;}
-  .metric .big small{display:block; font-size:.5em; color:var(--ink-2); letter-spacing:-0.025em; margin-bottom:.12em;}
-  .metric .big b{font-weight:600; padding:0 .05em; margin:0 -.05em; background-image:linear-gradient(var(--acid),var(--acid));
+  .metric .big small{display:block; font-size:.5em; color:var(--ink-2); letter-spacing:-0.04em; margin-bottom:.12em;}
+  .metric .big b{font-weight:900; padding:0 .05em; margin:0 -.05em; background-image:linear-gradient(var(--acid),var(--acid));
                  background-repeat:no-repeat; background-position:0 86%; background-size:0% .34em;
                  animation:sweep2 .6s var(--ease) both; animation-delay:calc(var(--t) + .55s);}
   @keyframes sweep2{to{background-size:100% .34em;}}
@@ -72,7 +72,7 @@
   @keyframes scene-in{from{opacity:0;} to{opacity:1;}}
   .scene.s5{animation:scene-in .45s linear var(--t) both;}
   .s5{align-items:flex-start; gap:4.5cqw;}
-  .s5 .mark{font-size:5cqw; font-weight:600; letter-spacing:-0.02em;}
+  .s5 .mark{font-size:5cqw; font-weight:900; letter-spacing:-0.06em;}
   .s5 h2{font-size:13cqw;}
   .s5 .url{font-size:4.1cqw; font-weight:700; letter-spacing:-0.02em; background:var(--acid); padding:2.6cqw 4.4cqw; border-radius:100cqw;}
   .s5 .open{font-size:3.4cqw; color:var(--ink-2); display:flex; align-items:center; gap:1.6cqw;}

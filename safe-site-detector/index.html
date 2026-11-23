@@ -28,11 +28,11 @@
 <meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-ssd.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design — case study system
-     Paper ground, ink type, one brand color. IBM Plex.
+     Paper ground, ink type, one acid field. DM Sans.
      Hard rules: no shadow, no gradient, no glow, no translucency.
      ============================================================ */
   :root{
@@ -56,10 +56,10 @@
   html{scroll-behavior:smooth;}
   body{
     background:var(--paper); color:var(--ink);
-    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    font-family:'DM Sans', system-ui, -apple-system, sans-serif;
     line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  h1,h2,h3,h4{font-weight:600; letter-spacing:-0.028em; line-height:1.0;}
+  h1,h2,h3,h4{font-weight:900; letter-spacing:-0.045em; line-height:1.0;}
   a{color:inherit; text-decoration:none;}
   img{display:block; max-width:100%;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
@@ -201,7 +201,7 @@
   }
   .article-body > .col:first-child .stage-label:first-of-type{margin-top:var(--sp-8);}
   .stage-label{scroll-margin-top:112px;}
-  .stage-label b{color:var(--ink); font-weight:600; margin-right:8px;}
+  .stage-label b{color:var(--ink); font-weight:900; margin-right:8px;}
   .stage-label + h2{margin-top:0 !important;}
 
   /* ============================================================
@@ -231,14 +231,14 @@
   .index ol{list-style:none; counter-reset:ix; display:grid; grid-template-columns:1fr 1fr; gap:0 28px;}
   .index li{counter-increment:ix; border-top:1px solid var(--line);}
   .index li a{display:flex; gap:12px; align-items:baseline; padding:12px 0; font-size:14.5px; color:var(--ink-2); transition:color .15s;}
-  .index li a::before{content:'0' counter(ix); font-weight:600; font-size:11.5px; color:var(--ink); letter-spacing:.04em;}
+  .index li a::before{content:'0' counter(ix); font-weight:900; font-size:11.5px; color:var(--ink); letter-spacing:.04em;}
   .index li a:hover{color:var(--ink);}
   
   
 
   /* one line per stage that a skimmer can read alone */
   .article-body h3.sub{
-    font-size:19px; font-weight:600; letter-spacing:-0.02em; line-height:1.25;
+    font-size:19px; font-weight:900; letter-spacing:-0.03em; line-height:1.25;
     margin:var(--sp-7) 0 var(--sp-3); color:var(--ink);
   }
   .receipts{list-style:none; margin:var(--sp-5) 0 var(--sp-2); display:grid; gap:0;}
@@ -266,7 +266,7 @@
 
   /* shorter measure reads faster; 17.5px over 720px was a wide column */
   .pull{
-    font-size:clamp(21px,2.7vw,30px); font-weight:600; letter-spacing:-0.025em; line-height:1.16; color:var(--ink);
+    font-size:clamp(21px,2.7vw,30px); font-weight:900; letter-spacing:-0.04em; line-height:1.16; color:var(--ink);
     border-left:4px solid var(--acid); padding-left:var(--sp-4); margin:var(--sp-7) 0; max-width:22ch;
   }
   .note{
@@ -362,7 +362,7 @@
   .metrics-strip .m{flex:1 1 0; min-width:0; padding:var(--sp-4) var(--sp-3); border-right:1px solid var(--line);}
   .metrics-strip .m:first-child{padding-left:0;}
   .metrics-strip .m:last-child{border-right:none; padding-right:0;}
-  .metrics-strip .num{font-weight:600; font-size:clamp(16px,2.5vw,22px); letter-spacing:-0.028em; line-height:1.12;}
+  .metrics-strip .num{font-weight:900; font-size:clamp(16px,2.5vw,22px); letter-spacing:-0.045em; line-height:1.12;}
   .metrics-strip .label{font-size:12px; color:var(--ink-2); margin-top:var(--sp-2); line-height:1.35;}
 
   /* CALLOUTS */
@@ -386,7 +386,7 @@
     display:inline-block; margin-top:12px; font-size:13.5px; font-weight:700;
     letter-spacing:-0.01em; color:var(--ink);
   }
-  .callout h3,.callout .callout-h{display:block; font-size:17px; font-weight:600; letter-spacing:-0.02em; line-height:1.3; margin-bottom:var(--sp-2);}
+  .callout h3,.callout .callout-h{display:block; font-size:17px; font-weight:900; letter-spacing:-0.03em; line-height:1.3; margin-bottom:var(--sp-2);}
   .callout p{font-size:var(--fs-small); line-height:var(--lh-small); color:var(--ink-2); margin:0;}
 
   /* DEMO TAGS — "what this case demonstrates", scanned in under a second */
@@ -401,7 +401,7 @@
   .decision-head{display:flex; align-items:center; gap:12px; padding:18px 20px; background:var(--paper-2); border-bottom:1px solid var(--line);}
   .decision-head .dn{
     width:26px; height:26px; border-radius:50%; background:var(--acid); color:var(--ink);
-    font-weight:600; font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-weight:900; font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
   .decision-head h3{font-size:17px; line-height:1.3; margin:0;}
   .decision-body{padding:4px 20px 22px; display:grid; gap:0;}
@@ -415,7 +415,7 @@
   .process li{counter-increment:step; position:relative; padding:var(--sp-4) var(--sp-4) var(--sp-4) 64px; background:var(--paper-2); border-radius:14px;}
   .process li::before{
     content:counter(step,decimal-leading-zero); position:absolute; left:24px; top:22px;
-    font-weight:600; font-size:15px; color:var(--ink); opacity:.42;
+    font-weight:900; font-size:15px; color:var(--ink); opacity:.42;
   }
   .process li h3{font-size:16.5px; margin-bottom:8px;}
   .process li p{font-size:14.5px; color:var(--ink-2); margin:0;}
@@ -441,7 +441,7 @@
 
   /* GENIAL growth reveal */
   .growth-readout{display:flex; flex-direction:column; margin-bottom:16px;}
-  .gr-num{font-weight:600; font-size:clamp(40px,6vw,72px); letter-spacing:-0.02em; line-height:.9;}
+  .gr-num{font-weight:900; font-size:clamp(40px,6vw,72px); letter-spacing:-0.055em; line-height:.9;}
   .gr-lab{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-top:8px;}
   .growth-frame{position:relative; overflow:hidden; border-radius:14px; border:1px solid var(--line); background:#fff;}
   .growth-veil{position:absolute; inset:0; background:var(--paper); transform-origin:right; transform:scaleX(1); transition:transform 2.1s cubic-bezier(.16,1,.3,1);}
@@ -662,7 +662,7 @@
   .meta-item .v{font-size:15px; line-height:1.4;}
   /* the outcome is the one fact in the strip that is a result, so it carries the marker */
   .meta-item:last-child .v{
-    display:inline; font-weight:600; letter-spacing:-0.02em; padding:0 .08em; margin:0 -.08em;
+    display:inline; font-weight:900; letter-spacing:-0.02em; padding:0 .08em; margin:0 -.08em;
     -webkit-box-decoration-break:clone; box-decoration-break:clone;
     background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat;
     background-position:0 88%; background-size:100% .42em;
@@ -674,7 +674,7 @@
   .index .k .rt{letter-spacing:0; font-weight:500; color:var(--ink-2);}
   .index li a.active{color:var(--ink); font-weight:700;}
   .demo-tags span{font-size:12px; font-weight:500; letter-spacing:0; text-transform:none; background:var(--acid); border-color:var(--acid); color:var(--ink);}
-  .metrics-strip .num{font-size:clamp(20px,2.6vw,28px); letter-spacing:-0.02em; line-height:1.05; font-variant-numeric:tabular-nums;}
+  .metrics-strip .num{font-size:clamp(20px,2.6vw,28px); letter-spacing:-0.05em; line-height:1.05; font-variant-numeric:tabular-nums;}
   .metrics-strip .label{font-size:13px; line-height:1.45; margin-top:10px;}
   .article-body h2,.article-close h2{text-wrap:balance;}
   /* a third closing action is a text link, never a third button: one primary, one secondary, the rest read as links */
@@ -684,7 +684,7 @@
   /* the pull quote runs the full column, like everything around it */
   .article-body .pull{max-width:none; text-wrap:pretty;}
   /* sub-headings inside a section had no rule at all, so they sat flush against the paragraph under them */
-  .article-body h3.card-h{font-size:21px; line-height:1.25; letter-spacing:-0.022em; margin:var(--sp-7) 0 var(--sp-3);}
+  .article-body h3.card-h{font-size:21px; line-height:1.25; letter-spacing:-0.035em; margin:var(--sp-7) 0 var(--sp-3);}
   .article-body .col > h3.card-h:first-child{margin-top:0;}
   /* the summary comes first in reading order on a phone, the index after it */
   .case-intro{display:flex; flex-direction:column;}
@@ -692,7 +692,7 @@
   @media (min-width:1100px){
     .article-hero{padding:164px 0 var(--sp-7);}
     .article-hero .col,.article-close .col{max-width:1088px;}
-    .article-hero h1{font-size:clamp(44px,4.6vw,66px); line-height:.97; letter-spacing:-0.02em; max-width:22ch; margin-bottom:var(--sp-5);}
+    .article-hero h1{font-size:clamp(44px,4.6vw,66px); line-height:.97; letter-spacing:-0.05em; max-width:22ch; margin-bottom:var(--sp-5);}
     .article-hero .dek{font-size:21px; line-height:1.5; max-width:56ch; margin-bottom:var(--sp-7);}
     .meta-row{padding-top:var(--sp-5); grid-template-columns:1fr 1.1fr 1fr .9fr 1.5fr;}
 
@@ -720,7 +720,7 @@
     .article-body .index ol{grid-template-columns:1fr;}
     .article-body .index li a{padding:11px 0; font-size:14px;}
 
-    .article-close h2{font-size:clamp(36px,4.2vw,56px); letter-spacing:-0.02em; line-height:.97; max-width:18ch; margin-bottom:var(--sp-4);}
+    .article-close h2{font-size:clamp(36px,4.2vw,56px); letter-spacing:-0.05em; line-height:.97; max-width:18ch; margin-bottom:var(--sp-4);}
     .article-close p{font-size:18px; max-width:56ch;}
   }
 
@@ -806,7 +806,7 @@
   .data-table thead th{font-size:13px; font-weight:700; color:var(--ink-2); border-bottom:1px solid var(--line-strong);}
   .data-table tbody th{font-weight:700; color:var(--ink);}
   .data-table td{color:var(--ink-2);}
-  .data-table td:last-child{font-weight:600; color:var(--ink); white-space:nowrap;}
+  .data-table td:last-child{font-weight:900; color:var(--ink); white-space:nowrap;}
   @media (max-width:640px){ .data-table{font-size:13.5px;} .data-table th,.data-table td{padding-right:8px;} }
   /* six levels */
   .levels{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; margin:var(--sp-4) 0 var(--sp-4);}
@@ -826,7 +826,7 @@
      The same small print as the home: mono, uppercase, one size. A shorter
      header, so the short version is on the first screen. A clean printout,
      because cases get saved as PDF and passed to the people who interview. */
-  :root{--mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+  :root{--mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
   .kicker-row{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 16px; margin-bottom:24px;}
   .kicker-row .kicker{margin-bottom:0;}
   .kicker{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase;}

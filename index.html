@@ -28,7 +28,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
      cannalonga design
@@ -61,11 +61,11 @@
   html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
   body{
     background:var(--paper); color:var(--ink);
-    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    font-family:'DM Sans', system-ui, -apple-system, sans-serif;
     font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility; overflow-x:hidden;
   }
-  h1,h2,h3{font-weight:600; letter-spacing:-0.02em; line-height:0.9;}
+  h1,h2,h3{font-weight:900; letter-spacing:-0.05em; line-height:0.9;}
   a{color:inherit; text-decoration:none;}
   img{display:block; max-width:100%;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad);}
@@ -112,7 +112,7 @@
      it stays clear; once the page moves it becomes opaque paper and the
      text passes behind it instead of through it. */
   nav.solid{background:var(--paper); padding-bottom:14px; box-shadow:0 1px 0 var(--line);}
-  .nav-mark{display:block; text-align:center; font-weight:600; font-size:19px; letter-spacing:-0.02em; line-height:1;}
+  .nav-mark{display:block; text-align:center; font-weight:900; font-size:19px; letter-spacing:-0.06em; line-height:1;}
   .nav-mark sup{font-size:9px; font-weight:500; letter-spacing:0;}
   .nav-pill{
     margin:16px auto 0; width:max-content; max-width:100%;
@@ -231,9 +231,9 @@
   .stats{border-top:1px solid var(--line);}
   .stat{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:var(--s3); align-items:center; padding:20px 0; border-bottom:1px solid var(--line);}
   .stat:last-child{border-bottom:none; padding-bottom:0;}
-  .stat .n{font-weight:600; font-size:clamp(26px,2.8vw,40px); letter-spacing:-0.02em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .stat .n{font-weight:900; font-size:clamp(26px,2.8vw,40px); letter-spacing:-0.05em; line-height:1; white-space:nowrap; font-variant-numeric:tabular-nums;}
   .stat .n span{font-weight:700; font-size:.72em; letter-spacing:0;}
-  .stat .n span.morph,.stat .n span.after,.stat .n span[data-i18n]{font-weight:600; font-size:1em; letter-spacing:inherit;}
+  .stat .n span.morph,.stat .n span.after,.stat .n span[data-i18n]{font-weight:900; font-size:1em; letter-spacing:inherit;}
   .stat .l{font-size:12.5px; color:var(--ink-2); line-height:1.45; max-width:26ch;}
   
   
@@ -308,7 +308,7 @@
      under it, the number with the name of what it measures. */
   .card-cap{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:14px; row-gap:8px; align-items:baseline; margin-top:18px;}
   .card-head{grid-column:1 / -1; display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px;}
-  .card-cap h3{font-size:25px; letter-spacing:-0.028em; line-height:1.1;}
+  .card-cap h3{font-size:25px; letter-spacing:-0.045em; line-height:1.1;}
   /* the kind of product, as a quiet badge beside the name */
   .card-cap .cat{font-size:12px; font-weight:500; line-height:1; color:var(--ink-2); padding:6px 10px; border:1px solid var(--line-2); border-radius:100px; white-space:nowrap;}
   .card-sum strong{font-weight:700; color:var(--ink);}
@@ -323,7 +323,7 @@
   section[id]{scroll-margin-top:120px;}
   /* A number with no name is trivia, so the name of the measure sits right
      under it, in sentence case and at reading size. */
-  .card-cap .met-v{order:2; font-size:20px; font-weight:600; letter-spacing:-0.025em; line-height:1.2; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .card-cap .met-v{order:2; font-size:20px; font-weight:900; letter-spacing:-0.04em; line-height:1.2; white-space:nowrap; font-variant-numeric:tabular-nums;}
   .card-cap .met-n{order:3; font-size:13px; color:var(--ink-2); line-height:1.4;}
   .card-cap .ev{order:4; grid-column:1 / -1; margin-top:2px;}
   a.card:hover .card-cap h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
@@ -345,7 +345,7 @@
 
   /* ================= EXPERTISE — type only ================= */
   .exp-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s5) var(--s6);}
-  .exp h3{font-size:19px; letter-spacing:-0.022em; line-height:1.3; margin-bottom:12px; display:flex; align-items:center; gap:8px;}
+  .exp h3{font-size:19px; letter-spacing:-0.035em; line-height:1.3; margin-bottom:12px; display:flex; align-items:center; gap:8px;}
   .exp h3::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--acid); flex-shrink:0;}
   .exp p{font-size:15px; color:var(--ink-2); max-width:48ch;}
   
@@ -354,7 +354,7 @@
   .band{background:var(--acid); overflow:hidden; padding:24px 0; margin-top:var(--s7);}
   .band-track{display:flex; gap:56px; width:max-content; animation:band 34s linear infinite;}
   .band-track span{
-    font-weight:600; font-size:clamp(38px,7.6vw,98px); letter-spacing:-0.02em;
+    font-weight:900; font-size:clamp(38px,7.6vw,98px); letter-spacing:-0.055em;
     line-height:1.05; white-space:nowrap; color:var(--ink);
   }
   @keyframes band{from{transform:translateX(0);} to{transform:translateX(-50%);}}
@@ -362,8 +362,8 @@
 
   /* ================= TESTIMONIALS ================= */
   .quote-wrap{display:grid; grid-template-columns:1fr 230px; gap:var(--s5); align-items:end;}
-  .quote{font-size:clamp(20px,2.5vw,30px); line-height:1.32; letter-spacing:-0.02em; font-weight:500;}
-  .quote strong{font-weight:600;}
+  .quote{font-size:clamp(20px,2.5vw,30px); line-height:1.32; letter-spacing:-0.03em; font-weight:500;}
+  .quote strong{font-weight:900;}
   .quote-by .n{font-size:14.5px; font-weight:700;}
   .quote-by .r{font-size:13px; color:var(--ink-2); margin-top:4px;}
   .quote-dots{display:flex; gap:24px; margin-top:var(--s4);}   /* gap opens up so the 44px hit areas don't overlap */
@@ -412,7 +412,7 @@
   .method-grid .sec-head{margin-bottom:0;}
   .instruments{list-style:none; border-top:1px solid var(--line);}
   .instruments li{display:grid; grid-template-columns:120px 1fr; gap:var(--s3); padding:18px 0; border-bottom:1px solid var(--line);}
-  .instruments .k{font-weight:600; letter-spacing:-0.02em; font-size:16px;}
+  .instruments .k{font-weight:900; letter-spacing:-0.03em; font-size:16px;}
   .instruments .v{font-size:15px; color:var(--ink-2); line-height:1.5;}
   /* ================= TESTIMONIALS (all three, static) ================= */
   /* One voice leads, two confirm. Three equal cards gave the manager, the PM
@@ -420,10 +420,10 @@
      two years gets the larger setting. */
   .quotes{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:20px;}
   .quote-card:first-child{grid-row:span 2; padding:var(--s5) var(--s4);}
-  .quote-card:first-child .quote{font-size:clamp(22px,2.4vw,31px); line-height:1.22; letter-spacing:-0.022em; text-wrap:pretty;}
+  .quote-card:first-child .quote{font-size:clamp(22px,2.4vw,31px); line-height:1.22; letter-spacing:-0.035em; text-wrap:pretty;}
   .quote-card{background:var(--paper-2); border-radius:18px; padding:var(--s4) var(--s3); display:flex; flex-direction:column; gap:var(--s3); justify-content:space-between;}
   .quote{font-size:17px; line-height:1.45; letter-spacing:-0.015em; font-weight:500;}
-  .quote strong{font-weight:600;}
+  .quote strong{font-weight:900;}
   .quote-by .n{font-size:14.5px; font-weight:700;}
   .quote-by .r{font-size:13px; color:var(--ink-2); margin-top:4px;}
   .timeline{margin:var(--s4) 0 var(--s3); border-top:1px solid var(--line);}
@@ -722,11 +722,11 @@
   }
   /* availability lives with the portrait in About: it is a fact about the person, not part of the claim */
   .about-grid .avail{margin:16px 0 0;}
-  .hero-d h1{font-size:clamp(44px,7.3vw,104px); line-height:.92; letter-spacing:-0.02em; margin-bottom:var(--s5); text-wrap:balance;}
+  .hero-d h1{font-size:clamp(44px,7.3vw,104px); line-height:.92; letter-spacing:-0.055em; margin-bottom:var(--s5); text-wrap:balance;}
   .hero-d .hero-foot{display:flex; align-items:center; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; padding-top:var(--s3); border-top:1px solid var(--line);}
   .hero-d .stats{display:flex; gap:var(--s4); border-top:none;}
   .hero-d .stat{display:block; padding:0; border-bottom:none;}
-  .hero-d .stat .n{font-size:clamp(18px,1.7vw,23px); letter-spacing:-0.025em;}
+  .hero-d .stat .n{font-size:clamp(18px,1.7vw,23px); letter-spacing:-0.04em;}
   .hero-d .stat .l{font-size:12px; margin-top:7px; max-width:none; white-space:nowrap;}
   @media (max-width:1040px){ .hero-d .hero-foot{flex-direction:column; align-items:flex-start;} }
   @media (max-width:640px){
@@ -827,7 +827,7 @@
      (labels, sources, dates) so reading type and system type never compete.
      The hero is shorter, so the work starts in the first screen, and each
      number in it links to the case that proves it. */
-  :root{--mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
+  :root{--mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;}
   .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0;}
 
   /* labels: mono, one step larger, numbered where they open a section */
@@ -860,7 +860,7 @@
   .ai-minis{list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 var(--s4); margin-bottom:var(--s3);}
   .ai-minis li{border-top:1px solid var(--line); padding:var(--s3) 0; display:grid; grid-template-columns:34px minmax(0,1fr); column-gap:var(--s2); row-gap:6px; align-content:start;}
   .ai-minis .n{grid-row:span 2; font-family:var(--mono); font-size:12px; line-height:1.9; color:var(--ink);}
-  .ai-minis h3{font-size:17px; font-weight:700; letter-spacing:-0.02em; line-height:1.3;}
+  .ai-minis h3{font-size:17px; font-weight:700; letter-spacing:-0.03em; line-height:1.3;}
   .ai-minis p{font-size:15px; line-height:1.5; color:var(--ink-2);}
   .ai-minis code{font-family:var(--mono); font-size:.9em; color:var(--ink); white-space:nowrap;}
 
@@ -1741,8 +1741,8 @@
 <script>
   /* for whoever opens the console */
   console.log('%ccannalonga%c\nHi. You inspect things too.\nThis site is plain HTML, CSS and a little JavaScript: no framework, no build step, built with Claude Code.\nHow it is built: https://cannalongadesign.github.io/colophon/',
-    'font:600 20px "IBM Plex Sans",sans-serif;letter-spacing:-0.02em;color:#14140f;background:#a9d8d1;padding:4px 10px;border-radius:6px',
-    'font:12px "IBM Plex Mono",ui-monospace,monospace;color:#605e56;line-height:1.6');
+    'font:900 20px "DM Sans",sans-serif;letter-spacing:-0.06em;color:#14140f;background:#d9f24b;padding:4px 10px;border-radius:6px',
+    'font:12px "DM Mono",ui-monospace,monospace;color:#605e56;line-height:1.6');
 </script>
 </body>
 </html>
