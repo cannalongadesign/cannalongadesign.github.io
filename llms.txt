@@ -8,6 +8,7 @@ Key facts:
 - Location: Greater Boston, MA, USA
 - Previously: Senior Product Designer at Kruzer (enterprise commerce platform; sole designer for four products) and Genial Care (autism therapy platform; first Senior Product Designer); Senior Product Designer (freelance, after hours) at Shock Tecnologia (white-label banking)
 - Strengths: product strategy and discovery, AI product design with human-in-the-loop, designing for AI readers (structured data, llms.txt), complex B2B workflows, design systems and tokens
+- Award: one of 4 champions out of 353 prototypes in Reclame AQUI’s company-wide AI challenge (2026), with qa-design, an AI skill for design QA
 - Works with AI daily: LLMs and agents to think decisions through, research and data analysis, functional prototypes (some shipped to production); Claude and Claude Code most deeply, also GPT and Gemini
 - Languages: English, Portuguese
 - LinkedIn: https://www.linkedin.com/in/guilhermecannalonga
@@ -27,6 +28,11 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 - [LIAM](https://cannalongadesign.github.io/liam/): A human-in-the-loop AI assistant that drafts clinical records from a therapist’s narration; documentation went from up to 2 hours to about 25 minutes per session, as reported by the clinical team.
 - [Pick & Pack](https://cannalongadesign.github.io/pick-and-pack/): The fulfillment platform behind Fast Shop’s 2-hour delivery, designed for store, distribution center and driver at once, rolled out to 80+ stores in 3 months.
 - [Compass](https://cannalongadesign.github.io/compass/): A design system built from scratch at Kruzer: semantic token scale and governance; design-ticket cycle time dropped from 4.2 to 2.5 days, measured in Jira.
+
+## How I work with AI
+
+- [How I work with AI](https://cannalongadesign.github.io/ai/): hub for AI in the products he designs (LIAM, Safe Site Detector), in his design process and for AI readers
+- [qa-design: an AI skill for design QA](https://cannalongadesign.github.io/ai/qa-design/): note on the Claude skill that reviews each build against the design, writes the fixes and opens the Jira ticket; one of 4 champions out of 353 prototypes in Reclame AQUI’s AI challenge
 
 ## About this site
 

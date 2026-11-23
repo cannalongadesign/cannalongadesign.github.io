@@ -1,8 +1,8 @@
 # Guilherme Cannalonga · Portfolio (full text)
 
-Source: https://cannalongadesign.github.io/ · Last updated: 2026-10-28
+Source: https://cannalongadesign.github.io/ · Last updated: 2026-11-23
 
-**Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA
+**Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA AI challenge champion · Reclame AQUI 2026
 
 # Product design for systems where the wrong screen is expensive.
 
@@ -114,27 +114,21 @@ How I work with AI
 
 ## AI on both sides of the screen.
 
-In the products I design, and in the way I design them.
+In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.
 
 ### In the product
 
-- **LIAM** drafts the clinical record from the therapist’s narration and never signs it: each field arrives pre-filled, and the therapist edits and decides.
-
-- **Safe Site Detector** gives an AI-powered verdict, worded to state only what was verified.
-
-- **Designing for AI readers:** the detector’s pages were structured so AI assistants quote them correctly. Citations in Google AI Overview rose 138% across 30 companies.
+LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.
 
 ### In my process
 
-- **Thinking decisions through** with LLMs and agents, every day.
+qa-design, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.
 
-- **Research and data analysis**, faster.
+### For AI readers
 
-- **Functional prototypes**, and some of them shipped to production.
+Pages structured so AI assistants quote them correctly, including this site.
 
-- **Claude and Claude Code** are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.
-
-- **This site** was built with them, and it is set up so AI assistants read it correctly. How it’s built
+See how I work with AI
 
 What people say
 
@@ -165,6 +159,8 @@ About
 I started in enterprise support, moved into front-end development, and found in design the work I wanted to do for life. I began with interface, then went deeper into usability to understand the people using it. From there I moved into product, to understand how those screens earn their place in the business at the end of the month and which number they move. Two postgraduate specializations later, the path has been more and more metrics, strategy and business.
 
 I have been the first or only designer more often than not: first Senior Product Designer at Genial Care, later leading design across two teams; sole designer for four products at Kruzer; now at Reclame AQUI, a consumer-trust platform more than 30 million people visit every month.
+
+In 2026, an AI skill I built for my team’s design QA was one of four champions out of 353 prototypes in the company’s AI challenge.
 
 2026 –:
 
@@ -1333,6 +1329,120 @@ Get in touch
 See all cases
 
 Try the detector live
+
+---
+
+URL: https://cannalongadesign.github.io/ai/qa-design/
+
+- Portfolio
+
+- AI
+
+- qa-design
+
+Note · AI in my process · 2026 6 min read · Published November 2026
+
+# I was about to become the bottleneck, so I built an AI skill to do my design QA
+
+My team ships fast experiments with nine developers and one product designer: me. To keep quality without slowing anyone down, I built a Claude skill that reviews each build against the design, writes the fixes for the developer and opens the ticket. It was one of four champions out of 353 prototypes in Reclame AQUI’s company-wide AI challenge.
+
+One of 4 champions out of 353 prototypes · Company-wide AI challenge · Reclame AQUI · 2026
+
+## The tension: speed or quality
+
+My team owns the largest share of Reclame AQUI’s consumer-facing product: the home page, complaint reading and most of what a shopper touches. It is also the biggest team in the company, with around nine developers and one product designer.
+
+We work with an experimentation method that links every experiment to a key result, a thesis and a hypothesis. Each developer takes a hypothesis, builds an experiment, ships it to production and switches it off quickly if it doesn’t work. Speed is the point. But it started producing a lot of noise. The ideas were often good, and the execution wasn’t. When people don’t understand what they’re supposed to do on a screen, the experiment doesn’t test the hypothesis; it tests the confusion. We were at risk of killing good ideas because of bad execution.
+
+So I started pushing a different question: what is the minimum quality an experiment needs to teach us anything? I brought examples of what wasn’t working, and the product trio agreed that I would review every experiment before it shipped.
+
+The tech lead raised the obvious problem straight away: with nine developers and my own work, I would become the bottleneck, which is the opposite of what fast experimentation is for. He was right. That became my project.
+
+## The challenge: one employee, one project
+
+At the same time, Reclame AQUI challenged its 500+ employees to each build one AI project around a real pain in their day-to-day, with mentoring sessions on how to scope a good project and guidance from information security on data access. Projects that touched company data had to follow security’s rules. Mine didn’t need any: the pain was in the design process itself.
+
+## What I built
+
+qa-design, a Claude skill that does the design QA I used to do by hand, and then the work that comes after it. The first version worked on day one: it compared the two links and wrote a report. Over the next three days it grew into the full loop, one question at a time. What if it also wrote the fixes? What if it opened the ticket too?
+
+**What it knows.** I gave it a library to reason with: our internal design practices, the rules of our experimentation method, our design system and tokens, the heuristics and hierarchy checks I ran manually, and reference books such as Marty Cagan’s work and Teresa Torres’s Continuous Discovery Habits. That’s what lets it judge whether something will work, not just whether it matches.
+
+**What it receives.** Two links: the Figma file and the staging build.
+
+**What it does.**
+
+- Opens the staging build, reads the Figma file through the Figma MCP and compares them: spacing, type, color, position and token usage.
+
+- Builds a **visual report** for the developer: the staging screenshot next to the original design, with each problem marked and an instruction for the fix.
+
+- Writes a **fix file**: a markdown file with every correction, ready for the developer to run in their own Claude or Cursor. They don’t have to read the report and fix things one by one; they run the file.
+
+- Keeps a **design decisions** section. When something can’t be resolved from the design alone, the skill asks me instead of guessing. I decide, drop it, or add the missing context. It also suggests improvements when it spots a decision that was never made.
+
+- **Logs the work in Jira**: it closes my design task, opens an adjustment task for the right developer, attaches the report and the fix file and tags them. The developer runs the fix and closes the task, so the whole loop is recorded.
+
+- Figma + staging
+
+- qa-design compares
+
+- Side-by-side report
+
+- Fix file (.md)
+
+- Jira task
+
+- Dev reviews, runs the fix and closes
+
+The qa-design loop, from two links to a closed task.
+
+## Getting it right
+
+The first real run was on a developer’s experiment built from my Figma file. The skill found more than 30 inconsistencies: components rebuilt instead of reused, tokens off the design system, spacing and type that had drifted. Running the fix file resolved all of them in one go except one, and that one was a design decision that needed my call, not a fix.
+
+I then ran it on three or four more experiments, with two developers. Each time it caught at least ten issues on the first pass, and the fix file cleared them. The design-decisions section came from those rounds: the skill was most useful when it knew where its judgment ended and mine began.
+
+The fix file doesn’t skip people, either. The developer reviews it before applying, checks nothing breaks and pushes to staging, and I take one last look before production. So far, none of the fixes has broken anything.
+
+## What changed
+
+The review every experiment had to pass stayed in place, without the queue the tech lead warned about. Developers no longer stop to send me a build and wait: the skill produces the report and the fix file, and the developer opens the task and resolves it. That removes two delays at once: the time a build waits for design, and the time a developer spends working out what to fix. Every review is also recorded in Jira, so the team can see how adjustments flow, not just guess.
+
+The bigger change was autonomy. The skill doesn’t have to run on my machine: any developer can run it on their own machine, against their own build, without asking me to run it. When the result was shared in the team channel, the developers’ reaction was exactly that: it unblocked them from waiting for design to decide whether a delivery needed changes.
+
+The project went to a jury with full documentation of the problem, how the skill works and how it was tested. The challenge received 353 prototypes. The jury approved 115, highlighted 15 and picked four champions, and qa-design was one of them, the only one built by a product designer.
+
+Company-wide AI challenge · 2026 From prototype to champion
+
+- **353** prototypes submitted
+
+- **115** approved by the jury
+
+- **15** highlighted
+
+- **4** champions
+
+qa-design · the only one by a product designer
+
+Source: internal announcement of results
+
+## What’s next
+
+After the result was shared in the company’s design channel, other designers asked how the skill works, because every team has the same problem. The plan now is to share it across the design team and turn it into part of how we run experiments, not a tool that belongs to one squad.
+
+It also connects to a question the whole company is still answering: what is the minimum viable quality for an experiment? With AI on both ends, the answer gets cheaper to reach. A designer can build a credible prototype quickly with Claude and Figma Make, and once a developer builds it, qa-design checks the delivery against that prototype side by side. AI speeds up making the design, and AI checks that what ships matches it, so moving fast stops costing us the quality an experiment needs.
+
+## What I learned
+
+The interesting part wasn’t the comparison; tools can diff pixels. It was everything around it: writing my judgment down well enough for a model to apply it, deciding what the skill should never decide on its own, and making the output something a developer could act on in one step. Designing a tool for my own team turned out to be the same job as designing for anyone else: find where people lose time on something that isn’t the real work, and turn it into a decision they can make quickly.
+
+## Questions this page doesn’t answer?
+
+How the skill’s library is put together, what it is never allowed to decide and how a team could adopt it: all of it is a 30-minute call away.
+
+Get in touch
+
+How I work with AI
 
 ---
 
