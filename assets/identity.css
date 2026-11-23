@@ -46,3 +46,12 @@ mark.hl,.quote strong{
 @media (prefers-reduced-motion:reduce){
   .js mark.hl,.js .quote strong{background-size:100% .38em; animation:none !important;}
 }
+
+/* ---------- the corner arrow ----------
+   Every clickable card carries the same ↗ in a circle. On hover it turns acid, everywhere:
+   case cards on the home, the AI tiles and the callouts inside the cases. */
+a.card .card-media::after,a.callout::after,.ai-tile::after{transition:opacity .2s ease, transform .2s ease, background-color .2s ease, color .2s ease;}
+a.card:hover .card-media::after,a.callout:hover::after,.ai-tile:hover::after,
+a.card:focus-visible .card-media::after,a.callout:focus-visible::after,.ai-tile:focus-visible::after{
+  opacity:1; background-color:var(--acid); color:var(--ink);
+}
