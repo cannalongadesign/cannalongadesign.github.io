@@ -24,15 +24,17 @@ Consumer trust, healthcare, logistics and fintech. Different products, the same 
 
 [Image: Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy]
 
+45.1% → 72.4% Said the detector helped them decide self-reported · in-product question
+
 Reclame AQUI · Consumer trust
 
 ### Safe Site Detector
 
 An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.
 
-45.1% → 72.4% Said the detector helped them decide self-reported · in-product question
-
 [Image: Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child’s evolution note]
+
+8.6% → 62.3% Families opening the app daily measured · Metabase
 
 Genial Care · Consumer healthcare
 
@@ -40,9 +42,9 @@ Genial Care · Consumer healthcare
 
 Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.
 
-8.6% → 62.3% Families opening the app daily measured · Metabase
-
 [Image: LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session]
+
+Up to 2h → 25min Documentation per session reported by the clinical team
 
 Genial Care · Clinical AI
 
@@ -50,9 +52,9 @@ Genial Care · Clinical AI
 
 Drafts the clinical record from the therapist’s narration. Never signs it.
 
-Up to 2h → 25min Documentation per session reported by the clinical team
-
 [Image: Pick & Pack order queue on a desktop monitor: every order with status, carrier and waiting time]
+
+80+ Stores live counted · staged rollout
 
 Kruzer, for Fast Shop · Enterprise logistics
 
@@ -60,11 +62,11 @@ Kruzer, for Fast Shop · Enterprise logistics
 
 One order, three people, one screen each. Designed around the exceptions.
 
-80+ Stores live counted · staged rollout
-
 Also shipped
 
 [Image: Compass design system documentation on a desktop monitor: the color palette page with primitive and semantic tokens]
+
+4.2d → 2.5d Design-ticket cycle time measured · Jira
 
 Kruzer · Design system
 
@@ -72,17 +74,15 @@ Kruzer · Design system
 
 Twenty blues in production to one semantic token layer, with governance.
 
-4.2d → 2.5d Design-ticket cycle time measured · Jira
-
 [Image: Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen]
+
+18% → 63% Credit-journey completion
 
 Shock Tecnologia · Fintech
 
 ### Matri Bank
 
 Redesigned the credit journey for a regulated product. Details on a call.
-
-18% → 63% Credit-journey completion
 
 How I decide
 

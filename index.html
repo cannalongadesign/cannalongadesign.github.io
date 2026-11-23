@@ -309,7 +309,7 @@
   .card-cap{display:flex; flex-direction:column; margin-top:20px;}
   .card-ctx{font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin-bottom:10px;}
   .card-cap h3{font-size:clamp(24px,2.2vw,30px); letter-spacing:-0.045em; line-height:1.08; margin-bottom:10px;}
-  .card-sum{font-size:15px; color:var(--ink-2); line-height:1.5; text-wrap:pretty; padding-right:10%; min-height:3em; margin-bottom:var(--s3);}
+  .card-sum{font-size:15px; color:var(--ink-2); line-height:1.5; text-wrap:pretty; padding-right:10%;}
   .now-tag{display:inline-block; vertical-align:middle; margin-left:8px; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; background:var(--acid); padding:4px 8px; border-radius:100px; transform:translateY(-3px);}
   .card-media.ink{background:var(--ink);}
   .sec-head.sub{margin:var(--s6) 0 var(--s3);}
@@ -319,10 +319,15 @@
   section[id]{scroll-margin-top:120px;}
   /* A number with no name is trivia, so the name of the measure sits right
      under it, in sentence case and at reading size. */
-  .card-met{display:flex; flex-direction:column; gap:4px; padding-top:var(--s2); border-top:1px solid var(--line);}
-  .card-met .met-v{font-size:clamp(26px,2.4vw,32px); font-weight:900; letter-spacing:-0.045em; line-height:1.1; white-space:nowrap; font-variant-numeric:tabular-nums;}
-  .card-met .met-n{font-size:14px; color:var(--ink); line-height:1.4;}
-  .card-met .ev{margin-top:6px;}
+  /* The proof sits on the case's own picture, as a label in the corner: the number reads as
+     this product's result, not as a separate block under the text. */
+  .card-media{position:relative;}
+  .card-met{position:absolute; left:16px; bottom:16px; z-index:2; display:flex; flex-direction:column; gap:3px;
+    max-width:calc(100% - 32px); padding:14px 16px 12px; background:var(--paper); border-radius:14px;}
+  .card-met .met-v{font-size:clamp(22px,2vw,28px); font-weight:900; letter-spacing:-0.045em; line-height:1.1; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .card-met .met-n{font-size:13px; color:var(--ink); line-height:1.35;}
+  .card-met .ev{margin-top:5px;}
+  @media (max-width:520px){ .card-met{left:12px; bottom:12px; padding:10px 12px 9px; border-radius:12px;} .card-met .met-v{font-size:20px;} .card-met .met-n{font-size:12px;} }
   a.card:hover .card-cap h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
   /* corner affordance, the way Stripe hints an expandable card */
   a.card .card-media::after{
@@ -957,30 +962,18 @@
     .hero-d .hero-actions{flex:none; flex-wrap:nowrap;}
   }
 
-  /* Hero fills the first screen: name and claim at the top, the rule and the numbers at the
-     bottom, so the claim gets room and the next section starts below the fold instead of
-     leaving a band of empty paper under the buttons. Capped, so a tall monitor does not
-     pull the two halves apart. */
+  /* Hero fills the first screen. The claim is set larger and with a little more leading so it
+     takes the room, and the whole group (name, claim, numbers) sits centered in the screen:
+     no band of empty paper between the claim and the rule, none under the buttons.
+     Capped, so a tall monitor does not stretch it. */
   @media (min-width:1041px) and (min-height:620px){
-    .hero-d{min-height:min(100svh, 960px); display:flex; flex-direction:column; padding-bottom:var(--s4);}
+    .hero-d{min-height:min(100svh, 940px); display:flex; flex-direction:column; padding-bottom:var(--s4);}
     .hero-d > .wrap{flex:1; display:flex; flex-direction:column; width:100%;}
-    .hero-d .hero-copy{flex:1; display:flex; flex-direction:column;}
+    .hero-d .hero-copy{flex:1; display:flex; flex-direction:column; justify-content:center;}
     .hero-d .who{margin-bottom:var(--s4);}
-    .hero-d h1{margin-bottom:var(--s5);}
-    .hero-d .hero-foot{margin-top:auto; padding-top:var(--s3);}
-  }
-
-  /* Hero fills the first screen: name and claim at the top, the rule and the numbers at the
-     bottom, so the claim gets room and the next section starts below the fold instead of
-     leaving a band of empty paper under the buttons. Capped, so a tall monitor does not
-     pull the two halves apart. */
-  @media (min-width:1041px) and (min-height:620px){
-    .hero-d{min-height:min(100svh, 960px); display:flex; flex-direction:column; padding-bottom:var(--s4);}
-    .hero-d > .wrap{flex:1; display:flex; flex-direction:column; width:100%;}
-    .hero-d .hero-copy{flex:1; display:flex; flex-direction:column;}
-    .hero-d .who{margin-bottom:var(--s4);}
-    .hero-d h1{margin-bottom:var(--s5);}
-    .hero-d .hero-foot{margin-top:auto; padding-top:var(--s3);}
+    .hero-d h1{font-size:clamp(64px,7.2vw,104px); line-height:.98; margin-bottom:var(--s5);}
+    /* in Portuguese the flagged phrase starts with "a": keep it with its words, not alone at a line end */
+    html[lang="pt-BR"] .hero-d h1 .mk{white-space:nowrap;}
   }
 </style>
 <link rel="stylesheet" href="/assets/identity.css">
@@ -1215,64 +1208,64 @@
       <a class="card reveal" href="/safe-site-detector/">
         <div class="card-media mint">
           <img decoding="async" class="card-shot" src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" loading="lazy" width="2000" height="1599">
-        </div>
-        <div class="card-cap">
-          <p class="card-ctx"><span>Reclame AQUI</span> · <span data-i18n="card.ssd.cat">Consumer trust</span></p>
-          <h3>Safe Site Detector</h3>
-          <p class="card-sum"><span data-i18n="card.ssd.sum">An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.</span></p>
           <div class="card-met">
             <span class="met-v" data-i18n="card.ssd.met">45.1% &rarr; 72.4%</span>
             <span class="met-n" data-i18n="card.ssd.metname">Said the detector helped them decide</span>
             <span class="ev reported" data-i18n="card.ssd.ev">self-reported · in-product question</span>
           </div>
         </div>
+        <div class="card-cap">
+          <p class="card-ctx"><span>Reclame AQUI</span> · <span data-i18n="card.ssd.cat">Consumer trust</span></p>
+          <h3>Safe Site Detector</h3>
+          <p class="card-sum"><span data-i18n="card.ssd.sum">An in-house AI detector that replaced a partner set to cost R$1.7M a month, tested for comprehension.</span></p>
+        </div>
       </a>
 
       <a class="card reveal" href="/genial/">
         <div class="card-media peri">
           <img decoding="async" class="card-shot" src="/assets/card-genial.webp" alt="Genial Care family app on two iPhones: home with upcoming sessions, and a session detail with the child’s evolution note" loading="lazy" width="1096" height="864">
-        </div>
-        <div class="card-cap">
-          <p class="card-ctx"><span>Genial Care</span> · <span data-i18n="card.genial.cat">Consumer healthcare</span></p>
-          <h3>Genial App</h3>
-          <p class="card-sum"><span data-i18n="card.genial.sum">Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.</span></p>
           <div class="card-met">
             <span class="met-v" data-i18n="card.genial.met">8.6% &rarr; 62.3%</span>
             <span class="met-n" data-i18n="card.genial.metname">Families opening the app daily</span>
             <span class="ev" data-i18n="card.genial.ev">measured · Metabase</span>
           </div>
         </div>
+        <div class="card-cap">
+          <p class="card-ctx"><span>Genial Care</span> · <span data-i18n="card.genial.cat">Consumer healthcare</span></p>
+          <h3>Genial App</h3>
+          <p class="card-sum"><span data-i18n="card.genial.sum">Found the scheduling bottleneck first. A one-month MVP, then a year of small bets.</span></p>
+        </div>
       </a>
 
       <a class="card reveal" href="/liam/">
         <div class="card-media sky">
           <img decoding="async" class="card-shot" src="/assets/card-liam.webp" alt="LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session" loading="lazy" width="1096" height="864">
-        </div>
-        <div class="card-cap">
-          <p class="card-ctx"><span>Genial Care</span> · <span data-i18n="card.liam.cat">Clinical AI</span></p>
-          <h3>LIAM</h3>
-          <p class="card-sum"><span data-i18n="card.liam.sum">Drafts the clinical record from the therapist’s narration. Never signs it.</span></p>
           <div class="card-met">
             <span class="met-v" data-i18n="card.liam.met">Up to 2h &rarr; 25min</span>
             <span class="met-n" data-i18n="card.liam.metname">Documentation per session</span>
             <span class="ev reported" data-i18n="card.liam.ev">reported by the clinical team</span>
           </div>
         </div>
+        <div class="card-cap">
+          <p class="card-ctx"><span>Genial Care</span> · <span data-i18n="card.liam.cat">Clinical AI</span></p>
+          <h3>LIAM</h3>
+          <p class="card-sum"><span data-i18n="card.liam.sum">Drafts the clinical record from the therapist’s narration. Never signs it.</span></p>
+        </div>
       </a>
 
       <a class="card reveal" href="/pick-and-pack/">
         <div class="card-media coral">
           <img decoding="async" class="card-shot" src="/assets/card-kruzer.webp" alt="Pick &amp; Pack order queue on a desktop monitor: every order with status, carrier and waiting time" loading="lazy" width="1096" height="864">
-        </div>
-        <div class="card-cap">
-          <p class="card-ctx"><span data-i18n="card.kruzer.co">Kruzer, for Fast Shop</span> · <span data-i18n="card.kruzer.cat">Enterprise logistics</span></p>
-          <h3>Pick &amp; Pack</h3>
-          <p class="card-sum"><span data-i18n="card.kruzer.sum">One order, three people, one screen each. Designed around the exceptions.</span></p>
           <div class="card-met">
             <span class="met-v" data-i18n="card.kruzer.met">80+</span>
             <span class="met-n" data-i18n="card.kruzer.metname">Stores live</span>
             <span class="ev" data-i18n="card.kruzer.ev">counted · staged rollout</span>
           </div>
+        </div>
+        <div class="card-cap">
+          <p class="card-ctx"><span data-i18n="card.kruzer.co">Kruzer, for Fast Shop</span> · <span data-i18n="card.kruzer.cat">Enterprise logistics</span></p>
+          <h3>Pick &amp; Pack</h3>
+          <p class="card-sum"><span data-i18n="card.kruzer.sum">One order, three people, one screen each. Designed around the exceptions.</span></p>
         </div>
       </a>
     </div>
@@ -1284,31 +1277,31 @@
       <a class="card reveal" href="/compass/">
         <div class="card-media indigo">
           <img decoding="async" class="card-shot" src="/assets/card-compass.webp" alt="Compass design system documentation on a desktop monitor: the color palette page with primitive and semantic tokens" loading="lazy" width="1096" height="864">
-        </div>
-        <div class="card-cap">
-          <p class="card-ctx"><span>Kruzer</span> · <span data-i18n="card.compass.cat">Design system</span></p>
-          <h3>Compass</h3>
-          <p class="card-sum"><span data-i18n="card.compass.sum">Twenty blues in production to one semantic token layer, with governance.</span></p>
           <div class="card-met">
             <span class="met-v" data-i18n="card.compass.met">4.2d &rarr; 2.5d</span>
             <span class="met-n" data-i18n="card.compass.metname">Design-ticket cycle time</span>
             <span class="ev" data-i18n="card.compass.ev">measured · Jira</span>
           </div>
         </div>
+        <div class="card-cap">
+          <p class="card-ctx"><span>Kruzer</span> · <span data-i18n="card.compass.cat">Design system</span></p>
+          <h3>Compass</h3>
+          <p class="card-sum"><span data-i18n="card.compass.sum">Twenty blues in production to one semantic token layer, with governance.</span></p>
+        </div>
       </a>
 
       <div class="card reveal">
         <div class="card-media ink">
           <img decoding="async" class="card-shot" src="/assets/matri-app.webp" alt="Matri Bank app screens on nine phones: account home with the credit card, Pix area, statement, Pix limits, support and the welcome screen" loading="lazy" width="1400" height="1054">
+          <div class="card-met">
+            <span class="met-v">18% &rarr; 63%</span>
+            <span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span>
+          </div>
         </div>
         <div class="card-cap">
           <p class="card-ctx"><span>Shock Tecnologia</span> · <span data-i18n="card.matri.cat">Fintech</span></p>
           <h3>Matri Bank</h3>
           <p class="card-sum"><span data-i18n="card.matri.sum">Redesigned the credit journey for a regulated product. Details on a call.</span></p>
-          <div class="card-met">
-            <span class="met-v">18% &rarr; 63%</span>
-            <span class="met-n" data-i18n="card.matri.metname">Credit-journey completion</span>
-          </div>
         </div>
       </div>
     </div>
