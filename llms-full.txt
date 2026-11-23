@@ -2,9 +2,7 @@
 
 Source: https://cannalongadesign.github.io/ · Last updated: 2026-11-23
 
-**Guilherme Cannalonga** · AI challenge champion, Reclame AQUI 2026
-
-Senior Product Designer · Greater Boston, MA
+**Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA
 
 # Product design for systems where the wrong screen is expensive.
 
@@ -123,6 +121,8 @@ In the products I design, in how I design them, and in how they are read by the 
 LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.
 
 ### In my process
+
+AI challenge champion
 
 qa-design, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.
 
