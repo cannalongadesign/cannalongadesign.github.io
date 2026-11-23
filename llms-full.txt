@@ -1334,12 +1334,6 @@ Try the detector live
 
 URL: https://cannalongadesign.github.io/ai/qa-design/
 
-- Portfolio
-
-- AI
-
-- qa-design
-
 Note · AI in my process · 2026 6 min read
 
 # I was about to become the bottleneck, so I built an AI skill to do my design QA

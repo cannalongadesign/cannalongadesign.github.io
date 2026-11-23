@@ -852,12 +852,6 @@
   }
 
   /* ================= AI HUB AND NOTES ================= */
-  .crumbs{font-family:var(--mono); font-size:12px; letter-spacing:.02em; color:var(--ink-2); margin-bottom:var(--sp-3);}
-  .crumbs ol{list-style:none; display:flex; flex-wrap:wrap; gap:6px;}
-  .crumbs li + li::before{content:'\203A'; margin-right:6px;}
-  .crumbs a{color:var(--ink-2); text-decoration:underline; text-decoration-color:var(--line-control); text-underline-offset:3px;}
-  .crumbs a:hover{color:var(--ink);}
-  .crumbs [aria-current]{color:var(--ink);}
   .award{display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12.5px; line-height:1.5;
     letter-spacing:.01em; color:var(--ink); border:1px solid var(--line-strong); border-radius:10px; padding:10px 14px; margin-top:var(--sp-4);}
   .award .tr{flex:none;}
@@ -1018,7 +1012,6 @@
 <p class="print-url">https://cannalongadesign.github.io/ai/qa-design/</p>
 <header class="article-hero">
   <div class="col">
-    <div class="crumbs" role="navigation" aria-label="Breadcrumb"><ol><li><a href="/" data-i18n="crumb.home">Portfolio</a></li><li><a href="/ai/" data-i18n="crumb.ai">AI</a></li><li><span aria-current="page">qa-design</span></li></ol></div>
     <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Note · AI in my process · 2026</span><span class="updated" data-i18n="ix.time">6 min read</span></div>
     <h1 data-i18n="hero.h1">I was about to become the bottleneck, so I built an AI skill to do my design QA</h1>
     <p class="dek" data-i18n="hero.dek">My team ships fast experiments with nine developers and one product designer: me. To keep quality without slowing anyone down, I built a Claude skill that reviews each build against the design, writes the fixes for the developer and opens the ticket. It was one of four champions out of 353 prototypes in Reclame AQUI’s company-wide AI challenge.</p>
@@ -1217,8 +1210,6 @@
         'modal.call.title':`Book a 30-min call`,
         'modal.call.sub':`Pick a time that works for you (ET)`,
         'ix.time':`6 min read`,
-        'crumb.home':`Portfolio`,
-        'crumb.ai':`AI`,
         'hero.kicker':`Note · AI in my process · 2026`,
         'hero.h1':`I was about to become the bottleneck, so I built an AI skill to do my design QA`,
         'hero.dek':`My team ships fast experiments with nine developers and one product designer: me. To keep quality without slowing anyone down, I built a Claude skill that reviews each build against the design, writes the fixes for the developer and opens the ticket. It was one of four champions out of 353 prototypes in Reclame AQUI’s company-wide AI challenge.`,
@@ -1296,8 +1287,6 @@
         'modal.call.title':`Agendar uma call de 30 min`,
         'modal.call.sub':`Escolha um horário (ET)`,
         'ix.time':`6 min de leitura`,
-        'crumb.home':`Portfólio`,
-        'crumb.ai':`IA`,
         'hero.kicker':`Nota · IA no meu processo · 2026`,
         'hero.h1':`Eu estava prestes a virar o gargalo, então criei uma skill de IA para fazer meu design QA`,
         'hero.dek':`Meu time lança experimentos rápidos com nove desenvolvedores e um product designer: eu. Para manter a qualidade sem travar ninguém, criei uma skill no Claude que revisa cada build contra o design, escreve as correções para o dev e abre o ticket. Ela foi uma das quatro campeãs, entre 353 protótipos, do desafio de IA do Reclame AQUI.`,
