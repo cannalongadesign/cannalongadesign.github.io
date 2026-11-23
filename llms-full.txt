@@ -124,13 +124,11 @@ LIAM drafts clinical records; the Safe Site Detector gives a verdict that states
 
 qa-design, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.
 
-Read how I built it AI challenge champion
+AI challenge champion
 
 ### For AI readers
 
 Pages structured so AI assistants quote them correctly, including this site.
-
-See how I work with AI
 
 What people say
 

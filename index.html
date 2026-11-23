@@ -839,33 +839,30 @@
   .hero-d a.stat:hover .l{color:var(--ink);}
 
   /* how I work with AI: two lists, the product and the process */
-  /* three ruled columns, the same hairline language as the stats and the old list: no boxes */
   /* the AI block sits on a panel, the same surface and radius as the testimonial cards,
      so it reads as its own chapter instead of running on from How I decide */
   .ai-panel{background:var(--paper-2); border-radius:18px; padding:var(--s5) var(--s5) var(--s4);}
   .ai-panel .sec-head{margin-bottom:var(--s4);}
-  .ai-panel .res-link{margin-top:var(--s1);}
   @media (max-width:820px){ .ai-panel{padding:var(--s5) var(--s3) var(--s4);} }
-  .ai-minis{list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 var(--s4); margin-bottom:var(--s3);}
-  .ai-minis li{border-top:1px solid var(--line); padding:var(--s3) 0; display:grid; grid-template-columns:34px minmax(0,1fr); column-gap:var(--s2); row-gap:6px; align-content:start;}
-  .ai-minis .n{grid-row:span 2; font-family:var(--mono); font-size:12px; line-height:1.9; color:var(--ink);}
-  .ai-minis h3{font-size:17px; font-weight:700; letter-spacing:-0.03em; line-height:1.3;}
-  .ai-minis p{font-size:15px; line-height:1.5; color:var(--ink-2);}
-  /* the award, as a tag in the process item: same shape as the category tags on the cards, not a link */
-  /* desktop: the tag closes the item, so the three headings and texts stay on the same lines.
-     Phone: one column, so the award comes first and the heading follows it. */
-  .ai-minis .m-body{display:flex; flex-direction:column; gap:6px;}
-  .ai-minis .m-body .tag{align-self:flex-start; margin-top:8px;}
-  @media (max-width:820px){ .ai-minis .m-body .tag{order:-1; margin:0 0 4px;} }
-  .ai-minis .tag{display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500; line-height:1; color:var(--ink);
-    padding:5px 10px 5px 8px; border:1px solid var(--line-2); border-radius:100px; white-space:nowrap;}
-  .ai-minis .tag svg{flex:none;}
-  .ai-minis p a{color:var(--ink); text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line-control);}
-  .ai-minis p a:hover,.ai-minis .more:hover{text-decoration-color:var(--ink);}
-  /* the note is the one item with its own page, so it gets its own way in */
-  .ai-minis .more{align-self:flex-start; font-size:14px; font-weight:700; color:var(--ink); margin-top:4px;
-    text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px; text-decoration-color:var(--line-control);}
-  .ai-minis code{font-family:var(--mono); font-size:.9em; color:var(--ink); white-space:nowrap;}
+  /* three tiles, each one a way in: the whole tile is the link, with the same corner arrow as the case cards */
+  .ai-tiles{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s2);}
+  .ai-tile{position:relative; display:flex; flex-direction:column; gap:8px; background:var(--paper); border-radius:14px;
+    padding:var(--s3); color:var(--ink); transition:transform .2s ease;}
+  .ai-tile::after{content:'\2197'; position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%;
+    background:var(--paper-2); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700;
+    opacity:.6; transition:opacity .2s ease, transform .2s ease;}
+  .ai-tile:hover{transform:translateY(-2px);}
+  .ai-tile:hover::after{opacity:1; transform:translate(2px,-2px);}
+  .ai-tile:hover h3{text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:2px;}
+  .ai-tile .n{font-family:var(--mono); font-size:12px; line-height:32px; color:var(--ink); margin-bottom:4px;}
+  .ai-tile h3{font-size:18px; font-weight:700; letter-spacing:-0.03em; line-height:1.25;}
+  .ai-tile p{font-size:15px; line-height:1.5; color:var(--ink-2);}
+  .ai-tile code{font-family:var(--mono); font-size:.9em; color:var(--ink); white-space:nowrap;}
+  /* the award: same shape as the category tags; it closes the tile on desktop and leads it on a phone */
+  .ai-tile .tag{align-self:flex-start; margin-top:auto; display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500;
+    line-height:1; color:var(--ink); padding:5px 10px 5px 8px; border:1px solid var(--line-2); border-radius:100px; white-space:nowrap;}
+  .ai-tile .tag svg{flex:none;}
+  @media (prefers-reduced-motion:reduce){ .ai-tile,.ai-tile::after{transition:none;} .ai-tile:hover{transform:none;} }
 
   /* contact: the address is the action, copying it is part of the same control */
   .mail-split{display:inline-flex; align-items:stretch; border-radius:100px; background:var(--acid);}
@@ -889,7 +886,7 @@
     .copy-btn.done .i-done{animation:pop .3s cubic-bezier(.2,.7,.2,1);}
   }
 
-  @media (max-width:820px){ .ai-minis{grid-template-columns:1fr;} .ai-minis li:last-child{border-bottom:1px solid var(--line);} }
+  @media (max-width:820px){ .ai-tiles{grid-template-columns:1fr;} .ai-tile .n{order:-2; margin-bottom:0;} .ai-tile .tag{order:-1; margin:0 0 4px;} }
 
   @media (max-width:640px){
     .hero-d{padding:124px 0 var(--s3);}
@@ -1302,12 +1299,11 @@
         <h2 data-i18n="ai.h2">AI on both sides of the screen.</h2>
         <p data-i18n="ai.p">In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.</p>
       </div>
-      <ol class="ai-minis reveal">
-        <li><span class="n" aria-hidden="true">01</span><h3 data-i18n="ai.m1.h">In the product</h3><p data-i18n="ai.m1.p"><a href="/liam/">LIAM</a> drafts clinical records; the <a href="/safe-site-detector/">Safe Site Detector</a> gives a verdict that states only what was verified.</p></li>
-        <li><span class="n" aria-hidden="true">02</span><div class="m-body"><h3 data-i18n="ai.m2.h">In my process</h3><p data-i18n="ai.m2.p"><code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.</p><a class="more" href="/ai/qa-design/"><span data-i18n="ai.m2.more">Read how I built it</span> <span aria-hidden="true">&rarr;</span></a><span class="tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0V4zM8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3M12 13v4M8 20h8M9.5 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ai.m2.tag">AI challenge champion</span></span></div></li>
-        <li><span class="n" aria-hidden="true">03</span><h3 data-i18n="ai.m3.h">For AI readers</h3><p data-i18n="ai.m3.p">Pages structured so AI assistants quote them correctly, including <a href="/colophon/">this site</a>.</p></li>
-      </ol>
-      <a class="res-link" href="/ai/"><span data-i18n="ai.more">See how I work with AI</span> <span aria-hidden="true">&rarr;</span></a>
+      <div class="ai-tiles">
+        <a class="ai-tile" href="/ai/"><span class="n" aria-hidden="true">01</span><h3 data-i18n="ai.m1.h">In the product</h3><p data-i18n="ai.m1.p">LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.</p></a>
+        <a class="ai-tile" href="/ai/qa-design/"><span class="n" aria-hidden="true">02</span><h3 data-i18n="ai.m2.h">In my process</h3><p data-i18n="ai.m2.p"><code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.</p><span class="tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0V4zM8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3M12 13v4M8 20h8M9.5 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="ai.m2.tag">AI challenge champion</span></span></a>
+        <a class="ai-tile" href="/colophon/"><span class="n" aria-hidden="true">03</span><h3 data-i18n="ai.m3.h">For AI readers</h3><p data-i18n="ai.m3.p">Pages structured so AI assistants quote them correctly, including this site.</p></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1522,7 +1518,7 @@
         'stat.ssd.src':`Safe Site Detector`,
         'work.updated':`Updated October 2026`,
         'card.ssd.met':`45.1% &rarr; 72.4%`, 'card.genial.met':`8.6% &rarr; 62.3%`,
-        'ai.label':`How I work with AI`, 'ai.h2':`AI on both sides of the screen.`, 'nav.ai':`AI`, 'card.ssd.ev':`self-reported · in-product question`, 'card.genial.ev':`measured · Metabase`, 'card.liam.ev':`reported by the clinical team`, 'card.kruzer.ev':`counted · staged rollout`, 'card.compass.ev':`measured · Jira`, 'ai.m2.tag':`AI challenge champion`, 'ai.p':`In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.`, 'ai.m1.h':`In the product`, 'ai.m1.p':`<a href="/liam/">LIAM</a> drafts clinical records; the <a href="/safe-site-detector/">Safe Site Detector</a> gives a verdict that states only what was verified.`, 'ai.m2.h':`In my process`, 'ai.m2.p':`<code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.`, 'ai.m3.h':`For AI readers`, 'ai.m3.p':`Pages structured so AI assistants quote them correctly, including <a href="/colophon/">this site</a>.`, 'ai.m2.more':`Read how I built it`, 'ai.more':`See how I work with AI`, 'about.p3':`In 2026, an AI skill I built for my team’s design QA was one of four champions out of 353 prototypes in the company’s AI challenge.`,
+        'ai.label':`How I work with AI`, 'ai.h2':`AI on both sides of the screen.`, 'nav.ai':`AI`, 'card.ssd.ev':`self-reported · in-product question`, 'card.genial.ev':`measured · Metabase`, 'card.liam.ev':`reported by the clinical team`, 'card.kruzer.ev':`counted · staged rollout`, 'card.compass.ev':`measured · Jira`, 'ai.m2.tag':`AI challenge champion`, 'ai.p':`In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.`, 'ai.m1.h':`In the product`, 'ai.m1.p':`LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.`, 'ai.m2.h':`In my process`, 'ai.m2.p':`<code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.`, 'ai.m3.h':`For AI readers`, 'ai.m3.p':`Pages structured so AI assistants quote them correctly, including this site.`, 'about.p3':`In 2026, an AI skill I built for my team’s design QA was one of four champions out of 353 prototypes in the company’s AI challenge.`,
         'contact.call':`Book a 30-min call`, 'contact.copy':`Copy`, 'contact.copied':`Copied`, 'contact.copy.aria':`Copy email address`, 'contact.copied.sr':`Email address copied`,
         'stat.genial.label':`Families opening the app daily, as the base grew to ~500 · Genial Care`,
         'stat.liam.label':`Documentation per session, from up to 2h · LIAM`,
@@ -1593,7 +1589,7 @@
         'stat.ssd.src':`Detector de Site Confiável`,
         'work.updated':`Atualizado em outubro de 2026`,
         'card.ssd.met':`45,1% &rarr; 72,4%`, 'card.genial.met':`8,6% &rarr; 62,3%`,
-        'ai.label':`Como trabalho com IA`, 'ai.h2':`IA dos dois lados da tela.`, 'nav.ai':`IA`, 'card.ssd.ev':`autodeclarado · pergunta no produto`, 'card.genial.ev':`medido · Metabase`, 'card.liam.ev':`reportado pelo time clínico`, 'card.kruzer.ev':`contado · rollout em ondas`, 'card.compass.ev':`medido · Jira`, 'ai.m2.tag':`Campeão do desafio de IA`, 'ai.p':`Nos produtos que desenho, no jeito como desenho e em como eles são lidos pelos assistentes de IA que as pessoas consultam antes de comprar.`, 'ai.m1.h':`No produto`, 'ai.m1.p':`O <a href="/liam/">LIAM</a> rascunha registros clínicos; o <a href="/safe-site-detector/">Detector</a> dá um veredito que afirma só o que foi verificado.`, 'ai.m2.h':`No meu processo`, 'ai.m2.p':`<code>qa-design</code>, uma skill de IA que faz meu design QA. Uma das 4 campeãs entre 353 protótipos.`, 'ai.m3.h':`Para leitores de IA`, 'ai.m3.p':`Páginas estruturadas para assistentes de IA citarem corretamente, incluindo <a href="/colophon/">este site</a>.`, 'ai.m2.more':`Ler como eu construí`, 'ai.more':`Veja como eu trabalho com IA`, 'about.p3':`Em 2026, uma skill de IA que criei para o design QA do meu time foi uma das quatro campeãs entre 353 protótipos no desafio de IA da empresa.`,
+        'ai.label':`Como trabalho com IA`, 'ai.h2':`IA dos dois lados da tela.`, 'nav.ai':`IA`, 'card.ssd.ev':`autodeclarado · pergunta no produto`, 'card.genial.ev':`medido · Metabase`, 'card.liam.ev':`reportado pelo time clínico`, 'card.kruzer.ev':`contado · rollout em ondas`, 'card.compass.ev':`medido · Jira`, 'ai.m2.tag':`Campeão do desafio de IA`, 'ai.p':`Nos produtos que desenho, no jeito como desenho e em como eles são lidos pelos assistentes de IA que as pessoas consultam antes de comprar.`, 'ai.m1.h':`No produto`, 'ai.m1.p':`O LIAM rascunha registros clínicos; o Detector dá um veredito que afirma só o que foi verificado.`, 'ai.m2.h':`No meu processo`, 'ai.m2.p':`<code>qa-design</code>, uma skill de IA que faz meu design QA. Uma das 4 campeãs entre 353 protótipos.`, 'ai.m3.h':`Para leitores de IA`, 'ai.m3.p':`Páginas estruturadas para assistentes de IA citarem corretamente, incluindo este site.`, 'about.p3':`Em 2026, uma skill de IA que criei para o design QA do meu time foi uma das quatro campeãs entre 353 protótipos no desafio de IA da empresa.`,
         'contact.call':`Agendar uma call de 30 min`, 'contact.copy':`Copiar`, 'contact.copied':`Copiado`, 'contact.copy.aria':`Copiar endereço de email`, 'contact.copied.sr':`Endereço de email copiado`,
         'stat.genial.label':`Famílias abrindo o app por dia, com a base crescendo para ~500 · Genial Care`,
         'stat.liam.label':`Documentação por sessão, de até 2h · LIAM`,
