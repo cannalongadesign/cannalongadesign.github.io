@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIAM: AI clinical documentation case study · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
-<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: LIAM, a human-in-the-loop AI assistant that drafts clinical records from a therapist&#39;s narration, cutting documentation from up to 2 hours to about 25 minutes per session.">
+<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: LIAM, a human-in-the-loop AI assistant that drafts clinical records from a therapist’s narration, cutting documentation from up to 2 hours to about 25 minutes per session.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="LIAM case study · up to 2 hours of clinical paperwork into a 25-minute review">
@@ -821,7 +821,7 @@
    "@type": "Article",
    "@id": "https://cannalongadesign.github.io/liam/#article",
    "headline": "LIAM: turning up to 2 hours of clinical paperwork into a 25-minute review",
-   "description": "LIAM, a human-in-the-loop AI assistant that drafts clinical session records from a therapist's narration. The clinician reviews and signs every field. Documentation went from up to 2 hours to about 25 minutes per session.",
+   "description": "LIAM, a human-in-the-loop AI assistant that drafts clinical session records from a therapist’s narration. The clinician reviews and signs every field. Documentation went from up to 2 hours to about 25 minutes per session.",
    "url": "https://cannalongadesign.github.io/liam/",
    "mainEntityOfPage": "https://cannalongadesign.github.io/liam/",
    "author": {
@@ -846,7 +846,7 @@
     "@type": "SoftwareApplication",
     "name": "LIAM",
     "applicationCategory": "HealthApplication",
-    "description": "AI assistant that drafts clinical records from a therapist's narration for review and signature."
+    "description": "AI assistant that drafts clinical records from a therapist’s narration for review and signature."
    },
    "keywords": "AI product design, human-in-the-loop, LLM, clinical documentation, healthcare, trust and safety",
    "genre": "Product design case study",
@@ -880,7 +880,7 @@
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
 </head>
-<body class="js">
+<body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav id="siteNav">
@@ -894,7 +894,7 @@
         <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
         <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
       </div>
-      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let’s talk</a>
     </div>
   </div>
 </nav>
@@ -948,7 +948,7 @@
     <figcaption class="caption" data-i18n="l.cover">LIAM lives inside the screen therapists already use during a session, on the tablet they already have in their hand. Screens show illustrative data.</figcaption>
   </figure>
   <div class="col reveal">
-    <p class="lead" data-i18n="l.lead">Every session at Genial Care generates a clinical record: what was targeted, what the child did, what changed. Therapists were writing that record from memory, after the fact, on top of a full day of sessions, which is exactly the kind of task that gets rushed, delayed, or thinned out under pressure. LIAM's job was to move the record-keeping into the moment it actually happens, instead of the moment there's finally time for it.</p>
+    <p class="lead" data-i18n="l.lead">Every session at Genial Care generates a clinical record: what was targeted, what the child did, what changed. Therapists were writing that record from memory, after the fact, on top of a full day of sessions, which is exactly the kind of task that gets rushed, delayed, or thinned out under pressure. LIAM’s job was to move the record-keeping into the moment it actually happens, instead of the moment there’s finally time for it.</p>
 
     <span class="stage-label" id="s01"><b>01</b> &middot; <span data-i18n="l.ix.1">Why it was hard</span></span>
     <h2 data-i18n="l.h2.hard">Two hours of reconstruction, and the constraint underneath it</h2>
@@ -970,7 +970,7 @@
   </div>
 
   <figure class="shot narrow reveal">
-    <div class="frame"><img decoding="async" src="/assets/liam-ia-wall.webp" alt="A wall covered in paper notes mapping the existing clinical panel: every section of the therapist&#39;s workspace laid out so the team could decide where a voice note belongs inside it" loading="lazy" width="1264" height="843"></div>
+    <div class="frame"><img decoding="async" src="/assets/liam-ia-wall.webp" alt="A wall covered in paper notes mapping the existing clinical panel: every section of the therapist’s workspace laid out so the team could decide where a voice note belongs inside it" loading="lazy" width="1264" height="843"></div>
     <figcaption class="caption" data-i18n="l.slot1.c">Mapping the clinical panel as it existed, section by section, so we could argue about where an audio note belongs inside a workspace therapists already use, instead of assuming it needed a new place of its own. Photo from the project.</figcaption>
   </figure>
 
@@ -995,7 +995,7 @@
     <p data-i18n="l.shipped.intro">Three pieces carried the two decisions above into a working product.</p>
 
     <h3 class="card-h" data-i18n="l.ship1.h">Recording, inside the work already happening</h3>
-    <p data-i18n="l.recording.p">The intervention screen, with its programs, targets, and progress per skill, is where a therapist already spends the session. A single mic control sits in the corner of that exact screen, not in a separate &ldquo;documentation&rdquo; tool. Only the therapist is recorded: they narrate what they are doing and how the child responds. The child is never the input. Once recorded, the note surfaces as a waveform with an explicit send action, so the therapist can confirm the capture before moving on. And when an upload fails (clinics have bad wifi), the interface says so directly, &ldquo;your voice note wasn&rsquo;t sent,&rdquo; with an obvious retry, instead of a spinner that quietly gives up.</p>
+    <p data-i18n="l.recording.p">The intervention screen, with its programs, targets, and progress per skill, is where a therapist already spends the session. A single mic control sits in the corner of that exact screen, not in a separate &ldquo;documentation&rdquo; tool. Only the therapist is recorded: they narrate what they are doing and how the child responds. The child is never the input. Once recorded, the note surfaces as a waveform with an explicit send action, so the therapist can confirm the capture before moving on. And when an upload fails (clinics have bad Wi-Fi), the interface says so directly, &ldquo;your voice note wasn&rsquo;t sent,&rdquo; with an obvious retry, instead of a spinner that quietly gives up.</p>
   </div>
 
   <figure class="shot reveal">
@@ -1026,7 +1026,7 @@
     <div class="frame">
       <img loading="lazy" decoding="async" src="/assets/liam-5.webp" alt="LIAM feedback modal asking whether the therapist likes the suggestions LIAM is generating, with a comment field" width="1200" height="800">
     </div>
-    <figcaption class="caption" data-i18n="l.cap5">A direct feedback loop on the suggestions themselves: the mechanism that lets LIAM's output quality stay visible instead of assumed.</figcaption>
+    <figcaption class="caption" data-i18n="l.cap5">A direct feedback loop on the suggestions themselves: the mechanism that lets LIAM’s output quality stay visible instead of assumed.</figcaption>
   </figure>
 
   <div class="col reveal">
@@ -1034,7 +1034,7 @@
     <h2 data-i18n="l.h2.impact">Impact</h2>
     <div class="metrics-strip">
       <div class="m"><div class="num">Up to 2h</div><div class="label" data-i18n="l.m0">Writing the record from memory after a full day, per session, before LIAM (self-reported)</div></div>
-      <div class="m"><div class="num">~25min</div><div class="label" data-i18n="l.m1">Reviewing and submitting LIAM's draft, per session, after</div></div>
+      <div class="m"><div class="num">~25min</div><div class="label" data-i18n="l.m1">Reviewing and submitting LIAM’s draft, per session, after</div></div>
       <div class="m"><div class="num">~80</div><div class="label" data-i18n="l.m2">Therapists on the clinical team: the before-and-after covers all of them, not a sample</div></div>
     </div>
     <p class="note" data-i18n="l.note"><strong>How it was measured, and what the number leaves out:</strong> the two hours are the upper end of the therapists&rsquo; own self-reported time to write a session report from memory before LIAM, not the typical session; the 25 minutes are their review-and-submit time with LIAM&rsquo;s draft in place, read by the team one quarter after rollout. I had left Genial Care by then: I designed and shipped LIAM, and the 25-minute figure is what the clinical team reported back. It is not a like-for-like total: narrating during the session adds a few minutes that the 25 does not include, and the population is the clinical team on staff, so this is a before-and-after with everyone, not a sample. The clinical lead&rsquo;s verdict after launch was that record quality improved rather than merely held: a record written minutes after the session carries detail that one written from memory at 9pm does not.</p>
@@ -1045,13 +1045,13 @@
     <p data-i18n="l.dif.p">I would have brought the clinical lead into the interface decisions, not only the review of the output: several trust states would have been simpler if the person who owns the clinical standard had been in the room while they were being drawn. And I under-designed the moment a therapist corrects a specific field. The feedback prompt asks about LIAM&rsquo;s suggestions in general, but editing a field never asks what was wrong with it, so the most precise signal in the whole feature goes unrecorded.</p>
 
     <h2 data-i18n="l.h2.bigpicture">Where this sits in the bigger picture</h2>
-    <p data-i18n="l.bigpicture.p">LIAM shipped after the family-facing app had already gone from 8% to 62% daily use. Once families were actually engaging, the constraint moved to the other side of the platform: the therapists producing the content families were now relying on. Same instinct, different audience: find where a person is spending effort on something that isn't the actual work, and compress it into a decision they can make quickly.</p>
+    <p data-i18n="l.bigpicture.p">LIAM shipped after the family-facing app had already gone from 8% to 62% daily use. Once families were actually engaging, the constraint moved to the other side of the platform: the therapists producing the content families were now relying on. Same instinct, different audience: find where a person is spending effort on something that isn’t the actual work, and compress it into a decision they can make quickly.</p>
   </div>
 </article>
 
 <section class="article-close reveal">
   <div class="col">
-    <h2 data-i18n="close.h2">Questions this page doesn't answer?</h2>
+    <h2 data-i18n="close.h2">Questions this page doesn’t answer?</h2>
     <p data-i18n="close.p.liam">How the model was chosen, how we handled clinical-language accuracy, how the rollout reached the whole clinical team and what the feedback prompt was built to catch: all of it is a 30-minute call away.</p>
     <div class="close-ctas">
       <a class="btn btn-primary" href="/#contact" data-contact-trigger data-i18n="close.cta1">Get in touch</a>
@@ -1085,9 +1085,9 @@
     <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <span class="kicker" data-i18n="modal.label">Let’s talk</span>
     <h3 data-i18n="modal.h3">How would you like to connect?</h3>
-    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <p data-i18n="modal.p">Pick whichever’s faster for you.</p>
     <div class="contact-modal-options">
       <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1101,7 +1101,7 @@
       </a>
       <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Pick a time that works for you (ET)</span></span>
         <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1180,7 +1180,7 @@
         'l.tl.did':`Designed an AI assistant that lives inside the session screen: the therapist narrates, LIAM drafts, and the clinician reviews and signs. Most of the design time went into the failure states.`,
         'l.tl.out':`Documentation went from <b>up to 2 hours to a 25-minute review</b> per session, as reported by the clinical team a quarter after rollout, with an in-product feedback loop so quality drift shows up in usage instead of months later.`,
         'l.demo.1':'AI product design', 'l.demo.2':'Human-in-the-loop', 'l.demo.3':'Healthcare', 'l.demo.4':'Trust &amp; safety',
-        'nav.back':'Back to portfolio', 'nav.cta':`Let's talk`,
+        'nav.back':'Back to portfolio', 'nav.cta':`Let’s talk`,
         'case.updated':`Updated October 2026`,
         'hero.kicker':'Case study · Healthcare · AI Design',
         'hero.h1':`LIAM: turning up to 2 hours of clinical paperwork into a 25-minute review`,
@@ -1188,7 +1188,7 @@
         'meta.role':'Role', 'meta.team':'Team', 'meta.company':'Company', 'meta.timeline':'Timeline', 'meta.outcome':'Outcome',
         'l.cover':`LIAM lives inside the screen therapists already use during a session, on the tablet they already have in their hand. Screens show illustrative data.`,
         'l.cover':`LIAM lives inside the screen therapists already use during a session, on the tablet they already have in their hand. Screens show illustrative data.`,
-        'l.lead':`Every session at Genial Care generates a clinical record: what was targeted, what the child did, what changed. Therapists were writing that record from memory, after the fact, on top of a full day of sessions, which is exactly the kind of task that gets rushed, delayed, or thinned out under pressure. LIAM's job was to move the record-keeping into the moment it actually happens, instead of the moment there's finally time for it.`,
+        'l.lead':`Every session at Genial Care generates a clinical record: what was targeted, what the child did, what changed. Therapists were writing that record from memory, after the fact, on top of a full day of sessions, which is exactly the kind of task that gets rushed, delayed, or thinned out under pressure. LIAM’s job was to move the record-keeping into the moment it actually happens, instead of the moment there’s finally time for it.`,
         'l.ix.1':`Why it was hard`, 'l.ix.2':`Decision: LIAM proposes, the clinician decides`, 'l.ix.3':`Decision: how I read trust`,
         'l.ix.4':`What shipped`, 'l.ix.5':`Impact`, 'l.ix.6':`What I&rsquo;d do differently`,
         'l.h2.hard':`Two hours of reconstruction, and the constraint underneath it`,
@@ -1210,7 +1210,7 @@
         'l.h2.shipped':`What shipped`,
         'l.shipped.intro':`Three pieces carried the two decisions above into a working product.`,
         'l.ship1.h':`Recording, inside the work already happening`,
-        'l.recording.p':`The intervention screen, with its programs, targets, and progress per skill, is where a therapist already spends the session. A single mic control sits in the corner of that exact screen, not in a separate &ldquo;documentation&rdquo; tool. Only the therapist is recorded: they narrate what they are doing and how the child responds. The child is never the input. Once recorded, the note surfaces as a waveform with an explicit send action, so the therapist can confirm the capture before moving on. And when an upload fails (clinics have bad wifi), the interface says so directly, &ldquo;your voice note wasn&rsquo;t sent,&rdquo; with an obvious retry, instead of a spinner that quietly gives up.`,
+        'l.recording.p':`The intervention screen, with its programs, targets, and progress per skill, is where a therapist already spends the session. A single mic control sits in the corner of that exact screen, not in a separate &ldquo;documentation&rdquo; tool. Only the therapist is recorded: they narrate what they are doing and how the child responds. The child is never the input. Once recorded, the note surfaces as a waveform with an explicit send action, so the therapist can confirm the capture before moving on. And when an upload fails (clinics have bad Wi-Fi), the interface says so directly, &ldquo;your voice note wasn&rsquo;t sent,&rdquo; with an obvious retry, instead of a spinner that quietly gives up.`,
         'l.cap1':`The intervention screen the therapist is already working in: recording starts from a single control here.`,
         'l.uploads.pull':'Silent failure is worse than an ugly one, especially in a tool handling clinical documentation.',
         'l.ship2.h':`The draft: a form the therapist edits, not writes`,
@@ -1218,19 +1218,19 @@
         'l.cap4':`The session-note form: every field carries a LIAM-drafted suggestion the therapist reviews and copies in, never submitted on their behalf.`,
         'l.ship3.h':`A feedback loop that keeps trust visible`,
         'l.trustloop.p':`An AI feature that quietly gets worse, or quietly gets better, teaches people to stop trusting it either way. A lightweight prompt sits directly in the flow: are you happy with LIAM&rsquo;s suggestions right now, yes or no, with room to say why, so drift in suggestion quality surfaces from real usage instead of a support ticket or a churned habit months later. The decision underneath all three pieces is the same: an AI feature earns trust through visible mechanics.`,
-        'l.cap5':`A direct feedback loop on the suggestions themselves: the mechanism that lets LIAM's output quality stay visible instead of assumed.`,
+        'l.cap5':`A direct feedback loop on the suggestions themselves: the mechanism that lets LIAM’s output quality stay visible instead of assumed.`,
         'l.h2.impact':'Impact',
-        'l.m0':`Writing the record from memory after a full day, per session, before LIAM (self-reported)`, 'l.m1':`Reviewing and submitting LIAM's draft, per session, after`, 'l.m2':`Therapists on the clinical team: the before-and-after covers all of them, not a sample`,
+        'l.m0':`Writing the record from memory after a full day, per session, before LIAM (self-reported)`, 'l.m1':`Reviewing and submitting LIAM’s draft, per session, after`, 'l.m2':`Therapists on the clinical team: the before-and-after covers all of them, not a sample`,
         'l.note':`<strong>How it was measured, and what the number leaves out:</strong> the two hours are the upper end of the therapists&rsquo; own self-reported time to write a session report from memory before LIAM, not the typical session; the 25 minutes are their review-and-submit time with LIAM&rsquo;s draft in place, read by the team one quarter after rollout. I had left Genial Care by then: I designed and shipped LIAM, and the 25-minute figure is what the clinical team reported back. It is not a like-for-like total: narrating during the session adds a few minutes that the 25 does not include, and the population is the clinical team on staff, so this is a before-and-after with everyone, not a sample. The clinical lead&rsquo;s verdict after launch was that record quality improved rather than merely held: a record written minutes after the session carries detail that one written from memory at 9pm does not.`,
         'l.h2.dif':`What I&rsquo;d do differently`,
         'l.h2.bigpicture':'Where this sits in the bigger picture',
-        'l.bigpicture.p':`LIAM shipped after the family-facing app had already gone from 8% to 62% daily use. Once families were actually engaging, the constraint moved to the other side of the platform: the therapists producing the content families were now relying on. Same instinct, different audience: find where a person is spending effort on something that isn't the actual work, and compress it into a decision they can make quickly.`,
-        'close.h2':`Questions this page doesn't answer?`,
+        'l.bigpicture.p':`LIAM shipped after the family-facing app had already gone from 8% to 62% daily use. Once families were actually engaging, the constraint moved to the other side of the platform: the therapists producing the content families were now relying on. Same instinct, different audience: find where a person is spending effort on something that isn’t the actual work, and compress it into a decision they can make quickly.`,
+        'close.h2':`Questions this page doesn’t answer?`,
         'close.p.liam':`How the model was chosen, how we handled clinical-language accuracy, how the rollout reached the whole clinical team and what the feedback prompt was built to catch: all of it is a 30-minute call away.`,
         'close.cta1':'Get in touch', 'close.cta2.liam':'Read the Genial App case',
         'footer.portfolio':'Portfolio', 'footer.email':'Email',
-        'modal.label':`Let's talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever's faster for you.`,
-        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Weekdays, flexible hours (ET)`
+        'modal.label':`Let’s talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever’s faster for you.`,
+        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Pick a time that works for you (ET)`
       },
       pt: {
         'footer.resume':`Currículo`, 'footer.colophon':`Como este site foi feito`,
@@ -1289,7 +1289,7 @@
         'l.h2.shipped':`O que foi lançado`,
         'l.shipped.intro':`Três peças levaram as duas decisões acima para um produto funcionando.`,
         'l.ship1.h':`Gravação, dentro do trabalho que já acontece`,
-        'l.recording.p':`A tela de intervenção, com seus programas, metas e progresso por habilidade, é onde o terapeuta já passa a sessão. Um único controle de microfone fica no canto dessa tela exata, não numa ferramenta separada de &ldquo;documentação&rdquo;. Só o terapeuta é gravado: ele narra o que está fazendo e como a criança responde. A criança nunca é a entrada. Depois de gravada, a nota aparece como onda sonora com uma ação explícita de enviar, para o terapeuta confirmar a captura antes de seguir. E quando um upload falha (clínica tem wifi ruim), a interface diz isso diretamente, &ldquo;sua nota de voz não foi enviada,&rdquo; com um retry óbvio, em vez de um spinner que desiste em silêncio.`,
+        'l.recording.p':`A tela de intervenção, com seus programas, metas e progresso por habilidade, é onde o terapeuta já passa a sessão. Um único controle de microfone fica no canto dessa tela exata, não numa ferramenta separada de &ldquo;documentação&rdquo;. Só o terapeuta é gravado: ele narra o que está fazendo e como a criança responde. A criança nunca é a entrada. Depois de gravada, a nota aparece como onda sonora com uma ação explícita de enviar, para o terapeuta confirmar a captura antes de seguir. E quando um upload falha (clínica tem Wi-Fi ruim), a interface diz isso diretamente, &ldquo;sua nota de voz não foi enviada,&rdquo; com um retry óbvio, em vez de um spinner que desiste em silêncio.`,
         'l.cap1':'A tela de intervenção onde o terapeuta já está trabalhando: a gravação começa por um único controle aqui.',
         'l.uploads.pull':'Falha silenciosa é pior que falha feia, especialmente numa ferramenta que lida com documentação clínica.',
         'l.ship2.h':`O rascunho: um formulário que o terapeuta edita, não escreve`,
@@ -1309,7 +1309,7 @@
         'close.cta1':'Entrar em contato', 'close.cta2.liam':'Ler o case do app Genial',
         'footer.portfolio':'Portfólio', 'footer.email':'Email',
         'modal.label':'Vamos conversar', 'modal.h3':'Como você prefere falar comigo?', 'modal.p':'Escolha o que for mais rápido pra você.',
-        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Dias úteis, horário flexível (ET)`
+        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Escolha um horário (ET)`
       }
     };
 

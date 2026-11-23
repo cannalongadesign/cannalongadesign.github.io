@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compass design system case study · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
@@ -11,7 +12,6 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with the real deployed URL after publishing. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Compass · building a design system from scratch">
@@ -894,7 +894,7 @@
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
 </head>
-<body class="js">
+<body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav>
@@ -908,7 +908,7 @@
         <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
         <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
       </div>
-      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let’s talk</a>
     </div>
   </div>
 </nav>
@@ -940,7 +940,7 @@
       <li><a href="#s03" data-i18n="c.ix.3">Decision: governance is part of the deliverable</a></li>
       <li><a href="#s04" data-i18n="c.ix.4">What shipped</a></li>
       <li><a href="#s05" data-i18n="c.ix.5">Impact</a></li>
-      <li><a href="#s06" data-i18n="c.ix.6">What I'd do differently</a></li>
+      <li><a href="#s06" data-i18n="c.ix.6">What I’d do differently</a></li>
     </ol>
   </div>
   <div class="col reveal">
@@ -957,7 +957,7 @@
   </div>
 
   <div class="col reveal">
-    <p class="lead" data-i18n="c.lead">Compass is the design system I built from scratch at Kruzer, the platform behind Fast Shop's fulfillment operation. It started as a way to stop rebuilding the same status pill for the third time, and ended up as the layer that let three products stay coherent while the platform scaled to 80+ stores.</p>
+    <p class="lead" data-i18n="c.lead">Compass is the design system I built from scratch at Kruzer, the platform behind Fast Shop’s fulfillment operation. It started as a way to stop rebuilding the same status pill for the third time, and ended up as the layer that let three products stay coherent while the platform scaled to 80+ stores.</p>
 
     <span class="stage-label" id="s01"><b>01</b> &middot; <span data-i18n="c.ix.1">Why it was hard</span></span>
     <h2 data-i18n="c.h2.before">Before: everything took longer than it should</h2>
@@ -974,8 +974,8 @@
       <div class="decision-body">
         <div class="decision-row"><span class="dk" data-i18n="c.dk.problem">Problem</span><p class="dv" data-i18n="c.d1.problem">Naming tokens after what they look like (<em>blue-500</em>) tells you nothing about when to use them. People guess, and the guessing is where inconsistency comes back in.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="c.dk.decision">Decision</span><p class="dv" data-i18n="c.d1.decision">Split three layers. Primitive: raw values like <em>blue-500</em>, <em>space-4</em>, referenced but never designed with directly. Semantic: what a value means (<em>action-primary</em>, <em>status-success</em>), the only layer a designer or engineer touches. Component: rare, purpose-built overrides.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="c.dk.why">Why</span><p class="dv" data-i18n="c.d1.why">Asking &ldquo;what breaks if we rebrand, or add dark mode&rdquo; early is what forced the token layer to exist before the components. A system that can&rsquo;t survive a colour change was never a system.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="c.dk.result">Result</span><p class="dv" data-i18n="c.d1.result">Changing the meaning of &ldquo;success&rdquo; across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a colour is there.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="c.dk.why">Why</span><p class="dv" data-i18n="c.d1.why">Asking &ldquo;what breaks if we rebrand, or add dark mode&rdquo; early is what forced the token layer to exist before the components. A system that can&rsquo;t survive a color change was never a system.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="c.dk.result">Result</span><p class="dv" data-i18n="c.d1.result">Changing the meaning of &ldquo;success&rdquo; across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a color is there.</p></div>
       </div>
     </div>
   </div>
@@ -988,7 +988,7 @@
         <div class="decision-row"><span class="dk" data-i18n="c.dk.problem">Problem</span><p class="dv" data-i18n="c.d2.problem">The part teams skip is the part that decides whether the system is alive in a year. A component nobody owns rots; a library with no rule against &ldquo;just one more variant&rdquo; drifts back into a folder.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="c.dk.decision">Decision</span><p class="dv" data-i18n="c.d2.decision">Ship rules with the files, not after them: a new component has to prove it appears in at least two products, a change to a semantic token goes through review because it moves everything downstream, and anything deprecated gets a removal date instead of sitting there forever. Documentation counts as part of the component: a &ldquo;use this when&rdquo; that doesn&rsquo;t exist is a component that will be misused.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="c.dk.why">Why</span><p class="dv" data-i18n="c.d2.why">I asked engineers what they were actually missing when a spec arrived, and the answers shaped the documentation more than any design-system article did.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="c.dk.result">Result</span><p class="dv" data-i18n="c.d2.result">Componentisation is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="c.dk.result">Result</span><p class="dv" data-i18n="c.d2.result">Componentization is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.</p></div>
       </div>
     </div>
   </div>
@@ -1062,7 +1062,7 @@
   </figure>
 
   <div class="col reveal">
-    <p data-i18n="c.build.p1">The component engineering questioned hardest was the data table. These products carry huge volumes of data, so advanced filters and user-customisable columns were a constant challenge, and the first versions didn&rsquo;t serve every product. Getting to the right model took benchmarking against mature data-heavy products and testing several component variants until one worked for all three.</p>
+    <p data-i18n="c.build.p1">The component engineering questioned hardest was the data table. These products carry huge volumes of data, so advanced filters and user-customizable columns were a constant challenge, and the first versions didn&rsquo;t serve every product. Getting to the right model took benchmarking against mature data-heavy products and testing several component variants until one worked for all three.</p>
     <p data-i18n="c.build.p3">Composition is where the atom-and-molecule distinction stops being vocabulary. A select is not one component; it is a field, a label, a tooltip, a chip, a list and an error state composed together. Getting the composition right is what made a new select variant cost minutes instead of an afternoon.</p>
   </div>
 
@@ -1075,8 +1075,8 @@
   <div class="col reveal">
     <span class="stage-label" id="s05"><b>05</b> &middot; <span data-i18n="c.ix.5">Impact</span></span>
     <h2 data-i18n="c.h2.results">What it changed</h2>
-    <p data-i18n="c.test.p2">There's no usability test for a design system, and no funnel: the evidence came from three places instead. The audit gave a hard before: around twenty blues, seven paddings and four button heights live in production, counted rather than estimated. Pick &amp; Pack was the first consumer, proving the system against a real product before anyone else adopted it. And Jira, which the team already used to track demand, gave the after: the same class of work, measured before and after adoption. A metric I invent to prove my own project is worth roughly nothing in a review; a metric engineering already trusts is much harder to wave away.</p>
-    <p data-i18n="c.results.p">The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and colour to whether the flow was right. What that number can't prove, and I'd say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.</p>
+    <p data-i18n="c.test.p2">There’s no usability test for a design system, and no funnel: the evidence came from three places instead. The audit gave a hard before: around twenty blues, seven paddings and four button heights live in production, counted rather than estimated. Pick &amp; Pack was the first consumer, proving the system against a real product before anyone else adopted it. And Jira, which the team already used to track demand, gave the after: the same class of work, measured before and after adoption. A metric I invent to prove my own project is worth roughly nothing in a review; a metric engineering already trusts is much harder to wave away.</p>
+    <p data-i18n="c.results.p">The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and color to whether the flow was right. What that number can’t prove, and I’d say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.</p>
 
     <div class="metrics-strip">
       <div class="m"><div class="num">4.2d &rarr; 2.5d</div><div class="label" data-i18n="c.m0">Cycle time on the same class of design ticket, before and after adoption: the harder number, found late</div></div>
@@ -1086,19 +1086,19 @@
     </div>
     <p class="note" data-i18n="c.note"><strong>How it was measured:</strong> both numbers come from the Jira board engineering already used to track demand, comparing the same class of design ticket before and after adoption: 40% on throughput, 4.2 days down to 2.5 on cycle time. Neither is a controlled experiment, and both are readings I recall rather than a report I can still pull. The measurement had to belong to someone other than me, or it would have been marketing; the confounds above are named on purpose.</p>
 
-    <span class="stage-label" id="s06"><b>06</b> &middot; <span data-i18n="c.ix.6">What I'd do differently</span></span>
-    <h3 class="sub" data-i18n="c.dif.h">What I&rsquo;d do differently</h3>
+    <span class="stage-label" id="s06"><b>06</b> &middot; <span data-i18n="c.ix.6">What I’d do differently</span></span>
+    <h2 data-i18n="c.dif.h">Lead with the harder number</h2>
     <p data-i18n="c.dif.p">I would have led with a different number. Throughput was the easy metric to reach for; cycle time, roughly 4.2 days down to 2.5, is the harder one to argue with, and I only went looking for it after 40% was already the headline.</p>
 
-    <h2 data-i18n="c.h2.defend">What I'd defend in a design review</h2>
+    <h3 class="sub" data-i18n="c.h2.defend">What I’d defend in a design review</h3>
     <p data-i18n="c.defend.p2">The decision I would defend hardest is refusing to let the component layer grow. Every one-off override was a signal that the semantic layer had a gap, and fixing the gap is slower in the moment and cheaper for everyone after. I also count governance as part of the deliverable: a system nobody owns drifts back to where it started.</p>
-    <p data-i18n="c.defend.p3">The argument I had to win was with engineering, because a system is adopted by people who didn't ask for it, and this one was about taking something away: only the semantic layer would be published, meaning giving up a naming convention they were comfortable with. What made it land was the audit: twenty near-identical blues live in production is not an opinion, and it moved the conversation from taste to cost in one meeting.</p>
+    <p data-i18n="c.defend.p3">The argument I had to win was with engineering, because a system is adopted by people who didn’t ask for it, and this one was about taking something away: only the semantic layer would be published, meaning giving up a naming convention they were comfortable with. What made it land was the audit: twenty near-identical blues live in production is not an opinion, and it moved the conversation from taste to cost in one meeting.</p>
   </div>
 </article>
 
 <section class="article-close reveal">
   <div class="col">
-    <h2 data-i18n="close.h2">Questions this page doesn't answer?</h2>
+    <h2 data-i18n="close.h2">Questions this page doesn’t answer?</h2>
     <p data-i18n="close.p">The token naming decisions, the audit that started it, how long Compass took and what it displaced, and how I handled the components teams did not want to give up: all of it is a 30-minute call away.</p>
     <div class="close-ctas">
       <a class="btn btn-primary" href="/#contact" data-contact-trigger data-i18n="close.cta1">Get in touch</a>
@@ -1131,9 +1131,9 @@
     <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
     </button>
-    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <span class="kicker" data-i18n="modal.label">Let’s talk</span>
     <h3 data-i18n="modal.h3">How would you like to connect?</h3>
-    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <p data-i18n="modal.p">Pick whichever’s faster for you.</p>
     <div class="contact-modal-options">
       <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1147,7 +1147,7 @@
       </a>
       <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Pick a time that works for you (ET)</span></span>
         <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1207,7 +1207,7 @@
         'c.build.p3':`Composition is where the atom-and-molecule distinction stops being vocabulary. A select is not one component; it is a field, a label, a tooltip, a chip, a list and an error state composed together. Getting the composition right is what made a new select variant cost minutes instead of an afternoon.`,
         'c.fig.tokens':`The semantic layer, and the only one published to design files. <code>$typography.h1.medium</code> carries intent; <code>60px</code> carries appearance. A designer who reaches for the second one is guessing, and the guessing is where inconsistency comes back in.`,
         'c.fig.molecules':`Molecules: the select composed from smaller pieces: field, label, tooltip, chip, list, error. Composing instead of redrawing is what makes a new variant cost minutes.`,
-        'c.dif.h':`What I&rsquo;d do differently`,
+        'c.dif.h':`Lead with the harder number`,
         'c.dif.p':`I would have led with a different number. Throughput was the easy metric to reach for; cycle time, roughly 4.2 days down to 2.5, is the harder one to argue with, and I only went looking for it after 40% was already the headline.`,
         'c.tk.embarrass':`Reach for the number that could embarrass you first.`,
         'nav.back.genial':`Back to Genial App`,
@@ -1222,24 +1222,24 @@
         'c.dsp.o1':`Order #48213`,
         'c.dsp.o2':`Order #48219`,
         'c.dsp.search':`Search order or SKU`,
-        'c.build.p1':`The component engineering questioned hardest was the data table. These products carry huge volumes of data, so advanced filters and user-customisable columns were a constant challenge, and the first versions didn&rsquo;t serve every product. Getting to the right model took benchmarking against mature data-heavy products and testing several component variants until one worked for all three.`,
+        'c.build.p1':`The component engineering questioned hardest was the data table. These products carry huge volumes of data, so advanced filters and user-customizable columns were a constant challenge, and the first versions didn&rsquo;t serve every product. Getting to the right model took benchmarking against mature data-heavy products and testing several component variants until one worked for all three.`,
         'c.tk.build':`A token that exists in Figma and not in code is a token that doesn&rsquo;t exist.`,
         'ix.time':`7 min read`,
         'c.demo.1':'Design systems', 'c.demo.2':'Design tokens', 'c.demo.3':'Platform design', 'c.demo.4':'Governance',
         'c.ix.1':`Why it was hard`, 'c.ix.2':`Decision: only the semantic layer ships`, 'c.ix.3':`Decision: governance is part of the deliverable`,
-        'c.ix.4':`What shipped`, 'c.ix.5':`Impact`, 'c.ix.6':`What I'd do differently`,
+        'c.ix.4':`What shipped`, 'c.ix.5':`Impact`, 'c.ix.6':`What I’d do differently`,
         'c.before.p3':`A design system that designers love and engineers route around is a failed one, so the founding conversation was with the people who would consume it: who owns a component once it exists, what a handoff needs to contain to stop being re-negotiated, and who is allowed to say no to a new variant. Settling those before the library had anything in it was the only moment that conversation was cheap.`,
         'c.dk.problem':'Problem', 'c.dk.decision':'Decision', 'c.dk.why':'Why', 'c.dk.result':'Result',
         'c.d1.title':`Only the semantic layer is allowed in a design file`,
         'c.d1.problem':`Naming tokens after what they look like (<em>blue-500</em>) tells you nothing about when to use them. People guess, and the guessing is where inconsistency comes back in.`,
         'c.d1.decision':`Split three layers. Primitive: raw values like <em>blue-500</em>, <em>space-4</em>, referenced but never designed with directly. Semantic: what a value means (<em>action-primary</em>, <em>status-success</em>), the only layer a designer or engineer touches. Component: rare, purpose-built overrides.`,
-        'c.d1.why':`Asking &ldquo;what breaks if we rebrand, or add dark mode&rdquo; early is what forced the token layer to exist before the components. A system that can&rsquo;t survive a colour change was never a system.`,
-        'c.d1.result':`Changing the meaning of &ldquo;success&rdquo; across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a colour is there.`,
+        'c.d1.why':`Asking &ldquo;what breaks if we rebrand, or add dark mode&rdquo; early is what forced the token layer to exist before the components. A system that can&rsquo;t survive a color change was never a system.`,
+        'c.d1.result':`Changing the meaning of &ldquo;success&rdquo; across three products became one edit. Adding a density mode became a token set. A new designer can read a file and understand why a color is there.`,
         'c.d2.title':`A library without governance is just a folder`,
         'c.d2.problem':`The part teams skip is the part that decides whether the system is alive in a year. A component nobody owns rots; a library with no rule against &ldquo;just one more variant&rdquo; drifts back into a folder.`,
         'c.d2.decision':`Ship rules with the files, not after them: a new component has to prove it appears in at least two products, a change to a semantic token goes through review because it moves everything downstream, and anything deprecated gets a removal date instead of sitting there forever. Documentation counts as part of the component: a &ldquo;use this when&rdquo; that doesn&rsquo;t exist is a component that will be misused.`,
         'c.d2.why':`I asked engineers what they were actually missing when a spec arrived, and the answers shaped the documentation more than any design-system article did.`,
-        'c.d2.result':`Componentisation is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.`,
+        'c.d2.result':`Componentization is where the rules stop being a document and start being enforced. A button is one component with variants for hierarchy, size, state and icon, spaced by token, not by hand: an engineer opening it receives a rule.`,
         'c.tk.pointer':`&ldquo;Consistency&rdquo; is not a business case. Delivery speed is, and it can be proven wrong.`,
         'c.tk.questions':`Governance isn&rsquo;t bureaucracy. It&rsquo;s the answer to &ldquo;can I just add one more variant?&rdquo;`,
         'c.slot1.c':`Counted, not estimated. The audit is what turned &ldquo;things feel inconsistent&rdquo; into a number.`,
@@ -1248,7 +1248,7 @@
         'c.tl.problem':`Every screen started from an empty frame, so the same component was redrawn with small differences nobody had decided on.`,
         'c.tl.did':`Built the system from scratch: an audit with real counts, a three-layer semantic token scale where only the middle layer is allowed in design files, then migration and governance rules.`,
         'c.tl.out':`Design-ticket cycle time dropped from <b>4.2 to 2.5 days</b>, measured in the Jira the engineering team already used.`,
-        'nav.back':'Back to portfolio', 'nav.cta':`Let's talk`,
+        'nav.back':'Back to portfolio', 'nav.cta':`Let’s talk`,
         'case.updated':`Updated October 2026`,
         'hero.kicker':'Case study · Design Systems · Enterprise platform',
         'hero.h1':'Compass: from one-off screens to a system three teams could build on',
@@ -1256,7 +1256,7 @@
         'meta.role':'Role', 'meta.team':'Team', 'meta.team.v':'PM · Eng teams · Design',
         'meta.client':'Client', 'meta.timeline':'Timeline', 'meta.outcome':'Outcome',
         'meta.outcome.v':'4.2d &rarr; 2.5d cycle time, measured in Jira',
-        'c.lead':`Compass is the design system I built from scratch at Kruzer, the platform behind Fast Shop's fulfillment operation. It started as a way to stop rebuilding the same status pill for the third time, and ended up as the layer that let three products stay coherent while the platform scaled to 80+ stores.`,
+        'c.lead':`Compass is the design system I built from scratch at Kruzer, the platform behind Fast Shop’s fulfillment operation. It started as a way to stop rebuilding the same status pill for the third time, and ended up as the layer that let three products stay coherent while the platform scaled to 80+ stores.`,
         'c.h2.before':'Before: everything took longer than it should',
         'c.before.p1':`There was no shared foundation. Every new screen started from an empty frame, so the same components were redrawn over and over with small differences nobody had decided on: the primary button was one shade of blue in the queue and another in the order detail. Design took longer because nothing could be reused, engineering took longer because every handoff described a slightly new component, and review cycles took longer because most comments were about inconsistencies, not whether the solution was right.`,
         'c.before.p2':`No one funds tidiness, so the pointer I argued for was delivery speed: how long a change takes to get from decision to production, across three products on the same platform. That framing can be proven wrong (if cycle time didn&rsquo;t move, Compass was an expensive preference), and tying it to a number engineering already tracked meant I was accountable to their measurement, not my own.`,
@@ -1264,27 +1264,27 @@
         'c.h2.job':`The user here is the team, and the job is confidence`,
         'c.job.p1':`Compass has no end user. Its users are designers and engineers, and what they need from it is the ability to make a decision once and not argue it again. Framed that way, the measure of success stops being how many components exist and becomes how few decisions each screen requires.`,
         'c.job.pull':`The job isn&rsquo;t consistency. It&rsquo;s making a decision once and never having to defend it again.`,
-        'c.test.p2':`There's no usability test for a design system, and no funnel: the evidence came from three places instead. The audit gave a hard before: around twenty blues, seven paddings and four button heights live in production, counted rather than estimated. Pick &amp; Pack was the first consumer, proving the system against a real product before anyone else adopted it. And Jira, which the team already used to track demand, gave the after: the same class of work, measured before and after adoption. A metric I invent to prove my own project is worth roughly nothing in a review; a metric engineering already trusts is much harder to wave away.`,
+        'c.test.p2':`There’s no usability test for a design system, and no funnel: the evidence came from three places instead. The audit gave a hard before: around twenty blues, seven paddings and four button heights live in production, counted rather than estimated. Pick &amp; Pack was the first consumer, proving the system against a real product before anyone else adopted it. And Jira, which the team already used to track demand, gave the after: the same class of work, measured before and after adoption. A metric I invent to prove my own project is worth roughly nothing in a review; a metric engineering already trusts is much harder to wave away.`,
         'c.dsp.header':'Compass · token playground', 'c.dsp.accent':'Accent', 'c.dsp.radius':'Radius', 'c.dsp.density':'Density',
         'c.dsp.compact':'Compact', 'c.dsp.default':'Default', 'c.dsp.comfy':'Comfy',
         'c.dsp.transit':'In transit', 'c.dsp.meta1':'Distribution center · SLA 1h 42m remaining',
         'c.dsp.assign':'Assign driver', 'c.dsp.history':'View history', 'c.dsp.returning':'Returning to store', 'c.dsp.meta2':'Failed delivery · needs a next step',
         'c.dsp.caption':`A live slice of Compass. Every component here reads from the same three tokens, so changing one keeps the whole set coherent.`,
         'c.h2.results':'What it changed',
-        'c.results.p':`The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and colour to whether the flow was right. What that number can't prove, and I'd say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.`,
+        'c.results.p':`The clearest signal came from the tracker: once teams were building from Compass instead of from scratch, Jira throughput on design demands rose by about 40%, and review comments shifted from spacing and color to whether the flow was right. What that number can’t prove, and I’d say so before anyone asked: ticket throughput is confounded (the team also grew and the sprint cadence changed once), so the 40% is the delta engineering leads read from their own board over the same class of work, the best number available, not a controlled one. The review-comment shift is the softer signal, and honestly the one I trust more, because nobody can game what a colleague chooses to argue about.`,
         'c.m0':`Cycle time on the same class of design ticket, before and after adoption: the harder number, found late`, 'c.m1':`Design-ticket throughput in Jira after adoption, same class of work; a tracker delta, not a controlled experiment`,
         'c.m2':'Products on one shared foundation',
         'c.m3':`Near-identical blues counted live in production before the audit, the baseline that turned a feeling into a number`,
         'c.note':`<strong>How it was measured:</strong> both numbers come from the Jira board engineering already used to track demand, comparing the same class of design ticket before and after adoption: 40% on throughput, 4.2 days down to 2.5 on cycle time. Neither is a controlled experiment, and both are readings I recall rather than a report I can still pull. The measurement had to belong to someone other than me, or it would have been marketing; the confounds above are named on purpose.`,
-        'c.h2.defend':`What I'd defend in a design review`,
+        'c.h2.defend':`What I’d defend in a design review`,
         'c.defend.p2':`The decision I would defend hardest is refusing to let the component layer grow. Every one-off override was a signal that the semantic layer had a gap, and fixing the gap is slower in the moment and cheaper for everyone after. I also count governance as part of the deliverable: a system nobody owns drifts back to where it started.`,
-        'c.defend.p3':`The argument I had to win was with engineering, because a system is adopted by people who didn't ask for it, and this one was about taking something away: only the semantic layer would be published, meaning giving up a naming convention they were comfortable with. What made it land was the audit: twenty near-identical blues live in production is not an opinion, and it moved the conversation from taste to cost in one meeting.`,
-        'close.h2':`Questions this page doesn't answer?`,
+        'c.defend.p3':`The argument I had to win was with engineering, because a system is adopted by people who didn’t ask for it, and this one was about taking something away: only the semantic layer would be published, meaning giving up a naming convention they were comfortable with. What made it land was the audit: twenty near-identical blues live in production is not an opinion, and it moved the conversation from taste to cost in one meeting.`,
+        'close.h2':`Questions this page doesn’t answer?`,
         'close.p':`The token naming decisions, the audit that started it, how long Compass took and what it displaced, and how I handled the components teams did not want to give up: all of it is a 30-minute call away.`,
         'close.cta1':'Get in touch', 'close.cta2':'Read the Pick &amp; Pack case',
         'footer.portfolio':'Portfolio', 'footer.email':'Email',
-        'modal.label':`Let's talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever's faster for you.`,
-        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Weekdays, flexible hours (ET)`
+        'modal.label':`Let’s talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever’s faster for you.`,
+        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Pick a time that works for you (ET)`
       },
       pt: {
         'footer.resume':`Currículo`, 'footer.colophon':`Como este site foi feito`,
@@ -1292,7 +1292,7 @@
         'c.build.p3':`A composição é onde a distinção entre átomo e molécula deixa de ser vocabulário. Um select não é um componente; é campo, rótulo, tooltip, chip, lista e estado de erro compostos juntos. Acertar a composição é o que fez uma variante nova de select custar minutos em vez de uma tarde.`,
         'c.fig.tokens':`A camada semântica, e a única publicada para os arquivos de design. <code>$typography.h1.medium</code> carrega intenção; <code>60px</code> carrega aparência. Um designer que pega o segundo está adivinhando, e é na adivinhação que a inconsistência volta.`,
         'c.fig.molecules':`Moléculas: o select composto a partir de peças menores: campo, rótulo, tooltip, chip, lista, erro. Compor em vez de redesenhar é o que faz uma variante nova custar minutos.`,
-        'c.dif.h':`O que eu faria diferente`,
+        'c.dif.h':`Começar pelo número mais difícil`,
         'c.dif.p':`Eu teria liderado com outro número. Vazão era a métrica fácil de alcançar; tempo de ciclo, de uns 4,2 dias para 2,5, é a difícil de contestar, e só fui atrás dela quando os 40% já eram a manchete.`,
         'c.tk.embarrass':`Busque primeiro o número que pode te constranger.`,
         'nav.back.genial':`Voltar ao Genial App`,
@@ -1369,7 +1369,7 @@
         'close.cta1':'Entrar em contato', 'close.cta2':'Ler o case do Pick &amp; Pack',
         'footer.portfolio':'Portfólio', 'footer.email':'Email',
         'modal.label':'Vamos conversar', 'modal.h3':'Como você prefere falar comigo?', 'modal.p':'Escolha o que for mais rápido pra você.',
-        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Dias úteis, horário flexível (ET)`
+        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Escolha um horário (ET)`
       }
     };
     function apply(lang){

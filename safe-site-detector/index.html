@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Safe Site Detector: Reclame AQUI case study · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
@@ -12,7 +13,6 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Safe Site Detector case study · from more data to a decision people can act on">
@@ -874,6 +874,7 @@
     img{max-height:110mm; object-fit:contain;}
     .article-body p a[href^="http"]::after,.article-body li a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8.5pt; color:#555; word-break:break-all;}
   }
+  .nw{white-space:nowrap;}
 </style>
 <script type="application/ld+json">
 {
@@ -943,7 +944,7 @@
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
 </head>
-<body class="js">
+<body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav id="siteNav">
@@ -957,7 +958,7 @@
         <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
         <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
       </div>
-      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let’s talk</a>
     </div>
   </div>
 </nav>
@@ -974,7 +975,7 @@
       <div class="meta-item"><div class="k" data-i18n="meta.team">Team</div><div class="v" data-i18n="meta.v.team">PM · Head of Product · Engineering</div></div>
       <div class="meta-item"><div class="k" data-i18n="meta.company">Company</div><div class="v">Reclame AQUI</div></div>
       <div class="meta-item"><div class="k" data-i18n="meta.timeline">Timeline</div><div class="v" data-i18n="meta.v.time">Jun 2026 &ndash; ongoing</div></div>
-      <div class="meta-item"><div class="k" data-i18n="meta.outcome">Outcome</div><div class="v" data-i18n="meta.v.out">Decision rate 45.1% &rarr; 72.4% · cost R$1.7M &rarr; R$1.2k a month</div></div>
+      <div class="meta-item"><div class="k" data-i18n="meta.outcome">Outcome</div><div class="v" data-i18n="meta.v.out">Decision rate <span class="nw">45.1% &rarr; 72.4%</span> · cost <span class="nw">R$1.7M &rarr; R$1.2k</span> a month</div></div>
     </div>
   </div>
 </header>
@@ -1047,7 +1048,7 @@
       <div class="decision-body">
         <div class="decision-row"><span class="dk" data-i18n="s.dk.problem">Problem</span><p class="dv" data-i18n="s.d1.problem">The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.decision">Decision</span><p class="dv" data-i18n="s.d1.decision">I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, or a refined version I designed from the critique. Getting the verdict right, acting on it and effort decided the winner.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="s.dk.why">Why</span><p class="dv" data-i18n="s.d1.why">A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="s.dk.why">Why</span><p class="dv" data-i18n="s.d1.why">A heatmap of the previous page showed attention almost entirely on the link field and the analyze button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.caught">What it caught</span><p class="dv" data-i18n="s.d1.caught">Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="s.dk.result">Result</span><p class="dv" data-i18n="s.d1.result">The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.</p></div>
       </div>
@@ -1064,9 +1065,9 @@
       <li><span data-i18n="s.qi.1"><strong>Reputation decides; the shields support it.</strong> The analysis matters most where a company has no reputation yet.</span></li>
       <li><span data-i18n="s.qi.2"><strong>The verification seal didn&rsquo;t explain itself.</strong> People described it through outside references, like a social network&rsquo;s verified badge.</span></li>
       <li><span data-i18n="s.qi.3"><strong>Trust and reputation only separated on a closer read.</strong> At first glance, a mixed result looked contradictory.</span></li>
-      <li><span data-i18n="s.qi.4"><strong>Shield colours confused people.</strong> They expected a traffic light.</span></li>
+      <li><span data-i18n="s.qi.4"><strong>Shield colors confused people.</strong> They expected a traffic light.</span></li>
     </ul>
-    <p data-i18n="s.qual.dir">Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analysed at the top, a seal that explains itself, and traffic-light colours.</p>
+    <p data-i18n="s.qual.dir">Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analyzed at the top, a seal that explains itself, and traffic-light colors.</p>
 
     <span class="stage-label" id="s04"><b>04</b> &middot; <span data-i18n="s.ix.4">Decision: a verdict built on evidence</span></span>
     <div class="decision">
@@ -1094,7 +1095,7 @@
       <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.1.k">Brand imitation</b><span data-i18n="s.sh.1.v">whether the address tries to pass as a known brand, or shows signs of data theft.</span></li>
       <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.2.k">Site security</b><span data-i18n="s.sh.2.v">the site&rsquo;s certificate and technical structure.</span></li>
       <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.3.k">Company identity</b><span data-i18n="s.sh.3.v">whether the company exists and its tax registration is active.</span></li>
-      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.4.k">Consumer behaviour</b><span data-i18n="s.sh.4.v">unrealistic offers, false urgency and suspicious contacts.</span></li>
+      <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.4.k">Consumer behavior</b><span data-i18n="s.sh.4.v">unrealistic offers, false urgency and suspicious contacts.</span></li>
       <li><svg class="shield-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.1-7.5 9.8-4.4-1.7-7.5-5.2-7.5-9.8V5.5z"/><path class="tick" d="M8.6 12.2l2.4 2.4 4.6-4.8"/></svg><b data-i18n="s.sh.5.k">Reputation and seal</b><span data-i18n="s.sh.5.v">the company&rsquo;s reputation on Reclame AQUI and its verification seal.</span></li>
     </ul>
     <h3 class="card-h" data-i18n="s.h3.levels">Six levels, one report each</h3>
@@ -1110,7 +1111,7 @@
 
     <span class="stage-label" id="s05"><b>05</b> &middot; <span data-i18n="s.ix.5">Designing for AI readers</span></span>
     <h2 data-i18n="s.h2.ai">A second reader: the AI answering for the shopper</h2>
-    <p data-i18n="s.ai.1">More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favour question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.</p>
+    <p data-i18n="s.ai.1">More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favor question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.</p>
     <p class="takeaway" data-i18n="s.takeaway">Across 30 companies, citations in Google AI Overview rose 138%, measured in Search Console. The same screen now serves two readers: the person deciding on a purchase, and the assistant answering on their behalf.</p>
 
     <span class="stage-label" id="s06"><b>06</b> &middot; <span data-i18n="s.ix.6">Impact</span></span>
@@ -1147,7 +1148,7 @@
     <p data-i18n="s.imp.why">Three things changed:</p>
     <ul>
       <li><span data-i18n="s.imp.l1"><strong>It answers the question people came with.</strong> The verdict comes first, and the shields explain it.</span></li>
-      <li><span data-i18n="s.imp.l2"><strong>It is fair to the company being analysed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.</span></li>
+      <li><span data-i18n="s.imp.l2"><strong>It is fair to the company being analyzed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.</span></li>
       <li><span data-i18n="s.imp.l3"><strong>It can be measured.</strong> The decision metric gives the team a running read on whether the detector helps people decide, which the old product never had.</span></li>
     </ul>
     <p data-i18n="s.imp.2">The feedback loop is still running. Since reaching 100%, the back-end rules and the way the AI behaves have evolved considerably. When a corner case appears, we investigate whether the cause is ours or a configuration in that company&rsquo;s own Reclame AQUI profile that is affecting the detector&rsquo;s answer, and fix it at the right end.</p>
@@ -1158,8 +1159,8 @@
     <p data-i18n="s.dif.p">Most of what I would change is about focus and alignment, not the screen itself.</p>
     <ul>
       <li><span data-i18n="s.dif.1"><strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.</span></li>
-      <li><span data-i18n="s.dif.2"><strong>Bring every decision level, and the neighbouring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.</span></li>
-      <li><span data-i18n="s.dif.4"><strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.</span></li>
+      <li><span data-i18n="s.dif.2"><strong>Bring every decision level, and the neighboring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.</span></li>
+      <li><span data-i18n="s.dif.4"><strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analyzed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.</span></li>
     </ul>
     <p data-i18n="s.dif.close">I would also look at the data companies send about themselves before designing the answer: a detector is only as good as what goes into it. It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.</p>
     <div class="callout team-box">
@@ -1171,7 +1172,7 @@
 
 <section class="article-close reveal">
   <div class="col">
-    <h2 data-i18n="close.h2">Questions this page doesn't answer?</h2>
+    <h2 data-i18n="close.h2">Questions this page doesn’t answer?</h2>
     <p data-i18n="close.p.ssd">The rules behind each shield, how the test was built and how each number was measured: all of it is a 30-minute call away.</p>
     <div class="close-ctas">
       <a class="btn btn-primary" href="/#contact" data-contact-trigger data-i18n="close.cta1">Get in touch</a>
@@ -1205,9 +1206,9 @@
     <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <span class="kicker" data-i18n="modal.label">Let’s talk</span>
     <h3 data-i18n="modal.h3">How would you like to connect?</h3>
-    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <p data-i18n="modal.p">Pick whichever’s faster for you.</p>
     <div class="contact-modal-options">
       <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1221,7 +1222,7 @@
       </a>
       <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Pick a time that works for you (ET)</span></span>
         <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1281,7 +1282,7 @@
         'a11y.skip':`Skip to content`,
         'a11y.lang':`Language`,
         'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
-        'meta.v.out':`Decision rate 45.1% &rarr; 72.4% · cost R$1.7M &rarr; R$1.2k a month`,
+        'meta.v.out':`Decision rate <span class="nw">45.1% &rarr; 72.4%</span> · cost <span class="nw">R$1.7M &rarr; R$1.2k</span> a month`,
         'meta.v.role':`Senior Product Designer`,
         'meta.v.team':`PM · Head of Product · Engineering`,
         'ix.time':`9 min read`,
@@ -1291,7 +1292,7 @@
         'tl.did.k':`What I did`,
         'tl.out.k':`Outcome`,
         'nav.back':`Back to portfolio`,
-        'nav.cta':`Let's talk`,
+        'nav.cta':`Let’s talk`,
         'case.updated':`Updated October 2026`,
         'hero.kicker':`Case study · Consumer trust · AI product`,
         'hero.h1':`Safe Site Detector: from more data to a decision people can act on`,
@@ -1301,18 +1302,18 @@
         'meta.company':`Company`,
         'meta.timeline':`Timeline`,
         'meta.outcome':`Outcome`,
-        'close.h2':`Questions this page doesn't answer?`,
+        'close.h2':`Questions this page doesn’t answer?`,
         'close.cta1':`Get in touch`,
         'footer.portfolio':`Portfolio`,
         'footer.email':`Email`,
-        'modal.label':`Let's talk`,
+        'modal.label':`Let’s talk`,
         'modal.h3':`How would you like to connect?`,
-        'modal.p':`Pick whichever's faster for you.`,
+        'modal.p':`Pick whichever’s faster for you.`,
         'modal.email.title':`Send an email`,
         'modal.resume.title':`See my résumé`,
         'modal.resume.sub':`Web page, also as PDF`,
         'modal.call.title':`Book a 30-min call`,
-        'modal.call.sub':`Weekdays, flexible hours (ET)`,
+        'modal.call.sub':`Pick a time that works for you (ET)`,
         'meta.v.time':`Jun 2026 &ndash; ongoing`,
         'close.p.ssd':`The rules behind each shield, how the test was built and how each number was measured: all of it is a 30-minute call away.`,
         'close.cta.live':`Try the detector live`,
@@ -1403,7 +1404,7 @@
         's.d1.title':`Test whether people read the result correctly`,
         's.d1.problem':`The easy question was &ldquo;how do we lay this out?&rdquo; A preference test would have picked the nicest screen and said nothing about whether people understood it.`,
         's.d1.decision':`I reframed the work around the user&rsquo;s job on this screen and tested performance: does the person read the verdict correctly, and act in line with it? In Useberry, each person saw one version: the experiment, or a refined version I designed from the critique. Getting the verdict right, acting on it and effort decided the winner.`,
-        's.d1.why':`A heatmap of the previous page showed attention almost entirely on the link field and the analyse button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.`,
+        's.d1.why':`A heatmap of the previous page showed attention almost entirely on the link field and the analyze button, and a benchmark of public tools like ScamAdviser and ScamDoc showed how others structure a safety result. Both showed where people look. Neither showed whether they understood what they saw, which is what a trust product depends on.`,
         's.d1.caught':`Faced with a site that was safe, 46% of people using the experiment chose &ldquo;be careful&rdquo; and 25% &ldquo;I don&rsquo;t know&rdquo;. Its extra data was making a safe site look doubtful.`,
         's.d1.result':`The refined version was read correctly by 74% of people, against 29% for the experiment, and it became the base for V2.`,
         's.q.note':`<strong>How to read it:</strong> 55 answers from 450 visits, so the gap is large and directional, not a population number.`,
@@ -1412,15 +1413,15 @@
         's.qi.1':`<strong>Reputation decides; the shields support it.</strong> The analysis matters most where a company has no reputation yet.`,
         's.qi.2':`<strong>The verification seal didn&rsquo;t explain itself.</strong> People described it through outside references, like a social network&rsquo;s verified badge.`,
         's.qi.3':`<strong>Trust and reputation only separated on a closer read.</strong> At first glance, a mixed result looked contradictory.`,
-        's.qi.4':`<strong>Shield colours confused people.</strong> They expected a traffic light.`,
-        's.qual.dir':`Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analysed at the top, a seal that explains itself, and traffic-light colours.`,
+        's.qi.4':`<strong>Shield colors confused people.</strong> They expected a traffic light.`,
+        's.qual.dir':`Findings went back into critiques, and a MaxDiff ranked which questions about a company deserve space on the page. Each finding became a direction for V2: the verdict before the detail, the site being analyzed at the top, a seal that explains itself, and traffic-light colors.`,
         's.sh.1.k':`Brand imitation`,
         's.sh.1.v':`whether the address tries to pass as a known brand, or shows signs of data theft.`,
         's.sh.2.k':`Site security`,
         's.sh.2.v':`the site&rsquo;s certificate and technical structure.`,
         's.sh.3.k':`Company identity`,
         's.sh.3.v':`whether the company exists and its tax registration is active.`,
-        's.sh.4.k':`Consumer behaviour`,
+        's.sh.4.k':`Consumer behavior`,
         's.sh.4.v':`unrealistic offers, false urgency and suspicious contacts.`,
         's.sh.5.k':`Reputation and seal`,
         's.sh.5.v':`the company&rsquo;s reputation on Reclame AQUI and its verification seal.`,
@@ -1442,22 +1443,22 @@
         's.h3.levels':`Six levels, one report each`,
         's.lv.p':`Every analysis lands on one of six levels, from 0 to 5 shields, each with its own report: what was checked, which shield the site didn&rsquo;t pass, and what to do next. While the analysis runs, the screen shows each source being checked. When a site can&rsquo;t be reached, an error says so and offers a retry.`,
         's.h2.ai':`A second reader: the AI answering for the shopper`,
-        's.ai.1':`More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favour question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.`,
+        's.ai.1':`More and more people ask an AI assistant whether a store is trustworthy before they open any website. Engineering structured the detector&rsquo;s data with JSON-LD, and I revised the interface to support it. Models favor question-and-answer content, so the page now opens with the question people actually ask, whether the site is trustworthy, and answers four short ones first: is it trustworthy, does the company exist, what is its reputation, does it have the seal.`,
         's.takeaway':`Across 30 companies, citations in Google AI Overview rose 138%, measured in Search Console. The same screen now serves two readers: the person deciding on a purchase, and the assistant answering on their behalf.`,
         's.h2.impact':`Cheaper, live, and easier to decide with`,
         's.flow.cap':`From first conversation to full launch in three months. An illustration of the process, not the product.`,
         's.imp.1':`V2, the version that came out of the research, went live in stages: 20% of users, then 50%, then 100% in September 2026. At each step we watched for errors and user reports and adjusted before widening, so a wrong answer about a company would reach as few people as possible. It now runs for everyone on Reclame AQUI&rsquo;s own engine.`,
         's.imp.why':`Three things changed:`,
         's.imp.l1':`<strong>It answers the question people came with.</strong> The verdict comes first, and the shields explain it.`,
-        's.imp.l2':`<strong>It is fair to the company being analysed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.`,
+        's.imp.l2':`<strong>It is fair to the company being analyzed.</strong> The verdict states only what the analysis can prove, and each shield shows the signal behind it.`,
         's.imp.l3':`<strong>It can be measured.</strong> The decision metric gives the team a running read on whether the detector helps people decide, which the old product never had.`,
         's.imp.2':`The feedback loop is still running. Since reaching 100%, the back-end rules and the way the AI behaves have evolved considerably. When a corner case appears, we investigate whether the cause is ours or a configuration in that company&rsquo;s own Reclame AQUI profile that is affecting the detector&rsquo;s answer, and fix it at the right end.`,
         's.imp.note':`<strong>How it was measured:</strong> the R$1.7M is the partner&rsquo;s per-query price applied to our volume, not an invoice we paid; the R$1.2k is V2&rsquo;s actual monthly cost for 171.7k analyses. Both decision rates come from the same in-product decision question, read during the experiment and after V2: a before-and-after, not a controlled test. The +138% compares Google AI Overview citations in Search Console for the 30 companies in the experiment.`,
         's.h2.dif':`Hold the screen to its job, and align earlier`,
         's.dif.p':`Most of what I would change is about focus and alignment, not the screen itself.`,
         's.dif.1':`<strong>Hold every version to the job from day one.</strong> The crawler could gather far more than the screen needed, and even the refined versions kept wanting to show more. It took several design rounds to cut back to what answered &ldquo;is this a scam?&rdquo;. I would make the job the filter for every piece of information from the first sketch, to keep cognitive load low from the start.`,
-        's.dif.2':`<strong>Bring every decision level, and the neighbouring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.`,
-        's.dif.4':`<strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analysed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.`,
+        's.dif.2':`<strong>Bring every decision level, and the neighboring teams, in at the start.</strong> Decisions passed through several levels, and a direction approved at one could meet new context at the next and come back for rework. The detector also touches journeys other teams own, from B2C to B2B to the logged-in area. I would put the people who shape the decision together earlier, so context arrives before the design, not after it.`,
+        's.dif.4':`<strong>Ask the three-sided question first.</strong> Every decision has to be good for Reclame AQUI, for the company being analyzed and for the consumer. If one of the three is left unprotected, the idea usually needs rethinking, and asking it at the start avoids rework later.`,
         's.dif.close':`I would also look at the data companies send about themselves before designing the answer: a detector is only as good as what goes into it. It was my first time designing inside a market leader of this size, where many teams and decision levels shape one journey. Learning to work across those layers, and to adapt when the context changed, is what I take into the next project.`,
         's.team.h':`The team, and what was mine`,
         's.team.p':`A PM and the Head of Product owned scope and priorities, and engineering built the experiment, the analysis pipeline and the structured data. Mine: data discovery, the design critique, the research plan and comprehension test, the refined version, the shield structure and how each level is explained, and the interface changes for AI readers.`
@@ -1471,7 +1472,7 @@
         'a11y.skip':`Pular para o conteúdo`,
         'a11y.lang':`Idioma`,
         'footer.rights':`© 2026 Guilherme Cannalonga. Todos os direitos reservados.`,
-        'meta.v.out':`Taxa de decisão 45,1% &rarr; 72,4% · custo R$1,7M &rarr; R$1,2 mil por mês`,
+        'meta.v.out':`Taxa de decisão <span class="nw">45,1% &rarr; 72,4%</span> · custo <span class="nw">R$1,7M &rarr; R$1,2 mil</span> por mês`,
         'meta.v.role':`Senior Product Designer`,
         'meta.v.team':`PM · Head of Product · Engenharia`,
         'ix.time':`9 min de leitura`,
@@ -1502,7 +1503,7 @@
         'modal.resume.title':`Ver meu currículo`,
         'modal.resume.sub':`Página web, também em PDF`,
         'modal.call.title':`Agendar uma call de 30 min`,
-        'modal.call.sub':`Dias úteis, horário flexível (ET)`,
+        'modal.call.sub':`Escolha um horário (ET)`,
         'meta.v.time':`Jun 2026 &ndash; em andamento`,
         'close.p.ssd':`As regras por trás de cada escudo, como o teste foi montado e como cada número foi medido: tudo isso cabe em uma call de 30 minutos.`,
         'close.cta.live':`Testar o detector ao vivo`,

@@ -22,16 +22,16 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 
 ## Case studies
 
-- [Safe Site Detector](https://cannalongadesign.github.io/safe-site-detector/): Reclame AQUI's in-house, AI-powered site detector, redesigned around a verdict built on protection shields, worded to state only what was verified, and tested for comprehension; decision rate from 45.1% to 72.4% and cost from a projected R$1.7M to R$1.2k a month
+- [Safe Site Detector](https://cannalongadesign.github.io/safe-site-detector/): Reclame AQUI’s in-house, AI-powered site detector, redesigned around a verdict built on protection shields, worded to state only what was verified, and tested for comprehension; decision rate from 45.1% to 72.4% and cost from a projected R$1.7M to R$1.2k a month
 - [Genial App](https://cannalongadesign.github.io/genial/): How the Genial Care family app went from 8.59% to 62.3% daily active families in 13 months by fixing a scheduling bottleneck instead of redesigning content.
-- [LIAM](https://cannalongadesign.github.io/liam/): A human-in-the-loop AI assistant that drafts clinical records from a therapist's narration; documentation went from up to 2 hours to about 25 minutes per session, as reported by the clinical team.
-- [Pick & Pack](https://cannalongadesign.github.io/pick-and-pack/): The fulfillment platform behind Fast Shop's 2-hour delivery, designed for store, distribution centre and driver at once, rolled out to 80+ stores in 3 months.
+- [LIAM](https://cannalongadesign.github.io/liam/): A human-in-the-loop AI assistant that drafts clinical records from a therapist’s narration; documentation went from up to 2 hours to about 25 minutes per session, as reported by the clinical team.
+- [Pick & Pack](https://cannalongadesign.github.io/pick-and-pack/): The fulfillment platform behind Fast Shop’s 2-hour delivery, designed for store, distribution center and driver at once, rolled out to 80+ stores in 3 months.
 - [Compass](https://cannalongadesign.github.io/compass/): A design system built from scratch at Kruzer: semantic token scale and governance; design-ticket cycle time dropped from 4.2 to 2.5 days, measured in Jira.
 
 ## About this site
 
 - [Portfolio home](https://cannalongadesign.github.io/): positioning, outcomes, how he decides, how he works with AI, testimonials, career timeline
-- [Résumé](https://cannalongadesign.github.io/resume/): experience, education and certifications on one page, same text as LinkedIn, with a PDF version
+- [Résumé](https://cannalongadesign.github.io/resume/): experience, education and certifications on one page, with a PDF version
 - [How this site is built](https://cannalongadesign.github.io/colophon/): structured data and AI-search practices used on this site, and the design tokens behind it
 
 ## Optional

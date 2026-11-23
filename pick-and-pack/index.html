@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pick &amp; Pack: fulfillment platform for 80+ stores, case study · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
-<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: Pick &amp; Pack, the fulfillment platform behind Fast Shop&#39;s 2-hour delivery, designed for store, distribution centre and driver and rolled out to 80+ stores in 3 months.">
+<meta name="description" content="Case study by Guilherme Cannalonga, Senior Product Designer: Pick &amp; Pack, the fulfillment platform behind Fast Shop’s 2-hour delivery, designed for store, distribution center and driver and rolled out to 80+ stores in 3 months.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="Pick &amp; Pack (Kruzer) case study · real-time order visibility across 80+ stores">
-<meta property="og:description" content="Designing fulfillment for three roles at once, plus the Compass design system, for Fast Shop's move to 2-hour delivery.">
+<meta property="og:description" content="Designing fulfillment for three roles at once, plus the Compass design system, for Fast Shop’s move to 2-hour delivery.">
 <meta property="og:url" content="https://cannalongadesign.github.io/pick-and-pack/">
 <link rel="canonical" href="https://cannalongadesign.github.io/pick-and-pack/">
 <meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
@@ -844,7 +844,7 @@
    "@type": "Article",
    "@id": "https://cannalongadesign.github.io/pick-and-pack/#article",
    "headline": "Pick & Pack: one order, three people, one screen each",
-   "description": "Pick & Pack, the fulfillment platform behind Fast Shop's 2-hour delivery, designed for store, distribution centre and driver at once and rolled out to 80+ stores in waves over 3 months.",
+   "description": "Pick & Pack, the fulfillment platform behind Fast Shop’s 2-hour delivery, designed for store, distribution center and driver at once and rolled out to 80+ stores in waves over 3 months.",
    "url": "https://cannalongadesign.github.io/pick-and-pack/",
    "mainEntityOfPage": "https://cannalongadesign.github.io/pick-and-pack/",
    "author": {
@@ -906,7 +906,7 @@
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
 </head>
-<body class="js">
+<body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav id="siteNav">
@@ -920,7 +920,7 @@
         <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
         <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
       </div>
-      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let’s talk</a>
     </div>
   </div>
 </nav>
@@ -931,7 +931,7 @@
   <div class="col">
     <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Case study · Enterprise logistics · B2B</span><span class="updated" data-i18n="case.updated">Updated October 2026</span></div>
     <h1 data-i18n="hero.h1">Pick &amp; Pack: one order, three people, one screen each</h1>
-    <p class="dek" data-i18n="hero.dek">Fast Shop sells two-hour delivery, and the process behind that promise ran on phone calls and spreadsheets. I designed the platform that replaced them for the store, the distribution centre and the driver at once, with the exceptions treated as first-class screens.</p>
+    <p class="dek" data-i18n="hero.dek">Fast Shop sells two-hour delivery, and the process behind that promise ran on phone calls and spreadsheets. I designed the platform that replaced them for the store, the distribution center and the driver at once, with the exceptions treated as first-class screens.</p>
     <div class="meta-row">
       <div class="meta-item"><div class="k" data-i18n="meta.role">Role</div><div class="v" data-i18n="meta.v.role">Sole product designer</div></div>
       <div class="meta-item"><div class="k" data-i18n="meta.team">Team</div><div class="v" data-i18n="meta.v.team">PM · Eng teams · Fast Shop ops</div></div>
@@ -953,7 +953,7 @@
       <li><a href="#s04" data-i18n="k.ix.4">What shipped: the screens</a></li>
       <li><a href="#s05" data-i18n="k.ix.5">Rollout, store by store</a></li>
       <li><a href="#s06" data-i18n="k.ix.6">Impact</a></li>
-      <li><a href="#s07" data-i18n="k.ix.7">What I'd do differently</a></li>
+      <li><a href="#s07" data-i18n="k.ix.7">What I’d do differently</a></li>
     </ol>
   </div>
   <div class="col reveal">
@@ -982,10 +982,10 @@
     <div class="decision">
       <div class="decision-head"><span class="dn">1</span><h3 data-i18n="k.d1.title">One platform, three homes, one order</h3></div>
       <div class="decision-body">
-        <div class="decision-row"><span class="dk" data-i18n="k.dk.problem">Problem</span><p class="dv" data-i18n="k.d1.problem">&ldquo;Design it for the store operator and the rest will adapt&rdquo; was a perfectly reasonable default. Most fulfilment tools pick one job and make the other two adapt to it.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="k.dk.decision">Decision</span><p class="dv" data-i18n="k.d1.decision">Design for three jobs at once. A store sees its own queue, the distribution centre sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colours, different first screen.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="k.dk.why">Why</span><p class="dv" data-i18n="k.d1.why">The store needs to clear the queue before the courier arrives, the distribution centre needs to route around what&rsquo;s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="k.dk.result">Result</span><p class="dv" data-i18n="k.d1.result">One platform shipped with a different home per role, and no store, distribution centre or driver had to translate someone else's workflow into their own.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="k.dk.problem">Problem</span><p class="dv" data-i18n="k.d1.problem">&ldquo;Design it for the store operator and the rest will adapt&rdquo; was a perfectly reasonable default. Most fulfillment tools pick one job and make the other two adapt to it.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="k.dk.decision">Decision</span><p class="dv" data-i18n="k.d1.decision">Design for three jobs at once. A store sees its own queue, the distribution center sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colors, different first screen.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="k.dk.why">Why</span><p class="dv" data-i18n="k.d1.why">The store needs to clear the queue before the courier arrives, the distribution center needs to route around what&rsquo;s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="k.dk.result">Result</span><p class="dv" data-i18n="k.d1.result">One platform shipped with a different home per role, and no store, distribution center or driver had to translate someone else’s workflow into their own.</p></div>
       </div>
     </div>
   </div>
@@ -993,7 +993,7 @@
   <div class="col reveal">
     <span class="stage-label" id="s03"><b>03</b> &middot; <span data-i18n="k.ix.3">The store board</span></span>
     <h2 data-i18n="k.d2.title">The store board, shaped by the first delivery round</h2>
-    <p data-i18n="k.d2.decision">After the first round of deliveries, store operators came back with two requests. &ldquo;I need to see the invoice number on the card, fast, to move my process along&rdquo;: the fiscal invoice was what they looked up most, so it moved onto the card. &ldquo;I need the most-late orders at the top, shouting on the screen, so I know what to prioritise&rdquo;: lateness became the sort order and the loudest thing on the card, with time in status in red at the top, the remaining SLA on the pill and the carrier logo last.</p>
+    <p data-i18n="k.d2.decision">After the first round of deliveries, store operators came back with two requests. &ldquo;I need to see the invoice number on the card, fast, to move my process along&rdquo;: the fiscal invoice was what they looked up most, so it moved onto the card. &ldquo;I need the most-late orders at the top, shouting on the screen, so I know what to prioritize&rdquo;: lateness became the sort order and the loudest thing on the card, with time in status in red at the top, the remaining SLA on the pill and the carrier logo last.</p>
   </div>
 
   <figure class="shot annot reveal">
@@ -1012,20 +1012,20 @@
       <li><b>4</b><span data-i18n="k.an1.4">Columns follow the store&rsquo;s own steps: received, picking, ready for pickup, in transit.</span></li>
       <li><b>5</b><span data-i18n="k.an1.5">Click &amp; Collect orders live on the same board with their own pill (&ldquo;Retira&rdquo;), so a store never runs two tools.</span></li>
     </ol>
-    <figcaption class="caption" data-i18n="k.an1.c">The store board as shipped.</figcaption>
+    <figcaption class="caption" data-i18n="k.an1.c">The store board as shipped. Screens show illustrative data.</figcaption>
   </figure>
 
   <div class="col reveal">
     <span class="stage-label" id="s04"><b>04</b> &middot; <span data-i18n="k.ix.4">What shipped: the screens</span></span>
     <h2 data-i18n="k.h2.shipped">What shipped: the screens</h2>
-    <p data-i18n="k.shipped.intro">Below, the store and distribution-centre homes and the exceptions they share. The driver&rsquo;s side is one stop at a time, and I walk through it on a call.</p>
-    <h3 class="card-h" data-i18n="k.h2.s05">The distribution centre: every store, and the numbers that say where the day is going wrong</h3>
-    <p data-i18n="k.s05.p1">The distribution centre sees every store at once, so its first screen is four counters (late, invoicing, transport, proof pending), each one a filter. Several operators work the same queue here, so every card shows who owns it.</p>
+    <p data-i18n="k.shipped.intro">Below, the store and distribution-center homes and the exceptions they share. The driver&rsquo;s side is one stop at a time, and I walk through it on a call.</p>
+    <h3 class="card-h" data-i18n="k.h2.s05">The distribution center: every store, and the numbers that say where the day is going wrong</h3>
+    <p data-i18n="k.s05.p1">The distribution center sees every store at once, so its first screen is four counters (late, invoicing, transport, proof pending), each one a filter. Several operators work the same queue here, so every card shows who owns it.</p>
   </div>
 
   <figure class="shot annot reveal">
     <div class="frame annot-frame">
-      <img decoding="async" src="/assets/pp-dc-board-allocation.webp" alt="Pick &amp; Pack distribution-centre board with counters for late, invoicing, transport and proof-of-delivery problems across the top, cards showing who each order is allocated to, and a menu to unallocate or allocate to another user" loading="lazy" width="1800" height="1455">
+      <img decoding="async" src="/assets/pp-dc-board-allocation.webp" alt="Pick &amp; Pack distribution-center board with counters for late, invoicing, transport and proof-of-delivery problems across the top, cards showing who each order is allocated to, and a menu to unallocate or allocate to another user" loading="lazy" width="1800" height="1455">
       <span class="pin" style="left:20.5%;top:12.6%">1</span>
       <span class="pin" style="left:43%;top:39.5%">2</span>
       <span class="pin" style="left:40%;top:49.5%">3</span>
@@ -1037,17 +1037,17 @@
       <li><b>3</b><span data-i18n="k.an2.3">&ldquo;Allocated to&rdquo; on every card, so &ldquo;is anyone on this?&rdquo; stops being a shout across the floor.</span></li>
       <li><b>4</b><span data-i18n="k.an2.4">Someone else&rsquo;s card fades back: visible, not grabbable.</span></li>
     </ol>
-    <figcaption class="caption" data-i18n="k.an2.c">The distribution-centre board: the store&rsquo;s cards plus ownership.</figcaption>
+    <figcaption class="caption" data-i18n="k.an2.c">The distribution-center board: the store&rsquo;s cards plus ownership.</figcaption>
   </figure>
 
   <div class="col reveal">
     <h3 class="card-h" data-i18n="k.h2.s05b">The same queue as a table, when the question changes</h3>
-    <p data-i18n="k.s05.p3">Every hour the distribution centre asks which of 104 orders has waited longest, a question a board can&rsquo;t answer. So the same queue toggles into a sortable table, with time in queue as its own column.</p>
+    <p data-i18n="k.s05.p3">Every hour the distribution center asks which of 104 orders has waited longest, a question a board can&rsquo;t answer. So the same queue toggles into a sortable table, with time in queue as its own column.</p>
   </div>
 
   <figure class="shot reveal">
     <div class="frame">
-      <img decoding="async" src="/assets/pp-dc-table.webp" alt="Pick &amp; Pack distribution-centre table view: one row per order with a severity dot, store, modality, stage, status pill, carrier, creation time and time in queue, sortable by any column" loading="lazy" width="1800" height="1460">
+      <img decoding="async" src="/assets/pp-dc-table.webp" alt="Pick &amp; Pack distribution-center table view: one row per order with a severity dot, store, modality, stage, status pill, carrier, creation time and time in queue, sortable by any column" loading="lazy" width="1800" height="1460">
     </div>
     <figcaption class="caption" data-i18n="k.an3.c">The same queue as a sortable table, for &ldquo;what has waited longest.&rdquo;</figcaption>
   </figure>
@@ -1077,7 +1077,7 @@
       </div>
       <div class="state">
         <img decoding="async" src="/assets/pp-modal-proof.webp" alt="Modal for a delivered order awaiting proof of delivery: a file upload area accepting images and documents, an uploaded screenshot, and a Complete order button" loading="lazy" width="1100" height="1297">
-        <p><b data-i18n="k.st2.h">Delivered, but not closed until there is proof</b> <span data-i18n="k.st2.p">An order closes when a photo or signature is attached, not when the driver says so. That is why &ldquo;proof pending&rdquo; is a counter on the distribution-centre home.</span></p>
+        <p><b data-i18n="k.st2.h">Delivered, but not closed until there is proof</b> <span data-i18n="k.st2.p">An order closes when a photo or signature is attached, not when the driver says so. That is why &ldquo;proof pending&rdquo; is a counter on the distribution-center home.</span></p>
       </div>
       <div class="state">
         <img decoding="async" src="/assets/pp-modal-qr.webp" alt="Modal for a click-and-collect order awaiting pickup: a QR code the customer scans to open a form with their data and a signature before taking the order" loading="lazy" width="709" height="588">
@@ -1093,7 +1093,7 @@
 
   <div class="col reveal">
     <span class="stage-label" id="s05"><b>05</b> &middot; <span data-i18n="k.ix.5">Rollout, store by store</span></span>
-    <h2 data-i18n="k.h2.s06">The release wasn't a date. It was a sequence</h2>
+    <h2 data-i18n="k.h2.s06">The release wasn’t a date. It was a sequence</h2>
     <p data-i18n="k.s06.p1">The flagship store went first, alone, watched daily until a full week passed without a new corner case. Then waves of about twenty stores every two weeks, close enough that problems were watched instead of reported. Three months of rollout and daily hypercare, then occasional tickets.</p>
     <p data-i18n="k.s06.p2">Each wave surfaced cases the first version didn&rsquo;t handle, and each became a state or a rule. &ldquo;Returning to store&rdquo; is the one I&rsquo;d point to. When a driver couldn&rsquo;t deliver, the operator had to cancel the ride in the Uber app, request a new one to bring the package back and track the driver in the app by hand. We built that return into the platform: when a delivery fails, the trip back is created automatically and the operator follows it on the panel.</p>
   </div>
@@ -1103,7 +1103,7 @@
     <h2 data-i18n="k.h2.s07">The operation didn&rsquo;t slow down. Even as the load went up</h2>
     <p data-i18n="k.s07.p1">Three months after rollout, the platform was running the two-hour promise across 80+ stores on more volume than the operation had ever handled. Operators stopped keeping parallel spreadsheets, and a failed delivery went from invisible to a status with a next step.</p>
     <div class="metrics-strip">
-      <div class="m"><div class="num">80+ stores</div><div class="label" data-i18n="k.m0">Rolled out in waves over three months, running the two-hour promise on top of Fast Shop&rsquo;s existing 22,000+ SKU catalogue</div></div>
+      <div class="m"><div class="num">80+ stores</div><div class="label" data-i18n="k.m0">Rolled out in waves over three months, running the two-hour promise on top of Fast Shop&rsquo;s existing 22,000+ SKU catalog</div></div>
       <div class="m"><div class="num">Chased &rarr; flagged</div><div class="label" data-i18n="k.m1">Time to detect an at-risk order: before, whenever someone happened to notice; after, the moment it enters &ldquo;Late&rdquo;</div></div>
       <div class="m"><div class="num">15</div><div class="label" data-i18n="k.m2">Statuses in the shipped taxonomy, four of them exceptions that replaced phone calls</div></div>
     </div>
@@ -1111,7 +1111,7 @@
   </div>
 
   <div class="col reveal">
-    <span class="stage-label" id="s07"><b>07</b> &middot; <span data-i18n="k.ix.7">What I'd do differently</span></span>
+    <span class="stage-label" id="s07"><b>07</b> &middot; <span data-i18n="k.ix.7">What I’d do differently</span></span>
     <h2 data-i18n="k.h2.s08">I shipped the first card without asking what operators look up first</h2>
     <p data-i18n="k.s08.p1">The two changes that made the store board work, the invoice number on the card and the most-late orders on top, came from operators after the first delivery round. An afternoon watching a store counter before shipping would have surfaced both. I would also have captured time-to-detect from the first release, so this page could show a measured before-and-after.</p>
     <div class="callout-grid">
@@ -1134,8 +1134,8 @@
 
 <section class="article-close reveal">
   <div class="col">
-    <h2 data-i18n="close.h2">Questions this page doesn't answer?</h2>
-    <p data-i18n="close.p.kruzer">The research, the driver&rsquo;s screen, how the rollout waves were sequenced and how we prioritised against Fast Shop&rsquo;s OKRs: all of it is a 30-minute call away.</p>
+    <h2 data-i18n="close.h2">Questions this page doesn’t answer?</h2>
+    <p data-i18n="close.p.kruzer">The research, the driver&rsquo;s screen, how the rollout waves were sequenced and how we prioritized against Fast Shop&rsquo;s OKRs: all of it is a 30-minute call away.</p>
     <div class="close-ctas">
       <a class="btn btn-primary" href="/#contact" data-contact-trigger data-i18n="close.cta1">Get in touch</a>
       <a class="btn btn-ghost" href="/#work" data-i18n="close.cta2.kruzer">See all cases</a>
@@ -1167,9 +1167,9 @@
     <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <span class="kicker" data-i18n="modal.label">Let’s talk</span>
     <h3 data-i18n="modal.h3">How would you like to connect?</h3>
-    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <p data-i18n="modal.p">Pick whichever’s faster for you.</p>
     <div class="contact-modal-options">
       <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1183,7 +1183,7 @@
       </a>
       <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Pick a time that works for you (ET)</span></span>
         <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1249,21 +1249,21 @@
         'ix.time':`7 min read`,
         'ix.k':'In this case', 'tl.k':'The short version',
         'tl.problem.k':'Problem', 'tl.did.k':'What I did', 'tl.out.k':'Outcome',
-        'nav.back':'Back to portfolio', 'nav.cta':`Let's talk`,
+        'nav.back':'Back to portfolio', 'nav.cta':`Let’s talk`,
         'case.updated':`Updated October 2026`,
         'hero.kicker':`Case study · Enterprise logistics · B2B`,
         'hero.h1':`Pick &amp; Pack: one order, three people, one screen each`,
-        'hero.dek':`Fast Shop sells two-hour delivery, and the process behind that promise ran on phone calls and spreadsheets. I designed the platform that replaced them for the store, the distribution centre and the driver at once, with the exceptions treated as first-class screens.`,
+        'hero.dek':`Fast Shop sells two-hour delivery, and the process behind that promise ran on phone calls and spreadsheets. I designed the platform that replaced them for the store, the distribution center and the driver at once, with the exceptions treated as first-class screens.`,
         'meta.role':'Role', 'meta.team':'Team', 'meta.client':'Client', 'meta.timeline':'Timeline', 'meta.scope':'Scope',
         'stage.pain':'The pain', 'stage.pointer':'The pointer', 'stage.questions':'The questions',
         'stage.job':'The job', 'stage.bet':'The bet', 'stage.test':'The test',
         'stage.evidence':'What the evidence changed', 'stage.production':'Into production',
-        'close.h2':`Questions this page doesn't answer?`,
-        'close.p.kruzer':`The research, the driver&rsquo;s screen, how the rollout waves were sequenced and how we prioritised against Fast Shop&rsquo;s OKRs: all of it is a 30-minute call away.`,
+        'close.h2':`Questions this page doesn’t answer?`,
+        'close.p.kruzer':`The research, the driver&rsquo;s screen, how the rollout waves were sequenced and how we prioritized against Fast Shop&rsquo;s OKRs: all of it is a 30-minute call away.`,
         'close.cta1':'Get in touch', 'close.cta2.kruzer':'See all cases',
         'footer.portfolio':'Portfolio', 'footer.email':'Email',
-        'modal.label':`Let's talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever's faster for you.`,
-        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Weekdays, flexible hours (ET)`,
+        'modal.label':`Let’s talk`, 'modal.h3':'How would you like to connect?', 'modal.p':`Pick whichever’s faster for you.`,
+        'modal.email.title':'Send an email', 'modal.resume.title':`See my résumé`, 'modal.resume.sub':`Web page, also as PDF`, 'modal.call.title':'Book a 30-min call', 'modal.call.sub':`Pick a time that works for you (ET)`,
         'k.tl.problem':`Checkout promised delivery in two hours. Behind it, nobody could tell where an order was without a phone call, and a failed delivery had no defined next step.`,
         'k.tl.did':`Designed Pick &amp; Pack for three roles at once instead of one primary user, treated the exception states as first-class screens, and rolled it out store by store.`,
         'k.tl.out':`The two-hour promise held across 80+ stores on more volume than the operation had ever handled; operators stopped keeping parallel spreadsheets; a class of failed deliveries that had no name got a status and a next step.`,
@@ -1274,7 +1274,7 @@
         'k.ix.4':`What shipped: the screens`,
         'k.ix.5':`Rollout, store by store`,
         'k.ix.6':`Impact`,
-        'k.ix.7':`What I'd do differently`,
+        'k.ix.7':`What I’d do differently`,
         'k.h2.hard':`Two hours, promised before anyone in a store knows the order exists`,
         'k.hard.1':`Fast Shop runs 80+ stores, 22,000+ SKUs and around 2,500 orders a day. Checkout sells delivery in two hours before anyone in a store has seen the order, and before Pick &amp; Pack that promise ran on phone calls, a courier app and spreadsheets. The operation couldn&rsquo;t even produce an on-time figure.`,
         'k.hard.2':`The number worth moving was time-to-detect: how long it takes an operator to find out an order is in trouble. Before the platform, that was whenever someone happened to notice or chased them about it, and an SLA is only met if exceptions surface early enough to fix.`,
@@ -1282,15 +1282,15 @@
         'k.tk.s01':`The win wasn&rsquo;t a rate. It was that a failed delivery finally had a name and a next step.`,
         'k.dk.problem':'Problem', 'k.dk.decision':'Decision', 'k.dk.why':'Why', 'k.dk.argument':`What won the argument`, 'k.dk.evidence':`What it caught`, 'k.dk.result':'Result',
         'k.d1.title':`One platform, three homes, one order`,
-        'k.d1.problem':`&ldquo;Design it for the store operator and the rest will adapt&rdquo; was a perfectly reasonable default. Most fulfilment tools pick one job and make the other two adapt to it.`,
-        'k.d1.decision':`Design for three jobs at once. A store sees its own queue, the distribution centre sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colours, different first screen.`,
-        'k.d1.why':`The store needs to clear the queue before the courier arrives, the distribution centre needs to route around what&rsquo;s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.`,
-        'k.d1.argument':`The map below settled it. Once the points where information fell between store, distribution centre and driver were visible on one page, nobody proposed picking a primary user again.`,
-        'k.d1.result':`One platform shipped with a different home per role, and no store, distribution centre or driver had to translate someone else's workflow into their own.`,
+        'k.d1.problem':`&ldquo;Design it for the store operator and the rest will adapt&rdquo; was a perfectly reasonable default. Most fulfillment tools pick one job and make the other two adapt to it.`,
+        'k.d1.decision':`Design for three jobs at once. A store sees its own queue, the distribution center sees every store plus where the day is going wrong, the driver gets one unambiguous stop. Same order, same statuses, same colors, different first screen.`,
+        'k.d1.why':`The store needs to clear the queue before the courier arrives, the distribution center needs to route around what&rsquo;s about to breach, and the driver needs one clear next stop. Holding all three decided what goes first on a card and what earns an alert.`,
+        'k.d1.argument':`The map below settled it. Once the points where information fell between store, distribution center and driver were visible on one page, nobody proposed picking a primary user again.`,
+        'k.d1.result':`One platform shipped with a different home per role, and no store, distribution center or driver had to translate someone else’s workflow into their own.`,
         'k.slot1.c':`One order, three lanes. The gaps between the lanes, where information fell on the floor, are where the arrows are.`,
         'k.d2.title':`The store board, shaped by the first delivery round`,
         'k.d2.problem':``,
-        'k.d2.decision':`After the first round of deliveries, store operators came back with two requests. &ldquo;I need to see the invoice number on the card, fast, to move my process along&rdquo;: the fiscal invoice was what they looked up most, so it moved onto the card. &ldquo;I need the most-late orders at the top, shouting on the screen, so I know what to prioritise&rdquo;: lateness became the sort order and the loudest thing on the card, with time in status in red at the top, the remaining SLA on the pill and the carrier logo last.`,
+        'k.d2.decision':`After the first round of deliveries, store operators came back with two requests. &ldquo;I need to see the invoice number on the card, fast, to move my process along&rdquo;: the fiscal invoice was what they looked up most, so it moved onto the card. &ldquo;I need the most-late orders at the top, shouting on the screen, so I know what to prioritize&rdquo;: lateness became the sort order and the loudest thing on the card, with time in status in red at the top, the remaining SLA on the pill and the carrier logo last.`,
         'k.d2.why':``,
         'k.d2.evidence':``,
         'k.d2.result':``,
@@ -1299,21 +1299,21 @@
         'k.an1.3':`The carrier logo sits last. You only need it once you have decided to act.`,
         'k.an1.4':`Columns follow the store&rsquo;s own steps: received, picking, ready for pickup, in transit.`,
         'k.an1.5':`Click &amp; Collect orders live on the same board with their own pill (&ldquo;Retira&rdquo;), so a store never runs two tools.`,
-        'k.an1.c':`The store board as shipped.`,
-        'k.h2.shipped':`What shipped: the screens`, 'k.shipped.intro':`Below, the store and distribution-centre homes and the exceptions they share. The driver&rsquo;s side is one stop at a time, and I walk through it on a call.`,
-        'k.h2.s05':`The distribution centre: every store, and the numbers that say where the day is going wrong`,
-        'k.s05.p1':`The distribution centre sees every store at once, so its first screen is four counters (late, invoicing, transport, proof pending), each one a filter. Several operators work the same queue here, so every card shows who owns it.`,
+        'k.an1.c':`The store board as shipped. Screens show illustrative data.`,
+        'k.h2.shipped':`What shipped: the screens`, 'k.shipped.intro':`Below, the store and distribution-center homes and the exceptions they share. The driver&rsquo;s side is one stop at a time, and I walk through it on a call.`,
+        'k.h2.s05':`The distribution center: every store, and the numbers that say where the day is going wrong`,
+        'k.s05.p1':`The distribution center sees every store at once, so its first screen is four counters (late, invoicing, transport, proof pending), each one a filter. Several operators work the same queue here, so every card shows who owns it.`,
         'k.an2.1':`Four counters, each a filter: late, invoicing, transport, proof pending.`,
         'k.an2.2':`Allocation on the card: take an order off someone or hand it over in two clicks.`,
         'k.an2.3':`&ldquo;Allocated to&rdquo; on every card, so &ldquo;is anyone on this?&rdquo; stops being a shout across the floor.`,
         'k.an2.4':`Someone else&rsquo;s card fades back: visible, not grabbable.`,
-        'k.an2.c':`The distribution-centre board: the store&rsquo;s cards plus ownership.`,
+        'k.an2.c':`The distribution-center board: the store&rsquo;s cards plus ownership.`,
         'k.h2.s05b':`The same queue as a table, when the question changes`,
-        'k.s05.p3':`Every hour the distribution centre asks which of 104 orders has waited longest, a question a board can&rsquo;t answer. So the same queue toggles into a sortable table, with time in queue as its own column.`,
+        'k.s05.p3':`Every hour the distribution center asks which of 104 orders has waited longest, a question a board can&rsquo;t answer. So the same queue toggles into a sortable table, with time in queue as its own column.`,
         'k.an3.1':`One toggle between board and table. Same filters, same selection, no re-learning.`,
         'k.an3.2':`A severity dot before the order number (red, amber, blue) so the eye can scan the column without reading a word.`,
-        'k.an3.3':`&ldquo;Time in queue&rdquo; is its own sortable column: the one the distribution centre sorts by first, every hour.`,
-        'k.an3.4':`Status pills carry the same colour semantics as the board: red needs a person, amber needs a step, blue is moving, green is done.`,
+        'k.an3.3':`&ldquo;Time in queue&rdquo; is its own sortable column: the one the distribution center sorts by first, every hour.`,
+        'k.an3.4':`Status pills carry the same color semantics as the board: red needs a person, amber needs a step, blue is moving, green is done.`,
         'k.an3.5':`Rows allocated to another operator fade, exactly as cards do on the board.`,
         'k.an3.c':`The same queue as a sortable table, for &ldquo;what has waited longest.&rdquo;`,
         'k.h2.s05c':`When an order becomes a phone call`,
@@ -1321,26 +1321,26 @@
         'k.an4.1':`The SLA countdown is the biggest thing on the page and turns red past the promise, because it is the thing the customer is asking about.`,
         'k.an4.2':`&ldquo;Time in this status&rdquo; separates &ldquo;the order is late&rdquo; from &ldquo;this step is the one that is late.&rdquo;`,
         'k.an4.3':`History as a timeline, newest first, each step with a plain-language line an operator can read aloud on the phone.`,
-        'k.an4.4':`Comments with attachments on the order itself, so a screenshot of the customer's message travels with the delivery.`,
+        'k.an4.4':`Comments with attachments on the order itself, so a screenshot of the customer’s message travels with the delivery.`,
         'k.an4.c':`The order page, for the moment a delivery turns into a phone call.`,
         'k.h2.s05d':`The exceptions are the product`,
         'k.s05.p5':`In logistics, the exceptions decide whether an operator trusts the screen or works around it. Each of these four replaced something that used to be a phone call.`,
         'k.st1.h':`The driver took the package and the ride never started`,
         'k.st1.p':`Who has it, what car, a plain sentence saying the ride hasn&rsquo;t begun, and tracking one click away. Used to be a call to the carrier.`,
         'k.st2.h':`Delivered, but not closed until there is proof`,
-        'k.st2.p':`An order closes when a photo or signature is attached, not when the driver says so. That is why &ldquo;proof pending&rdquo; is a counter on the distribution-centre home.`,
+        'k.st2.p':`An order closes when a photo or signature is attached, not when the driver says so. That is why &ldquo;proof pending&rdquo; is a counter on the distribution-center home.`,
         'k.st3.h':`Someone is at the counter to collect`,
         'k.st3.p':`A QR code opens a form with the buyer&rsquo;s data and signature, so the right person gets the product and the store keeps the record without a printer.`,
         'k.st4.h':`Someone still needs a spreadsheet`,
         'k.st4.p':`Exports stayed, with one guardrail: with nothing selected, the dialog says all 104 orders are about to be exported. Parallel spreadsheets falling out of use became our adoption signal.`,
         'k.states.c':`Four of the 15 statuses in the shipped platform: the ones that replaced the most phone calls.`,
-        'k.h2.s06':`The release wasn't a date. It was a sequence`,
+        'k.h2.s06':`The release wasn’t a date. It was a sequence`,
         'k.s06.p1':`The flagship store went first, alone, watched daily until a full week passed without a new corner case. Then waves of about twenty stores every two weeks, close enough that problems were watched instead of reported. Three months of rollout and daily hypercare, then occasional tickets.`,
         'k.s06.p2':`Each wave surfaced cases the first version didn&rsquo;t handle, and each became a state or a rule. &ldquo;Returning to store&rdquo; is the one I&rsquo;d point to. When a driver couldn&rsquo;t deliver, the operator had to cancel the ride in the Uber app, request a new one to bring the package back and track the driver in the app by hand. We built that return into the platform: when a delivery fails, the trip back is created automatically and the operator follows it on the panel.`,
         'k.tk.s06':`The difference between an operator trusting the screen and working around it is usually one unhandled case.`,
         'k.h2.s07':`The operation didn&rsquo;t slow down. Even as the load went up`,
         'k.s07.p1':`Three months after rollout, the platform was running the two-hour promise across 80+ stores on more volume than the operation had ever handled. Operators stopped keeping parallel spreadsheets, and a failed delivery went from invisible to a status with a next step.`,
-        'k.m0':`Rolled out in waves over three months, running the two-hour promise on top of Fast Shop&rsquo;s existing 22,000+ SKU catalogue`,
+        'k.m0':`Rolled out in waves over three months, running the two-hour promise on top of Fast Shop&rsquo;s existing 22,000+ SKU catalog`,
         'k.m1':`Time to detect an at-risk order: before, whenever someone happened to notice; after, the moment it enters &ldquo;Late&rdquo;`,
         'k.m2':`Statuses in the shipped taxonomy, four of them exceptions that replaced phone calls`,
         'k.note':`<strong>How it was measured:</strong> the operation never produced an on-time figure before the platform, so there is no verified baseline, and I don&rsquo;t present an estimate as one. Causality isn&rsquo;t proven either: Fast Shop changed processes in the same months. The staged rollout, stores on the platform next to stores not yet on it, is the closest thing to a control.`,
@@ -1382,7 +1382,7 @@
         'close.cta1':'Entrar em contato', 'close.cta2.kruzer':'Ver todos os cases',
         'footer.portfolio':'Portfólio', 'footer.email':'Email',
         'modal.label':'Vamos conversar', 'modal.h3':'Como você prefere falar comigo?', 'modal.p':'Escolha o que for mais rápido pra você.',
-        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Dias úteis, horário flexível (ET)`,
+        'modal.email.title':'Mandar um email', 'modal.resume.title':`Ver meu currículo`, 'modal.resume.sub':`Página web, também em PDF`, 'modal.call.title':'Agendar uma call de 30 min', 'modal.call.sub':`Escolha um horário (ET)`,
         'k.tl.problem':`O checkout prometia entrega em duas horas. Por trás, ninguém sabia onde um pedido estava sem um telefonema, e uma entrega que falhava não tinha próximo passo definido.`,
         'k.tl.did':`Desenhei o Pick &amp; Pack para três papéis ao mesmo tempo em vez de um usuário principal, tratei os estados de exceção como telas de primeira classe, e fiz o rollout loja a loja.`,
         'k.tl.out':`A promessa de duas horas se manteve em 80+ lojas, com mais volume do que a operação já tinha lidado; operadores pararam de manter planilhas paralelas; uma classe de entregas falhas que não tinha nome ganhou status e próximo passo.`,
@@ -1418,7 +1418,7 @@
         'k.an1.3':`O logo da transportadora fica por último. Você só precisa dele depois de decidir agir.`,
         'k.an1.4':`As colunas seguem as etapas da própria loja: recebido, em separação, pronto para retirada, em transporte.`,
         'k.an1.5':`Pedidos de Click &amp; Collect vivem no mesmo board com a própria pílula (&ldquo;Retira&rdquo;), para a loja nunca rodar duas ferramentas.`,
-        'k.an1.c':`O board da loja como foi entregue.`,
+        'k.an1.c':`O board da loja como foi entregue. As telas mostram dados ilustrativos.`,
         'k.h2.shipped':`O que foi entregue: as telas`, 'k.shipped.intro':`Abaixo, as telas iniciais da loja e do centro de distribuição e as exceções que elas compartilham. O lado do motorista é uma parada por vez, e eu mostro em uma call.`,
         'k.h2.s05':`O centro de distribuição: todas as lojas, e os números que dizem onde o dia está dando errado`,
         'k.s05.p1':`O centro de distribuição vê todas as lojas de uma vez, então a primeira tela são quatro contadores (atrasados, faturamento, transporte, comprovante pendente), cada um um filtro. Vários operadores trabalham a mesma fila aqui, então cada card mostra quem é o dono.`,

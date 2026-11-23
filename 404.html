@@ -18,7 +18,7 @@
      cannalonga design — 404
      Same paper, same ink, same acid as every other page.
      A 404 is a navigation failure, so it does the one thing a dead
-     end can do well: hand back the four real destinations instead
+     end can do well: hand back the five real destinations instead
      of a single "go home".
      ============================================================ */
   :root{
@@ -31,6 +31,7 @@
     --sky:#d3e9ff;     /* LIAM */
     --coral:#ff8d8f;   /* Pick & Pack */
     --indigo:#8ea5ff;  /* Compass */
+    --mint:#aae1cc;    /* Safe Site Detector */
     --line:rgba(20,20,15,0.12);
     --line-control:rgba(20,20,15,0.48);
     --max:1180px;
@@ -163,7 +164,7 @@
       <div>
         <span class="label" data-i18n="e.eyebrow">Error 404</span>
         <h1 data-i18n="e.h1">This page<br>took a<br>wrong turn.</h1>
-        <p data-i18n="e.p">The link you followed doesn't exist, or it moved. The work is all still here.</p>
+        <p data-i18n="e.p">The link you followed doesn’t exist, or it moved. The work is all still here.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="mailto:cannalongadesign@gmail.com" data-i18n="e.cta1">Get in touch</a>
           <a class="btn btn-ghost" href="/" data-i18n="e.cta2">Back to the portfolio</a>
@@ -172,6 +173,13 @@
 
       <div class="recover">
         <span class="label" data-i18n="e.recover">Or go straight to a case</span>
+
+        <a href="/safe-site-detector/">
+          <span class="swatch" style="background:var(--mint)"></span>
+          <span class="n">Safe Site Detector</span>
+          <span class="t" data-i18n="e.ssd">Consumer trust · 45.1% &rarr; 72.4%</span>
+          <span class="arw" aria-hidden="true">&nearr;</span>
+        </a>
 
         <a href="/genial/">
           <span class="swatch" style="background:var(--peri)"></span>
@@ -213,6 +221,7 @@
       <div class="foot-links">
         <a href="https://www.linkedin.com/in/guilhermecannalonga" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:cannalongadesign@gmail.com" data-i18n="footer.email">Email</a>
+        <a href="/resume/" data-i18n="footer.resume">Résumé</a>
         <a href="/colophon/" data-i18n="footer.colophon">How this site is built</a>
       </div>
     </div>
@@ -227,15 +236,16 @@
         'a11y.skip':`Skip to content`, 'a11y.lang':`Language`,
         'e.eyebrow':'Error 404',
         'e.h1':`This page<br>took a<br>wrong turn.`,
-        'e.p':`The link you followed doesn't exist, or it moved. The work is all still here.`,
+        'e.p':`The link you followed doesn’t exist, or it moved. The work is all still here.`,
         'e.cta1':`Get in touch`,
         'e.cta2':`Back to the portfolio`,
         'e.recover':'Or go straight to a case',
+        'e.ssd':`Consumer trust · 45.1% &rarr; 72.4%`,
         'e.genial':'Healthcare · 8.59% &rarr; 62.3%',
         'e.liam':`AI · up to 2h &rarr; 25min`,
         'e.kruzer':`Logistics · 80+ stores live`,
         'e.compass':`Design system · 4.2d &rarr; 2.5d`,
-        'foot.made':'Made by Guilherme Cannalonga', 'footer.email':'Email'
+        'foot.made':'Made by Guilherme Cannalonga', 'footer.email':'Email', 'footer.resume':`Résumé`
       },
       pt: {
         'footer.colophon':`Como este site foi feito`,
@@ -246,11 +256,12 @@
         'e.cta1':`Vamos conversar`,
         'e.cta2':`Voltar para o portfólio`,
         'e.recover':'Ou vá direto para um case',
+        'e.ssd':`Confiança do consumidor · 45,1% &rarr; 72,4%`,
         'e.genial':'Saúde · 8,59% &rarr; 62,3%',
         'e.liam':`IA · até 2h &rarr; 25min`,
         'e.kruzer':`Logística · 80+ lojas no ar`,
         'e.compass':`Design system · 4,2d &rarr; 2,5d`,
-        'foot.made':'Feito por Guilherme Cannalonga', 'footer.email':'Email'
+        'foot.made':'Feito por Guilherme Cannalonga', 'footer.email':'Email', 'footer.resume':`Currículo`
       }
     };
     function apply(lang){

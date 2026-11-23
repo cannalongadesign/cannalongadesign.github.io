@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How this site is built · Guilherme Cannalonga</title>
 <meta name="author" content="Guilherme Cannalonga">
-<meta name="description" content="How Guilherme Cannalonga&#39;s portfolio is built so that people and AI assistants read it correctly: structured data, a plain-text summary for language models, answers first and only numbers that can be backed up.">
+<meta name="description" content="How Guilherme Cannalonga’s portfolio is built so that people and AI assistants read it correctly: structured data, a plain-text summary for language models, answers first and only numbers that can be backed up.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#f7f6f1">
 
-<!-- Social preview. NOTE: replace https://cannalongadesign.github.io with your real deployed URL after publishing. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="How this site is built · Guilherme Cannalonga">
@@ -896,7 +896,7 @@
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Summary for AI assistants (llms.txt)">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c3e64fd0-ec7d-4fdf-a35f-7e8f77208d02"></script>
 </head>
-<body class="js">
+<body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <nav id="siteNav">
@@ -910,7 +910,7 @@
         <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
         <button type="button" data-lang="pt" aria-pressed="false" lang="pt-BR">PT</button>
       </div>
-      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let's talk</a>
+      <a class="nav-cta" href="/#contact" data-contact-trigger data-i18n="nav.cta">Let’s talk</a>
     </div>
   </div>
 </nav>
@@ -941,9 +941,9 @@
 
     <section class="system" aria-labelledby="sysTitle">
       <h2 id="sysTitle" data-i18n="sys.h2">The system behind it</h2>
-      <p data-i18n="sys.p">Three colours, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.</p>
+      <p data-i18n="sys.p">Three colors, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.</p>
 
-      <h3 class="sys-k" data-i18n="sys.color">Colour</h3>
+      <h3 class="sys-k" data-i18n="sys.color">Color</h3>
       <ul class="sys-swatches">
         <li data-token="--paper" data-on="--ink"><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.paper">Background</b><code>--paper</code></span><span class="val"><span class="hex">#F7F6F1</span><span class="cr"><span data-i18n="sys.inkon">Ink on it</span> <b class="ratio">17.07:1</b></span></span></li>
         <li data-token="--ink" data-on="--paper" data-swap><span class="sw" aria-hidden="true"></span><span class="nm"><b data-i18n="sys.ink">Text and interface</b><code>--ink</code></span><span class="val"><span class="hex">#14140F</span><span class="cr"><span data-i18n="sys.onpaper">On the background</span> <b class="ratio">17.07:1</b></span></span></li>
@@ -1011,9 +1011,9 @@
     <button class="contact-modal-close" id="contactModalClose" aria-label="Close">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <span class="kicker" data-i18n="modal.label">Let's talk</span>
+    <span class="kicker" data-i18n="modal.label">Let’s talk</span>
     <h3 data-i18n="modal.h3">How would you like to connect?</h3>
-    <p data-i18n="modal.p">Pick whichever's faster for you.</p>
+    <p data-i18n="modal.p">Pick whichever’s faster for you.</p>
     <div class="contact-modal-options">
       <a class="contact-option" href="mailto:cannalongadesign@gmail.com">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1027,7 +1027,7 @@
       </a>
       <a class="contact-option" href="https://calendar.app.google/ud4eadh3CyBDhbUQ9" target="_blank" rel="noopener">
         <span class="co-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Weekdays, flexible hours (ET)</span></span>
+        <span class="co-body"><span class="co-title" data-i18n="modal.call.title">Book a 30-min call</span><span class="co-sub" data-i18n="modal.call.sub">Pick a time that works for you (ET)</span></span>
         <svg class="co-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
@@ -1088,7 +1088,7 @@
         'a11y.lang':`Language`,
         'footer.rights':`© 2026 Guilherme Cannalonga. All rights reserved.`,
         'nav.back':`Back to portfolio`,
-        'nav.cta':`Let's talk`,
+        'nav.cta':`Let’s talk`,
         'case.updated':`Updated October 2026`,
         'hero.kicker':`Behind the site`,
         'hero.h1':`Built to be read by people, and by the AI tools they ask`,
@@ -1096,14 +1096,14 @@
         'close.cta1':`Get in touch`,
         'footer.portfolio':`Portfolio`,
         'footer.email':`Email`,
-        'modal.label':`Let's talk`,
+        'modal.label':`Let’s talk`,
         'modal.h3':`How would you like to connect?`,
-        'modal.p':`Pick whichever's faster for you.`,
+        'modal.p':`Pick whichever’s faster for you.`,
         'modal.email.title':`Send an email`,
         'modal.resume.title':`See my résumé`,
         'modal.resume.sub':`Web page, also as PDF`,
         'modal.call.title':`Book a 30-min call`,
-        'modal.call.sub':`Weekdays, flexible hours (ET)`,
+        'modal.call.sub':`Pick a time that works for you (ET)`,
         'close.h2.co':`Want to know how I use AI and structured data in product work?`,
         'close.p.co':`From JSON-LD and llms.txt to designing screens an AI assistant can quote correctly, like the Safe Site Detector: I am happy to walk you through it in a 30-minute call.`,
         'close.cta.all':`See all cases`,
@@ -1122,8 +1122,8 @@
         'co.7h':`Only numbers I can back up`,
         'co.7p':`Every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.`,
         'co.intro':`Seven things make that work:`,
-        'sys.h2':`The system behind it`, 'sys.p':`Three colours, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.`,
-        'sys.color':`Colour`, 'sys.type':`Type`, 'sys.space':`Spacing`, 'sys.space.aria':`Spacing scale`,
+        'sys.h2':`The system behind it`, 'sys.p':`Three colors, two typefaces and one spacing scale. The values below are read from this page&rsquo;s own stylesheet, so they always match what you see.`,
+        'sys.color':`Color`, 'sys.type':`Type`, 'sys.space':`Spacing`, 'sys.space.aria':`Spacing scale`,
         'sys.paper':`Background`, 'sys.ink':`Text and interface`, 'sys.ink2':`Secondary text`, 'sys.acid':`Accent, used as punctuation`,
         'sys.inkon':`Ink on it`, 'sys.onpaper':`On the background`,
         'sys.text':`Reading text, 18 on 32`, 'sys.mono':`Labels, sources and dates`,
@@ -1154,7 +1154,7 @@
         'modal.resume.title':`Ver meu currículo`,
         'modal.resume.sub':`Página web, também em PDF`,
         'modal.call.title':`Agendar uma call de 30 min`,
-        'modal.call.sub':`Dias úteis, horário flexível (ET)`,
+        'modal.call.sub':`Escolha um horário (ET)`,
         'close.h2.co':`Quer saber como uso IA e dados estruturados no trabalho de produto?`,
         'close.p.co':`De JSON-LD e llms.txt a telas que um assistente de IA consegue citar corretamente, como no Detector de Site Confiável: mostro tudo com prazer numa call de 30 minutos.`,
         'close.cta.all':`Ver todos os cases`,
