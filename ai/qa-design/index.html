@@ -861,10 +861,14 @@
   .award{display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12.5px; line-height:1.5;
     letter-spacing:.01em; color:var(--ink); border:1px solid var(--line-strong); border-radius:10px; padding:10px 14px; margin-top:var(--sp-4);}
   .award .tr{flex:none;}
-  .article-body code{font-family:var(--mono); font-size:.86em; background:var(--paper-2); border-radius:6px; padding:1px 6px; color:var(--ink);}
+  .article-body code{white-space:nowrap; font-family:var(--mono); font-size:.86em; background:var(--paper-2); border-radius:6px; padding:1px 6px; color:var(--ink);}
   .article-body ol.steps{margin:0 0 var(--sp-4) var(--sp-4);}
   .article-body ol.steps li{padding-left:4px;}
   .article-body .layer-lead{margin-top:var(--sp-4);}
+
+  /* short pages: the first section starts right under the hero, no rule and no 120px gap */
+  .article-body > .col:first-child > .stage-label:first-child,.article-body > .col:first-child > h2:first-child{margin-top:0; padding-top:0; border-top:none;}
+  .article-body{padding-top:var(--sp-5);}
 
   /* hub cards */
   .ai-cards{display:grid; grid-template-columns:1fr; gap:var(--sp-3); margin:var(--sp-5) 0 var(--sp-4);}
@@ -878,33 +882,34 @@
   .ai-card .body{padding:var(--sp-4); display:flex; flex-direction:column; gap:var(--sp-2); flex:1;}
   .article-body .ai-card h3{font-size:20px; line-height:1.2; letter-spacing:-0.03em; margin:0;}
   .article-body .ai-card p{font-size:var(--fs-small); line-height:var(--lh-small); margin:0;}
-  .ai-card .layer{font-family:var(--mono); font-size:12px; line-height:1.5; color:var(--ink-2); border-top:1px solid var(--line); padding-top:var(--sp-2); margin-top:auto;}
+  .ai-card .layer{font-size:13px !important; line-height:1.45 !important; color:var(--ink-2); border-top:1px solid var(--line); padding-top:var(--sp-2); margin-top:auto;}
   .ai-card .go{font-size:14px; font-weight:700; color:var(--ink);}
   .ai-card .go span{display:inline-block; transition:transform .2s ease;}
   .ai-card:hover .go span{transform:translateX(3px);}
   .ai-card.feature{margin:var(--sp-5) 0 var(--sp-4);}
   .ai-card.feature .body{padding:var(--sp-5);}
+  .ai-card .k{font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2);}
   .article-body .ai-card.feature h3{font-size:clamp(21px,2.4vw,26px); line-height:1.15;}
   .article-body .ai-card.feature p{font-size:16px; line-height:1.55;}
-  .ai-card.feature .funnel{border-radius:0; margin:0; border:none; border-bottom:1px solid var(--line);}
 
-  /* the challenge funnel: 353, 115, 15, 4. Bars shrink stage by stage; the last one carries the accent */
-  .funnel{background:var(--paper-2); border-radius:14px; padding:var(--sp-5) var(--sp-4); margin:var(--sp-6) 0;}
-  .funnel .f-k{display:block; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2);}
-  .article-body .funnel .f-h{font-size:clamp(22px,2.6vw,28px); line-height:1.1; letter-spacing:-0.04em; color:var(--ink); margin:6px 0 var(--sp-4);}
-  .funnel ol{list-style:none; margin:0; display:grid; gap:var(--sp-3);}
-  .article-body .funnel li{display:grid; grid-template-columns:3.2ch minmax(0,1fr); column-gap:16px; row-gap:6px; align-items:center; margin:0;
-    font-size:var(--fs-small); line-height:1.3; color:var(--ink-2);}
-  .funnel li b{grid-row:span 2; font-family:var(--mono); font-weight:500; font-size:clamp(24px,3vw,32px); line-height:1; color:var(--ink); text-align:right;}
-  .funnel li i{display:block; height:12px; width:max(var(--w), 4px); background:var(--ink-2); border-radius:3px;}
-  .funnel li.win i{background:var(--acid); box-shadow:inset 0 0 0 1px rgba(20,20,15,.28);}
-  .article-body .funnel li.win{color:var(--ink); font-weight:700;}
-  .funnel .f-who{font-family:var(--mono); font-size:12.5px; color:var(--ink); margin-top:var(--sp-3);}
-  .funnel .f-src{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-top:var(--sp-2);}
-  @media (max-width:520px){ .funnel{padding:var(--sp-4) var(--sp-3);} }
+  /* the challenge result: the site's own metrics strip, four cells, the last one marked */
+  .result{margin:var(--sp-6) 0;}
+  .result .result-k{display:block; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin-bottom:var(--sp-3);}
+  .result .metrics-strip{margin:0;}
+  .result .m.win .num span{background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat; background-position:0 88%; background-size:100% .42em; padding:0 .08em;}
+  .result .m.win .label{color:var(--ink); font-weight:700;}
+  .result .note{margin:var(--sp-3) 0 0;}
+  .article-body .note code{background:none; padding:0;}
+  @media (max-width:820px){
+    .result .metrics-strip{display:grid; grid-template-columns:1fr 1fr; flex-direction:initial;}
+    .result .metrics-strip .m{padding:var(--sp-3) var(--sp-3) var(--sp-3) 0; border-right:none; border-bottom:1px solid var(--line);}
+    .result .metrics-strip .m:nth-child(even){padding-left:var(--sp-3); border-left:1px solid var(--line);}
+    .result .metrics-strip .m:nth-last-child(-n+2){border-bottom:none;}
+    .result .metrics-strip .m:first-child{padding-top:var(--sp-3);}
+  }
 
   /* qa-design loop: six steps in a row on wide screens, a vertical line on narrow ones */
-  .flow{max-width:1040px; margin:var(--sp-6) auto var(--sp-7); padding:0 var(--pad);}
+  .flow{margin:var(--sp-6) 0 var(--sp-7);}
   .flow ol{list-style:none; margin:0; display:grid; gap:0; counter-reset:none;}
   .article-body .flow li{position:relative; margin:0; padding:0 0 var(--sp-4) 52px; font-size:var(--fs-small); line-height:var(--lh-small); color:var(--ink);}
   .flow li .n{position:absolute; left:0; top:0; width:36px; height:36px; border-radius:50%; display:grid; place-items:center;
@@ -915,13 +920,14 @@
   .flow li .t{display:block; padding-top:7px; font-weight:500;}
   .flow figcaption{font-family:var(--mono); font-size:11.5px; color:var(--ink-2); margin-top:var(--sp-2);}
   @media (min-width:900px){
-    .flow ol{grid-template-columns:repeat(6,1fr); gap:var(--sp-3);}
+    .flow ol{grid-template-columns:repeat(6,minmax(0,1fr)); gap:var(--sp-3);}
+    .article-body .flow li{font-size:14px; line-height:1.4;}
     .article-body .flow li{padding:52px 0 0;}
     .flow li::before{left:44px; right:calc(-1 * var(--sp-3)); top:17.5px; bottom:auto; width:auto; height:1px;}
     .flow li .t{padding-top:0;}
   }
   @media (prefers-reduced-motion:reduce){ .ai-card,.ai-card .go span{transition:none;} }
-  @media print{ .ai-card{break-inside:avoid;} .funnel,.flow{break-inside:avoid;} }
+  @media print{ .ai-card{break-inside:avoid;} .result,.flow{break-inside:avoid;} }
 </style>
 <script type="application/ld+json">
 {
@@ -1008,7 +1014,7 @@
 <header class="article-hero">
   <div class="col">
     <div class="crumbs" role="navigation" aria-label="Breadcrumb"><ol><li><a href="/" data-i18n="crumb.home">Portfolio</a></li><li><a href="/ai/" data-i18n="crumb.ai">AI</a></li><li><span aria-current="page">qa-design</span></li></ol></div>
-    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Note · AI in my process · 2026</span><span class="updated"><span data-i18n="ix.time">6 min read</span> · <span data-i18n="case.updated">Published November 2026</span></span></div>
+    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">Note · AI in my process · 2026</span><span class="updated" data-i18n="ix.time">6 min read</span></div>
     <h1 data-i18n="hero.h1">I was about to become the bottleneck, so I built an AI skill to do my design QA</h1>
     <p class="dek" data-i18n="hero.dek">My team ships fast experiments with nine developers and one product designer: me. To keep quality without slowing anyone down, I built a Claude skill that reviews each build against the design, writes the fixes for the developer and opens the ticket. It was one of four champions out of 353 prototypes in Reclame AQUI’s company-wide AI challenge.</p>
     <p class="award"><svg class="tr" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0V4zM8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3M12 13v4M8 20h8M9.5 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="n.award">One of 4 champions out of 353 prototypes · Company-wide AI challenge · Reclame AQUI · 2026</span></p>
@@ -1038,8 +1044,7 @@
       <li data-i18n="n.3.s4">Keeps a <strong>design decisions</strong> section. When something can’t be resolved from the design alone, the skill asks me instead of guessing. I decide, drop it, or add the missing context. It also suggests improvements when it spots a decision that was never made.</li>
       <li data-i18n="n.3.s5"><strong>Logs the work in Jira</strong>: it closes my design task, opens an adjustment task for the right developer, attaches the report and the fix file and tags them. The developer runs the fix and closes the task, so the whole loop is recorded.</li>
     </ol>
-  </div>
-  <figure class="flow">
+    <figure class="flow">
     <ol>
         <li><span class="n" aria-hidden="true">01</span><span class="t" data-i18n="fl.1">Figma + staging</span></li>
         <li><span class="n" aria-hidden="true">02</span><span class="t" data-i18n="fl.2">qa-design compares</span></li>
@@ -1049,8 +1054,7 @@
         <li><span class="n" aria-hidden="true">06</span><span class="t" data-i18n="fl.6">Dev reviews, runs the fix and closes</span></li>
     </ol>
     <figcaption data-i18n="fl.cap">The qa-design loop, from two links to a closed task.</figcaption>
-  </figure>
-  <div class="col">
+    </figure>
     <h2 data-i18n="n.h.4">Getting it right</h2>
     <p data-i18n="n.4.1">The first real run was on a developer’s experiment built from my Figma file. The skill found more than 30 inconsistencies: components rebuilt instead of reused, tokens off the design system, spacing and type that had drifted. Running the fix file resolved all of them in one go except one, and that one was a design decision that needed my call, not a fix.</p>
     <p data-i18n="n.4.2">I then ran it on three or four more experiments, with two developers. Each time it caught at least ten issues on the first pass, and the fix file cleared them. The design-decisions section came from those rounds: the skill was most useful when it knew where its judgment ended and mine began.</p>
@@ -1060,17 +1064,15 @@
     <p data-i18n="n.5.1">The review every experiment had to pass stayed in place, without the queue the tech lead warned about. Developers no longer stop to send me a build and wait: the skill produces the report and the fix file, and the developer opens the task and resolves it. That removes two delays at once: the time a build waits for design, and the time a developer spends working out what to fix. Every review is also recorded in Jira, so the team can see how adjustments flow, not just guess.</p>
     <p data-i18n="n.5.2">The bigger change was autonomy. The skill doesn’t have to run on my machine: any developer can run it on their own machine, against their own build, without asking me to run it. When the result was shared in the team channel, the developers’ reaction was exactly that: it unblocked them from waiting for design to decide whether a delivery needed changes.</p>
     <p data-i18n="n.5.3">The project went to a jury with full documentation of the problem, how the skill works and how it was tested. The challenge received 353 prototypes. The jury approved 115, highlighted 15 and picked four champions, and <code>qa-design</code> was one of them, the only one built by a product designer.</p>
-    <figure class="funnel" aria-labelledby="fnH">
-      <span class="f-k" data-i18n="fn.k">Company-wide AI challenge · 2026</span>
-      <div class="f-h" id="fnH" data-i18n="fn.h">From prototype to champion</div>
-      <ol>
-        <li style="--w:100%"><b>353</b><i aria-hidden="true"></i><span data-i18n="fn.1">prototypes submitted</span></li>
-        <li style="--w:32.6%"><b>115</b><i aria-hidden="true"></i><span data-i18n="fn.2">approved by the jury</span></li>
-        <li style="--w:4.2%"><b>15</b><i aria-hidden="true"></i><span data-i18n="fn.3">highlighted</span></li>
-        <li class="win" style="--w:1.1%"><b>4</b><i aria-hidden="true"></i><span data-i18n="fn.4">champions</span></li>
-      </ol>
-      <div class="f-who"><span aria-hidden="true">&#9679;</span> <span data-i18n="fn.who"><code>qa-design</code> · the only one by a product designer</span></div>
-      <figcaption class="f-src" data-i18n="fn.src">Source: internal announcement of results</figcaption>
+    <figure class="result">
+      <figcaption class="result-k" data-i18n="fn.k">Company-wide AI challenge · 2026</figcaption>
+      <div class="metrics-strip">
+        <div class="m"><div class="num">353</div><div class="label" data-i18n="fn.1">Prototypes submitted</div></div>
+        <div class="m"><div class="num">115</div><div class="label" data-i18n="fn.2">Approved by the jury</div></div>
+        <div class="m"><div class="num">15</div><div class="label" data-i18n="fn.3">Highlighted</div></div>
+        <div class="m win"><div class="num"><span>4</span></div><div class="label" data-i18n="fn.4">Champions</div></div>
+      </div>
+      <p class="note" data-i18n="fn.src"><strong>Source:</strong> internal announcement of results. <code>qa-design</code> was the only champion built by a product designer.</p>
     </figure>
 
     <h2 data-i18n="n.h.6">What’s next</h2>
@@ -1204,7 +1206,6 @@
         'modal.resume.sub':`Web page, also as PDF`,
         'modal.call.title':`Book a 30-min call`,
         'modal.call.sub':`Pick a time that works for you (ET)`,
-        'case.updated':`Published November 2026`,
         'ix.time':`6 min read`,
         'crumb.home':`Portfolio`,
         'crumb.ai':`AI`,
@@ -1252,13 +1253,11 @@
         'n.back':`How I work with AI`,
         'close.p':`How the skill’s library is put together, what it is never allowed to decide and how a team could adopt it: all of it is a 30-minute call away.`,
         'fn.k':`Company-wide AI challenge · 2026`,
-        'fn.h':`From prototype to champion`,
-        'fn.1':`prototypes submitted`,
-        'fn.2':`approved by the jury`,
-        'fn.3':`highlighted`,
-        'fn.4':`champions`,
-        'fn.who':`<code>qa-design</code> · the only one by a product designer`,
-        'fn.src':`Source: internal announcement of results`,
+        'fn.1':`Prototypes submitted`,
+        'fn.2':`Approved by the jury`,
+        'fn.3':`Highlighted`,
+        'fn.4':`Champions`,
+        'fn.src':`<strong>Source:</strong> internal announcement of results. <code>qa-design</code> was the only champion built by a product designer.`,
         'close.h2':`Questions this page doesn’t answer?`,
         'close.cta.all':`See all cases`
       },
@@ -1285,7 +1284,6 @@
         'modal.resume.sub':`Página web, também em PDF`,
         'modal.call.title':`Agendar uma call de 30 min`,
         'modal.call.sub':`Escolha um horário (ET)`,
-        'case.updated':`Publicado em novembro de 2026`,
         'ix.time':`6 min de leitura`,
         'crumb.home':`Portfólio`,
         'crumb.ai':`IA`,
@@ -1333,13 +1331,11 @@
         'n.back':`Como eu trabalho com IA`,
         'close.p':`Como a biblioteca da skill é montada, o que ela nunca pode decidir sozinha e como um time poderia adotá-la: tudo isso cabe numa conversa de 30 minutos.`,
         'fn.k':`Desafio de IA da empresa · 2026`,
-        'fn.h':`Do protótipo ao pódio`,
-        'fn.1':`protótipos enviados`,
-        'fn.2':`aprovados pela banca`,
-        'fn.3':`destaques`,
-        'fn.4':`campeões`,
-        'fn.who':`<code>qa-design</code> · o único de um product designer`,
-        'fn.src':`Fonte: anúncio interno dos resultados`,
+        'fn.1':`Protótipos enviados`,
+        'fn.2':`Aprovados pela banca`,
+        'fn.3':`Destaques`,
+        'fn.4':`Campeões`,
+        'fn.src':`<strong>Fonte:</strong> anúncio interno dos resultados. A <code>qa-design</code> foi a única campeã feita por um product designer.`,
         'close.h2':`Ficou alguma pergunta?`,
         'close.cta.all':`Ver todos os cases`
       }

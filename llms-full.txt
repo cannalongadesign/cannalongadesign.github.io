@@ -2,7 +2,9 @@
 
 Source: https://cannalongadesign.github.io/ · Last updated: 2026-11-23
 
-**Guilherme Cannalonga** Senior Product Designer · Greater Boston, MA AI challenge champion · Reclame AQUI 2026
+**Guilherme Cannalonga** · AI challenge champion, Reclame AQUI 2026
+
+Senior Product Designer · Greater Boston, MA
 
 # Product design for systems where the wrong screen is expensive.
 
@@ -1340,7 +1342,7 @@ URL: https://cannalongadesign.github.io/ai/qa-design/
 
 - qa-design
 
-Note · AI in my process · 2026 6 min read · Published November 2026
+Note · AI in my process · 2026 6 min read
 
 # I was about to become the bottleneck, so I built an AI skill to do my design QA
 
@@ -1412,19 +1414,25 @@ The bigger change was autonomy. The skill doesn’t have to run on my machine: a
 
 The project went to a jury with full documentation of the problem, how the skill works and how it was tested. The challenge received 353 prototypes. The jury approved 115, highlighted 15 and picked four champions, and qa-design was one of them, the only one built by a product designer.
 
-Company-wide AI challenge · 2026 From prototype to champion
+Company-wide AI challenge · 2026
 
-- **353** prototypes submitted
+353
 
-- **115** approved by the jury
+Prototypes submitted
 
-- **15** highlighted
+115
 
-- **4** champions
+Approved by the jury
 
-qa-design · the only one by a product designer
+15
 
-Source: internal announcement of results
+Highlighted
+
+4
+
+Champions
+
+**Source:** internal announcement of results. qa-design was the only champion built by a product designer.
 
 ## What’s next
 
