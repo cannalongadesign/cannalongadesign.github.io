@@ -322,12 +322,36 @@
   /* The proof sits on the case's own picture, as a label in the corner: the number reads as
      this product's result, not as a separate block under the text. */
   .card-media{position:relative;}
+  /* The label is dark: ink on paper text holds its contrast on every case color (mint, lilac, sky,
+     coral, indigo), where a paper label washed out. On the one dark card it flips to paper. */
   .card-met{position:absolute; right:14px; bottom:14px; z-index:2; display:flex; flex-direction:column; gap:2px;
-    max-width:calc(100% - 28px); padding:10px 12px 9px; background:var(--paper); border-radius:12px;}
-  .card-met .met-v{font-size:17px; font-weight:900; letter-spacing:-0.035em; line-height:1.15; white-space:nowrap; font-variant-numeric:tabular-nums;}
-  .card-met .met-n{font-size:12px; color:var(--ink-2); line-height:1.35;}
-  .card-met .ev{margin-top:4px; font-size:9.5px;}
-  @media (max-width:520px){ .card-met{right:10px; bottom:10px; padding:8px 10px 7px; border-radius:10px;} .card-met .met-v{font-size:15px;} .card-met .met-n{font-size:11px;} }
+    max-width:calc(100% - 28px); padding:10px 12px 9px; background:var(--ink); color:var(--paper); border-radius:12px;}
+  .card-met .met-v{font-size:17px; font-weight:900; letter-spacing:-0.035em; line-height:1.15; white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--paper);}
+  .card-met .met-n{font-size:12px; color:rgba(247,246,241,.78); line-height:1.35;}
+  .card-met .ev{margin-top:4px; font-size:9.5px; color:rgba(247,246,241,.66);}
+  .card-met .ev::before{background:var(--acid);}
+  .card-met .ev.reported::before{background:transparent; box-shadow:inset 0 0 0 1.5px var(--acid);}
+  .card-media.ink .card-met{background:var(--paper); color:var(--ink);}
+  .card-media.ink .card-met .met-v{color:var(--ink);}
+  .card-media.ink .card-met .met-n{color:var(--ink-2);}
+  .card-media.ink .card-met .ev{color:var(--ink-2);}
+  .card-media.ink .card-met .ev::before{background:var(--ink);}
+  .card-media.ink .card-met .ev.reported::before{background:transparent; box-shadow:inset 0 0 0 1.5px var(--ink);}
+  /* the product shot steps up and left, so the label's corner is empty paper-colored background, not the device */
+  .card-media:has(.card-met) .card-shot{scale:.88; translate:-6% -5%; transform-origin:50% 50%;}
+  .card-media.peri:has(.card-met) .card-shot{translate:-11% -6%;}
+  .card-media.sky:has(.card-met) .card-shot{translate:-14% -6%;}
+  .card-media.indigo:has(.card-met) .card-shot{translate:-9% -8%;}
+  /* Matri is a wall of phones edge to edge: shrinking it would show where the picture ends */
+  .card-media.ink:has(.card-met) .card-shot{scale:1; translate:none;}
+  @media (max-width:520px){
+    .card-met{right:10px; bottom:10px; padding:7px 9px 6px; border-radius:9px; gap:1px;}
+    .card-met .met-v{font-size:14px;} .card-met .met-n{font-size:10.5px;} .card-met .ev{font-size:8.5px; margin-top:3px; gap:5px;}
+    .card-met .ev::before{width:6px; height:6px;}
+    .card-media:has(.card-met) .card-shot{scale:.86; translate:-7% -6%;}
+    .card-media.sky:has(.card-met) .card-shot,.card-media.peri:has(.card-met) .card-shot{translate:-8% -7%;}
+    .card-media.ink:has(.card-met) .card-shot{scale:1; translate:none;}
+  }
   a.card:hover .card-cap h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
   /* corner affordance, the way Stripe hints an expandable card */
   a.card .card-media::after{
