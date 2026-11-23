@@ -857,6 +857,12 @@
 
   /* how I work with AI: two lists, the product and the process */
   /* three ruled columns, the same hairline language as the stats and the old list: no boxes */
+  /* the AI block sits on a panel, the same surface and radius as the testimonial cards,
+     so it reads as its own chapter instead of running on from How I decide */
+  .ai-panel{background:var(--paper-2); border-radius:18px; padding:var(--s5) var(--s5) var(--s4);}
+  .ai-panel .sec-head{margin-bottom:var(--s4);}
+  .ai-panel .res-link{margin-top:var(--s1);}
+  @media (max-width:820px){ .ai-panel{padding:var(--s5) var(--s3) var(--s4);} }
   .ai-minis{list-style:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 var(--s4); margin-bottom:var(--s3);}
   .ai-minis li{border-top:1px solid var(--line); padding:var(--s3) 0; display:grid; grid-template-columns:34px minmax(0,1fr); column-gap:var(--s2); row-gap:6px; align-content:start;}
   .ai-minis .n{grid-row:span 2; font-family:var(--mono); font-size:12px; line-height:1.9; color:var(--ink);}
@@ -1293,17 +1299,19 @@
 
 <section id="ai" class="section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="label" data-num="03" data-i18n="ai.label">How I work with AI</span>
-      <h2 data-i18n="ai.h2">AI on both sides of the screen.</h2>
-      <p data-i18n="ai.p">In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.</p>
+    <div class="ai-panel">
+      <div class="sec-head reveal">
+        <span class="label" data-num="03" data-i18n="ai.label">How I work with AI</span>
+        <h2 data-i18n="ai.h2">AI on both sides of the screen.</h2>
+        <p data-i18n="ai.p">In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.</p>
+      </div>
+      <ol class="ai-minis reveal">
+        <li><span class="n" aria-hidden="true">01</span><h3 data-i18n="ai.m1.h">In the product</h3><p data-i18n="ai.m1.p">LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.</p></li>
+        <li><span class="n" aria-hidden="true">02</span><h3 data-i18n="ai.m2.h">In my process</h3><p data-i18n="ai.m2.p"><code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.</p></li>
+        <li><span class="n" aria-hidden="true">03</span><h3 data-i18n="ai.m3.h">For AI readers</h3><p data-i18n="ai.m3.p">Pages structured so AI assistants quote them correctly, including this site.</p></li>
+      </ol>
+      <a class="res-link" href="/ai/"><span data-i18n="ai.more">See how I work with AI</span> <span aria-hidden="true">&rarr;</span></a>
     </div>
-    <ol class="ai-minis reveal">
-      <li><span class="n" aria-hidden="true">01</span><h3 data-i18n="ai.m1.h">In the product</h3><p data-i18n="ai.m1.p">LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.</p></li>
-      <li><span class="n" aria-hidden="true">02</span><h3 data-i18n="ai.m2.h">In my process</h3><p data-i18n="ai.m2.p"><code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.</p></li>
-      <li><span class="n" aria-hidden="true">03</span><h3 data-i18n="ai.m3.h">For AI readers</h3><p data-i18n="ai.m3.p">Pages structured so AI assistants quote them correctly, including this site.</p></li>
-    </ol>
-    <a class="res-link" href="/ai/"><span data-i18n="ai.more">See how I work with AI</span> <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 
