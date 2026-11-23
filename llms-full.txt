@@ -1434,10 +1434,6 @@ Champions
 
 **Source:** internal announcement of results. qa-design was the only champion built by a product designer.
 
-[Image: Excerpt from the internal announcement, in Portuguese: the AI challenge received 353 prototypes, with 115 approved, 15 highlighted and 4 champions. Below, Guilherme Cannalonga’s card from the champions graphic, tagged Product Design.]
-
-Excerpt from the post on the company’s internal network, in Portuguese. The other champions and the prizes are left out. Open full size
-
 ## What’s next
 
 After the result was shared in the company’s design channel, other designers asked how the skill works, because every team has the same problem. The plan now is to share it across the design team and turn it into part of how we run experiments, not a tool that belongs to one squad.
