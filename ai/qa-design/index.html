@@ -899,6 +899,12 @@
   .result .m.win .num span{background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat; background-position:0 88%; background-size:100% .42em; padding:0 .08em;}
   .result .m.win .label{color:var(--ink); font-weight:700;}
   .result .note{margin:var(--sp-3) 0 0;}
+  /* the receipt: an excerpt of the real post, framed like the case screenshots */
+  .article-body .evidence p{font-size:var(--fs-small); line-height:var(--lh-small); margin:0;}
+  .evidence a{display:block; margin:var(--sp-3) 0 var(--sp-2);}
+  .evidence img{display:block; width:100%; height:auto; border-radius:6px;}
+  .article-body .evidence .cap{font-family:var(--mono); font-size:11.5px; line-height:1.5; color:var(--ink-2);}
+  .evidence .cap a{color:var(--ink); text-decoration:underline; text-underline-offset:3px; white-space:nowrap;}
   .article-body .note code{background:none; padding:0;}
   @media (max-width:820px){
     .result .metrics-strip{display:grid; grid-template-columns:1fr 1fr; flex-direction:initial;}
@@ -1072,7 +1078,12 @@
         <div class="m"><div class="num">15</div><div class="label" data-i18n="fn.3">Highlighted</div></div>
         <div class="m win"><div class="num"><span>4</span></div><div class="label" data-i18n="fn.4">Champions</div></div>
       </div>
-      <p class="note" data-i18n="fn.src"><strong>Source:</strong> internal announcement of results. <code>qa-design</code> was the only champion built by a product designer.</p>
+      <div class="note evidence">
+        <p data-i18n="fn.src"><strong>Source:</strong> internal announcement of results. <code>qa-design</code> was the only champion built by a product designer.</p>
+        <a href="/assets/qa-design-announcement.jpg" target="_blank" rel="noopener"><img decoding="async" loading="lazy" src="/assets/qa-design-announcement.jpg" width="930" height="318"
+          alt="Excerpt from the internal announcement, in Portuguese: the AI challenge received 353 prototypes, with 115 approved, 15 highlighted and 4 champions. Below, Guilherme Cannalonga’s card from the champions graphic, tagged Product Design."></a>
+        <p class="cap" data-i18n="fn.cap">Excerpt from the post on the company’s internal network, in Portuguese. The other champions and the prizes are left out. <a href="/assets/qa-design-announcement.jpg" target="_blank" rel="noopener">Open full size</a></p>
+      </div>
     </figure>
 
     <h2 data-i18n="n.h.6">What’s next</h2>
@@ -1258,6 +1269,7 @@
         'fn.3':`Highlighted`,
         'fn.4':`Champions`,
         'fn.src':`<strong>Source:</strong> internal announcement of results. <code>qa-design</code> was the only champion built by a product designer.`,
+        'fn.cap':`Excerpt from the post on the company’s internal network, in Portuguese. The other champions and the prizes are left out. <a href="/assets/qa-design-announcement.jpg" target="_blank" rel="noopener">Open full size</a>`,
         'close.h2':`Questions this page doesn’t answer?`,
         'close.cta.all':`See all cases`
       },
@@ -1336,6 +1348,7 @@
         'fn.3':`Destaques`,
         'fn.4':`Campeões`,
         'fn.src':`<strong>Fonte:</strong> anúncio interno dos resultados. A <code>qa-design</code> foi a única campeã feita por um product designer.`,
+        'fn.cap':`Trecho do post na rede interna da empresa. Os outros campeões e os prêmios ficaram de fora. <a href="/assets/qa-design-announcement.jpg" target="_blank" rel="noopener">Ver em tamanho real</a>`,
         'close.h2':`Ficou alguma pergunta?`,
         'close.cta.all':`Ver todos os cases`
       }
