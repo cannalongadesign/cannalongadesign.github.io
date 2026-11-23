@@ -31,7 +31,7 @@ Selected outcomes (each explained, with how it was measured, on the case pages):
 
 ## How I work with AI
 
-- [How I work with AI](https://cannalongadesign.github.io/ai/): hub for AI in the products he designs (LIAM, Safe Site Detector), in his design process and for AI readers
+- [How I work with AI](https://cannalongadesign.github.io/ai/): how he uses AI in each product (Safe Site Detector, LIAM, qa-design and this site): what the AI does, where a person decides, and what changed
 - [qa-design: an AI skill for design QA](https://cannalongadesign.github.io/ai/qa-design/): note on the Claude skill that reviews each build against the design, writes the fixes and opens the Jira ticket; one of 4 champions out of 353 prototypes in Reclame AQUI’s AI challenge
 
 ## About this site

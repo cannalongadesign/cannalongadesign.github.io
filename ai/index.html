@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Guilherme Cannalonga">
 <meta property="og:title" content="How I work with AI · Guilherme Cannalonga">
-<meta property="og:description" content="AI on both sides of the screen: in the products, in the process and in how the work is read.">
+<meta property="og:description" content="How I use AI in each product: what it does, where a person decides, and what changed.">
 <meta property="og:url" content="https://cannalongadesign.github.io/ai/">
 <link rel="canonical" href="https://cannalongadesign.github.io/ai/">
 <meta property="og:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How I work with AI · Guilherme Cannalonga">
-<meta name="twitter:description" content="AI on both sides of the screen: in the products, in the process and in how the work is read.">
+<meta name="twitter:description" content="How I use AI in each product: what it does, where a person decides, and what changed.">
 <meta name="twitter:image" content="https://cannalongadesign.github.io/assets/og-cannalonga-v2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -932,6 +932,18 @@
   }
   @media (prefers-reduced-motion:reduce){ .ai-card,.ai-card .go span{transition:none;} }
   @media print{ .ai-card{break-inside:avoid;} .result,.flow{break-inside:avoid;} }
+
+  /* /ai/: one decision card per product, the same component the cases use */
+  .ai-dec .decision-head{justify-content:flex-start; flex-wrap:wrap; gap:8px 12px;}
+  .ai-dec .decision-head .cat{font-family:var(--mono); font-size:11.5px; letter-spacing:.04em; color:var(--ink-2); margin-left:auto;}
+  .ai-dec .decision-head .tag{display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500; line-height:1; color:var(--ink);
+    padding:5px 10px 5px 8px; border:1px solid var(--line-strong); border-radius:100px; white-space:nowrap; background:var(--paper);}
+  .ai-dec .decision-row .dv strong{font-weight:700;}
+  .ai-dec .decision-foot{padding:16px 20px; border-top:1px solid var(--line);}
+  .ai-dec .decision-foot a{font-size:14px; font-weight:700; color:var(--ink); text-decoration:underline; text-underline-offset:4px;
+    text-decoration-thickness:1.5px; text-decoration-color:var(--line-control);}
+  .ai-dec .decision-foot a:hover{text-decoration-color:var(--ink);}
+  @media (max-width:640px){ .ai-dec .decision-head .cat{margin-left:0; flex-basis:100%;} }
 </style>
 <link rel="stylesheet" href="/assets/identity.css">
 <script type="application/ld+json">
@@ -943,7 +955,7 @@
    "@id": "https://cannalongadesign.github.io/ai/#webpage",
    "url": "https://cannalongadesign.github.io/ai/",
    "name": "AI on both sides of the screen",
-   "description": "How Guilherme Cannalonga works with AI: in the products he designs (LIAM, Safe Site Detector), in his design process (qa-design, an award-winning AI skill for design QA) and for AI readers.",
+   "description": "How Guilherme Cannalonga uses AI in each product he designs: what the AI does, where a person decides and what changed, in the Safe Site Detector, LIAM, qa-design (an award-winning AI skill for design QA) and this site.",
    "isPartOf": {
     "@id": "https://cannalongadesign.github.io/#website"
    },
@@ -1026,75 +1038,59 @@
 <header class="article-hero">
   <div class="col">
     <div class="crumbs" role="navigation" aria-label="Breadcrumb"><ol><li><a href="/" data-i18n="crumb.home">Portfolio</a></li><li><span aria-current="page" data-i18n="crumb.ai">AI</span></li></ol></div>
-    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">How I work with AI</span><span class="updated" data-i18n="ix.time">3 min read</span></div>
+    <div class="kicker-row"><span class="kicker" data-i18n="hero.kicker">How I work with AI</span><span class="updated" data-i18n="ix.time">4 min read</span></div>
     <h1 data-i18n="hero.h1">AI on both sides of the screen</h1>
-    <p class="dek" data-i18n="hero.dek">I use AI the way I design: it proposes, a person decides, and every claim has evidence behind it. Here is where that shows up, in the products, in my process and in how the work is read.</p>
+    <p class="dek" data-i18n="hero.dek">I use AI the way I design: it proposes, a person decides, and every claim has evidence behind it. Here is how that played out, product by product: what the AI does, where a person stays in charge, and what changed.</p>
   </div>
 </header>
 
 <article class="article-body">
   <div class="col">
-    <span class="stage-label" id="s01"><b>01</b> &middot; <span data-i18n="h.s1.h">In the product</span></span>
-    <h2 data-i18n="h.s1.h">In the product</h2>
-    <p data-i18n="h.s1.p">When AI is part of the product, the design work is in the trust: what it is allowed to decide, how it says what it found, and what happens when it is wrong.</p>
-    <div class="ai-cards">
-      <a class="ai-card" href="/liam/">
-        <div class="media sky"><img decoding="async" src="/assets/card-liam.webp" alt="LIAM running on a tablet held in one hand: the intervention screen a therapist works in during a session" loading="lazy" width="1096" height="864"></div><div class="body">
-          <h3>LIAM</h3>
-          <p data-i18n="h.liam.p">Drafts the clinical record from a therapist’s narration. Every field is a suggestion the clinician reviews and signs.</p>
-          <p class="layer" data-i18n="h.liam.l">My layer: interface and human-in-the-loop model.</p>
-          <span class="go"><span data-i18n="h.go.case">Read the case</span> <span aria-hidden="true">&rarr;</span></span>
-        </div>
-      </a>
-      <a class="ai-card" href="/safe-site-detector/">
-        <div class="media mint"><img decoding="async" src="/assets/card-ssd.webp" alt="Safe Site Detector home page on a desktop monitor: paste a link and check whether a site is trustworthy" loading="lazy" width="1096" height="864"></div><div class="body">
-          <h3>Safe Site Detector</h3>
-          <p data-i18n="h.ssd.p">An AI-powered verdict on whether a store is safe, worded to state only what was verified.</p>
-          <p class="layer" data-i18n="h.ssd.l">My layer: interface and the wording of the verdict.</p>
-          <span class="go"><span data-i18n="h.go.case">Read the case</span> <span aria-hidden="true">&rarr;</span></span>
-        </div>
-      </a>
+    <div class="decision ai-dec" id="p1">
+      <div class="decision-head"><span class="dn">1</span><h3>Safe Site Detector</h3><span class="cat" data-i18n="d1.cat">Consumer trust</span></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="d.k.does">What the AI does</span><p class="dv" data-i18n="d1.does">A crawler collects public signals about a store and the company behind it, and a model writes the analysis. Engineering built it AI-first, so the first version was live in about six weeks.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.person">Where a person decides</span><p class="dv" data-i18n="d1.person">The model can gather far more than a shopper needs, and a wrong claim about a company can harm a legitimate business. I turned its output into one verdict, from 0 to 5 shields, worded to state only what was verified, with each shield showing the signal behind it.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d1.changed"><strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost went from a projected R$1.7M to R$1.2k. Citations in Google AI Overview rose 138% across 30 companies.</p></div>
+      </div>
+      <div class="decision-foot"><a href="/safe-site-detector/"><span data-i18n="d.go.case">Read the full case</span> <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="decision ai-dec" id="p2">
+      <div class="decision-head"><span class="dn">2</span><h3>LIAM</h3><span class="cat" data-i18n="d2.cat">Clinical AI</span></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="d.k.does">What the AI does</span><p class="dv" data-i18n="d2.does">The therapist narrates the session as it happens, and LIAM turns the audio into a first draft of every required field of the clinical record, rewritten into sentences that read like a record, not a transcript.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.person">Where a person decides</span><p class="dv" data-i18n="d2.person">LIAM proposes and never submits. Every field is a suggestion the therapist copies in by hand, the recording stays attached to check any line, and a prompt in the flow asks whether the suggestions are still good.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d2.changed">Documentation went from <strong>up to 2 hours to about 25 minutes</strong> per session, as reported by the clinical team a quarter after rollout. The clinical lead’s verdict was that record quality improved.</p></div>
+      </div>
+      <div class="decision-foot"><a href="/liam/"><span data-i18n="d.go.case">Read the full case</span> <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="decision ai-dec" id="p3">
+      <div class="decision-head"><span class="dn">3</span><h3>qa-design</h3><span class="tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8v5a4 4 0 01-8 0V4zM8 6H5v1a3 3 0 003 3M16 6h3v1a3 3 0 01-3 3M12 13v4M8 20h8M9.5 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="d3.tag">AI challenge champion</span></span><span class="cat" data-i18n="d3.cat">My design process</span></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="d.k.does">What the AI does</span><p class="dv" data-i18n="d3.does">A Claude skill that reviews each build against the Figma file, writes a fix file the developer runs in their own Claude or Cursor, and opens the Jira task.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.person">Where a person decides</span><p class="dv" data-i18n="d3.person">When something can’t be resolved from the design alone, the skill asks me instead of guessing. The developer reviews every fix before applying it, and I take a last look before production.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d3.changed">The review every experiment needed stayed in place, without the queue. The first real run found <strong>30+ inconsistencies</strong>, all fixed in one go except one design decision. One of <strong>4 champions out of 353 prototypes</strong> in the company’s AI challenge.</p></div>
+      </div>
+      <div class="decision-foot"><a href="/ai/qa-design/"><span data-i18n="d.go.note">Read the full note</span> <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="decision ai-dec" id="p4">
+      <div class="decision-head"><span class="dn">4</span><h3 data-i18n="d4.h">This site</h3><span class="cat" data-i18n="d4.cat">For AI readers</span></div>
+      <div class="decision-body">
+        <div class="decision-row"><span class="dk" data-i18n="d.k.does">What the AI does</span><p class="dv" data-i18n="d4.does">I built it with Claude Code: plain HTML, CSS and a little JavaScript, no framework. People increasingly ask an AI assistant before they open a website, so it is written for that second reader too.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.person">Where a person decides</span><p class="dv" data-i18n="d4.person">Only numbers I can back up: every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d4.changed">Structured data, an llms.txt and crawlable text on every page, so an assistant asked about my work quotes it correctly and points back here.</p></div>
+      </div>
+      <div class="decision-foot"><a href="/colophon/"><span data-i18n="d.go.site">See how this site is built</span> <span aria-hidden="true">&rarr;</span></a></div>
     </div>
 
-    <span class="stage-label" id="s02"><b>02</b> &middot; <span data-i18n="h.s2.h">In my process</span></span>
-    <h2 data-i18n="h.s2.h">In my process</h2>
-    <a class="ai-card feature" href="/ai/qa-design/">
-      <div class="body">
-        <span class="k" data-i18n="h.qa.k">Note · 6 min read</span>
-        <h3 data-i18n="h.qa.h">I was about to become the bottleneck, so I built an AI skill to do my design QA</h3>
-        <p data-i18n="h.qa.p"><code>qa-design</code> reviews each build against the design, writes the fixes for the developer and opens the ticket. One of 4 champions out of 353 prototypes in Reclame AQUI’s AI challenge.</p>
-        <span class="go"><span data-i18n="h.go.note">Read the note</span> <span aria-hidden="true">&rarr;</span></span>
-      </div>
-    </a>
-    <p data-i18n="h.s2.more">Beyond that one skill, AI is part of how I work every day:</p>
+    <h2 data-i18n="h.day.h">Every day</h2>
+    <p data-i18n="h.day.p">Beyond these products, AI is part of how I work:</p>
     <ul>
       <li data-i18n="ai.proc.1"><strong>Thinking decisions through</strong> with LLMs and agents, every day.</li>
       <li data-i18n="ai.proc.2"><strong>Research and data analysis</strong>, faster.</li>
       <li data-i18n="ai.proc.3"><strong>Functional prototypes</strong>, and some of them shipped to production.</li>
       <li data-i18n="ai.proc.4"><strong>Claude and Claude Code</strong> are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.</li>
     </ul>
-
-    <span class="stage-label" id="s03"><b>03</b> &middot; <span data-i18n="h.s3.h">For AI readers</span></span>
-    <h2 data-i18n="h.s3.h">For AI readers</h2>
-    <p data-i18n="h.s3.p">People increasingly ask an AI assistant before they open a website. I design for that second reader too.</p>
-    <div class="ai-cards">
-      <a class="ai-card" href="/safe-site-detector/#s05">
-        <div class="body">
-          <h3>Safe Site Detector</h3>
-          <p data-i18n="h.r.ssd.p">Question-first pages on structured data, so assistants quote the verdict correctly.</p>
-          <p class="layer" data-i18n="h.r.ssd.l">Citations in Google AI Overview rose 138% across 30 companies, measured in Search Console.</p>
-          <span class="go"><span data-i18n="h.go.sec">Read section 05</span> <span aria-hidden="true">&rarr;</span></span>
-        </div>
-      </a>
-      <a class="ai-card" href="/colophon/">
-        <div class="body">
-          <h3 data-i18n="h.r.site.h">This site</h3>
-          <p data-i18n="h.r.site.p">Structured data, an llms.txt and crawlable text on every page.</p>
-          
-          <span class="go"><span data-i18n="h.go.co">How this site is built</span> <span aria-hidden="true">&rarr;</span></span>
-        </div>
-      </a>
-    </div>
   </div>
 </article>
 
@@ -1220,40 +1216,42 @@
         'modal.resume.sub':`Web page, also as PDF`,
         'modal.call.title':`Book a 30-min call`,
         'modal.call.sub':`Pick a time that works for you (ET)`,
-        'ix.time':`3 min read`,
-        'hero.kicker':`How I work with AI`,
-        'hero.h1':`AI on both sides of the screen`,
-        'hero.dek':`I use AI the way I design: it proposes, a person decides, and every claim has evidence behind it. Here is where that shows up, in the products, in my process and in how the work is read.`,
+        'ix.time':`4 min read`,
         'crumb.home':`Portfolio`,
         'crumb.ai':`AI`,
-        'h.s1.k':`01 · In the product`,
-        'h.s1.h':`In the product`,
-        'h.s1.p':`When AI is part of the product, the design work is in the trust: what it is allowed to decide, how it says what it found, and what happens when it is wrong.`,
-        'h.liam.p':`Drafts the clinical record from a therapist’s narration. Every field is a suggestion the clinician reviews and signs.`,
-        'h.liam.l':`My layer: interface and human-in-the-loop model.`,
-        'h.ssd.p':`An AI-powered verdict on whether a store is safe, worded to state only what was verified.`,
-        'h.ssd.l':`My layer: interface and the wording of the verdict.`,
-        'h.go.case':`Read the case`,
-        'h.go.note':`Read the note`,
-        'h.s2.k':`02 · In my process`,
-        'h.s2.h':`In my process`,
-        'h.qa.k':`Note · 6 min read`,
-        'h.qa.h':`I was about to become the bottleneck, so I built an AI skill to do my design QA`,
-        'h.qa.p':`<code>qa-design</code> reviews each build against the design, writes the fixes for the developer and opens the ticket. One of 4 champions out of 353 prototypes in Reclame AQUI’s AI challenge.`,
-        'h.s2.more':`Beyond that one skill, AI is part of how I work every day:`,
+        'hero.kicker':`How I work with AI`,
+        'hero.h1':`AI on both sides of the screen`,
+        'hero.dek':`I use AI the way I design: it proposes, a person decides, and every claim has evidence behind it. Here is how that played out, product by product: what the AI does, where a person stays in charge, and what changed.`,
+        'd.k.does':`What the AI does`,
+        'd.k.person':`Where a person decides`,
+        'd.k.changed':`What changed`,
+        'd.go.case':`Read the full case`,
+        'd.go.note':`Read the full note`,
+        'd.go.site':`See how this site is built`,
+        'd1.cat':`Consumer trust`,
+        'd1.does':`A crawler collects public signals about a store and the company behind it, and a model writes the analysis. Engineering built it AI-first, so the first version was live in about six weeks.`,
+        'd1.person':`The model can gather far more than a shopper needs, and a wrong claim about a company can harm a legitimate business. I turned its output into one verdict, from 0 to 5 shields, worded to state only what was verified, with each shield showing the signal behind it.`,
+        'd1.changed':`<strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost went from a projected R$1.7M to R$1.2k. Citations in Google AI Overview rose 138% across 30 companies.`,
+        'd2.cat':`Clinical AI`,
+        'd2.does':`The therapist narrates the session as it happens, and LIAM turns the audio into a first draft of every required field of the clinical record, rewritten into sentences that read like a record, not a transcript.`,
+        'd2.person':`LIAM proposes and never submits. Every field is a suggestion the therapist copies in by hand, the recording stays attached to check any line, and a prompt in the flow asks whether the suggestions are still good.`,
+        'd2.changed':`Documentation went from <strong>up to 2 hours to about 25 minutes</strong> per session, as reported by the clinical team a quarter after rollout. The clinical lead’s verdict was that record quality improved.`,
+        'd3.cat':`My design process`,
+        'd3.does':`A Claude skill that reviews each build against the Figma file, writes a fix file the developer runs in their own Claude or Cursor, and opens the Jira task.`,
+        'd3.person':`When something can’t be resolved from the design alone, the skill asks me instead of guessing. The developer reviews every fix before applying it, and I take a last look before production.`,
+        'd3.changed':`The review every experiment needed stayed in place, without the queue. The first real run found <strong>30+ inconsistencies</strong>, all fixed in one go except one design decision. One of <strong>4 champions out of 353 prototypes</strong> in the company’s AI challenge.`,
+        'd3.tag':`AI challenge champion`,
+        'd4.h':`This site`,
+        'd4.cat':`For AI readers`,
+        'd4.does':`I built it with Claude Code: plain HTML, CSS and a little JavaScript, no framework. People increasingly ask an AI assistant before they open a website, so it is written for that second reader too.`,
+        'd4.person':`Only numbers I can back up: every result says how it was measured, and anything I could not verify is left out. An AI repeats what it finds, so the page has to be right first.`,
+        'd4.changed':`Structured data, an llms.txt and crawlable text on every page, so an assistant asked about my work quotes it correctly and points back here.`,
+        'h.day.h':`Every day`,
+        'h.day.p':`Beyond these products, AI is part of how I work:`,
         'ai.proc.1':`<strong>Thinking decisions through</strong> with LLMs and agents, every day.`,
         'ai.proc.2':`<strong>Research and data analysis</strong>, faster.`,
         'ai.proc.3':`<strong>Functional prototypes</strong>, and some of them shipped to production.`,
         'ai.proc.4':`<strong>Claude and Claude Code</strong> are where I go deepest. I have worked with GPT and Gemini too, and I test new models and tools as they launch.`,
-        'h.s3.k':`03 · For AI readers`,
-        'h.s3.h':`For AI readers`,
-        'h.s3.p':`People increasingly ask an AI assistant before they open a website. I design for that second reader too.`,
-        'h.r.ssd.p':`Question-first pages on structured data, so assistants quote the verdict correctly.`,
-        'h.r.ssd.l':`Citations in Google AI Overview rose 138% across 30 companies, measured in Search Console.`,
-        'h.r.site.h':`This site`,
-        'h.r.site.p':`Structured data, an llms.txt and crawlable text on every page.`,
-        'h.go.sec':`Read section 05`,
-        'h.go.co':`How this site is built`,
         'close.p':`How I scope an AI feature, where I keep a person in the loop and how <code>qa-design</code> fits a team’s workflow: all of it is a 30-minute call away.`,
         'close.h2':`Questions this page doesn’t answer?`,
         'close.cta.all':`See all cases`
@@ -1281,43 +1279,45 @@
         'modal.resume.sub':`Página web, também em PDF`,
         'modal.call.title':`Agendar uma call de 30 min`,
         'modal.call.sub':`Escolha um horário (ET)`,
-        'ix.time':`3 min de leitura`,
-        'hero.kicker':`Como eu trabalho com IA`,
-        'hero.h1':`IA dos dois lados da tela`,
-        'hero.dek':`Uso IA do mesmo jeito que desenho: ela propõe, uma pessoa decide, e toda afirmação tem evidência por trás. Aqui está onde isso aparece: nos produtos, no meu processo e em como o trabalho é lido.`,
+        'ix.time':`4 min de leitura`,
         'crumb.home':`Portfólio`,
         'crumb.ai':`IA`,
-        'h.s1.k':`01 · No produto`,
-        'h.s1.h':`No produto`,
-        'h.s1.p':`Quando a IA faz parte do produto, o trabalho de design está na confiança: o que ela pode decidir, como ela diz o que encontrou e o que acontece quando ela erra.`,
-        'h.liam.p':`Rascunha o registro clínico a partir da narração da terapeuta. Cada campo é uma sugestão que a terapeuta revisa e assina.`,
-        'h.liam.l':`Minha camada: interface e modelo com humano no controle.`,
-        'h.ssd.p':`Um veredito com IA sobre se uma loja é segura, escrito para afirmar só o que foi verificado.`,
-        'h.ssd.l':`Minha camada: interface e o texto do veredito.`,
-        'h.go.case':`Ler o case`,
-        'h.go.note':`Ler a nota`,
-        'h.s2.k':`02 · No meu processo`,
-        'h.s2.h':`No meu processo`,
-        'h.qa.k':`Nota · 6 min de leitura`,
-        'h.qa.h':`Eu estava prestes a virar o gargalo, então criei uma skill de IA para fazer meu design QA`,
-        'h.qa.p':`A <code>qa-design</code> revisa cada build contra o design, escreve as correções para o dev e abre o ticket. Uma das 4 campeãs entre 353 protótipos do desafio de IA do Reclame AQUI.`,
-        'h.s2.more':`Além dessa skill, a IA faz parte do meu trabalho todos os dias:`,
-        'h.s3.k':`03 · Para leitores de IA`,
-        'h.s3.h':`Para leitores de IA`,
-        'h.s3.p':`Cada vez mais as pessoas perguntam a um assistente de IA antes de abrir um site. Eu desenho também para esse segundo leitor.`,
-        'h.r.ssd.p':`Páginas que começam pela pergunta, sobre dados estruturados, para os assistentes citarem o veredito corretamente.`,
-        'h.r.ssd.l':`As citações no Google AI Overview subiram 138% em 30 empresas, medidas no Search Console.`,
-        'h.r.site.h':`Este site`,
-        'h.r.site.p':`Dados estruturados, um llms.txt e texto rastreável em todas as páginas.`,
-        'h.go.sec':`Ler a seção 05`,
-        'h.go.co':`Como este site é feito`,
-        'close.p':`Como eu delimito uma feature de IA, onde mantenho uma pessoa no controle e como a <code>qa-design</code> entra no fluxo de um time: tudo isso cabe numa conversa de 30 minutos.`,
-        'close.h2':`Ficou alguma pergunta?`,
-        'close.cta.all':`Ver todos os cases`,
+        'hero.kicker':`Como eu trabalho com IA`,
+        'hero.h1':`IA dos dois lados da tela`,
+        'hero.dek':`Uso IA do mesmo jeito que desenho: ela propõe, uma pessoa decide, e toda afirmação tem evidência por trás. Veja como isso funcionou em cada produto: o que a IA faz, onde uma pessoa continua no controle e o que mudou.`,
+        'd.k.does':`O que a IA faz`,
+        'd.k.person':`Onde uma pessoa decide`,
+        'd.k.changed':`O que mudou`,
+        'd.go.case':`Ler o case completo`,
+        'd.go.note':`Ler a nota completa`,
+        'd.go.site':`Ver como este site é feito`,
+        'd1.cat':`Confiança do consumidor`,
+        'd1.does':`Um crawler coleta sinais públicos sobre a loja e a empresa por trás dela, e um modelo escreve a análise. A engenharia construiu tudo com IA desde o início, e a primeira versão foi ao ar em cerca de seis semanas.`,
+        'd1.person':`O modelo consegue juntar muito mais do que o consumidor precisa, e uma afirmação errada sobre uma empresa pode prejudicar um negócio legítimo. Transformei o resultado num veredito só, de 0 a 5 escudos, escrito para afirmar só o que foi verificado, com cada escudo mostrando o sinal por trás dele.`,
+        'd1.changed':`<strong>45,1% → 72,4%</strong> disseram que o detector ajudou a decidir. O custo mensal foi de R$1,7M projetados para R$1,2k. As citações no Google AI Overview subiram 138% em 30 empresas.`,
+        'd2.cat':`IA clínica`,
+        'd2.does':`O terapeuta narra a sessão enquanto ela acontece, e o LIAM transforma o áudio num primeiro rascunho de todos os campos obrigatórios do registro clínico, reescrito em frases que soam como um registro, não como uma transcrição.`,
+        'd2.person':`O LIAM propõe e nunca envia. Cada campo é uma sugestão que o terapeuta copia à mão, a gravação fica anexada para conferir qualquer trecho, e uma pergunta no fluxo checa se as sugestões continuam boas.`,
+        'd2.changed':`A documentação foi de <strong>até 2 horas para cerca de 25 minutos</strong> por sessão, segundo o time clínico um trimestre após o lançamento. Na avaliação da liderança clínica, a qualidade dos registros melhorou.`,
+        'd3.cat':`Meu processo de design`,
+        'd3.does':`Uma skill no Claude que revisa cada build contra o arquivo do Figma, escreve um arquivo de correção que o dev roda no Claude ou no Cursor dele e abre a task no Jira.`,
+        'd3.person':`Quando algo não dá para resolver só pelo design, a skill me pergunta em vez de chutar. O dev revisa cada correção antes de aplicar, e eu dou uma última olhada antes de ir para produção.`,
+        'd3.changed':`A revisão que todo experimento precisava continuou, sem a fila. O primeiro teste real encontrou <strong>mais de 30 inconsistências</strong>, todas resolvidas de uma vez, menos uma decisão de design. Uma das <strong>4 campeãs entre 353 protótipos</strong> do desafio de IA da empresa.`,
+        'd3.tag':`Campeão do desafio de IA`,
+        'd4.h':`Este site`,
+        'd4.cat':`Para leitores de IA`,
+        'd4.does':`Construí com o Claude Code: HTML, CSS e um pouco de JavaScript, sem framework. Cada vez mais as pessoas perguntam a um assistente de IA antes de abrir um site, então ele foi escrito também para esse segundo leitor.`,
+        'd4.person':`Só números que eu sustento: cada resultado diz como foi medido, e o que não consegui verificar ficou de fora. A IA repete o que encontra, então a página precisa estar certa primeiro.`,
+        'd4.changed':`Dados estruturados, um llms.txt e texto rastreável em todas as páginas, para que um assistente perguntado sobre o meu trabalho cite corretamente e aponte para cá.`,
+        'h.day.h':`No dia a dia`,
+        'h.day.p':`Além desses produtos, a IA faz parte do meu trabalho:`,
         'ai.proc.1':`<strong>Pensar decisões</strong> com LLMs e agentes, todos os dias.`,
         'ai.proc.2':`<strong>Pesquisa e análise de dados</strong>, mais rápidas.`,
         'ai.proc.3':`<strong>Protótipos funcionais</strong>, e alguns deles foram para produção.`,
-        'ai.proc.4':`<strong>Claude e Claude Code</strong> são onde vou mais fundo. Também já trabalhei com GPT e Gemini, e testo modelos e ferramentas novos conforme são lançados.`
+        'ai.proc.4':`<strong>Claude e Claude Code</strong> são onde vou mais fundo. Também já trabalhei com GPT e Gemini, e testo modelos e ferramentas novos conforme são lançados.`,
+        'close.p':`Como eu delimito uma feature de IA, onde mantenho uma pessoa no controle e como a <code>qa-design</code> entra no fluxo de um time: tudo isso cabe numa conversa de 30 minutos.`,
+        'close.h2':`Ficou alguma pergunta?`,
+        'close.cta.all':`Ver todos os cases`
       }
     };
 
