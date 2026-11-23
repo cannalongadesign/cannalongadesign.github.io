@@ -28,3 +28,20 @@
 /* headings inside numbered lists and takeaways were inheriting the gray of body text */
 .article-body .process li h2,.article-body .process li h3,.article-body .takeaway{color:var(--ink);}
 .article-body .process li p{line-height:1.55;}
+
+/* ---------- the highlight ----------
+   One mark, used the same way everywhere: the acid band under the words that carry
+   the point, like the hero's "the wrong screen". In the About it marks the facts,
+   in the testimonials the phrase each person chose to stress. It draws in once,
+   when its block reaches the screen; with reduced motion or no JavaScript it is simply there. */
+mark.hl,.quote strong{
+  background:none; color:var(--ink); padding:0 .06em; margin:0 -.06em;
+  background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat;
+  background-position:0 88%; background-size:100% .38em;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone;
+}
+.js .reveal mark.hl,.js .reveal .quote strong{background-size:0% .38em; transition:background-size .8s cubic-bezier(.2,.7,.2,1) .25s;}
+.js .reveal.in mark.hl,.js .reveal.in .quote strong{background-size:100% .38em;}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal mark.hl,.js .reveal .quote strong{background-size:100% .38em; transition:none;}
+}
