@@ -994,49 +994,19 @@
     .hero-d .hero-actions{flex:none; flex-wrap:nowrap;}
   }
 
-  /* Hero: claim, one line of context, the award, then the numbers. Tight enough that the top of
-     the first case shows on a 1280x800 laptop without scrolling; the claim keeps its size. */
-  @media (min-width:1041px){
-    .hero-d{padding:108px 0 16px;}
-    .hero-d .who{margin-bottom:16px;}
-    .hero-d .who img{width:48px; height:48px;}
-    .hero-d h1{font-size:clamp(64px,7.2vw,104px); line-height:.98; margin-bottom:16px;}
+  /* Hero fills the first screen. The claim is set larger and with a little more leading so it
+     takes the room, and the whole group (name, claim, numbers) sits centered in the screen:
+     no band of empty paper between the claim and the rule, none under the buttons.
+     Capped, so a tall monitor does not stretch it. */
+  @media (min-width:1041px) and (min-height:620px){
+    .hero-d{min-height:min(100svh, 940px); display:flex; flex-direction:column; padding-bottom:var(--s4);}
+    .hero-d > .wrap{flex:1; display:flex; flex-direction:column; width:100%;}
+    .hero-d .hero-copy{flex:1; display:flex; flex-direction:column; justify-content:center;}
+    .hero-d .who{margin-bottom:var(--s4);}
+    .hero-d h1{font-size:clamp(64px,7.2vw,104px); line-height:.98; margin-bottom:var(--s5);}
+    /* in Portuguese the flagged phrase starts with "a": keep it with its words, not alone at a line end */
     html[lang="pt-BR"] .hero-d h1 .mk{white-space:nowrap;}
-    .hero-d .hero-meta{margin-bottom:20px;}
-    .hero-d .hero-foot{padding-top:16px;}
-    #work{padding-top:var(--s3);}
-    #work > .wrap > .sec-head{margin-bottom:20px;}
-    #work > .wrap > .sec-head .label-row{margin-bottom:10px;}
-    #work > .wrap > .sec-head h2{margin-bottom:6px;}
-    #work > .wrap > .sec-head p{max-width:none;}
   }
-
-  /* short laptop screens (1280x800): the same layout, closer together, so the first case still peeks in */
-  @media (min-width:1041px) and (max-height:860px){
-    .hero-d{padding:100px 0 8px;}
-    .hero-d .who{margin-bottom:12px;}
-    .hero-d h1{margin-bottom:12px;}
-    .hero-d .hero-meta{margin-bottom:14px;}
-    .hero-d .hero-foot{padding-top:12px;}
-    #work{padding-top:16px;}
-    #work > .wrap > .sec-head{margin-bottom:16px;}
-    #work > .wrap > .sec-head .label-row{margin-bottom:6px;}
-  }
-  /* context line and award share a row on desktop, stack on narrow screens */
-  .hero-d .hero-meta{display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; margin:0 0 var(--s3);}
-  .hero-d .hero-meta .hero-sub{flex:1 1 0; min-width:min(100%,34ch); margin:0;}
-  .hero-d .hero-meta .hero-award{margin:0; flex:none;}
-
-  .hero-d .hero-sub{font-size:clamp(16px,1.3vw,18px); line-height:1.5; color:var(--ink-2); max-width:62ch; margin:0 0 14px;}
-  .hero-d .hero-award{display:inline-flex; align-items:center; gap:8px; align-self:flex-start; margin:0 0 var(--s4);
-    font-family:var(--mono); font-size:12px; letter-spacing:.02em; line-height:1.4; color:var(--ink);
-    padding:7px 12px; border:1px solid var(--line-2); border-radius:100px; transition:border-color .16s ease, background-color .16s ease;}
-  .hero-d .hero-award::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--acid); box-shadow:inset 0 0 0 1px rgba(20,20,15,.25); flex:none;}
-  .hero-d .hero-award:hover,.hero-d .hero-award:focus-visible{border-color:var(--ink); background:var(--paper-2);}
-  .hero-d .hero-copy{display:flex; flex-direction:column;}
-  @media (max-width:1040px){ .hero-d .hero-meta .hero-award{flex:0 1 auto; max-width:100%;} }
-  @media (max-width:520px){ .hero-d .hero-award{font-size:11px; border-radius:12px; padding:7px 10px; align-items:flex-start;} .hero-d .hero-award::before{margin-top:4px;} }
-
   /* Matri has no page: no corner arrow, no hover, and the call is the action */
   .card-static .card-call{align-self:flex-start; margin-top:12px; font:inherit; font-size:14px; font-weight:700; color:var(--ink); background:none; border:0; padding:6px 0; cursor:pointer;
     text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1.5px; text-decoration-color:var(--line-control);}
@@ -1247,10 +1217,6 @@
         <div><strong>Guilherme Cannalonga</strong><span data-i18n="hero.role">Senior Product Designer · Greater Boston, MA</span></div>
       </div>
       <h1 data-i18n="hero.h1">Product design for systems where <mark class="mk">the wrong screen</mark> is expensive.</h1>
-      <div class="hero-meta">
-      <p class="hero-sub" data-i18n="hero.sub">Now at Reclame AQUI, where more than 30 million people check companies every month. I design AI products where a person stays in charge.</p>
-      <a class="hero-award" href="/ai/qa-design/"><span data-i18n="hero.award">One of 4 champions out of 353 prototypes · company-wide AI challenge, 2026</span> <span aria-hidden="true">&rarr;</span></a>
-      </div>
       <div class="hero-foot">
         <div class="stats">
           <a class="stat" href="/safe-site-detector/"><div class="n" aria-hidden="true"><span data-i18n="stat.ssd.from">45.1%</span> <span class="after-in"><span class="arw">&rarr;</span> <span class="morph" data-from="45.1" data-to="72.4" data-dec="1" data-suffix="%">72.4%</span></span></div><span class="bar" aria-hidden="true" data-max="100" style="--from:45.1%;--now:72.4%"></span><span class="sr-only" data-i18n="stat.ssd.sr">45.1% to 72.4%:</span> <span class="l" data-i18n="card.ssd.metname">Said the detector helped them decide</span> <span class="src"><span data-i18n="stat.ssd.src">Safe Site Detector</span> <span aria-hidden="true">&rarr;</span></span></a>
@@ -1650,7 +1616,7 @@
         'stat.ssd.sr':`45.1% to 72.4%:`, 'stat.genial.sr':`8.6% to 62.3%:`, 'stat.liam.sr':`Up to 2 hours to 25 minutes:`,
         'stat.ssd.src':`Safe Site Detector`,
         'card.ssd.met':`45.1% &rarr; 72.4%`, 'card.genial.met':`8.6% &rarr; 62.3%`,
-        'ai.label':`How I work with AI`, 'ai.h2':`AI on both sides of the screen.`, 'nav.ai':`AI`, 'hero.sub':`Now at Reclame AQUI, where more than 30 million people check companies every month. I design AI products where a person stays in charge.`, 'hero.award':`One of 4 champions out of 353 prototypes · company-wide AI challenge, 2026`, 'card.matri.ev':`reported by the client`, 'card.matri.call':`Details on a call`, 'card.ssd.ev':`self-reported · in-product question`, 'card.genial.ev':`measured · Metabase`, 'card.liam.ev':`reported by the clinical team`, 'card.kruzer.ev':`counted · staged rollout`, 'card.compass.ev':`measured · Jira`, 'ai.m2.tag':`AI challenge champion`, 'ai.p':`In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.`, 'ai.m1.h':`In the product`, 'ai.m1.p':`LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.`, 'ai.m2.h':`In my process`, 'ai.m2.p':`<code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.`, 'ai.m3.h':`For AI readers`, 'ai.m3.p':`Pages structured so AI assistants quote them correctly, including this site.`, 'about.p3':`In 2026, an AI skill I built for my team’s design QA was one of four champions out of 353 prototypes in the company’s AI challenge.`,
+        'ai.label':`How I work with AI`, 'ai.h2':`AI on both sides of the screen.`, 'nav.ai':`AI`, 'card.matri.ev':`reported by the client`, 'card.matri.call':`Details on a call`, 'card.ssd.ev':`self-reported · in-product question`, 'card.genial.ev':`measured · Metabase`, 'card.liam.ev':`reported by the clinical team`, 'card.kruzer.ev':`counted · staged rollout`, 'card.compass.ev':`measured · Jira`, 'ai.m2.tag':`AI challenge champion`, 'ai.p':`In the products I design, in how I design them, and in how they are read by the AI assistants people now ask before they buy.`, 'ai.m1.h':`In the product`, 'ai.m1.p':`LIAM drafts clinical records; the Safe Site Detector gives a verdict that states only what was verified.`, 'ai.m2.h':`In my process`, 'ai.m2.p':`<code>qa-design</code>, an AI skill that does my design QA. One of 4 champions out of 353 prototypes.`, 'ai.m3.h':`For AI readers`, 'ai.m3.p':`Pages structured so AI assistants quote them correctly, including this site.`, 'about.p3':`In 2026, an AI skill I built for my team’s design QA was one of four champions out of 353 prototypes in the company’s AI challenge.`,
         'contact.call':`Book a 30-min call`, 'contact.copy':`Copy`, 'contact.copied':`Copied`, 'contact.copy.aria':`Copy email address`, 'contact.copied.sr':`Email address copied`,
         'stat.genial.label':`Families opening the app daily, as the base grew to ~500 · Genial Care`,
         'stat.liam.label':`Documentation per session, from up to 2h · LIAM`,
@@ -1719,7 +1685,7 @@
         'stat.ssd.sr':`De 45,1% para 72,4%:`, 'stat.genial.sr':`De 8,6% para 62,3%:`, 'stat.liam.sr':`De até 2 horas para 25 minutos:`,
         'stat.ssd.src':`Detector de Site Confiável`,
         'card.ssd.met':`45,1% &rarr; 72,4%`, 'card.genial.met':`8,6% &rarr; 62,3%`,
-        'ai.label':`Como trabalho com IA`, 'ai.h2':`IA dos dois lados da tela.`, 'nav.ai':`IA`, 'hero.sub':`Hoje no Reclame AQUI, onde mais de 30 milhões de pessoas consultam empresas todo mês. Desenho produtos de IA em que uma pessoa continua no controle.`, 'hero.award':`Um dos 4 campeões entre 353 protótipos · desafio de IA da empresa, 2026`, 'card.matri.ev':`informado pelo cliente`, 'card.matri.call':`Detalhes numa conversa`, 'card.ssd.ev':`autodeclarado · pergunta no produto`, 'card.genial.ev':`medido · Metabase`, 'card.liam.ev':`reportado pelo time clínico`, 'card.kruzer.ev':`contado · rollout em ondas`, 'card.compass.ev':`medido · Jira`, 'ai.m2.tag':`Campeão do desafio de IA`, 'ai.p':`Nos produtos que desenho, no jeito como desenho e em como eles são lidos pelos assistentes de IA que as pessoas consultam antes de comprar.`, 'ai.m1.h':`No produto`, 'ai.m1.p':`O LIAM rascunha registros clínicos; o Detector dá um veredito que afirma só o que foi verificado.`, 'ai.m2.h':`No meu processo`, 'ai.m2.p':`<code>qa-design</code>, uma skill de IA que faz meu design QA. Uma das 4 campeãs entre 353 protótipos.`, 'ai.m3.h':`Para leitores de IA`, 'ai.m3.p':`Páginas estruturadas para assistentes de IA citarem corretamente, incluindo este site.`, 'about.p3':`Em 2026, uma skill de IA que criei para o design QA do meu time foi uma das quatro campeãs entre 353 protótipos no desafio de IA da empresa.`,
+        'ai.label':`Como trabalho com IA`, 'ai.h2':`IA dos dois lados da tela.`, 'nav.ai':`IA`, 'card.matri.ev':`informado pelo cliente`, 'card.matri.call':`Detalhes numa conversa`, 'card.ssd.ev':`autodeclarado · pergunta no produto`, 'card.genial.ev':`medido · Metabase`, 'card.liam.ev':`reportado pelo time clínico`, 'card.kruzer.ev':`contado · rollout em ondas`, 'card.compass.ev':`medido · Jira`, 'ai.m2.tag':`Campeão do desafio de IA`, 'ai.p':`Nos produtos que desenho, no jeito como desenho e em como eles são lidos pelos assistentes de IA que as pessoas consultam antes de comprar.`, 'ai.m1.h':`No produto`, 'ai.m1.p':`O LIAM rascunha registros clínicos; o Detector dá um veredito que afirma só o que foi verificado.`, 'ai.m2.h':`No meu processo`, 'ai.m2.p':`<code>qa-design</code>, uma skill de IA que faz meu design QA. Uma das 4 campeãs entre 353 protótipos.`, 'ai.m3.h':`Para leitores de IA`, 'ai.m3.p':`Páginas estruturadas para assistentes de IA citarem corretamente, incluindo este site.`, 'about.p3':`Em 2026, uma skill de IA que criei para o design QA do meu time foi uma das quatro campeãs entre 353 protótipos no desafio de IA da empresa.`,
         'contact.call':`Agendar uma call de 30 min`, 'contact.copy':`Copiar`, 'contact.copied':`Copiado`, 'contact.copy.aria':`Copiar endereço de email`, 'contact.copied.sr':`Endereço de email copiado`,
         'stat.genial.label':`Famílias abrindo o app por dia, com a base crescendo para ~500 · Genial Care`,
         'stat.liam.label':`Documentação por sessão, de até 2h · LIAM`,

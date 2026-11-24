@@ -74,13 +74,8 @@ a.card:focus-visible .card-media::after,a.callout:focus-visible::after,.ai-tile:
   /* 3. cards: the shot pans up, the arrow steps out, the source line comes forward */
   a.card .card-shot{transition:transform 600ms var(--ease-out);}
   a.card:hover .card-shot,a.card:focus-visible .card-shot{transform:translateY(-3%);}
-  /* 4. reading progress: a 2px acid line along the base of the nav pill (replaces the top-edge bar) */
-  @supports (animation-timeline: scroll()){
-    body::before{display:none !important;}
-    #siteNav > .wrap{position:relative; overflow:hidden;}
-    #siteNav > .wrap::after{content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--acid);
-      transform-origin:0 50%; transform:scaleX(0); animation:v27-read linear both; animation-timeline:scroll(root block);}
-  }
+  /* 4. the old top-edge reading bar stays off; a better place for it is still to be found */
+  body::before{display:none !important;}
   /* 6. page to page: the card picture becomes the case picture */
   ::view-transition-group(*){animation-duration:var(--t-base); animation-timing-function:var(--ease-out);}
 }

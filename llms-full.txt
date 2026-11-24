@@ -6,10 +6,6 @@ Source: https://cannalongadesign.github.io/ · Last updated: 2026-11-24
 
 # Product design for systems where the wrong screen is expensive.
 
-Now at Reclame AQUI, where more than 30 million people check companies every month. I design AI products where a person stays in charge.
-
-One of 4 champions out of 353 prototypes · company-wide AI challenge, 2026
-
 45.1% to 72.4%: Said the detector helped them decide Safe Site Detector
 
 8.6% to 62.3%: Families opening the app daily Genial App
