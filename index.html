@@ -349,16 +349,27 @@
   .card-media.coral{background:var(--coral) url(/assets/card-kruzer.webp) center / cover no-repeat;}
   .card-media.coral .card-shot{scale:1; translate:0 -5%;}
   a.card:hover .card-media.coral .card-shot{transform:none;}
-  /* on a phone the label leaves the picture and sits under it, as a plain line: nothing covers the product */
+  /* Phone: each case reads as one closed block. Picture, then who and what, then the result in a small
+     panel that closes the card; a clear gap before the next case. */
   @media (max-width:820px){
-    .card-met{position:static; max-width:none; flex-direction:row; flex-wrap:wrap; align-items:baseline; gap:4px 10px;
-      padding:12px 0 0; background:none; border-radius:0; color:var(--ink);}
-    .card-met .met-v,.card-media.ink + .card-met .met-v{color:var(--ink); font-size:17px;}
-    .card-met .met-n,.card-media.ink + .card-met .met-n{color:var(--ink-2); font-size:13px;}
-    .card-met .ev,.card-media.ink + .card-met .ev{flex-basis:100%; margin-top:2px; color:var(--ink-2);}
+    #work .grid{gap:72px;}
+    .card{display:flex; flex-direction:column;}
+    .card-fig{display:contents;}
+    .card-media{order:0;}
+    .card-cap{order:1; margin-top:var(--s3);}
+    .card-ctx{margin-bottom:8px;}
+    .card-cap h3{margin-bottom:8px;}
+    .card-static .card-call{margin-top:4px;}
+    .card-met,.card-media.ink + .card-met{order:2; position:static; max-width:none; margin-top:var(--s3);
+      display:grid; grid-template-columns:auto 1fr; align-items:baseline; gap:4px 12px;
+      padding:14px 16px; background:var(--paper-2); border-radius:14px; color:var(--ink);}
+    .card-met .met-v,.card-media.ink + .card-met .met-v{color:var(--ink); font-size:20px;}
+    .card-met .met-n,.card-media.ink + .card-met .met-n{color:var(--ink-2); font-size:13.5px; line-height:1.35;}
+    .card-met .ev,.card-media.ink + .card-met .ev{grid-column:1 / -1; margin-top:2px; color:var(--ink-2);}
     .card-met .ev::before{background:var(--ink);} .card-met .ev.reported::before{background:transparent; box-shadow:inset 0 0 0 1.5px var(--ink);}
-    .card-media.ink + .card-met{background:none;}
+    #work .sec-head.sub{margin-top:88px;}
   }
+
   a.card:hover .card-cap h3{text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:2px;}
   /* corner affordance, the way Stripe hints an expandable card */
   a.card .card-media::after{
