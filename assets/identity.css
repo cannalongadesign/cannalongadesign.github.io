@@ -17,7 +17,8 @@
    Blocks rising in and numbers counting are gone: content is there when the page is,
    for a recruiter skimming and for a crawler reading. The highlight on the headline
    still draws in; hover and focus stay. */
-.reveal,.js .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
+/* blocks come in as they reach the screen (see the layered motion below); without JS or with reduced motion they are simply there */
+.reveal{opacity:1; transform:none;}
 .js .article-hero .col > *,.js .hero-copy > *,.js .stats,.js .hero-d h1 .w{animation:none !important;}
 .js .shot.reveal .frame > img,.js .shot.reveal .stage img,.js .shot.reveal .phone-row img{transform:none !important; transition:none !important;}
 .js .meta-item:last-child .v{animation:none !important;}
@@ -42,7 +43,7 @@ mark.hl,.quote strong{
 }
 @keyframes hl-draw{from{background-size:0% .38em;} to{background-size:100% .38em;}}
 .js mark.hl,.js .quote strong{background-size:0% .38em;}
-.js mark.hl.on,.js .quote strong.on{animation:hl-draw .8s cubic-bezier(.2,.7,.2,1) .15s both;}
+.js mark.hl.on,.js .quote strong.on{animation:hl-draw 1s cubic-bezier(.2,.7,.2,1) .45s both;}
 @media (prefers-reduced-motion:reduce){
   .js mark.hl,.js .quote strong{background-size:100% .38em; animation:none !important;}
 }
@@ -66,11 +67,15 @@ a.card:focus-visible .card-media::after,a.callout:focus-visible::after,.ai-tile:
 
 @media (prefers-reduced-motion:no-preference){
   /* 1. the hero highlight draws once, left to right */
-  .js .hero-d h1 .mk{animation:v27-mk var(--t-max) var(--ease-out) 120ms both !important;}
+  /* layered: first the highlight draws, then, after a beat, the results change one by one */
+  .js .hero-d h1 .mk{animation:v27-mk 1s var(--ease-out) 350ms both !important;}
   /* 2. before stays, the arrow and the after value arrive: the change, not a count */
-  .js .hero-d .after-in{display:inline-block; animation:v27-after var(--t-base) var(--ease-out) both;}
-  .js .hero-d .stat:nth-child(2) .after-in{animation-delay:80ms;}
-  .js .hero-d .stat:nth-child(3) .after-in{animation-delay:160ms;}
+  .js .hero-d .after-in{display:inline-block; animation:v27-after 600ms var(--ease-out) 1550ms both;}
+  .js .hero-d .stat:nth-child(2) .after-in{animation-delay:1750ms;}
+  .js .hero-d .stat:nth-child(3) .after-in{animation-delay:1950ms;}
+  /* then, as the page scrolls, each block comes in once: a short rise and fade */
+  .js .reveal{opacity:0; transform:translateY(24px); transition:opacity 800ms var(--ease-out), transform 800ms var(--ease-out);}
+  .js .reveal.in{opacity:1; transform:none;}
   /* 3. cards: the shot pans up, the arrow steps out, the source line comes forward */
   a.card .card-shot{transition:transform 600ms var(--ease-out);}
   a.card:hover .card-shot,a.card:focus-visible .card-shot{transform:translateY(-3%);}
@@ -112,3 +117,10 @@ html,body{overflow-x:clip;}
   .js a.card.reveal:hover .card-shot,.js a.card.reveal:focus-visible .card-shot{transform:translateY(-3%);}
   .js a.card.reveal:hover .card-media.coral .card-shot{transform:none;}
 }
+/* case index: the section's rule lands just under the nav, so the heading is right there to read */
+.stage-label{scroll-margin-top:96px;}
+
+/* Matri: light phone screens run to the edge of a dark picture and met the light page; a dark frame keeps the card's shape */
+.card-media.ink .card-shot{inset:3px; width:calc(100% - 6px); height:calc(100% - 6px); border-radius:16px;}
+/* printing never waits for a block to scroll in */
+@media print{ .reveal,.js .reveal{opacity:1 !important; transform:none !important;} }

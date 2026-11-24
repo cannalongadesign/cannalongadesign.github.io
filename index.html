@@ -1529,6 +1529,26 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -4% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+  /* Anchors land on the content, not on the section's top padding: the first thing in the section
+     sits a fixed gap under the nav, whatever padding that section has at this screen size. */
+  (function(){
+    const GAP=36;
+    const nav=document.querySelector('nav');
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const target=id=>{ const sec=document.getElementById(id); if(!sec||sec.tagName!=='SECTION') return null;
+      const wrap=sec.querySelector(':scope > .wrap'); return (wrap&&wrap.firstElementChild)||sec; };
+    const y=el=>{ const top=el.getBoundingClientRect().top+window.scrollY; const h=nav?nav.getBoundingClientRect().height+(nav.classList.contains('solid')?0:14):0;   /* the nav grows 14px once the page scrolls */
+      return Math.max(0, Math.min(top-h-GAP, document.documentElement.scrollHeight-window.innerHeight)); };
+    document.addEventListener('click',e=>{
+      const a=e.target.closest('a[href^="#"]'); if(!a||a.hasAttribute('data-contact-trigger')) return;
+      const id=a.getAttribute('href').slice(1); const el=target(id); if(!el) return;
+      e.preventDefault();
+      window.scrollTo({top:y(el), behavior:reduce?'auto':'smooth'});
+      history.pushState(null,'','#'+id);
+    });
+    window.addEventListener('load',()=>{ const id=location.hash.slice(1); const el=id&&target(id); if(el) window.scrollTo({top:y(el)}); });
+  })();
+
   /* highlights draw as their text reaches the screen, the same way the hero's does.
      The text element is watched, not the mark: switching language rewrites the marks inside it. */
   (function(){
