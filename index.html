@@ -1007,6 +1007,10 @@
     /* in Portuguese the flagged phrase starts with "a": keep it with its words, not alone at a line end */
     html[lang="pt-BR"] .hero-d h1 .mk{white-space:nowrap;}
   }
+  /* the numbers sit on the buttons' optical center: their box is centered, but the bold number on top and the
+     empty line space under the label made the block read a few pixels high */
+  @media (min-width:1041px){ .hero-d .stats{position:relative; top:3px;} }
+
   /* Matri has no page: no corner arrow, no hover, and the call is the action */
   .card-static .card-call{align-self:flex-start; margin-top:12px; font:inherit; font-size:14px; font-weight:700; color:var(--ink); background:none; border:0; padding:6px 0; cursor:pointer;
     text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1.5px; text-decoration-color:var(--line-control);}
