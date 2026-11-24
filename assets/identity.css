@@ -55,3 +55,65 @@ a.card:hover .card-media::after,a.callout:hover::after,.ai-tile:hover::after,
 a.card:focus-visible .card-media::after,a.callout:focus-visible::after,.ai-tile:focus-visible::after{
   opacity:1; background-color:var(--acid); color:var(--ink);
 }
+
+/* ================= audit v27: motion with a job =================
+   One easing, three durations. Everything that moves sits inside no-preference;
+   with reduced motion every element is simply in its final state. */
+:root{--ease-out:cubic-bezier(.2,.7,.2,1); --t-micro:160ms; --t-base:280ms; --t-max:480ms;}
+@keyframes v27-mk{from{background-size:0% .38em;} to{background-size:100% .38em;}}
+@keyframes v27-after{from{opacity:.35; transform:translateX(4px);} to{opacity:1; transform:none;}}
+@keyframes v27-read{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+
+@media (prefers-reduced-motion:no-preference){
+  /* 1. the hero highlight draws once, left to right */
+  .js .hero-d h1 .mk{animation:v27-mk var(--t-max) var(--ease-out) 120ms both !important;}
+  /* 2. before stays, the arrow and the after value arrive: the change, not a count */
+  .js .hero-d .after-in{display:inline-block; animation:v27-after var(--t-base) var(--ease-out) both;}
+  .js .hero-d .stat:nth-child(2) .after-in{animation-delay:80ms;}
+  .js .hero-d .stat:nth-child(3) .after-in{animation-delay:160ms;}
+  /* 3. cards: the shot pans up, the arrow steps out, the source line comes forward */
+  a.card .card-shot{transition:transform 600ms var(--ease-out);}
+  a.card:hover .card-shot,a.card:focus-visible .card-shot{transform:translateY(-3%);}
+  /* 4. reading progress: a 2px acid line along the base of the nav pill (replaces the top-edge bar) */
+  @supports (animation-timeline: scroll()){
+    body::before{display:none !important;}
+    #siteNav > .wrap{position:relative; overflow:hidden;}
+    #siteNav > .wrap::after{content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--acid);
+      transform-origin:0 50%; transform:scaleX(0); animation:v27-read linear both; animation-timeline:scroll(root block);}
+  }
+  /* 6. page to page: the card picture becomes the case picture */
+  ::view-transition-group(*){animation-duration:var(--t-base); animation-timing-function:var(--ease-out);}
+}
+@media (prefers-reduced-motion:reduce){
+  *{view-transition-name:none !important;}
+  .js .hero-d .after-in{animation:none !important;}
+}
+@media (hover:hover) and (min-width:821px){
+  a.card .card-met .ev{opacity:.7; transition:opacity var(--t-base) var(--ease-out);}
+  a.card:hover .card-met .ev,a.card:focus-visible .card-met .ev{opacity:1;}
+}
+
+/* ================= audit v27: visual bugs ================= */
+/* Pick & Pack: the corner arrow sits on the monitor, so it gets a solid ground */
+a.card .card-media.coral::after{opacity:1; background:var(--paper);}
+/* on touch screens the corner arrow is a hover hint with nothing to hover; it also slid under the back-to-top button */
+@media (max-width:820px){ a.card .card-media::after,.ai-tile::after{display:none;} }
+/* nothing may push the page wider than the screen */
+html,body{overflow-x:clip;}
+.card-media{contain:paint;}
+/* Compass on a phone: the wide boards scroll sideways on purpose; say so */
+@media (max-width:820px){
+  .shot.wide{position:relative;}
+  .shot.wide::before{content:'scroll \2192'; position:absolute; top:10px; right:calc(var(--pad, 20px) + 10px); z-index:2;
+    font-family:var(--mono, ui-monospace, monospace); font-size:11px; letter-spacing:.04em; color:var(--ink);
+    background:var(--paper); border:1px solid var(--line); border-radius:100px; padding:4px 9px; pointer-events:none;}
+  html[lang="pt-BR"] .shot.wide::before{content:'role \2192';}
+}
+/* the old reveal zoomed card pictures to 107% until they entered, and Matri kept a 106% scale meant for
+   the drift that is gone: both pushed the picture 2px past a 375px screen */
+.js .card.reveal .card-shot{transform:none;}
+.card-media.ink .card-shot{scale:1 !important;}
+@media (prefers-reduced-motion:no-preference){
+  .js a.card.reveal:hover .card-shot,.js a.card.reveal:focus-visible .card-shot{transform:translateY(-3%);}
+  .js a.card.reveal:hover .card-media.coral .card-shot{transform:none;}
+}

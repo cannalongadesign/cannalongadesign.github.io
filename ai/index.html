@@ -880,24 +880,6 @@
   .article-body .ai-card.feature p{font-size:16px; line-height:1.55;}
 
   /* the challenge result: the site's own metrics strip, four cells, the last one marked */
-  .result{margin:var(--sp-6) 0;}
-  .result .result-k{display:block; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); margin-bottom:var(--sp-3);}
-  .result .metrics-strip{margin:0;}
-  .result .m.win .num span{background-image:linear-gradient(var(--acid),var(--acid)); background-repeat:no-repeat; background-position:0 88%; background-size:100% .42em; padding:0 .08em;}
-  .result .m.win .label{color:var(--ink); font-weight:700;}
-  .result .note{margin:var(--sp-3) 0 0;}
-  /* the proof: the champions graphic, framed like the case screenshots */
-  .proof{margin:var(--sp-4) 0 0;}
-  .proof img{display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--line);}
-  .article-body .proof .cap{font-family:var(--mono); font-size:11.5px; line-height:1.5; color:var(--ink-2); margin:var(--sp-2) 0 0;}
-  .article-body .note code{background:none; padding:0;}
-  @media (max-width:820px){
-    .result .metrics-strip{display:grid; grid-template-columns:1fr 1fr; flex-direction:initial;}
-    .result .metrics-strip .m{padding:var(--sp-3) var(--sp-3) var(--sp-3) 0; border-right:none; border-bottom:1px solid var(--line);}
-    .result .metrics-strip .m:nth-child(even){padding-left:var(--sp-3); border-left:1px solid var(--line);}
-    .result .metrics-strip .m:nth-last-child(-n+2){border-bottom:none;}
-    .result .metrics-strip .m:first-child{padding-top:var(--sp-3);}
-  }
 
   /* qa-design loop: six steps in a row on wide screens, a vertical line on narrow ones */
   .flow{margin:var(--sp-6) 0 var(--sp-7);}
@@ -918,7 +900,7 @@
     .flow li .t{padding-top:0;}
   }
   @media (prefers-reduced-motion:reduce){ .ai-card,.ai-card .go span{transition:none;} }
-  @media print{ .ai-card{break-inside:avoid;} .result,.flow{break-inside:avoid;} }
+  @media print{ .ai-card{break-inside:avoid;} .funnel-fig,.flow{break-inside:avoid;} }
 
   /* /ai/: one decision card per product, the same component the cases use */
   .ai-dec .decision-head{justify-content:flex-start; flex-wrap:wrap; gap:8px 12px;}
@@ -953,7 +935,7 @@
     "@id": "https://cannalongadesign.github.io/#person"
    },
    "inLanguage": "en",
-   "dateModified": "2026-11-23",
+   "dateModified": "2026-11-24",
    "hasPart": [
     {
      "@id": "https://cannalongadesign.github.io/ai/qa-design/#article"
@@ -1037,7 +1019,7 @@
       <div class="decision-body">
         <div class="decision-row"><span class="dk" data-i18n="d.k.does">What the AI does</span><p class="dv" data-i18n="d1.does">A crawler collects public signals about a store and the company behind it, and a model writes the analysis. Engineering built it AI-first, so the first version was live in about six weeks.</p></div>
         <div class="decision-row"><span class="dk" data-i18n="d.k.person">Where a person decides</span><p class="dv" data-i18n="d1.person">The model can gather far more than a shopper needs, and a wrong claim about a company can harm a legitimate business. I turned its output into one verdict, from 0 to 5 shields, worded to state only what was verified, with each shield showing the signal behind it.</p></div>
-        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d1.changed"><strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost went from a projected R$1.7M to R$1.2k. Citations in Google AI Overview rose 138% across 30 companies.</p></div>
+        <div class="decision-row"><span class="dk" data-i18n="d.k.changed">What changed</span><p class="dv" data-i18n="d1.changed"><strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost is 99.9% lower than the partner’s projection. Citations in Google AI Overview rose 138% across 30 companies.</p></div>
       </div>
       <div class="decision-foot"><a href="/safe-site-detector/"><span data-i18n="d.go.case">Read the full case</span> <span aria-hidden="true">&rarr;</span></a></div>
     </div>
@@ -1215,7 +1197,7 @@
         'd1.cat':`Consumer trust`,
         'd1.does':`A crawler collects public signals about a store and the company behind it, and a model writes the analysis. Engineering built it AI-first, so the first version was live in about six weeks.`,
         'd1.person':`The model can gather far more than a shopper needs, and a wrong claim about a company can harm a legitimate business. I turned its output into one verdict, from 0 to 5 shields, worded to state only what was verified, with each shield showing the signal behind it.`,
-        'd1.changed':`<strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost went from a projected R$1.7M to R$1.2k. Citations in Google AI Overview rose 138% across 30 companies.`,
+        'd1.changed':`<strong>45.1% → 72.4%</strong> said the detector helped them decide. Monthly cost is 99.9% lower than the partner’s projection. Citations in Google AI Overview rose 138% across 30 companies.`,
         'd2.cat':`Clinical AI`,
         'd2.does':`The therapist narrates the session as it happens, and LIAM turns the audio into a first draft of every required field of the clinical record, rewritten into sentences that read like a record, not a transcript.`,
         'd2.person':`LIAM proposes and never submits. Every field is a suggestion the therapist copies in by hand, the recording stays attached to check any line, and a prompt in the flow asks whether the suggestions are still good.`,
@@ -1276,7 +1258,7 @@
         'd1.cat':`Confiança do consumidor`,
         'd1.does':`Um crawler coleta sinais públicos sobre a loja e a empresa por trás dela, e um modelo escreve a análise. A engenharia construiu tudo com IA desde o início, e a primeira versão foi ao ar em cerca de seis semanas.`,
         'd1.person':`O modelo consegue juntar muito mais do que o consumidor precisa, e uma afirmação errada sobre uma empresa pode prejudicar um negócio legítimo. Transformei o resultado num veredito só, de 0 a 5 escudos, escrito para afirmar só o que foi verificado, com cada escudo mostrando o sinal por trás dele.`,
-        'd1.changed':`<strong>45,1% → 72,4%</strong> disseram que o detector ajudou a decidir. O custo mensal foi de R$1,7M projetados para R$1,2k. As citações no Google AI Overview subiram 138% em 30 empresas.`,
+        'd1.changed':`<strong>45,1% → 72,4%</strong> disseram que o detector ajudou a decidir. O custo mensal ficou 99,9% menor que o projetado pelo parceiro. As citações no Google AI Overview subiram 138% em 30 empresas.`,
         'd2.cat':`IA clínica`,
         'd2.does':`O terapeuta narra a sessão enquanto ela acontece, e o LIAM transforma o áudio num primeiro rascunho de todos os campos obrigatórios do registro clínico, reescrito em frases que soam como um registro, não como uma transcrição.`,
         'd2.person':`O LIAM propõe e nunca envia. Cada campo é uma sugestão que o terapeuta copia à mão, a gravação fica anexada para conferir qualquer trecho, e uma pergunta no fluxo checa se as sugestões continuam boas.`,

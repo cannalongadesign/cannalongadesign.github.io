@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="From prototype to champion: 353, 115, 15, 4">
+<rect width="1200" height="760" fill="#F6F4EE"/>
+<text x="80" y="104" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="20" letter-spacing="2" fill="#8A877F">COMPANY-WIDE AI CHALLENGE · 2026</text>
+<text x="80" y="164" font-family="IBM Plex Sans, DM Sans, system-ui, sans-serif" font-size="52" font-weight="600" letter-spacing="-1" fill="#16161A">From prototype to champion</text>
+<rect x="80" y="220" width="1040" height="96" rx="8" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
+<text x="112" y="286" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="52" font-weight="500" fill="#16161A">353</text>
+<text x="240" y="280" font-family="IBM Plex Sans, DM Sans, system-ui, sans-serif" font-size="26" fill="#5E5C57">prototypes submitted</text>
+<rect x="80" y="332" width="594" height="96" rx="8" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
+<text x="112" y="398" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="52" font-weight="500" fill="#16161A">115</text>
+<text x="240" y="392" font-family="IBM Plex Sans, DM Sans, system-ui, sans-serif" font-size="26" fill="#5E5C57">approved by the jury</text>
+<rect x="80" y="444" width="214" height="96" rx="8" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
+<text x="112" y="510" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="52" font-weight="500" fill="#16161A">15</text>
+<text x="318" y="504" font-family="IBM Plex Sans, DM Sans, system-ui, sans-serif" font-size="26" fill="#5E5C57" font-weight="400">highlighted</text>
+<rect x="80" y="556" width="150" height="96" rx="8" fill="#0E5E5A" stroke="none" stroke-width="2"/>
+<text x="112" y="622" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="52" font-weight="500" fill="#FFFFFF">4</text>
+<text x="254" y="616" font-family="IBM Plex Sans, DM Sans, system-ui, sans-serif" font-size="26" fill="#16161A" font-weight="600">champions</text>
+<rect x="80" y="652" width="0" height="0"/>
+<circle cx="264" cy="652" r="0"/>
+<text x="254" y="648" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="20" fill="#0E5E5A">● qa-design · the only one by a product designer</text>
+<text x="80" y="712" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="16" letter-spacing="1" fill="#8A877F">SOURCE  Internal announcement of results</text>
+</svg>
