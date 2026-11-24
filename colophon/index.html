@@ -1074,7 +1074,7 @@
     const I18N = {
       en: {
         'footer.resume':`Résumé`, 'footer.colophon':`How this site is built`,
-        'nav.back.genial':`Back to Genial App`,
+        'nav.back.genial':`Back to Genial App`, 'nav.back.ssd':`Back to Safe Site Detector`, 'nav.back.ai':`Back to How I work with AI`, 'nav.back.qa':`Back to qa-design`,
         'nav.back.liam':`Back to LIAM`,
         'nav.back.kruzer':`Back to Pick &amp; Pack`,
         'nav.back.compass':`Back to Compass`,
@@ -1124,7 +1124,7 @@
       },
       pt: {
         'footer.resume':`Currículo`, 'footer.colophon':`Como este site foi feito`,
-        'nav.back.genial':`Voltar ao Genial App`,
+        'nav.back.genial':`Voltar ao Genial App`, 'nav.back.ssd':`Voltar ao Detector de Site Confiável`, 'nav.back.ai':`Voltar a Como eu trabalho com IA`, 'nav.back.qa':`Voltar à qa-design`,
         'nav.back.liam':`Voltar ao LIAM`,
         'nav.back.kruzer':`Voltar ao Pick &amp; Pack`,
         'nav.back.compass':`Voltar ao Compass`,
@@ -1204,25 +1204,27 @@
   })();
 
   (function(){
-    /* The label and the destination must agree. If the visitor came from
-       another case on this site, "back" means that case; otherwise it means
-       the portfolio. Same-origin only, and a refresh is not a journey. */
+    /* "Back" follows the path the visitor actually took, one step at a time, and always ends at the
+       portfolio. The trail lives in sessionStorage: each page adds itself, and reaching a page that is
+       already on it cuts the trail back to that page, so two cases never send you back and forth. */
     const link=document.querySelector('.back-link'); if(!link) return;
     const label=link.querySelector('[data-i18n]'); if(!label) return;
-    const MAP={'genial':'nav.back.genial','liam':'nav.back.liam',
-               'pick-and-pack':'nav.back.kruzer','compass':'nav.back.compass'};
-    try{
-      if(!document.referrer) return;
-      const u=new URL(document.referrer);
-      if(u.origin!==location.origin) return;
-      const seg=p=>p.replace(/\/(index\.html)?$/,'').split('/').pop();
-      const from=seg(u.pathname);
-      if(!from || from===seg(location.pathname)) return;
-      const key=MAP[from]; if(!key) return;
-      link.setAttribute('href', '/'+from+'/');
-      label.dataset.i18n=key;
-      if(window.applyLang) window.applyLang();
-    }catch(e){ /* a malformed referrer just leaves the default in place */ }
+    const MAP={'genial':'nav.back.genial','liam':'nav.back.liam','pick-and-pack':'nav.back.kruzer','compass':'nav.back.compass',
+               'safe-site-detector':'nav.back.ssd','ai':'nav.back.ai','qa-design':'nav.back.qa'};
+    const norm=p=>p.replace(/index\.html$/,'').replace(/\/?$/,'/');
+    const here=norm(location.pathname);
+    let trail=[];
+    try{ trail=JSON.parse(sessionStorage.getItem('site-trail')||'[]'); }catch(e){}
+    if(!Array.isArray(trail)||!trail.length) trail=['/'];
+    const i=trail.lastIndexOf(here);
+    trail = i>=0 ? trail.slice(0,i+1) : trail.concat(here);
+    try{ sessionStorage.setItem('site-trail', JSON.stringify(trail)); }catch(e){}
+    const prev=trail[trail.length-2];
+    const key=prev && MAP[prev.replace(/\/$/,'').split('/').pop()];
+    if(!key) return;                       /* first step in: back goes to the portfolio */
+    link.setAttribute('href', prev);
+    label.dataset.i18n=key;
+    if(window.applyLang) window.applyLang();
   })();
 </script>
 

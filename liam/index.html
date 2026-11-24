@@ -1152,7 +1152,7 @@
         'l.arg.p':`The pressure on an AI feature is always to make it do more. The constraint I held was that LIAM proposes and never submits, even when the draft is good enough that signing it unread would be tempting. It cost us the most impressive version of the demo. It&rsquo;s the reason the clinical side allowed the feature to exist at all.`,
         'l.dif.p':`I would have brought the clinical lead into the interface decisions, not only the review of the output: several trust states would have been simpler if the person who owns the clinical standard had been in the room while they were being drawn. And I under-designed the moment a therapist corrects a specific field. The feedback prompt asks about LIAM&rsquo;s suggestions in general, but editing a field never asks what was wrong with it, so the most precise signal in the whole feature goes unrecorded.`,
         'close.cta3.liam':`Read the Pick &amp; Pack case`,
-        'nav.back.genial':`Back to Genial App`,
+        'nav.back.genial':`Back to Genial App`, 'nav.back.ssd':`Back to Safe Site Detector`, 'nav.back.ai':`Back to How I work with AI`, 'nav.back.qa':`Back to qa-design`,
         'nav.back.liam':`Back to LIAM`,
         'nav.back.kruzer':`Back to Pick &amp; Pack`,
         'nav.back.compass':`Back to Compass`,
@@ -1231,7 +1231,7 @@
         'l.arg.p':`A pressão sobre uma feature de IA é sempre para ela fazer mais. A restrição que eu segurei foi que o LIAM propõe e nunca envia, mesmo quando o rascunho está bom o bastante para ser assinado sem leitura. Custou a versão mais impressionante da demo. É a razão de o lado clínico ter permitido a feature existir.`,
         'l.dif.p':`Eu teria trazido a liderança clínica para as decisões de interface, não só para a revisão da saída: vários estados de confiança teriam ficado mais simples se quem é dono do padrão clínico estivesse na sala enquanto eram desenhados. E eu subdesenhei o momento em que a terapeuta corrige um campo específico. O prompt de feedback pergunta sobre as sugestões do LIAM em geral, mas editar um campo nunca pergunta o que estava errado, então o sinal mais preciso da feature inteira não é registrado.`,
         'close.cta3.liam':`Ler o case do Pick &amp; Pack`,
-        'nav.back.genial':`Voltar ao Genial App`,
+        'nav.back.genial':`Voltar ao Genial App`, 'nav.back.ssd':`Voltar ao Detector de Site Confiável`, 'nav.back.ai':`Voltar a Como eu trabalho com IA`, 'nav.back.qa':`Voltar à qa-design`,
         'nav.back.liam':`Voltar ao LIAM`,
         'nav.back.kruzer':`Voltar ao Pick &amp; Pack`,
         'nav.back.compass':`Voltar ao Compass`,
@@ -1335,25 +1335,27 @@
   })();
 
   (function(){
-    /* The label and the destination must agree. If the visitor came from
-       another case on this site, "back" means that case; otherwise it means
-       the portfolio. Same-origin only, and a refresh is not a journey. */
+    /* "Back" follows the path the visitor actually took, one step at a time, and always ends at the
+       portfolio. The trail lives in sessionStorage: each page adds itself, and reaching a page that is
+       already on it cuts the trail back to that page, so two cases never send you back and forth. */
     const link=document.querySelector('.back-link'); if(!link) return;
     const label=link.querySelector('[data-i18n]'); if(!label) return;
-    const MAP={'genial':'nav.back.genial','liam':'nav.back.liam',
-               'pick-and-pack':'nav.back.kruzer','compass':'nav.back.compass'};
-    try{
-      if(!document.referrer) return;
-      const u=new URL(document.referrer);
-      if(u.origin!==location.origin) return;
-      const seg=p=>p.replace(/\/(index\.html)?$/,'').split('/').pop();
-      const from=seg(u.pathname);
-      if(!from || from===seg(location.pathname)) return;
-      const key=MAP[from]; if(!key) return;
-      link.setAttribute('href', '/'+from+'/');
-      label.dataset.i18n=key;
-      if(window.applyLang) window.applyLang();
-    }catch(e){ /* a malformed referrer just leaves the default in place */ }
+    const MAP={'genial':'nav.back.genial','liam':'nav.back.liam','pick-and-pack':'nav.back.kruzer','compass':'nav.back.compass',
+               'safe-site-detector':'nav.back.ssd','ai':'nav.back.ai','qa-design':'nav.back.qa'};
+    const norm=p=>p.replace(/index\.html$/,'').replace(/\/?$/,'/');
+    const here=norm(location.pathname);
+    let trail=[];
+    try{ trail=JSON.parse(sessionStorage.getItem('site-trail')||'[]'); }catch(e){}
+    if(!Array.isArray(trail)||!trail.length) trail=['/'];
+    const i=trail.lastIndexOf(here);
+    trail = i>=0 ? trail.slice(0,i+1) : trail.concat(here);
+    try{ sessionStorage.setItem('site-trail', JSON.stringify(trail)); }catch(e){}
+    const prev=trail[trail.length-2];
+    const key=prev && MAP[prev.replace(/\/$/,'').split('/').pop()];
+    if(!key) return;                       /* first step in: back goes to the portfolio */
+    link.setAttribute('href', prev);
+    label.dataset.i18n=key;
+    if(window.applyLang) window.applyLang();
   })();
 </script>
 
